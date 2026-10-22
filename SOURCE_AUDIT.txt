@@ -1,0 +1,238 @@
+LOWLATENCY REPOSITORY SOURCE AUDIT
+Date: 2026-10-22
+Branch checked: main
+Policy: PRESERVE EVERY EXISTING FILE. No coding solutions, implementation,
+test implementation, filled-in worksheet, or purported benchmark result.
+Use only factual corrections, source provenance, and unsolved questions.
+
+AUDIT COVERAGE
+The following 27 tracked text/source files were fetched from GitHub before
+writing this register. "Inspected" means content was retrieved and examined;
+it DOES NOT claim every assertion was independently replicated.
+
+Root:
+.gitignore                      inspected, standard build ignore rules
+LICENSE                         inspected, Apache License Version 2.0; untouched
+hello.py                        inspected, prints Hello World; untouched
+README.md                       inspected, original 'no solutions' claim conflicts
+                                with several numerical worked-scenario files
+CORRECTNESS.md                  inspected, extended theoretical/numerical notes,
+                                mixed evidence classes, unmeasured CPU timings
+question bank1.txt              inspected, Q01-Q102 retained; some historic
+                                archive trails not independently reverified
+ans                             inspected, numerical scenarios, not solutions
+                                to the 13 unimplemented coding exercises
+ans_predicintbug.txt            inspected, identical blob to 'ans'
+predicintbug.txt                inspected, identical blob to 'ans'
+pedictnext.txt                  inspected, numerical scenarios with hardware
+                                timings treated as assumptions
+pedictnext_text.txt             inspected, identical blob to 'pedictnext.txt'
+predictnext.txt                 inspected, identical blob to 'pedictnext.txt'
+predictnext1.txt                inspected, historical failure reconstructions,
+                                hypothetical memory addresses and simulations
+memory-ordering/README.md       inspected, issue leads and disputed model traces
+Exercises, all inspected:
+exercises/01-akuna-matching-engine.md
+exercises/02-cpp14-orderbook-takehome.md
+exercises/03-hrt-order-book-workshop.md
+exercises/04-nasdaq-itch-decoder.md
+exercises/05-cboe-pitch-decoder.md
+exercises/06-fix-gateway.md
+exercises/07-pretrade-risk-server.md
+exercises/08-spsc-ring-buffer.md
+exercises/09-optiver-ready-trader-go.md
+exercises/10-drw-tetris.md
+exercises/11-imc-prosperity.md
+exercises/12-akuna-shanghai-binary-messages.md
+exercises/13-hrt-partcl-macro-placement.md
+
+INFORMATION HIERARCHY
+1. A venue's actual message table defines that venue's wire format.
+2. A published assignment's exact requirements define the exercise.
+3. A primary source code comment may impose narrower rules than a README.
+4. A bug report is not automatically an observed defect in your code.
+5. A synthetic numerical trace is not a measured CPU or kernel timeline.
+6. Linked author solutions MUST NOT be copied into this question bank.
+
+FILE-BY-FILE VERDICT (EXERCISES)
+01 Akuna:
+CANDIDATE-REPORTED; original employer-authenticated prompt not in hand.
+Potential task and command syntax must remain candidate-derived, never
+labelled a guaranteed current Akuna recruitment assignment.
+ONE ACTION: WRITE the initial quantity of the first example order.
+
+02 C++14 order-book take-home:
+PRIMARY ASSIGNMENT READ. It accepts feed messages A/X/M/T and constructs
+the book. The author provides a worked background example where an exchange
+would match, BUT incoming book feed ALSO contains trade, remove and modify
+messages. A feed-only implementation should not match a new BUY by itself
+unless an additional matching rule is expressly introduced.
+Items (1)-(5) are requirements; item (6) supplies starter source.
+The midquote is emitted EVERY message (including NAN when undefined).
+The reported traded-volume tally resets on a change of MOST RECENT trade
+price, including when price switches back to an earlier value. The error
+summary counts malformed input categories listed in requirement (5).
+The author's later 'Solution' section is not part of the assignment.
+PRIMARY: https://github.com/olibre/Cpp14-OrderBook
+ONE ACTION: COPY the first order-message line from the published Example.
+
+03 Inside@HRT book workshop:
+PRIMARY CODE READ: Book.py on_update comment: update may alter only price
+and/or size, cannot change symbol/side; 'Updates must maintain PIQ.'
+Partial cancellation also maintains PIQ. A zero cancel removes the order
+under the initial Book assumption. README optional MatchingEngine says
+reject a non-existing update and reject an attempted size INCREASE.
+The book builder and optional matching engine are separate phases; keep
+the event handling and their update rules distinct.
+PRIMARY:
+https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+https://github.com/hudson-trading/inside-at-hrt
+ONE ACTION: DRAW two same-price orders in their arrival order.
+
+04 Nasdaq ITCH decoder:
+PRIMARY PDF BODY PAGE INSPECTED: actual printed page 13 Add A fields
+finish at byte 36; F has four further attribution bytes (40 bytes).
+This is an OUTBOUND market-data feed, not order entry. Synthetic 32-byte
+Order structs are a separate, in-memory design. Different message types
+have different lengths. Exact framing of historical files must be checked
+in its OWN format documentation, not presumed equivalent to MoldUDP.
+PRIMARY:
+https://nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+ONE ACTION: ADD the byte counts in the Add A table from page 13.
+
+05 Cboe PITCH decoder:
+OFFICIAL FORMAT LINKED, exact revision-specific message layouts not
+fully reverified in this audit. Treat 0x23/0x24/0x2A semantics as
+specification questions for the identified market and revision.
+Do not infer ITCH endian rules for PITCH.
+PRIMARY TO CHECK:
+https://www.cboe.com/document/tech-spec/document/technical-specifications/cboe-titanium-u.s.-equitiesoptions-multicast-pitch-specification
+ONE ACTION: LOCATE the table row containing message type 0x23.
+
+06 FIX 4.4 gateway:
+The existing file is a CONSTRUCTED task, not an employer-provided take-home.
+Tag-value framing, BodyLength, CheckSum, order/session sequence and
+PossDupFlag must come from the identified FIX protocol version and venue.
+User's 100/30/25 scenario is invented test input; not exchange evidence.
+SOURCE EXAMPLES: https://developer.gemini.com/trading/fix/order-entry/examples/execution-reports
+ONE ACTION: COPY the numeric tag for an Execution Report from the source.
+
+07 Pre-trade risk:
+The specified 100-share and $5,000 limits are artificial. A venue's
+risk-rejection, cancellation, and kill-switch behavior depend on the
+official venue rules and version. SEC Rule 15c3-5 is background market-
+access policy, NOT a source for the invented specific thresholds.
+SOURCE: https://www.cboe.com/us/equities/trading/offerings/risk_management/
+ONE ACTION: WRITE the two independently stated limits before each order.
+
+08 SPSC:
+PRIMARY IMPLEMENTATION READ: Rigtorp's constructor increments internal
+capacity to reserve one slack slot; try_emplace returns false if full,
+while emplace blocks if full. Its producer owns write position and
+consumer owns read position. Do not attribute a one-slot convention
+to every possible SPSC implementation, or conflate it with MPMC.
+PRIMARY:
+https://github.com/rigtorp/SPSCQueue/blob/master/include/rigtorp/SPSCQueue.h
+ONE ACTION: DRAW exactly four logical positions, marking an empty ring.
+
+09 Optiver Ready Trader Go:
+OFFICIAL PUBLIC competition; not verified employee take-home.
+Compiler and framework version must be tied to a dated season before
+being applied to another competition. Participant files are not rules.
+RULES: https://readytradergo.optiver.com/faqs/
+ONE ACTION: FIND the original official C++ language-version requirement.
+
+10 DRW Tetris:
+Firsthand candidate report is not the full assessment specification.
+The six-column and piece geometry are invented practice inputs.
+SOURCE: https://news.ycombinator.com/item?id=26629891
+ONE ACTION: DRAW six empty columns.
+
+11 IMC Prosperity 4:
+PUBLIC trading competition, Python interface. +20 position limit and
+103 fair price are numerical exercise assumptions, not asserted
+universal values for the actual competition.
+SOURCE: https://www.imc.com/ap/articles/prosperity-4-imc-global-trading-challenge
+ONE ACTION: COPY the existing +15 position into a one-cell table.
+
+12 Akuna Shanghai binary:
+Candidate Gist is source evidence only for its own written sample.
+The original employer prompt/input binary is UNVERIFIED. In-memory
+pointer declarations do NOT prove the binary wire layout stores actual
+process-address values; inspect serialization functions separately.
+SOURCE: https://gist.github.com/jeb2239/227acb7833948f30c7f4e60982d44ee6
+ONE ACTION: IDENTIFY the first defined field in Header.
+
+13 HRT/Partcl macro placement:
+OFFICIAL PUBLIC hardware competition, not proved to be a trading
+software interview. Read actual challenge scoring and benchmark files;
+do not treat a single sample design as representative of all benchmarks.
+SOURCE: https://github.com/partcleda/macro-place-challenge-2026
+ONE ACTION: FIND the first named validity constraint in SETUP.md.
+
+CROSS-FILE CORRECTIONS FOR NUMERICAL / MEMORY MATERIAL
+A. Synthetic addresses (0x1000, 0x500000, 0x800000) are teaching
+   labels, NOT dumps from observed hardware or actual process mappings.
+B. 64,000,000 bytes is decimal 64 MB, distinct from 64 MiB.
+C. An ITCH A message is 36 bytes; the 32-byte synthetic in-memory
+   order-record example is independent of ITCH wire layout.
+D. 64-byte cache-line alignment does not by itself prove no sharing:
+   inspect member offsets, adjacent objects and platform's destructive-
+   interference granularity.
+E. A 3 GHz assumed clock permits converting ideal cycles to ideal
+   nanoseconds; it does not establish 14-cycle total handling, 1-cycle
+   hash lookup, or universal 2-us mutex/allocations.
+F. A page-table walk need not incur a DRAM access at every level.
+G. mmap does not assign a user-specified PHYSICAL address. MAP_HUGETLB
+   may fail or round allocation units. MAP_FIXED can replace mappings.
+H. Cast-to-struct wire parsing must respect object lifetime, bounds,
+   alignment, aliasing and byte order; zero copy is not a correctness proof.
+I. A mutex lock does not always enter the kernel. std::map::find does
+   not always miss the cache. Unmeasured stall constants are hypothetical.
+J. std::pmr::monotonic_buffer_resource can request upstream memory.
+   Preallocating an Order array does not guarantee global zero malloc.
+K. std::memory_order_seq_cst defines ordering; it is not a promise to
+   flush every CPU pipeline. [[likely]]/[[unlikely]] are C++20 attributes.
+L. GCC __builtin_ctzll(0) has an undefined result; a mask scan needs
+   separate handling of the zero mask.
+M. isolcpus or pthread affinity alone do not prevent all interrupt,
+   scheduling, SMT and OS interference.
+N. Python/OS/C++ labs at universities are not proven identical to any
+   HFT firm's private take-home without an employer primary document.
+O. The NorthwestERN CS343 lab actually uses two producers/four consumers
+   in an example, a 16-element ring and spinlock/mutex/semaphore tasks.
+   Its 2025 PDF does not require implementing MCS, ticket, or lock-free
+   MPMC algorithms. Signal-like interrupts are a separate lab condition.
+
+PRIMARY MATERIAL ENTERED
+1. Nasdaq 36-page TotalView ITCH PDF: printed p.13 original message
+   tables read and visually inspected. Distinguishes variable message
+   lengths and outbound order-event feed.
+2. Northwestern CS343 Winter 2025 13-page PDF, Task 2/3 middle pages
+   read and visually inspected; spinlock, interrupt, mutex and semaphore
+   sections inspected, rather than relying on its title.
+   https://users.cs.northwestern.edu/~pdinda/os-w25/labs/pclab.pdf
+3. C++14 order-book original GitHub 'Problem' body, numbered clauses
+   1-6, input example, trade-price sequence, malformed-input list.
+4. HRT Book.py TODO function comments and README matching-extension
+   contract.
+5. Rigtorp SPSCQueue.h capacity_++ constructor and try_emplace branch.
+6. Steven Rostedt actual September 2009 Linux ring-buffer patch bodies
+   and code diffs, including:
+   iterator double-advance https://lkml.iu.edu/0909.0/01672.html
+   reset during commit https://lkml.iu.edu/0909.0/01682.html
+   swap during commit https://lkml.iu.edu/0909.0/01687.html
+   discarded-count fix https://lkml.iu.edu/0909.0/01686.html
+
+UNVERIFIED / NOT CLAIMED COMPLETE
+- The initial 54-question historical research has some entries that
+  include only archive search trails, not independently opened messages.
+- Memory-ordering claims include theoretical weak-memory outcomes,
+  unverified exact CPU traces and some disputed issues.
+- Course marketing / historical school rankings do not establish
+  actual interview requirements without exact assignment PDFs.
+- All timings in numerical files lack original measurement logs.
+- No program, benchmark or regression suite was executed in this pass.
+- The original 27 tracked files were inspected; this audit adds one more.
+- No coding-problem solutions are written or checked into the repository.
+END SOURCE AUDIT
