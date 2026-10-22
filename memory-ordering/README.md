@@ -1,6 +1,7 @@
 # Memory-Ordering Bugs (ARM64 / POWER vs x86-64)
 
 > **Status: unverified.** This is reference material supplied by the repo owner. The bug-tracker IDs, file names, line numbers and failure descriptions have not been checked against the primary sources. Confirm each against its linked tracker or mailing-list thread before relying on it, and rewrite any statement you cannot confirm.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 
 ## Hardware state diagrams
 
@@ -21,45 +22,83 @@ REFERENCE COUNT DECREMENT RACE (USE-AFTER-FREE AT 0x3000)
 | 0x3008 [Ref_Count: 2 -> 1] (Relaxed)  | Calls free(0x3000) BEFORE 999 lands |
 +-----------------------------------------------------------------------------+
 ```
+FOLLOW-UP: DRAW the initial state represented by this code example.
 
 ## Original problem statement
 
 Synchronize shared memory across 2 CPU cores at addresses `0x1000` (Payload), `0x2000` (Flag), and `0x3008` (Reference Counter) without allowing Store-Buffer delays, Load-Load hardware reordering, or Store-Load reordering to expose uninitialized bytes (`0`), execute `free(0x3000)` before pending writes complete, or drop thread wakeups.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 
 ## Reconstructed bugs from C++ mailing lists, Bugzilla, and production repositories
 
 1. **Omit** `#StoreLoad` barrier in atomic wait/notify state tracking (LLVM `libc++` Issue `#109290`, `__libcpp_contention_notify` in `atomic.cpp`):
+FACT CHECK CORRECTION: LLVM #109290 was a theoretical C++ memory-model counterexample, not observed ARM64 deadlock; current libc++ has changed. https://github.com/llvm/llvm-project/issues/109290
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
    - **Step 1 (Waiter Core 1):** Write integer `1` into `contention_state` at address `0x2000` to register a sleeping thread, and read `platform_state` at address `0x1000` (value `10`).
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
    - **Step 2 (Notifier Core 0):** Execute `platform_state.fetch_add(1, std::memory_order_release)` at address `0x1000` (updating `10` to `11`), and immediately execute `contention_state.load(std::memory_order_seq_cst)` at address `0x2000`.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Why it fails:** Because `memory_order_release` followed by a `memory_order_seq_cst` load is not a sequential-consistency store, the CPU holds the write `11` inside Core 0's local store buffer while executing the read of `0x2000` early (reading `0` waiters). Core 0 skips the `futex` wake call while Core 1 sees stale value `10` and sleeps forever (deadlock).
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 
 2. **Publish** pointer updates with `memory_order_relaxed` instead of `memory_order_release` (CPython Free-Threading Issue `#133980` / PR `#133988` in `Objects/object.c`, and Order-Matching-Engine `ReplicationProtocol` audit):
+FACT CHECK CORRECTION: CPython issue #133980 does not by itself establish a reproduced ARM64 segfault; verify the exact affected store and merged patch. https://github.com/python/cpython/issues/133980
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Step 1 (Writer Core 0):** Write dictionary values `{1: 2}` into heap block `0x1000` (costing 100 nanoseconds to flush from store buffer) and write pointer `0x1000` into `_PyObject_ManagedDictPointer(obj)->dict` at `0x2000` without a release barrier.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
    - **Step 2 (Reader Core 1):** Read `0x2000` using `FT_ATOMIC_LOAD_PTR_ACQUIRE`, obtain address `0x1000`, and dereference `0x1000`.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
    - **Why it fails:** On x86-64, hardware Total Store Ordering (TSO) hides the bug because x86 stores cannot pass earlier stores. On ARM64, the CPU flushes address `0x2000` to L1 cache before `0x1000`, causing Core 1 to read uninitialized garbage (`0x0`) at `0x1000` and segfault.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 
 3. **Decrement** reference counters using `memory_order_relaxed` or `memory_order_release` alone (`boost::atomic` / `std::shared_ptr` mailing list defect analysis):
+FACT CHECK: The concrete use-after-free execution requires lifetime and synchronization premises not established by the text alone; do not assert that relaxed decrement by itself always frees before a pending write.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Step 1 (Core 0):** Write `999` into shared payload at `0x3000`, then decrement reference count at `0x3008` from `2` to `1` using `fetch_sub(1, std::memory_order_relaxed)`.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Step 2 (Core 1):** Decrement reference count at `0x3008` from `1` to `0` using `fetch_sub(1, std::memory_order_relaxed)`, observe `0`, and immediately invoke `delete` on `0x3000`.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Why it fails:** Without `memory_order_release` on Core 0's decrement and `memory_order_acquire` on Core 1's decrement (`std::memory_order_acq_rel`), Core 0's write of `999` to `0x3000` is reordered *after* Core 1 frees memory block `0x3000`, corrupting the heap allocator's free list.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 
 4. **Pass** impossible memory models to pure stores or Compare-And-Swap failure paths (GCC Bugzilla `PR 124827` and Bloomberg `quantum` Issue `#160` in `quantum_task.h`):
+FACT CHECK VERIFIED: GCC PR124827 concerns missing INVALID-memory-order diagnostics under ThreadSanitizer, not proof that the compiler correctly executes invalid operations. https://www.mail-archive.com/gcc-patches%40gcc.gnu.org/msg399845.html
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
    - **Step 1 (Developer Code):** Call `_status.store(value, std::memory_order_acq_rel)` at line 131 of `SuspensionGuard::set`, or call `x.compare_exchange_weak(y, 0, std::memory_order_relaxed, std::memory_order_release)`.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Why it fails:** A pure `store` performs 0 reads, so `acquire` semantics are physically impossible; similarly, a failed `compare_exchange` performs 0 writes, so `memory_order_release` on the failure argument is undefined behavior in the C++ standard (silently accepted when GCC 16 pass `waccess2` failed to inspect `__tsan_atomic_compare_exchange` builtins under `-fsanitize=thread`).
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 
 5. **Wrap** SPSC ring buffer indices using modulo arithmetic before storing into the atomic variable (Facebook `folly::ProducerConsumerQueue` commit history and design notes in `ProducerConsumerQueue.h`):
+FACT CHECK CORRECTION: Folly's ProducerConsumerQueue uses wrapped cursors by design and reserves one ring slot; the described unconditional failure is false for that implementation. https://github.com/facebook/folly/blob/main/folly/ProducerConsumerQueue.h
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Step 1 (Producer Core 0):** Advance `localIndex` across a 1024-slot buffer, wrapping `1024 & 1023` back to `0` prior to storing into the atomic cursor, while Consumer Core 1 relies on a cached `remoteIndexCache` of `0`.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
    - **Why it fails:** When indices wrap to `0` inside the stored atomic variable instead of increasing monotonically to `UINT64_MAX`, a full queue (`occupancy == 1024`, index `0`) and an empty queue (`occupancy == 0`, index `0`) become numerically identical (`consumer_.localIndex == producer_.localIndex`), causing the consumer's stale cache check to alias and overwrite unread slots.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 
 6. **Rely** on `std::memory_order_consume` for dependency-ordered pointer chasing without hardware barriers (GCC Bugzilla `59448` & WG21 `N4215`):
+FACT CHECK: GCC bug 59448 addresses compiler dependency handling, but the claimed precise machine instruction, stale value, and architecture-specific observed outcome require independent evidence. https://gcc.gnu.org/pipermail/gcc-bugs/2014-October/485661.html
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Step 1 (Producer Core 0):** Write `0x1234` to `Payload[0]` at `0x5000` and store `1` to flag `f` with `memory_order_release`.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Step 2 (Consumer Core 1):** Load `f` with `memory_order_consume` and access `Payload[f - f]` (which algebraically cancels `f` to `Payload[0]`).
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Why it fails:** The compiler's optimizer simplifies `f - f` to `0`, severing the machine-register data dependency between the load of `f` and the load of `Payload[0]`. In GCC 4.9.2 (`gcc/config/aarch64/atomics.md`), `MEMMODEL_CONSUME` emitted a bare `ldr` instruction instead of an acquiring `ldar`, allowing the ARM64 CPU to read `Payload[0]` before `f` and return uninitialized value `0xbadf00d`.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 
 7. **Spin** on a `memory_order_relaxed` loop expecting an `acquire` fence *before* the loop or on the *wrong* variable to synchronize payload data (StackOverflow / C++ Concurrency mailing list fence ordering trap):
+FACT CHECK: The placement and pairing of fences determine whether synchronization exists; a fence before a relaxed loop is not automatically an acquire operation protecting subsequently read data. https://eel.is/c++draft/atomics
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Step 1 (Core 0):** Write `x = true` (`relaxed`) at `0x1000`, then write `y = true` (`relaxed`) at `0x2000`.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
    - **Step 2 (Core 1):** Spin on `while(!y.load(std::memory_order_relaxed))` at `0x2000`, and immediately read `x.load(std::memory_order_relaxed)` at `0x1000`.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
    - **Why it fails:** Beginners assume `atomic` prevents reordering across *different* variables. `memory_order_relaxed` only guarantees coherence on a *single* memory address (`0x2000` alone). Without `std::atomic_thread_fence(std::memory_order_release)` between `x` and `y` on Core 0 and `std::atomic_thread_fence(std::memory_order_acquire)` *after* `y.load()` on Core 1, Core 1 speculatively loads `x = false` from `0x1000` before `y = true` arrives at `0x2000`, firing `assert(z != 0)`.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 
 ## Summary table of mailing-list and bug-tracker evidence
 
