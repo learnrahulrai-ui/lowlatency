@@ -46,3 +46,8 @@ universal ITCH message. Record it only as an invented storage example.
 SOURCE: https://classic.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
 ONE ACTION: CALCULATE the byte count of A using the official field lengths,
 without using the asserted final count.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+PROTOCOL CONTRACT: The exchange explicitly says ITCH is outbound market data and does not support order entry. The message-type byte belongs to the ITCH MESSAGE BODY; packet transport and historical-file wrapping require separate parsing. A=36 and F=40 bytes are derived from the specification's printed p.13 tables; do not use the 32-byte synthetic Order in-memory record as a wire structure.
+SOURCE: https://nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+ONE ACTION: COPY the first field's name and length from the official Add A table.
