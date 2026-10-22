@@ -1328,3 +1328,13 @@ C6: 12 logical cores, two isolated cores, 4096 RX slots,
     a shared 65,536 byte UMEM, 2,048 byte chunk size.
     FIRST ACTION: CALCULATE 65,536 / 2,048.
 END FINAL QUESTION BANK
+
+
+
+SOURCE LINK ERRATA (2026-10-23, additive; old text retained)
+Some FQ session-gap rows have a misspelled SourceForge message-ID URL.
+The corrected historical QuickFIX thread URL is:
+https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992c95d08f7c0c1f%40mail.gmail.com/
+Use this corrected link for the section named FIX SESSION GAP.
+A mailing-list example is a 2006 historic report, not a published current
+hiring take-home or a proof about modern FIX implementations.
