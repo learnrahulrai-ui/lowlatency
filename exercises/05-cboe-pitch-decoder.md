@@ -20,3 +20,8 @@ FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulti
 FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 4. Extend with `0x24` (execution at price/size). The spec permits executed quantity larger than displayed quantity because some liquidity may be hidden. Decide how your book handles that.
 FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+REVISION GATE: 0x23, 0x24 and 0x2A are protocol message-type identifiers, not automatically interchangeable with Nasdaq ITCH messages. Before writing tests, choose the Cboe market (equities versus options) and dated PITCH revision, then record the stated length, unit sequence, byte order, order-book effect and any variant fields. The cited specification was NOT exhaustively checked by this audit.
+SOURCE: https://www.cboe.com/document/tech-spec/document/technical-specifications/cboe-titanium-u.s.-equitiesoptions-multicast-pitch-specification
+ONE ACTION: LOCATE the row defining message type 0x23.
