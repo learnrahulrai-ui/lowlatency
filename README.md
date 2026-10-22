@@ -76,3 +76,19 @@ measured production path or a firm-authenticated assessment.
 - For a complete local checkout: `git clone --recurse-submodules https://github.com/learnrahulrai-ui/lowlatency.git`; inside an existing checkout: `git submodule update --init --recursive`.
 
 No existing question bank was deleted or replaced. The linked upstream code includes the author's example implementations; our two new question files do not supply coding solutions. All uninspected issue bodies remain marked research leads.
+
+
+
+RESEARCH UPDATE - 2026-10-23 (ADDITIVE; NO SOLUTIONS)
+- FINAL QUESTION BANK.txt: master unsolved reading order and 180 additional
+  numbered numerical boundary/forensics puzzles, plus composite challenges.
+- HFT_TAKEHOME_MISSING.txt: 13 existing exercise files checked; 22 distinct
+  missing or differently classified take-home/interview/adjacent assessment
+  leads; 129 public OA metadata titles from 18 firms. Many are third-party
+  titles, not employer-authenticated take-home assessments.
+- HFT_GDB_DEBUGGING_QUESTION_BANK.txt: 312 less common technical terms across
+  26 systems categories, 104 numerical/debugging cases and 30 practical GDB
+  labs covering more than hangs (corruptions, lost bytes, FD reuse, missed
+  events, unwinding, allocator lifetime, PMU bias, core dumps and crashes).
+- These files preserve the 13 original exercises, old question banks and
+  MIT-licensed pinned Packt submodule; no coding solutions were added.
