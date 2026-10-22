@@ -28,3 +28,8 @@ FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
 FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
 4. Review `step3`, `step4`, `step5` and the binary read loop in `main()` of the gist.
 FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+A candidate Gist is only evidence for the code it actually contains; neither original Akuna recruitment prompt nor input binary has been independently checked. Pointer fields inside process-memory structures are NOT proof that serialized messages encode native addresses. Reconstruct binary offsets only after locating the actual reading/parsing routines.
+SOURCE: https://gist.github.com/jeb2239/227acb7833948f30c7f4e60982d44ee6
+ONE ACTION: COPY the first declared Header field from the Gist.
