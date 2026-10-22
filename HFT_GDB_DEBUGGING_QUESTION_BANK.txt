@@ -1222,3 +1222,139 @@ awatch, reverse control, record methods and catchpoints. These features
 may have target/architecture restrictions. Valgrind, rr, perf, AF_XDP
 and tracefs each have separate measurement overhead and compatibility
 constraints. Do not assume any synthetic case was run.
+
+
+
+PRACTICAL GDB / SYSTEMS FORENSICS LABS (ADDENDUM; NO SOLUTION CODE)
+All commands below are documentation-supported debugger operations.
+Run against an owned test binary with debug information. The symbolic
+arguments ADDRESS, EXPRESSION, PID, TID, and EXECUTABLE must be obtained
+from the running program before they are used; never paste made-up memory
+addresses and pretend they came from an actual crash. Commands alone do
+not constitute a coding solution. Record the response in the blank.
+SOURCE: https://sourceware.org/gdb/current/onlinedocs/gdb
+SOURCE: https://rr-project.org/
+SOURCE: https://www.kernel.org/doc/html/latest/trace/ftrace.html
+SOURCE: https://valgrind.org/docs/manual/mc-manual.html
+
+LAB-GDB-001: gdb -q EXECUTABLE
+INPUT: executable-with-debug-info=unknown; build-id=unknown.
+FIRST ACTION: LOCATE the real executable filename from its build output.
+OBSERVATION: __________
+LAB-GDB-002: info threads
+INPUT: stopped-threads=5; expected-threads=6; process=one.
+FIRST ACTION: COPY the printed thread count, without diagnosing the missing one.
+OBSERVATION: __________
+LAB-GDB-003: thread apply all bt full
+INPUT: 6 threads; 2 waiting; 1 running; 3 unknown.
+FIRST ACTION: RECORD the frame-0 function of ONE waiting thread.
+OBSERVATION: __________
+LAB-GDB-004: info proc mappings
+INPUT: attempted-access=0x400100; expected-map=[0x400000,0x401000).
+FIRST ACTION: WRITE the exact map boundaries from the current process.
+OBSERVATION: __________
+LAB-GDB-005: x/64bx ADDRESS
+INPUT: a real 64-byte aligned address selected from an owned process.
+FIRST ACTION: COPY only the first byte and its address.
+OBSERVATION: __________
+LAB-GDB-006: disassemble /r
+INPUT: source-level branch at one identified program counter.
+FIRST ACTION: COPY one actual machine instruction byte sequence.
+OBSERVATION: __________
+LAB-GDB-007: watch -location EXPRESSION
+INPUT: stored quantity 100; later observed 250; object may have moved.
+FIRST ACTION: WRITE the storage address shown by GDB for the expression.
+OBSERVATION: __________
+LAB-GDB-008: rwatch EXPRESSION
+INPUT: one shared integer; reader count 10; writer count 1.
+FIRST ACTION: VERIFY whether the target supports a hardware read watchpoint.
+OBSERVATION: __________
+LAB-GDB-009: awatch EXPRESSION
+INPUT: one 4-byte state field; accesses by 3 threads.
+FIRST ACTION: RECORD hardware acceptance or rejection of the access watchpoint.
+OBSERVATION: __________
+LAB-GDB-010: catch syscall close
+INPUT: accepted-fd=7; close calls at times 100us, 101us, 110us.
+FIRST ACTION: RECORD one observed close argument in GDB.
+OBSERVATION: __________
+LAB-GDB-011: catch syscall sendto
+INPUT: pending=65536; send-return=16384; EAGAIN follows.
+FIRST ACTION: RECORD the first return value without calculating unsent bytes.
+OBSERVATION: __________
+LAB-GDB-012: catch syscall recvmsg
+INPUT: record-size=36; read fragments=20+16 bytes.
+FIRST ACTION: RECORD the first syscall return value.
+OBSERVATION: __________
+LAB-GDB-013: catch throw
+INPUT: possible at()-range failure; noexcept caller present.
+FIRST ACTION: RECORD the thrown type IF the debugger actually stops.
+OBSERVATION: __________
+LAB-GDB-014: catch fork
+INPUT: process=200; potential child=201.
+FIRST ACTION: RECORD the one actual event ID after the catchpoint stops.
+OBSERVATION: __________
+LAB-GDB-015: catch exec
+INPUT: old-process-image=unknown; new-process-image=unknown.
+FIRST ACTION: RECORD the path of the new executable image.
+OBSERVATION: __________
+LAB-GDB-016: set scheduler-locking step
+INPUT: two runnable threads and a stepping session.
+FIRST ACTION: RUN 'show scheduler-locking' and copy only its resulting mode.
+OBSERVATION: __________
+LAB-GDB-017: set non-stop on
+INPUT: debugger version and target capabilities unknown.
+FIRST ACTION: CHECK availability using the official non-stop section before running.
+OBSERVATION: __________
+LAB-GDB-018: record full
+INPUT: 200000 recorded-instruction default limit; 200001 requested.
+FIRST ACTION: COPY the current record-full instruction limit in GDB.
+OBSERVATION: __________
+LAB-GDB-019: reverse-continue
+INPUT: recorded execution support not yet checked.
+FIRST ACTION: RECORD whether the target supports reverse execution at this stop.
+OBSERVATION: __________
+LAB-GDB-020: record btrace
+INPUT: target CPU trace features unknown; sampled data writes=unknown.
+FIRST ACTION: IDENTIFY whether branch-trace recording is available.
+OBSERVATION: __________
+LAB-GDB-021: rr record EXECUTABLE
+INPUT: AMD/Intel/AArch64 hardware support must be checked first.
+FIRST ACTION: COPY the CPU model and kernel version; do not claim rr succeeded.
+OBSERVATION: __________
+LAB-GDB-022: rr replay
+INPUT: a prior successful rr recording must already exist.
+FIRST ACTION: COPY the recording's trace directory name.
+OBSERVATION: __________
+LAB-GDB-023: maintenance info sections
+INPUT: stripped executable and external debug file uncertain.
+FIRST ACTION: FIND one section name that begins .debug_ IF present.
+OBSERVATION: __________
+LAB-GDB-024: set print static off
+INPUT: symbol table may be incomplete and frame optimized.
+FIRST ACTION: RECORD the displayed value of one nonstatic local, if available.
+OBSERVATION: __________
+LAB-GDB-025: info sharedlibrary
+INPUT: runtime loaded 3 shared libraries; one symbol table missing.
+FIRST ACTION: COPY the library's load-range text, not a guessed file offset.
+OBSERVATION: __________
+LAB-GDB-026: info registers
+INPUT: program stopped at a specific signal with 64-bit registers.
+FIRST ACTION: COPY ONLY the instruction-pointer register value.
+OBSERVATION: __________
+LAB-GDB-027: thread apply all bt
+INPUT: possible 4-thread lock-order cycle; 2 locks.
+FIRST ACTION: RECORD the innermost call of the first thread.
+OBSERVATION: __________
+LAB-GDB-028: catch syscall futex
+INPUT: futex expected=0; observed=1; waiters=4.
+FIRST ACTION: IDENTIFY one futex operation and its expected value.
+OBSERVATION: __________
+LAB-GDB-029: watch -location field-after-move
+INPUT: original address=0x1000; moved address=0x2000; 8-byte field.
+FIRST ACTION: DRAW old and new object lifetimes; do NOT install a watchpoint at an invented address.
+OBSERVATION: __________
+LAB-GDB-030: record-full versus rr comparison
+INPUT: failed-run-count=1; retries=1000; bad-value observed once.
+FIRST ACTION: RECORD whether an actual deterministic trace exists.
+OBSERVATION: __________
+END GDB PRACTICAL LABS
