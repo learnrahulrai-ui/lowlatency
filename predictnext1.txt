@@ -1,3 +1,14 @@
+SOURCE REVIEW 2026-10-22 — HISTORICAL EXERCISES, NOT OBSERVED TRACES
+All original reported scenarios are preserved below. Synthetic addresses
+and scheduled nanosecond values are NOT memory dumps or benchmarks.
+A primary Linux kernel patch proves only its own historical fix, not an
+identical failure in modern networking or a user matching engine.
+The Nasdaq ITCH feed is outbound, and a reported A event has 36 message
+bytes; do not feed a synthetic 32-byte Order struct to a wire decoder.
+This file does not solve any of the 13 coding exercises. See SOURCE_AUDIT.txt.
+ONE ACTION: DRAW the first two independently named storage locations.
+END SOURCE REVIEW
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 00. ARCHIVAL PROTOCOL, CONCURRENCY, AND KERNEL MEMORY ADDRESS AXIOMS                                                                                               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
