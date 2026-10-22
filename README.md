@@ -1,3 +1,9 @@
+> SOURCE REVIEW — 2026-10-22: Start with [SOURCE_AUDIT.txt](SOURCE_AUDIT.txt), then [question bank1.txt](question%20bank1.txt). The bank has Q01-Q102, and the 13 exercises remain UNSOLVED. Existing files named ans and predictnext contain pre-existing numerical scenarios, not an implemented answer to any of the 13 coding problems. Historical claims and fixed nanosecond numbers are not automatically verified measurements. No files were deleted.
+>
+> One-step mode: Read one question, write the first numerical state or source-backed premise, verify against primary evidence, and only then continue. Do not copy an author's published solution.
+>
+> Critical distinction: C++14 order-book FEED RECONSTRUCTION, HRT book updates, and actual EXCHANGE MATCHING are different contracts. Consult the specific source before inferring executions.
+
 # lowlatency
 
 Practice problems for low-latency C++ and trading-systems work. This repo holds **problem statements and sources only. No solutions.**
