@@ -42,3 +42,8 @@ The starter files ring.[ch] atomics.[ch] harness.c are described in the
 PDF, but the class-specific GitHub Classroom code was not fetched here.
 SOURCE: https://users.cs.northwestern.edu/~pdinda/os-w25/labs/pclab.pdf
 ONE ACTION: DRAW two senders and four receivers around a 16-position ring.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+PRIMARY IMPLEMENTATION FACT: Rigtorp's constructor increases physical capacity by one slack slot; try_emplace is the nonblocking operation and returns false on full, whereas emplace waits for space. Current code has separate producer writeIdx and consumer readIdx access, and wraps stored cursors. Do not call modulo wrapping inherently defective or confuse this one-producer/one-consumer design with Northwestern's multi-producer lab.
+SOURCE: https://github.com/rigtorp/SPSCQueue/blob/master/include/rigtorp/SPSCQueue.h
+ONE ACTION: DRAW four logical storage positions before the producer's first push.
