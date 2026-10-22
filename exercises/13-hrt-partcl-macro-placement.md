@@ -18,3 +18,8 @@ FOLLOW-UP: CALCULATE: Reproduce one given number from its stated inputs.
 FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
 4. Compare every change against the published baseline.
 FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+This is a publicly hosted hardware optimization challenge. Macro legality, proxy scoring, physical-stage timing and benchmark coverage must be read from SETUP.md, SCORING.md and the included benchmark files, not inferred from the name of the sponsoring firm. It is not an authenticated trading software take-home.
+SOURCE: https://github.com/partcleda/macro-place-challenge-2026
+ONE ACTION: COPY the first legality rule from SETUP.md.
