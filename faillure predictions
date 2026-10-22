@@ -1,0 +1,223 @@
+FAILLURE PREDICTIONS
+Created 2026-10-23 | Repository main | UNSOLVED PROBLEMS ONLY
+
+PURPOSE
+The word "faillure" follows the requested filename spelling.
+This is a source-aware failure prediction ledger, not evidence that
+all situations have been reproduced or confirmed as bugs.
+
+EVIDENCE LABELS
+SOURCE = exact supplied upstream implementation has the relevant construct.
+REPORT = a GitHub issue author reports the behavior; unconfirmed until
+the reproducer and reply/fix are inspected.
+SOURCE+REPORT = both original code and an issue report inspected.
+SOURCE PREDICTION / DERIVED = an adversarial test, not a proved failure.
+QUESTION = contested behavior / interface contract.
+NEVER assign a performance number without measurement.
+
+UPSTREAM CODE ACCESS
+PacktPublishing/Building-Low-Latency-Applications-with-CPP uses MIT License
+with Copyright (c) 2022 Packt. Reuse requires attribution and license copy.
+Pinned original commit: 11e3925f431f7c8c39739ed90b874d6ff2aa2966.
+The full Packt source tree is linked via Git SUBMODULE, not copied as new
+independent Git blobs, at:
+third_party/Building-Low-Latency-Applications-with-CPP
+Clone with: git clone --recurse-submodules <YOUR_REPOSITORY_URL>
+The submodule requires access to GitHub on checkout. Do not represent it
+as a vendored offline snapshot.
+
+SOURCE SCOPE
+Directly inspected Packt Chapter12 code and primary issues/prs for:
+LFQueue, MemPool, MEOrderBook, FIFOSequencer, sockets, TCP send/receive,
+MarketDataConsumer, market-data publisher, logger, macros and limits.
+The case list is NEW research, not a merge or rewrite of question bank1.
+
+PACKT CHAPTER12 — 40 SOURCE-TRACED TEST PREDICTIONS
+
+PACKT-001 [SOURCE+REPORT] Price levels 100 and 356 alias one 256-slot price bucket
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/exchange/matcher/me_order_book.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/9
+ONE ACTION: Price 100 and 356 in separate books; check mapping and independent resting states.
+
+PACKT-002 [SOURCE+REPORT] A bid and an ask using the same modulo bucket may share linked-list metadata
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/exchange/matcher/me_order_book.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/9
+ONE ACTION: Start with price 100 BUY and 356 SELL that are not crossing; record both sides.
+
+PACKT-003 [REPORT] Out-of-range order ID at a fixed array boundary may throw through noexcept
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/exchange/matcher/me_order_book.cpp
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/9
+ONE ACTION: Submit order ID 1048576 with otherwise legal values; record termination status.
+
+PACKT-004 [DERIVED] Client identifier boundary may exceed fixed-size table
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/types.h
+ONE ACTION: Compare client IDs 255 and 256 in a clean process; identify specified valid range.
+
+PACKT-005 [DERIVED] Ticker identifier boundary may exceed fixed-size table
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/types.h
+ONE ACTION: Compare ticker IDs 7 and 8; inspect fixed index bounds.
+
+PACKT-006 [SOURCE PREDICTION] Memory pool zero capacity indexes first element during initialization
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/mem_pool.h
+ONE ACTION: Construct zero-element pool using a trivial type under a bounds sanitizer.
+
+PACKT-007 [SOURCE+REPORT] Reused pool object has no explicit destructor in deallocate
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/mem_pool.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/7
+ONE ACTION: Choose one type that owns external memory; count construction and destruction calls.
+
+PACKT-008 [SOURCE PREDICTION] Placement construction over already-constructed nontrivial pool object
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/mem_pool.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/7
+ONE ACTION: Draw one object's lifetime from vector construction through first placement construction.
+
+PACKT-009 [SOURCE PREDICTION] Releasing an object pointer from a different pool is checked after pointer subtraction
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/mem_pool.h
+ONE ACTION: Identify the validity premise needed BEFORE subtracting two unrelated pointers.
+
+PACKT-010 [SOURCE] Memory pool full scan eventually terminates through FATAL
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/mem_pool.h
+ONE ACTION: Fill two slots, request a third, and record the documented API contract.
+
+PACKT-011 [SOURCE PREDICTION] Write-side LFQueue access lacks a full-capacity admission check
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/lf_queue.h
+ONE ACTION: Use capacity 2: write three times before any read; record expected occupancy.
+
+PACKT-012 [SOURCE+QUESTION] Multiple producers can reserve the same queue slot
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/lf_queue.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/4
+ONE ACTION: Pause two producers immediately before both read the write position.
+
+PACKT-013 [SOURCE+QUESTION] Multiple consumers can observe the same unread slot
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/lf_queue.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/4
+ONE ACTION: Pause two consumers immediately before each requests a read pointer.
+
+PACKT-014 [SOURCE PREDICTION] Zero-length ring makes modulo wrap undefined
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/lf_queue.h
+ONE ACTION: Initialize a queue of capacity 0, then request one publication.
+
+PACKT-015 [REPORT/PR] Polling atomic queue size in inner loop may add coherence traffic
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/lf_queue.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/pull/14
+ONE ACTION: Count size() reads in 1000 consumer iterations with an empty queue.
+
+PACKT-016 [REPORT/PR] Queue throughput and latency claims need A/B performance tests
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/lf_queue.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/pull/13
+ONE ACTION: Record producer and consumer counts before any benchmark.
+
+PACKT-017 [SOURCE PREDICTION] FIFO sorting equal receive timestamps lacks explicit stable tie rule
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/exchange/order_server/fifo_sequencer.h
+ONE ACTION: Insert two client requests with equal timestamps and preserve their input order.
+
+PACKT-018 [SOURCE] FIFO pending list has a hard 1024-request limit
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/exchange/order_server/fifo_sequencer.h
+ONE ACTION: Record event counts at pending sizes 1023, 1024 and 1025.
+
+PACKT-019 [SOURCE+REPORT] Socket construction can leave previous socket handles when address candidates repeat
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/socket_utils.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/5
+ONE ACTION: Inspect exact addrinfo list cardinality under the current AF_INET and AI_NUMERICHOST flags.
+
+PACKT-020 [SOURCE PREDICTION] Address-resolution result requires release after getaddrinfo succeeds
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/socket_utils.h
+ONE ACTION: Count allocations and releases for one successful address resolution.
+
+PACKT-021 [SOURCE PREDICTION] connect() check compares return value to 1, not expected error categories
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/socket_utils.h
+ONE ACTION: List connect() returns 0, -1, and 1 and evaluate the source's boolean condition.
+
+PACKT-022 [SOURCE PREDICTION] Nonblocking TCP send can send only part of buffered bytes
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/tcp_socket.cpp
+ONE ACTION: Provide 100 pending bytes, force send() to report 40; inspect remaining byte bookkeeping.
+
+PACKT-023 [SOURCE PREDICTION] Nonblocking TCP send can return EAGAIN without sending any data
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/tcp_socket.cpp
+ONE ACTION: Provide 100 bytes, force send() to return -1/EAGAIN; trace pending count.
+
+PACKT-024 [SOURCE PREDICTION] Outgoing TCP buffer append has no local capacity guard
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/tcp_socket.cpp
+ONE ACTION: Set available buffer 8 bytes, request append of 9, record the legal boundary.
+
+PACKT-025 [SOURCE PREDICTION] TCP receive buffer full yields zero-length iovec
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/tcp_socket.cpp
+ONE ACTION: Set valid received byte count equal to TCPBufferSize and build the next iovec.
+
+PACKT-026 [SOURCE PREDICTION] Timestamp ancillary-message metadata is read from uninitialized control buffer on missing cmsg
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/tcp_socket.cpp
+ONE ACTION: Call recvmsg with timestamp control absent and inspect which fields are initialized.
+
+PACKT-027 [SOURCE PREDICTION] SCM_TIMESTAMP payload length check compares timeval with time_kernel scalar length
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/tcp_socket.cpp
+ONE ACTION: Write sizeof(timeval) and sizeof(Nanos) before comparing cmsg_len.
+
+PACKT-028 [SOURCE PREDICTION] Market data receive remainder uses memcpy on potentially overlapping ranges
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/trading/market_data/market_data_consumer.cpp
+ONE ACTION: Leave a partial trailing message; mark destination/source byte regions.
+
+PACKT-029 [DERIVED] Snapshot/incremental recovery can overflow its downstream publication queue
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/trading/market_data/market_data_consumer.cpp
+ONE ACTION: Start with downstream capacity 2, then request publication of 3 events.
+
+PACKT-030 [SOURCE] Duplicate snapshot sequence clears accumulated snapshot records
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/trading/market_data/market_data_consumer.cpp
+ONE ACTION: Queue snapshot sequence 0,1,1; write the collection size after each.
+
+PACKT-031 [SOURCE PREDICTION] Snapshot reconstruction subtracts 2 from an unsigned size counter
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/trading/market_data/market_data_consumer.cpp
+ONE ACTION: Evaluate the source's subtraction for snapshot size 0 and 1 as boundary tests.
+
+PACKT-032 [DERIVED] Market-data publisher uses queue without local full check
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/exchange/market_data/market_data_publisher.cpp
+ONE ACTION: Set pending snapshot queue occupancy equal to its capacity.
+
+PACKT-033 [SOURCE+PR] Assertion message arguments are evaluated even when assertion succeeds
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/macros.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/pull/11
+ONE ACTION: Place one observable increment in an assertion-message expression with condition true.
+
+PACKT-034 [SOURCE+PR] RDTSC timing endpoints may be affected by instruction ordering
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/perf_utils.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/pull/12
+ONE ACTION: Identify timer start/end instructions before interpreting measured elapsed cycles.
+
+PACKT-035 [SOURCE PREDICTION] Incoming client sequence mismatch is logged but needs explicit rejection contract
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/exchange/order_server/order_server.h
+ONE ACTION: Supply expected sequence 2 and received sequence 4; record whether request is forwarded.
+
+PACKT-036 [REPORT] Exchange data structures and code compiled for x86 need portability checks on ARM
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/perf_utils.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/9
+ONE ACTION: Find the preprocessor guard for CPU-specific timestamp instructions.
+
+PACKT-037 [DERIVED] Publisher/consumer recovery must account for truncated binary messages
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/trading/market_data/market_data_consumer.cpp
+ONE ACTION: Supply an incomplete message of one byte less than sizeof(MDPMarketUpdate).
+
+PACKT-038 [DERIVED] Unbounded logger traffic can influence queue occupancy
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/common/logging.h
+ONE ACTION: Run a hypothetical 1000 logs/second producer against a 900 logs/second consumer.
+
+PACKT-039 [DERIVED] Hidden dependency on client response buffer capacity
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/exchange/order_server/order_server.h
+ONE ACTION: Queue more than ME_MAX_CLIENT_UPDATES responses while outbound transport is paused.
+
+PACKT-040 [SOURCE PREDICTION] Price-level removal assumes linked list and lookup refer to same price and side
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/main/Chapter12/exchange/matcher/me_order_book.h
+ISSUE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/9
+ONE ACTION: Start with the aliased 100/356 pair and mark side/price stored in one bucket.
+
+SOURCE-INSPECTION CAUTIONS
+- A source construct is not an observed failure until a relevant test
+  actually triggers the wrong behavior.
+- Bug #9 includes reporter reproduction claims at a pinned commit;
+  no local execution of its testcase was performed by this audit.
+- The source uses hard-coded limits and a tutorial environment.
+  A limit is a defect only when input constraints allow crossing it.
+- A report about multi-producer safety does not prove a queue promised
+  multi-producer support; first inspect intended ownership.
+- The source socket loop uses AF_INET+AI_NUMERICHOST; do not assume more
+  than one address candidate without checking the actual result set.
+- This document has ZERO coding solutions.
+END ORIGINAL SOURCE-TRACED CASES
