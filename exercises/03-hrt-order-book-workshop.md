@@ -49,3 +49,8 @@ FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulti
 ## Extra
 Re-implement the same book in C++ and compare against the reference output.
 FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+SOURCE-CODE DISTINCTION: Book.py on_update says changes to price and/or size must maintain place-in-queue (PIQ), while symbol and side may not change. Book.py on_cancel says partial cancellations retain PIQ. The optional MatchingEngine README additionally forbids SIZE INCREASE on an existing order and rejects unknown updates. These are two separate interfaces: never copy the MatchingEngine restriction to Book.py without a source justification.
+SOURCES: https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py and https://github.com/hudson-trading/inside-at-hrt
+ONE ACTION: DRAW the two resting same-price orders before any update.
