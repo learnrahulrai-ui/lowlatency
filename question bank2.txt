@@ -2529,3 +2529,2408 @@ CLAIM: src/opentelemetry only includes compiled code - no source is provided
 SOURCE: https://github.com/confluentinc/librdkafka/issues/5185
 FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
 
+QB2-0501 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: x86_64: segfault at startup under qemu-user on aarch64 hosts
+SOURCE: https://github.com/jemalloc/jemalloc/issues/3040
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0502 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: aw-backtrace for jemalloc
+SOURCE: https://github.com/jemalloc/jemalloc/issues/3031
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0503 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compilation error on older GCC version (4.8.5)
+SOURCE: https://github.com/jemalloc/jemalloc/issues/3022
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0504 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Deadlock when using osrt of Nsight Systems that hooks pthread_mutex_lock()
+SOURCE: https://github.com/jemalloc/jemalloc/issues/3012
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0505 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add OpenTelemetry memory profiling support
+SOURCE: https://github.com/jemalloc/jemalloc/issues/3011
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0506 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Seg fault in jemalloc 5.3.1
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2981
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0507 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [coredump] Segment fault in FreeBSD 15.1
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2969
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0508 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: jemalloc large allocation becomes inaccessible shortly after malloc
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2956
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0509 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Veracode Flaw (static): Numeric Errors
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2925
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0510 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Tag that builds with GCC 16
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2917
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0511 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 5.3.1 release retagged
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2903
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0512 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: rtree_read segfault in 5.3.1, 5.3.0 works ok
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2899
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0513 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: VERSION file missing in the 5.3.1 tarball
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2898
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0514 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Too may assertion failed in debug build with 5.3.1
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2895
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0515 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: LLM audit
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2892
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0516 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crashes in tcache when jemalloc bundled as static library with LTO into result binary
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2890
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0517 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: jemalloc5.3.0: always_inline build failure
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2888
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0518 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MSVC Windows build failed with 5.3.1
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2886
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0519 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Preserving the top 64 bytes from being allocated
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2878
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0520 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: coredump in function bitmap_set in bitmap.h
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2875
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0521 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: std::allocator: allocate(0) + deallocate(0) == segfault
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2872
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0522 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: jemalloc is hoarding memory
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2867
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0523 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RSS calculation from jemalloc types
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2858
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0524 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Issues related to possible out of bounds for arena_dalloc_bin
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2856
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0525 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: jemalloc-5.2.1 segment fault pthread_mutex_trylock
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2855
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0526 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: how to use percpu_arena:2
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2852
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0527 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to trace the fragmentation?
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2850
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0528 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: jmalloc segfault when start application built by rust compiller with Jmalloc global allocator on FreeBSD releng/14.2
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2844
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0529 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Arena switch overhead
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2839
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0530 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: memory leak in retained
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2838
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0531 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allocating an extra page at the end of each area of memory that jemalloc reserves
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2836
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0532 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Many threads doing simultaneous huge `free`s can result in a very slow single-threaded `free`
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2834
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0533 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: GNU mode FFI incorrectly applied in large workspace: `strerror_r` type mismatch
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2833
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0534 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to estimate the number of bytes that have been released back to OS?
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2832
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0535 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: My program looped in the phn_merge for more than 20 minutes without releasing the mutex lock ecache, then blocked all other threads.
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2830
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0536 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to estimate number of bytes in free, mapped pages in page heap
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2829
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0537 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to estimate total bytes of system memory reserved by jemalloc?
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2826
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0538 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: malloc_tsd_dalloc called before C++ thread_local callbacks
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2825
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0539 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to fine-tune settings for large memory requests, frequently larger than 8MB
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2824
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0540 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Test test_alignment_errors fails when compiled with GCC 15 (and its default option -fmalloc-dce=2)
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2823
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0541 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Increasing RSS due to fragmentation
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2817
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0542 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow suppression of unsupported warnings
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2816
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0543 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Memory leak: `arena_extent_dalloc()` is not called for extents for which `arena_extent_split()` failed
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2815
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0544 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Update config.sub and config.guess
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2814
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0545 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Using tcache for manual created arenas
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2813
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0546 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: custom oversize_threshold value is not set correclty
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2809
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0547 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Clarification needed on HPA-related settings in jemalloc
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2808
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0548 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Saving and restoring arenas
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2805
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0549 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: tsd_state_set coredump while create a new thread
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2804
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0550 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why is the memory reported by jeprof significantly less than what top shows for RSS?
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2803
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0551 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Segmentation fault in je_dallocx when using extent hooks
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2802
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0552 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: New release?
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2800
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0553 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can't find symbol of je_memalign on MacOS
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2799
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0554 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Cannot get the heap profiler wotking with jemalloc-5.2.1
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2798
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0555 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Thread exiting calls mallocx and hits assert(dopts->arena_ind == ARENA_IND_AUTOMATIC) as reentrancy_level > 0
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2791
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0556 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Need to skip taking LCM for deciding page size
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2790
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0557 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: update doc to not use confusing symlink for malloc.conf
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2788
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0558 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Jemalloc malloc_stats_print doesn't match RSS/VSZ
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2785
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0559 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SIGFPE when max_background_threads == 0
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2784
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0560 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unable to build jemaloc using musl on Ubuntu aarch64
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2782
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0561 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: jemalloc config crashes on a asan/tsan binary causing instacrash
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2778
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0562 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Regex used by grep to determine version fails because it's not BRE
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2777
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0563 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: UBSAN failures in test/unit/bitmap and test/unit/hash
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2775
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0564 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Teyd-project
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2774
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0565 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: jemalloc function bitmap_set() error
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2772
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0566 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Computing unused but retained physical memory
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2768
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0567 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Clarification on Identifying Huge Arenas and Decay Behavior
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2766
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0568 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Rendered documentation for `--with-install-suffix` omits instances of `<suffix>`
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2764
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0569 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: internal error: could not change current thread's arena (4.5.0)
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2763
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0570 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Increasing tcache small bin sizes
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2760
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0571 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: jemalloc-5.1.0/include/jemalloc/internal/rtree.h:397: Failed assertion: "rtree_leaf_elm_extent_read(tsdn, rtree, elm, false) == NULL"
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2759
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0572 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: about narenas
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2758
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0573 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Cross-Thread deallocation leading to memory growth
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2757
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0574 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: window redis memory overcommit error
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2756
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0575 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: test/unit/retained fails on s390x
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2753
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0576 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Custom extent hooks with preallocated buffer and dirty page reusing
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2752
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0577 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Improve documentation on `{dirty,muzzy}_decay_ms` & `background_tasks` settings & purging mechanisms
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2751
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0578 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Core dumps in "stable" Sept 2024: 6cc4217 build
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2749
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0579 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Could prof.dump be told to dump only a particular arena?
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2744
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0580 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: error: 'unreachable' macro redefined
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2743
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0581 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: No leak info in heap file at Android
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2742
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0582 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: buffer overflow during the make check process of building jemalloc 4.5.0 on Ubuntu 24.04
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2741
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0583 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Issue under "old" Linux distros due to gettid() not being implemented in glibc before v2.30
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2740
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0584 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Seg fault on arm in background_thread_entry
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2739
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0585 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: cmake or meson support please
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2737
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0586 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] maybe_check_alloc_ctx() passes wrong size to safety_check_fail_sized_dealloc()
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2736
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0587 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add `arm64e-apple-darwin` support
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2735
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0588 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Q: How to reduce overhead costs when using jemalloc with profiling enabled
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2734
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0589 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Seg fault in 5.3.0+
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2732
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0590 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: metadata_thp:always not seems to do anything
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2729
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0591 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `je_cv_madv_free=no` no longer overrides `MADV_FREE` when building for Linux
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2728
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0592 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Q: Replace dynamically linked jemalloc with LD_PRELOAD
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2727
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0593 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: jemalloc is thread un-safe on the first call.
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2725
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0594 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crashing during allocation
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2724
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0595 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crash hapenning: FAILURE_BUCKET_ID: INVALID_POINTER_WRITE_c0000005_jemalloc.dll!ehooks_default_zero_impl 
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2722
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0596 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crash happening: INVALID_POINTER_READ_c0000005_jemalloc.dll!tcache_bin_flush_stashed
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2721
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0597 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: jemalloc not working on windows server 2022
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2716
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0598 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Don't quite get why profiling is still off 
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2715
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0599 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: using jemalloc for java windows app
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2713
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0600 | jemalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ASLR: FreeBSD 13.2 Jemalloc causes RES memory to keep on increasing even after setting retain:false
+SOURCE: https://github.com/jemalloc/jemalloc/issues/2711
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0601 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: aarch64: paired ldp/stp on adjacent mi_page_t fields makes malloc+free 27–29% slower than v3.3.2
+SOURCE: https://github.com/microsoft/mimalloc/issues/1433
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0602 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Intermittent SIGSEGV / memory corruption under WSL2 with mimalloc 3.3.2 as Rust global allocator
+SOURCE: https://github.com/microsoft/mimalloc/issues/1430
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0603 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 3.5.x Mimalloc can't run on win7 x64
+SOURCE: https://github.com/microsoft/mimalloc/issues/1426
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0604 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: dev3: build fails with `-DMI_PROFILE=OFF`
+SOURCE: https://github.com/microsoft/mimalloc/issues/1425
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0605 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 3.5.1+: mi_free_size uses mi_free_small for small sizes with MI_PAGE_META_IS_ALIGNED, corrupting the heap when a larger block is freed with a small size
+SOURCE: https://github.com/microsoft/mimalloc/issues/1423
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0606 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Freed arena memory stays resident in an idle process; no targeted or size-threshold eager purge short of process-wide purge_delay=0
+SOURCE: https://github.com/microsoft/mimalloc/issues/1422
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0607 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: internal.h中，漏掉了1个定义。
+SOURCE: https://github.com/microsoft/mimalloc/issues/1414
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0608 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Vendored mimalloc `mi_prim_tls_slot()` inline asm turns a TLS load into a store when compiled with GCC `-masm=intel`
+SOURCE: https://github.com/microsoft/mimalloc/issues/1413
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0609 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `malloc_normal.current` / `malloc_huge.current` drifts when a thread rarely allocates and frees other threads' memory periodically
+SOURCE: https://github.com/microsoft/mimalloc/issues/1410
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0610 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Mimalloc arena `mi_heap_malloc_aligned` has a hidden limit on max alignment of 64 KiB per allocation
+SOURCE: https://github.com/microsoft/mimalloc/issues/1406
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0611 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support official Rust FFI bindings
+SOURCE: https://github.com/microsoft/mimalloc/issues/1405
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0612 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Arena allocator pre-maturely returns NOMEM on parent arena while space is still available in child arena
+SOURCE: https://github.com/microsoft/mimalloc/issues/1403
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0613 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: dev3: Debug build asserts 'mi_theap_is_initialized(theap)' in mi_page_theap — page theap is cleared before _mi_page_update_stats re-reads it
+SOURCE: https://github.com/microsoft/mimalloc/issues/1402
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0614 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SegFault: mi_free_size_aligned / mi_free_size on small over-aligned allocations v3
+SOURCE: https://github.com/microsoft/mimalloc/issues/1400
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0615 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Assert on first thread allocation on 3.5.2
+SOURCE: https://github.com/microsoft/mimalloc/issues/1398
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0616 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: version 3.5.0 hangs at startup on Windows Server 2008 R2
+SOURCE: https://github.com/microsoft/mimalloc/issues/1395
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0617 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Faithful, performant tracking of committed memory and limit enforcement
+SOURCE: https://github.com/microsoft/mimalloc/issues/1392
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0618 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MSVC: `mi_atomic_load_acquire(&page->self)` triggers `incompatible-pointer-types` compile error
+SOURCE: https://github.com/microsoft/mimalloc/issues/1386
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0619 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: All tests failing for v3.5.0 on aarch64
+SOURCE: https://github.com/microsoft/mimalloc/issues/1382
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0620 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Issues for thread exit and process exit on Windows
+SOURCE: https://github.com/microsoft/mimalloc/issues/1377
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0621 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: A bunch of "X is freed with mi_free_size but the given size 8 is less than the allocated block size ... ".
+SOURCE: https://github.com/microsoft/mimalloc/issues/1375
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0622 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The program crashes upon startup on certain machines.
+SOURCE: https://github.com/microsoft/mimalloc/issues/1374
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0623 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Surprising performance hit in mi_page_free_list_extend when allowing THP
+SOURCE: https://github.com/microsoft/mimalloc/issues/1373
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0624 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: perf: lock contention on os_abandoned_pages_lock and arena_pages_lock under high concurrency
+SOURCE: https://github.com/microsoft/mimalloc/issues/1372
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0625 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: realloc() on new thread incorrectly asserts on 3.5.0 on Linux
+SOURCE: https://github.com/microsoft/mimalloc/issues/1371
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0626 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Clang GNU frontend fails to build dev3 on Windows
+SOURCE: https://github.com/microsoft/mimalloc/issues/1370
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0627 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Segfault in `mi_arena_try_purge` upon exit, same use case as in #1313
+SOURCE: https://github.com/microsoft/mimalloc/issues/1367
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0628 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Large RSS increase when memory is allocated by multiple threads and freed by an uninitialized thread
+SOURCE: https://github.com/microsoft/mimalloc/issues/1364
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0629 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: dev3: two first-ever-allocation bootstrap bugs on Android (arena_reserve_lock reentrancy risk, recurse-guard emutls recursion) -- patch included
+SOURCE: https://github.com/microsoft/mimalloc/issues/1362
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0630 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: v3.4.5 fails to compiler with MSVC x86 `include\mimalloc/internal.h(662): error C2109: subscript requires array or pointer type`
+SOURCE: https://github.com/microsoft/mimalloc/issues/1361
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0631 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [v3] "returned TLS index was too high" due to incorrect interpretation of TlsAlloc return value
+SOURCE: https://github.com/microsoft/mimalloc/issues/1359
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0632 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: fix: avoid deadlock when growing dynamic thread-local slots
+SOURCE: https://github.com/microsoft/mimalloc/issues/1358
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0633 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: v3.3.1 macOS arm64: SIGSEGV in _mi_heap_main via mi_thread_init — theap->tld is NULL on a freshly-initialized thread heap
+SOURCE: https://github.com/microsoft/mimalloc/issues/1356
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0634 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mimalloc builds are not deterministic due to using DATE and TIME
+SOURCE: https://github.com/microsoft/mimalloc/issues/1355
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0635 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: stderr crash
+SOURCE: https://github.com/microsoft/mimalloc/issues/1354
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0636 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mimalloc uses undocumented NtAllocateVirtualMemoryEx
+SOURCE: https://github.com/microsoft/mimalloc/issues/1352
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0637 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mimalloc override on macOS 26 / Darwin 25.5: `free` is interposed but `malloc` is not
+SOURCE: https://github.com/microsoft/mimalloc/issues/1350
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0638 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Huge segments: `slices[]` is zeroed past its declared size, and huge segments are accepted on a failed commit
+SOURCE: https://github.com/microsoft/mimalloc/issues/1345
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0639 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Sony PS5's clang `-fmerge-all-constants` causes crash during initialization
+SOURCE: https://github.com/microsoft/mimalloc/issues/1343
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0640 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MI_SECURE=2: mi_find_free_page calls mi_page_extend_free while page->free != NULL (assert)
+SOURCE: https://github.com/microsoft/mimalloc/issues/1342
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0641 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mimalloc 3.x segfaults on free(NULL) called before mimalloc is initialized
+SOURCE: https://github.com/microsoft/mimalloc/issues/1341
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0642 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Misleading comment: `large_page_size` documented as "4MiB on Windows" but `GetLargePageMinimum()` returns 2 MiB
+SOURCE: https://github.com/microsoft/mimalloc/issues/1338
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0643 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Fails to build on macOS < 10.12
+SOURCE: https://github.com/microsoft/mimalloc/issues/1336
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0644 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: V3 perfomance charts
+SOURCE: https://github.com/microsoft/mimalloc/issues/1335
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0645 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: macOS heap corruption at thread exit (SIGTRAP) since v3.4.0/v3.4.1's fixed-TLS-slot change (126/127) -- bisected to f211b370
+SOURCE: https://github.com/microsoft/mimalloc/issues/1333
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0646 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: v3.4.0 GCC `Wtype-limits` warning
+SOURCE: https://github.com/microsoft/mimalloc/issues/1331
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0647 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Use MEM_64K_PAGES?
+SOURCE: https://github.com/microsoft/mimalloc/issues/1329
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0648 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Two independently-linked mimalloc v3 instances (CPython 3.14 vendored + static in a Python extension) SIGSEGV in _mi_theap_collect_retired at process exit when Arrow's v2 copy is also loaded (macOS arm64)
+SOURCE: https://github.com/microsoft/mimalloc/issues/1327
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0649 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Possible Windows thread-state issue with gRPC worker threads (CreateThread) in mimalloc 3.3.2
+SOURCE: https://github.com/microsoft/mimalloc/issues/1324
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0650 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: perfomance issue in v3.3.2 related to MIMALLOC_ARENA_EAGER_COMMIT
+SOURCE: https://github.com/microsoft/mimalloc/issues/1323
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0651 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Reproducible crash in mi_stats_add() on thread-end
+SOURCE: https://github.com/microsoft/mimalloc/issues/1320
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0652 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: V3.3.2 `mi_theap_set_default()` declared and documented, but not defined.
+SOURCE: https://github.com/microsoft/mimalloc/issues/1318
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0653 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: _mi_heap_delayed_free_all can spin forever when a page is stuck in MI_DELAYED_FREEING (priority-inversion livelock on a core-pinned, priority-scheduled platform)
+SOURCE: https://github.com/microsoft/mimalloc/issues/1317
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0654 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Requesting Documentation for Using Subprocess
+SOURCE: https://github.com/microsoft/mimalloc/issues/1316
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0655 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Use-after-free when setenv reallocates environ during early option init
+SOURCE: https://github.com/microsoft/mimalloc/issues/1314
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0656 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Segfault with 1 arena through `mi_manage_os_memory_ex` and multiple per-thread heaps through `mi_heap_new_in_arena`
+SOURCE: https://github.com/microsoft/mimalloc/issues/1313
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0657 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: v3: arena growth wedges at the 16 GiB reserve cap (info_slices 521 >= 512); all later allocations fall back to per-allocation OS mmap and exhaust vm.max_map_count
+SOURCE: https://github.com/microsoft/mimalloc/issues/1309
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0658 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MAYBE: Using `mimalloc` with a custom pool of memory and sanitation logic causes a crash due to a `memset` happning inside `mi_malloc`
+SOURCE: https://github.com/microsoft/mimalloc/issues/1307
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0659 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Assertion failed in `_mi_arenas_page_abandon` on macOS arm64 under high multi-thread load
+SOURCE: https://github.com/microsoft/mimalloc/issues/1306
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0660 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Reproducible crash in realloc with libcurl and libopenssl
+SOURCE: https://github.com/microsoft/mimalloc/issues/1304
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0661 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: v3 HugePage Bug? killed due to inadequate hugepage pool
+SOURCE: https://github.com/microsoft/mimalloc/issues/1303
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0662 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Apple FIXED_SLOT causes SIGABRT when multiple statically-linked instances coexist — no cflag can select THREAD_LOCAL
+SOURCE: https://github.com/microsoft/mimalloc/issues/1301
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0663 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Faster `mi_ptr_page` in v3
+SOURCE: https://github.com/microsoft/mimalloc/issues/1295
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0664 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mimalloc(v3.2.8) crashed on mi_theap_malloc
+SOURCE: https://github.com/microsoft/mimalloc/issues/1292
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0665 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Illegal instruction on old CPU and v3.2.x or 3.3.x when compiling with VS2026
+SOURCE: https://github.com/microsoft/mimalloc/issues/1291
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0666 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: When mi_os_prim_alloc_aligned falls back on overallocation, it drops allow_large
+SOURCE: https://github.com/microsoft/mimalloc/issues/1290
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0667 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Crash] mimalloc v3.3.1 crash on android in multi thread allocation
+SOURCE: https://github.com/microsoft/mimalloc/issues/1288
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0668 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mimalloc >= 3.3.0 causes segmentation faults when used from multiple threads
+SOURCE: https://github.com/microsoft/mimalloc/issues/1287
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0669 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RSS regression: v3.1.5 → v3.3.0 shows +81% VmRSS on musl/Alpine (26 MB → 47 MB)
+SOURCE: https://github.com/microsoft/mimalloc/issues/1282
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0670 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mi_stats_print_out() prints weird numbers with mimalloc 3.3.1
+SOURCE: https://github.com/microsoft/mimalloc/issues/1281
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0671 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build warnings with 3.3.1
+SOURCE: https://github.com/microsoft/mimalloc/issues/1279
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0672 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mimalloc v3.3.0 / v3.3.1 fails on Windows ARM 64
+SOURCE: https://github.com/microsoft/mimalloc/issues/1277
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0673 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Linux (maybe macOS) self-deadlock in v3.3.0 with `MI_SECURE`>=4 on large aligned allocation
+SOURCE: https://github.com/microsoft/mimalloc/issues/1272
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0674 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: LLM audit
+SOURCE: https://github.com/microsoft/mimalloc/issues/1271
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0675 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 3.3.0 failing to build
+SOURCE: https://github.com/microsoft/mimalloc/issues/1270
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0676 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Linker error when building version 3.3.0 with MSVC
+SOURCE: https://github.com/microsoft/mimalloc/issues/1269
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0677 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crash (0xC0000005) when building mimalloc as a DLL with Intel ICX compiler on Windows
+SOURCE: https://github.com/microsoft/mimalloc/issues/1268
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0678 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MI_SECURE=4 on v3.3.0 hangs on mi_malloc_aligned ?
+SOURCE: https://github.com/microsoft/mimalloc/issues/1267
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0679 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Junk filling with mimalloc
+SOURCE: https://github.com/microsoft/mimalloc/issues/1265
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0680 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: PYTHONMALLOC=mimalloc does not work
+SOURCE: https://github.com/microsoft/mimalloc/issues/1260
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0681 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Windows DLL unload: mimalloc reservations reported as leaked
+SOURCE: https://github.com/microsoft/mimalloc/issues/1259
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0682 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: proposal: Add mi_heap_page_is_underutilized to advanced heap API to combat internal fragmentation
+SOURCE: https://github.com/microsoft/mimalloc/issues/1258
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0683 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: reducing tail latency of ram
+SOURCE: https://github.com/microsoft/mimalloc/issues/1256
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0684 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Shadowing variable.
+SOURCE: https://github.com/microsoft/mimalloc/issues/1251
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0685 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mi_heap_destroy fails in multithreading case (in Debug builds)
+SOURCE: https://github.com/microsoft/mimalloc/issues/1250
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0686 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: VirusTotal classifies 2/69 mimalloc-redirect.dll (1.3.3)
+SOURCE: https://github.com/microsoft/mimalloc/issues/1248
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0687 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Assert in _mi_heap_area_init -> mi_page_block_size when calling mi_heap_visit_blocks
+SOURCE: https://github.com/microsoft/mimalloc/issues/1247
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0688 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mi_collect(false) does not always complete scheduled purges
+SOURCE: https://github.com/microsoft/mimalloc/issues/1246
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0689 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Clang: incompatible integer to pointer conversion
+SOURCE: https://github.com/microsoft/mimalloc/issues/1240
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0690 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: macOS arm64: deterministic `pointer being freed was not allocated` with `MI_OVERRIDE=ON` (v3.2.8 and dev3), reproducible in standalone C++ MRE
+SOURCE: https://github.com/microsoft/mimalloc/issues/1239
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0691 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: committed > reserved when preallocating huge pages
+SOURCE: https://github.com/microsoft/mimalloc/issues/1236
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0692 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Porting mimalloc to Solo5
+SOURCE: https://github.com/microsoft/mimalloc/issues/1234
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0693 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: assertion failed: "theap->tld->thread_id == 0 || theap->tld->thread_id == tid"
+SOURCE: https://github.com/microsoft/mimalloc/issues/1231
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0694 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Data race in lazy init of theap in heap.c line 52
+SOURCE: https://github.com/microsoft/mimalloc/issues/1230
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0695 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Question] Max contiguous allocation size limitations within custom Arenas
+SOURCE: https://github.com/microsoft/mimalloc/issues/1229
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0696 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Not able to prevent additional mmap-s beside reserved memory
+SOURCE: https://github.com/microsoft/mimalloc/issues/1228
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0697 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compilation failure OSX, 3.2.8
+SOURCE: https://github.com/microsoft/mimalloc/issues/1227
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0698 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mimalloc single thread performance absurdly worse than default mallocators, I must be doing something wrong
+SOURCE: https://github.com/microsoft/mimalloc/issues/1222
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0699 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crash on startup with security appliance injecting another DLL
+SOURCE: https://github.com/microsoft/mimalloc/issues/1221
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0700 | mimalloc | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: suggestion: improve runtime complexity of mi_heap_collect_ex
+SOURCE: https://github.com/microsoft/mimalloc/issues/1220
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0701 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Race condition in shutdown logic leading to lost published events under certain conditions
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/517
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0702 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is there a plan for a new version release?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/513
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0703 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Could a new version be released
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/512
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0704 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Potential inconsistency in MultiProducerSequencer.remainingCapacity(): cursor read twice
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/511
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0705 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Package level Java doc is outdated.
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/509
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0706 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Community] disruptor-cpp: Complete 1:1 C++ port with all tests and real-world exchange example
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/507
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0707 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question: We want to empty the ringbuffer as fast as possible on shutdown, even if the handler threads are currently blocked
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/506
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0708 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question: Why is `cursor.setVolatile(nextValue)` (StoreLoad fence) needed in SingleProducerSequencer?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/505
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0709 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: i met a situation when i use shutdown ,it caused infinite loop and never stop
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/504
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0710 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bug
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/503
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0711 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.lmax.disruptor.RingBufferFields in JAVA 24
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/502
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0712 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `handleOnShutdownException` might never be invoked in `shutdown`
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/501
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0713 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: D.
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/499
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0714 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: When the publish of event release is fast, the remaningCapacity method is clearly stuck
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/497
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0715 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: logstash-logback-encoder-8.1.jar ->lmax.disruptor.MultiProducerSequencer is using jdk.unsupported apis and not compatible with Java 17/21
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/496
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0716 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Warning when used in Java 24: `WARNING: A terminally deprecated method in sun.misc.Unsafe has been called`
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/493
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0717 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Whether JDK21 is supported
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/491
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0718 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why not replace Thread.yield() with Thread.onSpinWait() in SleepingWaitStrategy?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/490
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0719 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: When looping multiple disruptor publishevents, all will fail due to low consumer capabilities
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/489
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0720 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Another BlockingWaitStrategy
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/487
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0721 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Best practices
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/486
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0722 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Tech-paper typo: missed footnote; and some rumbling
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/485
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0723 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: can not get mdc traceId
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/484
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0724 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is there a performance problem with the next(n) method？
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/482
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0725 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Message loss
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/481
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0726 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Potential Cursor Update Issue in SingleProducerSequencer#next(int) Method
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/477
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0727 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: how to use threadpool with latest version disruptor 
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/474
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0728 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: I think this framework is great, thank you to the author for their outstanding work. Does this framework have a C++ version?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/473
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0729 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Another Disruptor
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/472
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0730 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [v3.4.2] AsyncLogger thread is stuck on 100% CPU on lmax queue polling
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/471
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0731 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Reduce unnecessary consumption
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/469
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0732 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Possible unnecessary judgments
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/468
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0733 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: About process a batch of messages
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/467
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0734 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: In version 4.x, is there a successor to Disruptor::handleEventsWithWorkerPool? Can multiple consumers cooperate to process a batch of messages? (one message will only be processed by one consumer)
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/466
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0735 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java 21 and log4j
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/465
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0736 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Problem Using LMAX Disruptor 4.0.0 with JDBC-postgres 42.6.0
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/464
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0737 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Lmax Disruptor Version 4.0.0 with MultiProducers blocks in ringbuffer.next() call
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/463
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0738 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SequenceBarrier.waitForSequence sometimes doesn't respect BlockingWaitStrategy
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/462
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0739 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: BlockingWaitStrategy CPU 100%
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/460
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0740 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: FixedSequenceGroup What does this class do?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/458
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0741 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Directly replace Fence with the methods setRelease, setVolatile, and getAcquire. No need to set barriers via VarHandle
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/456
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0742 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unable to set disruptor as singleton
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/454
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0743 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: A service creates multiple Disruptors
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/452
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0744 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: please guide me,thanks.
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/451
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0745 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 4.0.0.RC1 has been released for more than one year. When will another stable version be released?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/450
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0746 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can a new 3.X version be released based on 3.4.4?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/449
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0747 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 4.0 is based on JDK11. Will the JDK8-based 3.x version continue to be released?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/447
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0748 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `Util.log2` gets stuck in endless loop for negative values
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/443
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0749 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: lmax library compatibility with Java 11 and Java 17
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/442
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0750 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add a maximum batch size to the `BatchEventProcessor`
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/438
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0751 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `EventHandler::setSequenceCallback` will not play well with `RewindableException` throwing event handlers
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/437
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0752 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: remove redundant judgment
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/435
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0753 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Question] How to test batch behavior? 
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/434
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0754 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: pictures in doc files are broken
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/431
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0755 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is there performance problems for method[next] in class[MultiProducerSequencer]
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/430
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0756 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: BatchEventProcessor.processEvents performance
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/429
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0757 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Questions about usage scenarios
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/428
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0758 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 4.0 GA release
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/426
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0759 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to convert ReentrantReadWriteLock logic to LMAX Disruptor with barriers
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/425
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0760 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: What size should I make the ring buffer if you are using a virtual machine without l3?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/424
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0761 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Concurrency safe with multiple producers and consumers
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/423
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0762 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Optimizating About RingBuffer
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/420
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0763 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: use disruptor with multi consumers and get wrong
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/419
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0764 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Sequence barrier design questions
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/417
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0765 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Question] Two disruptors interacting with one consumer
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/416
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0766 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Help] Can consumers act like producers?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/415
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0767 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why change the padding from long to bytes
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/413
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0768 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Too many consumers caused shutdown to fail to perform normally.
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/412
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0769 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Refactor package structure of main module.
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/409
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0770 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: does disruptor support a process graph?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/406
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0771 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Something optimize suggestion.
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/405
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0772 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 会吃掉消息。
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/404
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0773 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Disruptor Throughput and Performance vs Apache kafka
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/403
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0774 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Fix to #227 not present in official releases.
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/402
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0775 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why RingBuffer:getBufferSize return int, RingBuffer:remainingCapacity return long ?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/401
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0776 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: why RingBufferFields need BUFFER_PAD ?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/400
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0777 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Improve `BatchEventProcessor` current method of detecting EventHandler extensions via `instanceof`
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/398
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0778 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why does `TimeoutHandler` get to throw `Exception`?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/397
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0779 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: I want to persist to hard disk or redis. Is there any way?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/393
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0780 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: start error
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/390
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0781 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: I want to send a delayed message. Is there any way?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/389
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0782 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question about com.lmax.disruptor.MultiProducerSequencer#initialiseAvailableBuffer
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/388
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0783 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MultiProducerSequencer#availableBuffer
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/384
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0784 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: What do these codes mean, in MultiProducerSequencer.setAvailableBufferValue
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/382
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0785 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: There may be some problems in disruptor shutdown(final long timeout, final TimeUnit timeUnit) method
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/381
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0786 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add OSGi headers to MANIFEST.MF
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/380
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0787 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Colored Schema
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/379
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0788 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: addGatingSequences / handleEventsWithWorkerPool for Kafka Producer
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/378
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0789 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to use disruptor on multi producer and multi consumer condition?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/377
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0790 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why are SingleProducerSequencer padded with bytes?
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/372
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0791 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Provide a way to register a custom ExceptionHandler without initializing java.util.logging
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/370
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0792 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Need a release a year ago.
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/369
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0793 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Retain EventPoller in disruptor core
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/367
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0794 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Missing Javadoc
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/365
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0795 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RingBuffer::isPublished is inconsistently named and implemented
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/363
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0796 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ThreadHints.onSpinWait() in BlockingWaitStrategy cause high cpu load sometimes
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/359
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0797 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Increased CPU Time caused by TimeoutBlockingWaitStrategy
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/358
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0798 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: after tryPublishEvent the disruptor.getRingBuffer().remainingCapacity() equals to 0
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/354
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0799 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Question] Is Disruptor termination-safe
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/348
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0800 | Disruptor | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Remove uses of `sun.misc.Unsafe`
+SOURCE: https://github.com/LMAX-Exchange/disruptor/issues/345
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0801 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Interpreter hangs at exit after `pq.read_table(python_file_object)` - thread pool teardown deadlock
+SOURCE: https://github.com/apache/arrow/issues/50482
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0802 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][R] Deadlock in IPC dataset scan with a small IO thread pool: synchronous reader re-open inside MergedGenerator lock
+SOURCE: https://github.com/apache/arrow/issues/51547
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0803 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][C++] Deadlock in ensure_s3_finalized atexit handler when pyarrow.fs.S3FileSystem reference outlives interpreter shutdown (pyarrow 24.x regression)
+SOURCE: https://github.com/apache/arrow/issues/50188
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0804 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][FlightRPC][MSVC] Flight SQL: Potential deadlock error after C++ 20 requirement is enabled
+SOURCE: https://github.com/apache/arrow/issues/48714
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0805 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] RecordBatchReader failed when reading parquet file
+SOURCE: https://github.com/apache/arrow/issues/45116
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0806 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Acero] Errors during execution of exec plan lead to deadlock and use-after-free
+SOURCE: https://github.com/apache/arrow/issues/47248
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0807 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Parquet] Add WriteRecordBatchAsync to parquet writer
+SOURCE: https://github.com/apache/arrow/issues/33710
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0808 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] We use ThreadPool to read hdfsfile, when the std::thread finished, it call the deadlock!
+SOURCE: https://github.com/apache/arrow/issues/36432
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0809 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Dump threads on signal
+SOURCE: https://github.com/apache/arrow/issues/27988
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0810 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Recursive locking in RestartTask makes it impossible to avoid context switches
+SOURCE: https://github.com/apache/arrow/issues/48332
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0811 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][C++] scanner(fragment_readahead=0).to_table() hangs indefinitely.
+SOURCE: https://github.com/apache/arrow/issues/48111
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0812 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Acero's Execution Plan never finishes.
+SOURCE: https://github.com/apache/arrow/issues/33593
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0813 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CI][C++][Flight] Deadlock in GrpcAsyncClientTest.TestListenerLifetime
+SOURCE: https://github.com/apache/arrow/issues/38151
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0814 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] ParquetDataset deadlock with different metadata_nthreads values
+SOURCE: https://github.com/apache/arrow/issues/23661
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0815 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Deadlock in the interaction of pyarrow FileSystem and ParquetDataset
+SOURCE: https://github.com/apache/arrow/issues/26051
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0816 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] FlightStreamReader not stop iteration when peer writer closed while local FlightStreamWriter not 
+SOURCE: https://github.com/apache/arrow/issues/36749
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0817 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Failing `arrow-flight-test` when enabling opentelemetry
+SOURCE: https://github.com/apache/arrow/issues/45120
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0818 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Should ThreadPool executor SpawnReal handle exception?
+SOURCE: https://github.com/apache/arrow/issues/45426
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0819 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Simplify ExecNode contract by removing the concept of "node finished"
+SOURCE: https://github.com/apache/arrow/issues/15130
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0820 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Thread Pool Deadlock Detection Framework
+SOURCE: https://github.com/apache/arrow/issues/49061
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0821 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] If an I/O error is encountered while the dataset writer is applying backpressure there could be deadlock in rare (artifical?) situations
+SOURCE: https://github.com/apache/arrow/issues/31653
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0822 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Deadlock in CSV AsyncThreadedTableReader destructor
+SOURCE: https://github.com/apache/arrow/issues/48741
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0823 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][FlightRPC][MSVC] Flight SQL ODBC: Potential deadlock error after C++ 20 requirement is enabled
+SOURCE: https://github.com/apache/arrow/issues/48637
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0824 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] Re-allow some multithreading on Windows
+SOURCE: https://github.com/apache/arrow/issues/29747
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0825 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Allow producers to require callbacks are scheduled on a new thread
+SOURCE: https://github.com/apache/arrow/issues/28812
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0826 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Thread pool leaks memory when forking (and could maybe deadlock) if threads exist at the time of fork
+SOURCE: https://github.com/apache/arrow/issues/28609
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0827 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Add automatic detection of "abandoned" futures
+SOURCE: https://github.com/apache/arrow/issues/28025
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0828 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Dataset] DatasetWriter deadlocks on concurrent WriteRecordBatch
+SOURCE: https://github.com/apache/arrow/issues/47124
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0829 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Acero] Apparent deadlock in Table.join_asof
+SOURCE: https://github.com/apache/arrow/issues/46224
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0830 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] DatasetWriter deadlocks on writting batch greater than max_rows_queued
+SOURCE: https://github.com/apache/arrow/issues/46420
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0831 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Acero] Threading issues in the groupby node
+SOURCE: https://github.com/apache/arrow/issues/46227
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0832 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] pyarrow.fs.copy_files hangs indefinitely
+SOURCE: https://github.com/apache/arrow/issues/15233
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0833 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Thread deadlock in ObjectOutputStream
+SOURCE: https://github.com/apache/arrow/issues/41862
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0834 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Reading empty CSV file in parallel hangs
+SOURCE: https://github.com/apache/arrow/issues/38676
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0835 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][FlightRPC] Interpreter deadlock when using GeneratorStream and Acero + Python UDFs
+SOURCE: https://github.com/apache/arrow/issues/40004
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0836 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CI][C++] Flaky DatasetWriterTestFixture.MaxRowsOneWriteBackpresure test
+SOURCE: https://github.com/apache/arrow/issues/39326
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0837 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Test failures for libarrow in conda-forge
+SOURCE: https://github.com/apache/arrow/issues/35587
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0838 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] DatasetWriter cleanup resource when not able to write
+SOURCE: https://github.com/apache/arrow/issues/38884
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0839 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Acero] Race condition in asof join causes execution to stall for large number of record batches
+SOURCE: https://github.com/apache/arrow/issues/37796
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0840 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] FileFormat::GetReaderAsync hangs when ARROW_IO_THREADS is set to 1
+SOURCE: https://github.com/apache/arrow/issues/37487
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0841 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Add support for disablging threading for emscripten
+SOURCE: https://github.com/apache/arrow/issues/35176
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0842 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] TSAN error in s3 (maybe false positive?)
+SOURCE: https://github.com/apache/arrow/issues/36523
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0843 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Deadlock when PyArrow imports Pandas from multiple threads
+SOURCE: https://github.com/apache/arrow/issues/26488
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0844 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Arrow Flight SetShutdownOnSignals cause potential mutex deadlock in gRPC 
+SOURCE: https://github.com/apache/arrow/issues/27711
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0845 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Deadlock can happen when using BackgroundGenerator without transferring callbacks
+SOURCE: https://github.com/apache/arrow/issues/28813
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0846 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Rust] [DataFusion] Deadlock in creation of physical plan with two udfs
+SOURCE: https://github.com/apache/arrow/issues/25857
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0847 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Python] Parallel parquet file reading disabled with single file reads
+SOURCE: https://github.com/apache/arrow/issues/31227
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0848 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][R] Async streaming CSV reader deadlocking when being run synchronously from datasets
+SOURCE: https://github.com/apache/arrow/issues/27982
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0849 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Rust][DataFusion] Mixing of crossbeam channel and async tasks can lead to deadlock
+SOURCE: https://github.com/apache/arrow/issues/27653
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0850 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] TaskGroup::Finish should execute tasks
+SOURCE: https://github.com/apache/arrow/issues/26038
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0851 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Get rid of MakeIteratorGenerator
+SOURCE: https://github.com/apache/arrow/issues/27750
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0852 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CI][C++] arrow-compute `ExecPlanExecution.StressSourceGroupedSumStop` timeout
+SOURCE: https://github.com/apache/arrow/issues/15243
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0853 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FlightRPC][C++][Python] Interrupting a Flight server results in abort 
+SOURCE: https://github.com/apache/arrow/issues/27431
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0854 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] Investigate/fix thread safety issues (esp. Windows)
+SOURCE: https://github.com/apache/arrow/issues/24563
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0855 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Dataset] Add CsvFileFormat for CSV support
+SOURCE: https://github.com/apache/arrow/issues/23997
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0856 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] ScanningStress test is flaky in CI
+SOURCE: https://github.com/apache/arrow/issues/32926
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0857 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Develop threading APIs to accommodate nested parallelism 
+SOURCE: https://github.com/apache/arrow/issues/23315
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0858 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] pyarrow.hdfs.connect crashes when executed asynchronously in processes
+SOURCE: https://github.com/apache/arrow/issues/23721
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0859 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] read_feather hanging on Windows
+SOURCE: https://github.com/apache/arrow/issues/27449
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0860 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Add parallelism to streaming CSV reader
+SOURCE: https://github.com/apache/arrow/issues/27731
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0861 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Add ability to enable call stack logging for each memory allocation
+SOURCE: https://github.com/apache/arrow/issues/19377
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0862 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Batch readahead not working correctly in Parquet scanner
+SOURCE: https://github.com/apache/arrow/issues/29624
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0863 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] parallel as.data.frame.Table hangs indefinitely on Windows
+SOURCE: https://github.com/apache/arrow/issues/26715
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0864 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] Windows multithreading error: filtering datasets 
+SOURCE: https://github.com/apache/arrow/issues/27301
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0865 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CI][R][Homebrew] Nightly CI jobs aren't maintained
+SOURCE: https://github.com/apache/arrow/issues/14829
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0866 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Is there Pandas circular dependency problem?
+SOURCE: https://github.com/apache/arrow/issues/25229
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0867 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] head() is crashing on some nightly builds
+SOURCE: https://github.com/apache/arrow/issues/33424
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0868 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Large memory reallocation by Arrow causes hang in jemalloc
+SOURCE: https://github.com/apache/arrow/issues/17220
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0869 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Fix potential deadlock in arrow::compute::TaskScheduler
+SOURCE: https://github.com/apache/arrow/issues/20236
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0870 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] how to run arrow::StringArray::GetString in parallel?
+SOURCE: https://github.com/apache/arrow/issues/12527
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0871 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Intermittent deadlock on arrow-threading-utility-test
+SOURCE: https://github.com/apache/arrow/issues/31162
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0872 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] arrow-compute-hash-join-node-test timeout on MinGW
+SOURCE: https://github.com/apache/arrow/issues/31442
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0873 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] [Packaging] test_s3fs_limited_permissions_create_bucket fails with Permission denied on MAC OS wheel builds 
+SOURCE: https://github.com/apache/arrow/issues/31632
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0874 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: An unhandled race condition exists in `ThreadPool`
+SOURCE: https://github.com/apache/arrow/issues/12329
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0875 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Add a minimum_row_group_size to dataset writing
+SOURCE: https://github.com/apache/arrow/issues/29990
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0876 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Dataset API calls with nested parallelism does not progress
+SOURCE: https://github.com/apache/arrow/issues/18711
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0877 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Add ability to convert an AsyncGenerator to an Iterator by wrapping each run with RunInSerialExecutor 
+SOURCE: https://github.com/apache/arrow/issues/28203
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0878 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] head() hangs on CSV datasets > 600MB
+SOURCE: https://github.com/apache/arrow/issues/18935
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0879 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Allow futures to be added as tasks to a TaskGroup
+SOURCE: https://github.com/apache/arrow/issues/26191
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0880 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ParquetDataset deadlock with different metadata_nthreads values
+SOURCE: https://github.com/apache/arrow/issues/6020
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0881 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Deadlock during fork-join and use_threads=True
+SOURCE: https://github.com/apache/arrow/issues/19326
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0882 | Arrow-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Failing to release GIL in MemoryMappedFile._open causes deadlock
+SOURCE: https://github.com/apache/arrow/issues/17361
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0883 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][Parquet] Comparing metadata or schemas with None can crash Python
+SOURCE: https://github.com/apache/arrow/issues/53500
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0884 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Python] pyarrow.Table.join() fatal crash for `large_string` keys near 2gb
+SOURCE: https://github.com/apache/arrow/issues/54885
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0885 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Ruby] Exported Arrow::TableBatchReader crashes after GC when its table is not referenced
+SOURCE: https://github.com/apache/arrow/issues/54689
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0886 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] ExtensionType$new() crashes on non-R extension types such as arrow.opaque
+SOURCE: https://github.com/apache/arrow/issues/53951
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0887 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Parquet][Python][Dataset] Mixed FileInfo and path sources can crash Python in dataset()
+SOURCE: https://github.com/apache/arrow/issues/53033
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0888 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] ValidateFull() crashes on a union array whose type ids or offsets buffer is missing
+SOURCE: https://github.com/apache/arrow/issues/54908
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0889 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] ALTREP crash in base R due to use-after-free
+SOURCE: https://github.com/apache/arrow/issues/51198
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0890 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Compute] Casting an all-null list array read from IPC to fixed_size_list segfaults (Take with out-of-bounds index on an empty child)
+SOURCE: https://github.com/apache/arrow/issues/54570
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0891 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Reading a MapArray from invalid IPC stream/file can read memory out of bounds
+SOURCE: https://github.com/apache/arrow/issues/54936
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0892 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] ComputeLogicalNullCount crashes for dictionary arrays with null value type
+SOURCE: https://github.com/apache/arrow/issues/50699
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0893 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] `KeyValueMetadata::DeleteMany` method crashes with duplicate `0` indexes
+SOURCE: https://github.com/apache/arrow/issues/50351
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0894 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][C++][Parquet] A damaged footer makes `RowGroupMetaData.column()` / `ColumnChunkMetaData.statistics` abort the interpreter (uncaught `ParquetException` -> `std::terminate`)
+SOURCE: https://github.com/apache/arrow/issues/54957
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0895 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][C++] SIGSEGV: NULL deref in bundled mimalloc mi_thread_init when first pyarrow import and first allocation happen on a short-lived thread
+SOURCE: https://github.com/apache/arrow/issues/50908
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0896 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] "struct_field" kernel crashing when selecting a Union field and parent StructArray has a validity bitmap
+SOURCE: https://github.com/apache/arrow/issues/14736
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0897 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] `Array.from_buffers` docs should mention safety issues
+SOURCE: https://github.com/apache/arrow/issues/49717
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0898 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] `pyarrow.arange()` segfaults for an int64 range with 2**63 elements
+SOURCE: https://github.com/apache/arrow/issues/51393
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0899 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Directly constructed FunctionOptions segfaults in serialize()
+SOURCE: https://github.com/apache/arrow/issues/51628
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0900 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] get_partition_keys segfaults when the partition expression is None
+SOURCE: https://github.com/apache/arrow/issues/51293
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0901 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][CMake] Invalid version script argument supplied to MSVC linker
+SOURCE: https://github.com/apache/arrow/issues/50449
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0902 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Test] Temporary files collide and crash the tests
+SOURCE: https://github.com/apache/arrow/issues/47428
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0903 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Several APIs segfault instead of rejecting arguments of the wrong type
+SOURCE: https://github.com/apache/arrow/issues/51042
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0904 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Python] `MapArray.value_parent_indices()` crashes (probably segfaults)
+SOURCE: https://github.com/apache/arrow/issues/45880
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0905 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Docs] Improve documentation of our security model
+SOURCE: https://github.com/apache/arrow/issues/46218
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0906 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] Arrow schema checks should throw graceful errors instead of crashing from assertions
+SOURCE: https://github.com/apache/arrow/issues/39543
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0907 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][FlightRPC][ODBC] Address Disconnect() in FlightSQL ODBC test suite
+SOURCE: https://github.com/apache/arrow/issues/49808
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0908 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Dataset] Selecting a StringView column ("project") of a Dataset crashes
+SOURCE: https://github.com/apache/arrow/issues/39639
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0909 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Substrait] RelCommon.emit indices are not bounds-checked before they index the schema
+SOURCE: https://github.com/apache/arrow/issues/51243
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0910 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Logging memory pool crashes if set as the default memory pool
+SOURCE: https://github.com/apache/arrow/issues/38328
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0911 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Out-of-bounds read in Apache Arrow C++ Feather V1 reader: `feather::Reader::Open` calls `fbs::GetCTable` with no `flatbuffers::Verifier`
+SOURCE: https://github.com/apache/arrow/issues/50229
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0912 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][FlightRPC] Buffer handling change in 12.0.1 causing a lot of warnings being printed
+SOURCE: https://github.com/apache/arrow/issues/36301
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0913 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Parquet] Thread crash at exit in Arrow-15.0.0 dataset scan
+SOURCE: https://github.com/apache/arrow/issues/39862
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0914 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] An unstable crash may appears when reading table from a json file.
+SOURCE: https://github.com/apache/arrow/issues/20253
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0915 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Compute] Crash of out-of-bounds memory accessing in KeyCompare::NullUpdateColumnToRowImp_avx2 of hash_aggregate 
+SOURCE: https://github.com/apache/arrow/issues/31059
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0916 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Several APIs segfault when required Arrow object arguments are `None`
+SOURCE: https://github.com/apache/arrow/issues/51043
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0917 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Python][FlightRPC] Crash in PyArrow Flight test_never_sends_data test from GRPC
+SOURCE: https://github.com/apache/arrow/issues/47104
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0918 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] UWSGI test is crashed with AWS SDK C++ for C++ 1.11.587
+SOURCE: https://github.com/apache/arrow/issues/46832
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0919 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Importing Decimal with invalid range from C Data Interface results in a crash
+SOURCE: https://github.com/apache/arrow/issues/45856
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0920 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Provide a way to close a NativeFile without writing the contents
+SOURCE: https://github.com/apache/arrow/issues/40502
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0921 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][C++] Crash when performing `join` on a table larger than INT32_MAX bytes
+SOURCE: https://github.com/apache/arrow/issues/36879
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0922 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] "CSV parser got out of sync with chunker" on subsequent batches regardless of block size
+SOURCE: https://github.com/apache/arrow/issues/33282
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0923 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Support hash-join on larger than memory datasets
+SOURCE: https://github.com/apache/arrow/issues/31769
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0924 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] `call_tabular_function()` segfaults for some wrong typed `func_registry` values
+SOURCE: https://github.com/apache/arrow/issues/51228
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0925 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Security checks and relaxing hashjoin batch rows size
+SOURCE: https://github.com/apache/arrow/issues/40816
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0926 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Windows 10 Access Violation exit(5) application crashes when mysql-connector-python==9.1.0 is used and pyarrow installed
+SOURCE: https://github.com/apache/arrow/issues/45065
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0927 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CI][Python] Have a way to reproduce hypothesis failures from CI
+SOURCE: https://github.com/apache/arrow/issues/33324
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0928 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Use software __builtin_popcountll when building without SSE4.2
+SOURCE: https://github.com/apache/arrow/issues/23013
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0929 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Gandiva] Integer overflow in mask output buffer size causes heap overflow
+SOURCE: https://github.com/apache/arrow/issues/50472
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0930 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Allow pyarrow import to fail without triggering Py_FatalError
+SOURCE: https://github.com/apache/arrow/issues/40849
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0931 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Audit uses of datetime formatting
+SOURCE: https://github.com/apache/arrow/issues/29371
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0932 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Parquet] Uncontrolled Memory Allocation (OOM) in Parquet Delta decoders
+SOURCE: https://github.com/apache/arrow/issues/49955
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0933 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Type validation missing in Table::Make allowing mismatched column types
+SOURCE: https://github.com/apache/arrow/issues/45888
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0934 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Apache Arrow Substrait `DeserializePlan` fatal `ARROW_CHECK` abort on out-of-range decimal precision (`Decimal128Type` ctor via `FromProtoImpl` make_shared bypass)
+SOURCE: https://github.com/apache/arrow/issues/50230
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0935 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][Dataset] The first table schema becomes a common schema for the full Dataset
+SOURCE: https://github.com/apache/arrow/issues/27905
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0936 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Conversion from one dataset to another that will not fit in memory?
+SOURCE: https://github.com/apache/arrow/issues/12653
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0937 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] SIGSEGV while using ProxyMemoryPool with IPC file format via RecordBatchFileReader
+SOURCE: https://github.com/apache/arrow/issues/48081
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0938 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] `SelectKUnstable` can crash on empty inputs
+SOURCE: https://github.com/apache/arrow/issues/51210
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0939 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] AWS SDK 1.11 support in pyarrow wheels?
+SOURCE: https://github.com/apache/arrow/issues/42154
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0940 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Gandiva] Upgrade LLVM to 21
+SOURCE: https://github.com/apache/arrow/issues/48039
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0941 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][FlightRPC] Investigate using generic callback stub to bypass Protobuf serialization
+SOURCE: https://github.com/apache/arrow/issues/37937
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0942 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][C++] Calling Table.from_pandas with a dataframe that contains a map column of sufficient size causes SIGABRT and process crash
+SOURCE: https://github.com/apache/arrow/issues/44643
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0943 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Aggregate kernel should not mandate alignment
+SOURCE: https://github.com/apache/arrow/issues/33010
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0944 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][FlightRPC] Memory alignment related warning
+SOURCE: https://github.com/apache/arrow/issues/37195
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0945 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][FlightRPC] Segmentation Fault when invoking authenticate concurrently over a same FlightClient
+SOURCE: https://github.com/apache/arrow/issues/38565
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0946 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][C++] How to limit the memory consumption of to_batches()
+SOURCE: https://github.com/apache/arrow/issues/33759
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0947 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Multiple warnings and asserts triggered in debug CPython 3.11
+SOURCE: https://github.com/apache/arrow/issues/33765
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0948 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Python] IPC reader rejects a DictionaryEncoding without indexType, which the format allows
+SOURCE: https://github.com/apache/arrow/issues/51779
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0949 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Pyarrow conversion from and to pandas fails for categorical variables with large dictionaries 
+SOURCE: https://github.com/apache/arrow/issues/44048
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0950 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][FlightRPC] FlightClient.authenticate is not thread safe
+SOURCE: https://github.com/apache/arrow/issues/41919
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0951 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Go][Parquet] panic: fatal error: found bad pointer in Go heap on ByteArrayColumnChunkReader.Skip
+SOURCE: https://github.com/apache/arrow/issues/33108
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0952 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: importing pyarrow segfaults on Mac
+SOURCE: https://github.com/apache/arrow/issues/46276
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0953 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Parquet read table fail with small groups with Pyarrow 7.0.0
+SOURCE: https://github.com/apache/arrow/issues/12470
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0954 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][CI] CountingSemaphore sporadic test crash
+SOURCE: https://github.com/apache/arrow/issues/30272
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0955 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][Parquet] Memory Leak when using ParquetWriter
+SOURCE: https://github.com/apache/arrow/issues/45971
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0956 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Problem when used from "qlora", huggingface. Does not clean up, and dumps core.
+SOURCE: https://github.com/apache/arrow/issues/35876
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0957 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] Error when reading parquet file using FileSystem object
+SOURCE: https://github.com/apache/arrow/issues/12118
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0958 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Python] pyarrow.compute.indices_nonzero segfaults on a ChunkedArray with zero chunks
+SOURCE: https://github.com/apache/arrow/issues/51018
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0959 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Proxy memory pool crashes with Dataset scanning
+SOURCE: https://github.com/apache/arrow/issues/33470
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0960 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Segfault in `to_pandas()` on batch from IPC stream in specific edge cases
+SOURCE: https://github.com/apache/arrow/issues/44869
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0961 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: pq.read_table doesn't seem to be thread safe
+SOURCE: https://github.com/apache/arrow/issues/33189
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0962 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] crash when reading with duckdb
+SOURCE: https://github.com/apache/arrow/issues/40593
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0963 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GLib] red-arrow-flight TestFlightSQLClient#prepare sometime crash on macOS
+SOURCE: https://github.com/apache/arrow/issues/50919
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0964 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] arrow::open_dataset %>% select(myvars) %>% collect causes memory leak
+SOURCE: https://github.com/apache/arrow/issues/33366
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0965 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: PyArrow Write Dataset Memory Consumption - How does it work?
+SOURCE: https://github.com/apache/arrow/issues/36303
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0966 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] pyarrow does not disable SIMD CPU optimizations when set to do so.
+SOURCE: https://github.com/apache/arrow/issues/34277
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0967 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] libc++ Compatibility Issue - Crash
+SOURCE: https://github.com/apache/arrow/issues/50715
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0968 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CI][Python] parquet/test_encryption.py fails with NameError: name 'InMemoryKmsClient' is not defined
+SOURCE: https://github.com/apache/arrow/issues/51446
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0969 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Python] pyarrow.csv.write_csv crashes when writing tables containing FixedSizeBinaryArray 
+SOURCE: https://github.com/apache/arrow/issues/35901
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0970 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] read_json error message not clear when duplicate field in schema
+SOURCE: https://github.com/apache/arrow/issues/44949
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0971 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] R arrow crash
+SOURCE: https://github.com/apache/arrow/issues/50116
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0972 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Parquet] Limit schema nesting depth when parsing Thrift metadata
+SOURCE: https://github.com/apache/arrow/issues/51238
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0973 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] 32 bit MSVC doesn't build
+SOURCE: https://github.com/apache/arrow/issues/32111
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0974 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python][Parquet] pq.write_to_dataset crash from numpy
+SOURCE: https://github.com/apache/arrow/issues/36389
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0975 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Crash when build arrow::Array using arrow::ArrayBuilder
+SOURCE: https://github.com/apache/arrow/issues/30504
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0976 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] GZipCodec::Init does deflateInit and immediately throws it away
+SOURCE: https://github.com/apache/arrow/issues/51308
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0977 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [R] "open_dataset(f) %>% filter(id %in% myvec) %>% collect" causes CPP11::unwind_execption, crashed R
+SOURCE: https://github.com/apache/arrow/issues/33487
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0978 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: pandas_udf causing Python worker to crash in PySpark on macOS with M3 pro chip
+SOURCE: https://github.com/apache/arrow/issues/43774
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0979 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Failure to parse files that can be parsed on pyarrow. Also, failure to recover from crash
+SOURCE: https://github.com/apache/arrow/issues/32732
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0980 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [java] reading multiple parquet files takes unresonable amount of memory
+SOURCE: https://github.com/apache/arrow/issues/13949
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
+QB2-0981 | Arrow-crash | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [c++][parquet][8.0.0] The coredump appears when constructed parquetfileReader
+SOURCE: https://github.com/apache/arrow/issues/15044
+FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
+
