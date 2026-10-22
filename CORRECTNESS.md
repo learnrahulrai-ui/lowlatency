@@ -1,3 +1,20 @@
+SOURCE STATUS UPDATE 2026-10-22 — READ FIRST
+This file combines definitions, illustrative traces, derived error
+hypotheses, and some measured-looking but UNSOURCED latency estimates.
+The displayed numerical outcomes are PRE-EXISTING teaching examples, not
+verified hardware benchmarks and not solutions to the coding assignments.
+Do not infer that the atomics traces were observed on a real ARM or x86
+machine unless an original report explicitly says so.
+Nasdaq ITCH Add A (36 bytes) is an outbound accepted-order event, distinct
+from an order-entry command and from a 32-byte custom in-memory object.
+C++14 feed handling, HRT Book.py, and a price-time matching engine are
+separate specifications. Sequentially consistent atomics do not imply a
+universal full CPU pipeline flush. Source provenance and the 27-file
+inventory are tracked in SOURCE_AUDIT.txt.
+ONE ACTION: COPY a single input number from a selected question before
+working through any further line. No implementation or coding solution here.
+END SOURCE STATUS UPDATE
+
 CORRECTNESS.md · bug catalogue for exercises/01…13 and memory-ordering/README.md · 0 fixes · 0 solutions · ✓ holds · ✗ breaks · ∴ therefore · → implies · ⚠ source not fetched during writing · FILL / CALCULATE / DRAW / DERIVE = work for reader, answer absent on purpose · rings widen outward, ring N+1 opens only after ring N holds ✓
 FOLLOW-UP: VERIFY the first independently testable claim in the previous line against its cited original.
 
