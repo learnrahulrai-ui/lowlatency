@@ -7404,3 +7404,1868 @@ CLAIM: Lombok and maven
 SOURCE: https://github.com/exchange-core/exchange-core/issues/17
 FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
 
+QB2-1476 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SIZE_MAX capacity wraps during construction and allows out-of-bounds writes
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/49
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1477 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why align the cached indices?
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/47
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1478 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Notice: Making a `conda-forge` package for `spscqueue`
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/46
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1479 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Release the latest changes please
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/44
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1480 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Non-blocking push?
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/42
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1481 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Read multiple elements at once
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/41
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1482 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Memory buffer
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/39
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1483 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Benchmarking against other queues ? 
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/37
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1484 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Assertion failed
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/35
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1485 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM:  replace (std::memory_order_release ,std::memory_order_acquire) with (std::memory_order_relax)?
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/34
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1486 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: mmap IPC allocator example
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/33
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1487 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Small things
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/30
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1488 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: add T * back() and pop_back actions
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/27
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1489 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: COMPILE ERROR Mac OS - hardware_destructive_interference_size is not found
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/26
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1490 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Minimum Capacity 
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/25
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1491 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Error with __cpp_lib_hardware_interference_size on MacOS llvm-g++ 12.x
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/22
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1492 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The alignment of Slot?
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/21
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1493 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Mark front() const
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/19
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1494 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: optimize front() for bust of data
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/18
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1495 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Provide a way to let consumer know push failed
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/17
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1496 | SPSCQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Setup MSVC CI builds
+SOURCE: https://github.com/rigtorp/SPSCQueue/issues/7
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1497 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: spsc_value: possible data race when a slot is recycled
+SOURCE: https://github.com/boostorg/lockfree/issues/142
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1498 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow lockfree::queue to use move-only types
+SOURCE: https://github.com/boostorg/lockfree/issues/125
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1499 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Thread Safety] When data type is `std::shared_ptr`. it has undefined behaviour
+SOURCE: https://github.com/boostorg/lockfree/issues/124
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1500 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CMake errors on master
+SOURCE: https://github.com/boostorg/lockfree/issues/123
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1501 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [ Thread Safety ] boost::lockfree::queue<T> data race when T is a pointer type
+SOURCE: https://github.com/boostorg/lockfree/issues/120
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1502 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can boost::lockfree::queue's pop return false for non-empty queue?
+SOURCE: https://github.com/boostorg/lockfree/issues/119
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1503 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: lockfree::queue requires is_trivially_move_assignable in 1.87.0
+SOURCE: https://github.com/boostorg/lockfree/issues/117
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1504 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: property "CMAKE_CXX_STANDARD_REQUIRED" not allowed in lockfree
+SOURCE: https://github.com/boostorg/lockfree/issues/114
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1505 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ringbuffer_base<T>::reset Fails to Compile Due to Missing Parameters
+SOURCE: https://github.com/boostorg/lockfree/issues/113
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1506 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: error: 'uint16_t' in namespace 'std' does not name a type
+SOURCE: https://github.com/boostorg/lockfree/issues/111
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1507 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: lockfree::queue too many headers dependencies
+SOURCE: https://github.com/boostorg/lockfree/issues/110
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1508 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: redundant `next_ptr == 0` check in queue?
+SOURCE: https://github.com/boostorg/lockfree/issues/108
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1509 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: queue_interprocess_test fails with bad_alloc after recent Interprocess changes
+SOURCE: https://github.com/boostorg/lockfree/issues/103
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1510 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Modular Boost C++ Libraries Request
+SOURCE: https://github.com/boostorg/lockfree/issues/100
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1511 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MacOS: Workaround for extremely slow performance creating lockfree::stack instances (99.999999% for sure a MacOS problem only)
+SOURCE: https://github.com/boostorg/lockfree/issues/99
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1512 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Reconfiguring with BUILD_TESTING=OFF doesn't disable tests
+SOURCE: https://github.com/boostorg/lockfree/issues/97
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1513 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Boost CMake testing procedure fails for Lockfree
+SOURCE: https://github.com/boostorg/lockfree/issues/95
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1514 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM:  variable-sized queue with a custom allocator is not constructible
+SOURCE: https://github.com/boostorg/lockfree/issues/84
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1515 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: version 1.73 boost::lockfree::queue crash under android 12 when destruct?
+SOURCE: https://github.com/boostorg/lockfree/issues/82
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1516 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: a new lock-free queue
+SOURCE: https://github.com/boostorg/lockfree/issues/79
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1517 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Lockfree Queue Triggers Thread Sanitizer Data Race Warning
+SOURCE: https://github.com/boostorg/lockfree/issues/78
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1518 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: error in tagged_ptr_dcas.hpp about BOOST_ALIGNMENT
+SOURCE: https://github.com/boostorg/lockfree/issues/80
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1519 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can the Queue be movable?
+SOURCE: https://github.com/boostorg/lockfree/issues/76
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1520 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: boost::lockfree queues support r-values and move in push/pop/consume etc?
+SOURCE: https://github.com/boostorg/lockfree/issues/77
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1521 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 1.6.7 lockfree queue, out of order
+SOURCE: https://github.com/boostorg/lockfree/issues/75
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1522 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: A out-dated issue，please delete it.
+SOURCE: https://github.com/boostorg/lockfree/issues/72
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1523 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: alignment change in 1.77 beta breaks VS 2017 builds
+SOURCE: https://github.com/boostorg/lockfree/issues/71
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1524 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: boost.lockfree tagged_ptr conflict with Hardware-assisted AddressSanitizer(HWASan) from LLVM project
+SOURCE: https://github.com/boostorg/lockfree/issues/70
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1525 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to contribute code
+SOURCE: https://github.com/boostorg/lockfree/issues/69
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1526 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: compilation error using tagged_ptr_dcas.hpp
+SOURCE: https://github.com/boostorg/lockfree/issues/68
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1527 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: spsc_queue with compile_time_sized_ringbuffer does not call destructors of remaining queue items when destroyed
+SOURCE: https://github.com/boostorg/lockfree/issues/67
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1528 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: differering destructor behavior with compile-time size
+SOURCE: https://github.com/boostorg/lockfree/issues/66
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1529 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Lockfree queue delivers data out of order
+SOURCE: https://github.com/boostorg/lockfree/issues/59
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1530 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Test stack_test is LittleEndian dependant
+SOURCE: https://github.com/boostorg/lockfree/issues/58
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1531 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: unsynchronized_push does not compile while stack capacity is specified
+SOURCE: https://github.com/boostorg/lockfree/issues/57
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1532 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: x86-64 pointer tagging is unsound on most recent Intel CPUs (Ice Lake)
+SOURCE: https://github.com/boostorg/lockfree/issues/56
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1533 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: queue_interprocess_test and stack_interprocess_test failed in clang on Windows for conflicting types
+SOURCE: https://github.com/boostorg/lockfree/issues/54
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1534 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: queue misaligned access fails UBSAN
+SOURCE: https://github.com/boostorg/lockfree/issues/52
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1535 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Spsc queue with no bounded size
+SOURCE: https://github.com/boostorg/lockfree/issues/51
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1536 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: fix valgrind issue of uninitialized next value in node
+SOURCE: https://github.com/boostorg/lockfree/issues/48
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1537 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: What is the use of the btiwise and in tagged_ptr_dcas::get_next_tag?
+SOURCE: https://github.com/boostorg/lockfree/issues/47
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1538 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: lockfree queue: memory orderings are questionable, 1.68.0
+SOURCE: https://github.com/boostorg/lockfree/issues/44
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1539 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: change constructor (queue()) has_capacity assert to static assert
+SOURCE: https://github.com/boostorg/lockfree/issues/43
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1540 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build failure MSVC 14 (x86) on Boost 1.68.0
+SOURCE: https://github.com/boostorg/lockfree/issues/42
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1541 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: wrong predef flag usage
+SOURCE: https://github.com/boostorg/lockfree/issues/38
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1542 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Enhancement] Allow bounded queue size to exceed 65,535 for 64bit systems
+SOURCE: https://github.com/boostorg/lockfree/issues/36
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1543 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: queue::has_capacity Requirements Not Documented
+SOURCE: https://github.com/boostorg/lockfree/issues/35
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1544 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: move only types are not supported
+SOURCE: https://github.com/boostorg/lockfree/issues/26
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1545 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Need way to shrink the freelist
+SOURCE: https://github.com/boostorg/lockfree/issues/25
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1546 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: queue template constructors uncallable
+SOURCE: https://github.com/boostorg/lockfree/issues/23
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1547 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Data race in lockfree::stack
+SOURCE: https://github.com/boostorg/lockfree/issues/22
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1548 | BoostLockfree | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Switch to BOOST_NO_CXX11_HDR_ATOMIC ?
+SOURCE: https://github.com/boostorg/lockfree/issues/17
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1549 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Antora guide: navigation, bookmarks and readability improvements (2025 feedback)
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1733
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1550 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Reduce excessive linear scans in lastIndex() hot path
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1704
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1551 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: UnsupportedOperationException: Read only when calling createTailer(String)
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1703
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1552 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: work with jdk25 error
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1701
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1553 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Clarify durability semantics for SyncMode.SYNC
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1677
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1554 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Maven EA vs Commercial Nexus Stable builds
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1673
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1555 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Where is ChronicleQueue.acquireAppender?
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1663
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1556 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Suppress display of index in ChronicleReader for empty messages
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1647
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1557 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: lastIndex() reported an NPE for an empty queue
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1643
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1558 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Move secondary index scanning to primary index loop
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1604
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1559 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `chronicle-queue:5.26ea3` maven import error
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1603
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1560 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Ensure Enterprise Pretoucher used if it is in classpath
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1595
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1561 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Shouldn't fail fast if trying to open a queue in read only mode, allow a short timeout
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1592
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1562 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ChronicleReader suppress empty message
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1579
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1563 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build out StoreAppender and StoreTailer test coverage to 90%+
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1573
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1564 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Roll files never closed
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1567
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1565 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Improve configuration around readAfterReplicaAcknowledged() to allow a configurable number of inflight messages. 
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1564
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1566 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Antora configuration update
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1559
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1567 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Improve the linearScan warning, and make it off by default
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1555
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1568 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add support for WEEKLY rolling on Sunday 00:00
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1549
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1569 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: NullPointerException in StoreAppender
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1548
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1570 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: how to the the unread msg count? it seems the queue.lastIndex() changes very largely only when one msg is added
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1545
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1571 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can't find 5.24 releases
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1542
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1572 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Memory exhaustion due to heap growth caused by CleaningThreadLocal
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1539
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1573 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: When a partial update occurs, we sometimes end up thinking the second last excerpt is the last excerpt
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1538
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1574 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: chronicle-queue using the wrong chronicle-wire version - Maven
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1535
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1575 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Chronicle Queue Heap memory issue
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1534
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1576 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: toEnd doesn't work when the last roll cycle is empty
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1532
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1577 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question on BufferUnderflowException while reading using ending tailer
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1513
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1578 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Deprecation warnings should not break Windows build
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1512
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1579 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Tailers can skip unacquirable cycles
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1509
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1580 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Flaky test: CheckHalfWrittenMsgNotSeenByTailerTest.checkTailerOnlyReadsTwoMessageTwoProcesses
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1506
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1581 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow a fast, less safe append-at-index
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1501
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1582 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Docs: broken internal links 
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1489
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1583 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Re-opening a chronicle queue results in exception
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1485
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1584 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Improve tailer.toEnd() performance for backwards tailers
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1483
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1585 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 5.25ea1 not usable
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1482
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1586 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Read-only Tailer cannot read existing queue if some segments were removed/archived
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1480
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1587 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support for Enterprise named tailer replication
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1476
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1588 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Ensure DiskSpaceMonitor is initialised on each Queue instantiation
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1474
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1589 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Remove ParseException from WireStoreSupplier#cycles signature
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1471
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1590 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Improve hugetlbfs support
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1470
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1591 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Remove QueueLock
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1461
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1592 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Prepare for hugetlbfs compatibility
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1458
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1593 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CPU usage has increased since version 5.24.ea26
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1457
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1594 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Queue should only have WeakReferences back to appenders and tailers
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1455
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1595 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: deprecate TableStoreWriteLock#forceUnlockQuietly for removal
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1448
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1596 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Failed with java.lang.IllegalStateException: Unable to claim exclusive exclusive lock on file
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1446
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1597 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: jdk21 support
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1445
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1598 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Method change in TableStoreWriteLock causes spurious test failure
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1431
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1599 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question: Which version of chronicle-queue contains the fix for java.nio.channels.OverlappingFileLockException: null
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1430
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1600 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: AppenderFileHandleLeakTest is flaky
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1421
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1601 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: AbstractTSQueueLock improve warn logging during force unlock
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1416
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1602 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Refactor StoreTailer.readingDocument
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1415
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1603 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SCQIndexing reduce method size for inlining
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1410
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1604 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Include zero-cost-assertions in Chronicle-Queue
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1402
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1605 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: TableStoreWrite.lock reduce method length
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1400
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1606 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: make SingleChronicleQueueBuilder#drainerPriority() default to null
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1397
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1607 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Refactor ChronicleReader.execute
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1394
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1608 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Refactor StoreAppenderContext.close
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1392
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1609 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Flaky test net.openhft.chronicle.queue.channel.PipeHandlerTest#redirectedServer
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1390
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1610 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ReadOnly test fails on Windows
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1388
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1611 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Remove unused throwExceptionIfClosed calls
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1386
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1612 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Fix TeamCity ARM build
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1381
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1613 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Ensure all logging around lock forcing/timeout is at WARN
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1380
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1614 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Deprecate queueLock for removal in x.25
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1377
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1615 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Shared WireStorePool instances
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1376
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1616 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Archiving tool
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1373
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1617 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ExcerptTailer#readingDocument throws if you're reading backwards and you get to zero
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1370
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1618 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow queue locks to be pluggable
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1365
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1619 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: deprecate ChronicleQueue#acquireAppender
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1361
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1620 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Check if directory listing checks may be skipped
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1355
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1621 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Exception: Unsigned Int 31-bit
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1342
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1622 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: FileSystemDirectoryListing#refresh should respect its force argument
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1336
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1623 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Provide a version of afterLastWritten(..) that can work from a give index
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1332
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1624 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is there an example of how to serialise the queue to rolling file backup?
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1328
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1625 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: WriteAfterEOFException thrown by writingDocument() leaves queue lock locked
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1324
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1626 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Entries can be written to past roll cycles that do not exist
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1323
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1627 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Delegating appender doesn't work with chaining method writers
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1322
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1628 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: When appender goes past uninitialized segment, it will remain unitialized forever causing issues
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1317
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1629 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Instead of recovering header, rename file then create a new one
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1313
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1630 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Chronicle Queue with jdk 16
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1309
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1631 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Running chronicle junit tests cases with JDK 11/16
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1308
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1632 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RollCycleMultiThreadStressTest is failing
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1307
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1633 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Optimise normaliseEOFs
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1306
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1634 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: "Not yet implemented " exception in queue.clear()
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1303
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1635 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: headerRecovery proceeds regardless if lock was acquired
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1296
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1636 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: OverlappingFileLockException when headerRecovery results in resizeRafIfTooSmall
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1291
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1637 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: JDK 18/19 support
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1286
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1638 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Improve performance of binary search
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1285
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1639 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Remove ParseException from WireStoreSupplier API methods
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1284
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1640 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SIGBUS JVM Crash when out of disk space
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1282
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1641 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Remove automatic roll shrinking code
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1280
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1642 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ChronicleReader support named tailer
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1277
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1643 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Store tailer unshrinks existing queue files
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1276
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1644 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM:  RollingCycleTest.testRollCycle is flaky
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1275
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1645 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Stabilize performance of exact excerpt counting
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1273
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1646 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Tailer.toEnd() may not position on the last queue entry after crash 
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1272
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1647 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Appender's resetPosition uses approximate last sequence number
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1269
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1648 | ChronicleQueue | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Docs: Add a section on cross-thread and cross-process usability of CQ
+SOURCE: https://github.com/OpenHFT/Chronicle-Queue/issues/1262
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1649 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: WebSocket::send with backpressure: one `send(2)` per message, and `BackPressure::erase` copies each byte ~31 times
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1959
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1650 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: PROXY v2 parser rejects headers carrying TLVs, so IPv6 clients behind HAProxy hang
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1957
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1651 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: New onData, onWritable overloads that mostly replace onAborted [draft]
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1956
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1652 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add collectBody from uWS.js
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1953
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1653 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: PROXY v2 parser accepts invalid commands and returns addresses from invalid family blocks
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1948
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1654 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Some caching features
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1945
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1655 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Transfer-Encoding with chunked as the last coding is refused with 400 since v20.70.0
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1941
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1656 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `res.beginWrite()` adds too many `\r\n` before response content
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1939
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1657 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Chunked encoding parser fixes
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1936
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1658 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_uring backend silently drops WebSocket messages above ~2KB( works reliably on epoll)
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1931
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1659 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Latest available version 20.69.0
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1930
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1660 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: UWS_WITH_PROXY PROXY v2 parser accepts short address payloads and repeated frames
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1927
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1661 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `onWritable` callback is restored after reentrant replacement, leaving a moved-from callback installed
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1926
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1662 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SIGSEGV in app.publish() / app.numSubscribers() without calling App.ws to define a WebSocketContext
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1924
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1663 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Client Support
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1920
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1664 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Improve behavior of maxRemainingBodyLength()
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1915
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1665 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Domain and add serverName to work without ssl?
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1909
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1666 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to monitor an eventfd in the main thread of uWebSockets?
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1908
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1667 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: C++23 Support
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1907
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1668 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Security: Committed private keys in `uWebSockets/misc` trigger compliance failures
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1906
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1669 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Strange issue with simple code
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1905
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1670 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Server Fails to Properly Handle Extra Data Beyond Content-Length
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1898
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1671 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow flushing HTTP headers
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1895
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1672 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow flushing headers
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1896
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1673 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can lib.exe be swapped in linux builds
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1894
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1674 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Please provide a clear answer: Does uWebSocket support client?
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1893
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1675 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Stopping http takes 1 second
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1887
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1676 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: No option in build.c to enable simdutf support
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1886
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1677 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Request C++11 compatibility for µWebSockets v17+ and its dependency, µSockets
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1885
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1678 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow specifying a WS closing code to TemplatedApp.close()
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1911
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1679 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: spec. compliance regarding transfer-encoding headers
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1883
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1680 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: uwebsockets receive performance is good, but reply performance is more lower than receive.
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1880
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1681 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is CachingApp example still supported?
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1878
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1682 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to get all headers instead of getHeader method, just like forEach in uWebSockets.js
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1875
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1683 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: getRemoteAddressAsText() will return ip6 address event ip is ip4
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1873
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1684 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: isValidUtf8 seems 2-5 times slow than is_utf8
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1865
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1685 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Double-Free of UserData when gracefully closing a Websocket from Server-Side
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1863
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1686 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Exception: Exception 0x80000003 encountered at address 0x7ff9db8a0948
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1861
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1687 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Request multithreading support
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1858
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1688 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: us_timer inconsistent
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1857
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1689 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Are there any complete examples?
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1856
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1690 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Invoking `endWithoutBody` with a size, without invoking `onAborted` is forbidden
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1855
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1691 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support for ML-KEM/Post-Quantum Cryptography
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1851
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1692 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How can we support HTTP 103 Early Hints?
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1849
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1693 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compiler fail when I set WITH_BORINGSSL=1 and WITH_IO_URING=1 make
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1848
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1694 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The uWS::Loop::get()->defer method will block the reception of subsequent messages. How should this be handled?
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1844
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1695 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The WebSocket connection is unexpectedly closed, and the program crashes.
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1842
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1696 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: memory leaks on server exit
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1840
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1697 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: conflict with _CRTDBG_MAP_ALLOC in windows - fails to compile
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1837
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1698 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Loop.h failes to compile in debug mode
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1832
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1699 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is the std::string_view argument necessary for the ping and pong handlers? 
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1830
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1700 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: HttpResponse::tryEnd relies on evaluation order
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1827
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1701 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: HttpRequest::getMethod modifies request
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1826
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1702 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Dynamic routes not removed
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1825
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1703 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why does the open method triggered when opening a WebSocket connection in the code example retrieve a custom structure, PerSocketData, which isn't passed by the client when the connection is opened? 
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1823
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1704 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Authentication using WWW-Authenticate
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1820
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1705 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Segmentation fault on std::make_unique<uWS::App>();
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1816
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1706 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: uwebsocket is not a header-only program
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1815
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1707 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: When calling the app.run() method in the main function, it blocks the thread as expected. However, when running it in a thread, it doesn't block, which causes the HTTP service to fail.
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1813
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1708 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to implement a callback after the HTTP service has successfully started, i.e., after calling uWS::App::run()?
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1812
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1709 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unable to use uWebsockets via vcpkg 
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1811
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1710 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add CMakeLists.txt
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1809
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1711 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The status code is returning incorrectly. I expect it to return 404, but it is ultimately returning 200.
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1808
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1712 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MSVC warnings
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1807
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1713 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Vcpkg SSL Support
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1806
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1714 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: build examples error
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1803
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1715 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Defer not working in multithreaded app
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1800
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1716 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: uWS::SSLApp not working on Windows - us_listen_socket_t* is nullptr
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1799
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1717 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Fix fuzzing build
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1798
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1718 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Strict Weak Ordering Check failing when adding an http handler
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1793
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1719 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: res.cork(() => res.upgrade()) in Upgrade handler with ws.send() in Open handler = close connection
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1928
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1720 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Problem with provided default example inside documentation
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1785
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1721 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Exceeding max header count limit closes connection after 8-10 seconds with empty response
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1779
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1722 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to remove previously registered path in existing web-socket server.
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1778
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1723 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Method to indicate that request has body
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1910
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1724 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Http request error 505 when the first line of the request is fragmented.
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1776
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1725 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Encounter "Error: Cork buffer must not be acquired without checking canCork!"
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1774
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1726 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Please help me check the issues with the client
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1772
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1727 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Underscore in http methods get trashed. 
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1769
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1728 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: µWebSockets.js => ~30.000 ; µWebSockets => ~1.015 ?
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1766
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1729 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: clang-tidy: error: Use of memory after it is freed [clang-analyzer-cplusplus.NewDelete,-warnings-as-errors]
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1765
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1730 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: getenv is deprecated
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1764
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1731 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to configure keep-alive for uWs.App()?
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1912
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1732 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: is it support client in 2024?
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1763
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1733 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Use AddressSanitizer before posting crash issues
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1757
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1734 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Segmentation fault when returning SSL_CTX of the app
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1756
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1735 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CLOSE_WAIT question
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1755
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1736 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unable to fail a request without triggering a CORS error 
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1754
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1737 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Specify QoS for MQTT syntax
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1753
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1738 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Random crashes 
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1751
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1739 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Pressure test
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1748
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1740 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: A crash occurred when the client closed the connection
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1746
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1741 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: UB in sending long messages
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1743
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1742 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: benchmark
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1737
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1743 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: C++ 20 Module support
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1734
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1744 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Kernel load balancing 
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1732
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1745 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Program crash when `publish` was called too many times in a short time in websocket server
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1731
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1746 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: uWS::Loop::defer causes crashes (SIGSEGV)
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1728
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1747 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How do I set up development environment
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1725
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1748 | uWebSockets | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: dear sir, a stupid question, how to compile on linux(debian/ ubuntu)? 
+SOURCE: https://github.com/uNetworking/uWebSockets/issues/1724
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1749 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] MSETEX response_policy all_succeeded hides per-slot NX/XX failures
+SOURCE: https://github.com/redis/redis/issues/16030
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1750 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MSETEX command tips conflict with all-key atomicity and conditional reply semantics
+SOURCE: https://github.com/redis/redis/issues/16029
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1751 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `daemonize --yes` on `macOS` dramatically slows single client non-pipelined throughput
+SOURCE: https://github.com/redis/redis/issues/16028
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1752 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] HOTKEYS START rejects DURATION 0 documented by HOTKEYS HELP
+SOURCE: https://github.com/redis/redis/issues/16025
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1753 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CRASH] Server cannot start after `VADD ... CAS` with AOF: replayed `VADD ... CAS` blocks the AOF client, `aof.c` assertion `(fakeClient->flags & CLIENT_BLOCKED) == 0`
+SOURCE: https://github.com/redis/redis/issues/16014
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1754 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CRASH] Crashed running the instruction at: 0x5784c77d442c
+SOURCE: https://github.com/redis/redis/issues/16007
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1755 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] AOF replay evaluates hash field TTLs against the wall clock: fields made persistent (`HPERSIST`, `HGETEX PERSIST`) or re-armed (`HSETEX FXX`) are deleted on restart, and `HINCRBY` restarts from 0
+SOURCE: https://github.com/redis/redis/issues/16005
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1756 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `XTRIM`/`XADD ... MAXLEN = n ACKED` stops at the listpack node holding the trim boundary, so the result depends on node layout and replicas / the AOF diverge from the master
+SOURCE: https://github.com/redis/redis/issues/16004
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1757 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] A deduplicated `XADD ... IDMP` retry is written to the AOF as `XADD ... *` and adds a duplicate entry on restart
+SOURCE: https://github.com/redis/redis/issues/16003
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1758 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] AOF rewrite and atomic slot migration drop the IDMP record of a deleted stream entry, so a retried `XADD ... IDMP` is stored again
+SOURCE: https://github.com/redis/redis/issues/16002
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1759 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] BITPOS inconsistency between empty and non-existing keys
+SOURCE: https://github.com/redis/redis/issues/15987
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1760 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] jemalloc 5.3.0 in redis-server --version is detected as the Redis version
+SOURCE: https://github.com/redis/redis/issues/15954
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1761 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CRASH] ebuckets.c assert(raxNext(&ri)) in ebDefragRax() when active defrag resumes after the saved bucket was removed (8.6.1; code unchanged in unstable)
+SOURCE: https://github.com/redis/redis/issues/15947
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1762 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Replica rejects writes from its master with -LOADING during `DEBUG RELOAD`, silently losing them
+SOURCE: https://github.com/redis/redis/issues/15946
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1763 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG]`maxmemory-clients` does not evict a client whose pending reply references a deleted key (stale `reply_bytes_unshared`)
+SOURCE: https://github.com/redis/redis/issues/15945
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1764 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG]Replica with replica-ignore-maxmemory no rejects writes from its master with -OOM, silently diverging from the master
+SOURCE: https://github.com/redis/redis/issues/15944
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1765 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] XTRIM/XADD with DELREF or ACKED and MINID ~ delete entries that replicas and the AOF keep
+SOURCE: https://github.com/redis/redis/issues/15934
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1766 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] A failed directory fsync at the end of an AOF rewrite leaves a manifest that names a deleted base file
+SOURCE: https://github.com/redis/redis/issues/15929
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1767 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [NEW] RESET should keep authentication and protocol version
+SOURCE: https://github.com/redis/redis/issues/15919
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1768 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [QUESTION] Missing attribute breaks OR in Vector Sets filter expression
+SOURCE: https://github.com/redis/redis/issues/15909
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1769 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Sentinel spins at 100% CPU when an ICMP error is left in the socket error queue (redis/hiredis#1375 not yet in deps/hiredis)
+SOURCE: https://github.com/redis/redis/issues/15908
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1770 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `HIMPORT HELP` (and `BLESS HELP`) do not exist, but their unknown-subcommand error says "Try HIMPORT HELP"
+SOURCE: https://github.com/redis/redis/issues/15899
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1771 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] HOTKEYS by-cpu-time-us is empty for multi-key commands: per-key CPU is integer-divided by numkeys and truncates to 0
+SOURCE: https://github.com/redis/redis/issues/15897
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1772 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CRASH] Redis Cluster 8.0.4 crash
+SOURCE: https://github.com/redis/redis/issues/15892
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1773 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [NEW] Validate the attribute JSON in VSETATTR and VADD SETATTR
+SOURCE: https://github.com/redis/redis/issues/15886
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1774 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Variant analysis: 1 unfixed sibling safety gap in redis
+SOURCE: https://github.com/redis/redis/issues/15883
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1775 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] ARLASTITEMS silently drops an existing element when the walked range has a hole
+SOURCE: https://github.com/redis/redis/issues/15874
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1776 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Failure to apply socket-mark-id to TCP listener is not reported
+SOURCE: https://github.com/redis/redis/issues/15864
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1777 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CRASH] __ziplistInsert assertion fails when RPUSH after LSET/RPOP on a quicklist with list-compress-depth enabled
+SOURCE: https://github.com/redis/redis/issues/15863
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1778 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] DEBUG RESTART leaves inherited file descriptors above maxclients + 1024 open
+SOURCE: https://github.com/redis/redis/issues/15860
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1779 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [TSAN] data race in slowlogCreateEntry vs module thread freeing client argv (aofduration test module)
+SOURCE: https://github.com/redis/redis/issues/15857
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1780 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] A failed XADD ... IDMP leaves an idempotency producer that no cleanup path can ever free
+SOURCE: https://github.com/redis/redis/issues/15840
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1781 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] SRANDMEMBER key <count> never updates the per-slot allocation accounting, unlike the no-count form (CLUSTER SLOT-STATS memory-bytes grows without bound)
+SOURCE: https://github.com/redis/redis/issues/15839
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1782 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] HGETDEL that deletes nothing skips updateSlotAllocSize(), stranding the rehash shrink it caused (CLUSTER SLOT-STATS memory-bytes grows without bound)
+SOURCE: https://github.com/redis/redis/issues/15838
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1783 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] HOTKEYS ... SAMPLE n reports per-key totals at 1/n of the totals in the same reply, and hides the only denominator on that scale outside cluster mode
+SOURCE: https://github.com/redis/redis/issues/15837
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1784 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] XADD IDMP entries never expire once the stream's last ID is ahead of the clock
+SOURCE: https://github.com/redis/redis/issues/15836
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1785 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] hash-max-template-entries is not enforced when a template hash gains fields
+SOURCE: https://github.com/redis/redis/issues/15835
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1786 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Connection-scoped VOLATILE keys
+SOURCE: https://github.com/redis/redis/issues/15826
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1787 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [NEW] Optional 64-bit integer score mode for Sorted Sets (avoid double precision loss above 2^53)
+SOURCE: https://github.com/redis/redis/issues/15824
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1788 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `ZADD key -0 member` loses the sign of zero in listpack-encoded sorted sets, so the same command stores a different value depending on the key's size
+SOURCE: https://github.com/redis/redis/issues/15812
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1789 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] XTRIM MINID after XDEL leaves a stream node with zero live entries, producing an RDB that the same server refuses to load
+SOURCE: https://github.com/redis/redis/issues/15808
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1790 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Tab‑completion and inline hints don't work when the default user has a password set via aclfile
+SOURCE: https://github.com/redis/redis/issues/15799
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1791 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CSOAI — Redis AI governance caching
+SOURCE: https://github.com/redis/redis/issues/15794
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1792 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG]One dropped replica aborts the RDB full sync for every other replica
+SOURCE: https://github.com/redis/redis/issues/15767
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1793 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Hostnames for cluster-announce-ip must be less than 46 characters
+SOURCE: https://github.com/redis/redis/issues/15760
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1794 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG]
+SOURCE: https://github.com/redis/redis/issues/15753
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1795 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] add graceful shutdown for TLS in redis-cli- #14721 #14721 - unstable - new error
+SOURCE: https://github.com/redis/redis/issues/15745
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1796 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [NEW] Include run_id in the HELLO reply so clients can identify the server at connect
+SOURCE: https://github.com/redis/redis/issues/15744
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1797 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] AOF rewrite drops PEL entries for deleted Stream messages
+SOURCE: https://github.com/redis/redis/issues/15729
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1798 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] An empty or number-less memory config value is accepted and silently becomes 0
+SOURCE: https://github.com/redis/redis/issues/15719
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1799 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CRASH] SmallThinVec size may not exceed the capacity of a 16-bit sized int
+SOURCE: https://github.com/redis/redis/issues/15718
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1800 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] CONFIG SET tls-cluster makes a node advertise a cluster-bus port nothing is listening on
+SOURCE: https://github.com/redis/redis/issues/15698
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1801 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Remote UAF in Redis Cluster bus `FORGOTTEN_NODE` handling with demonstrated RCE impact
+SOURCE: https://github.com/redis/redis/issues/15672
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1802 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] AOF rewrite child remains blocked in jemalloc mutex after fork (Redis 7.4.7)
+SOURCE: https://github.com/redis/redis/issues/15666
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1803 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Signed integer overflow in getKeysUsingKeySpecs with oversized keynum key counts
+SOURCE: https://github.com/redis/redis/issues/15646
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1804 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] stringmatchlen() does not match "" (and any pattern starting with `) against the empty string, which silently drops empty set / hash / list elements during SCAN … MATCH *
+SOURCE: https://github.com/redis/redis/issues/15643
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1805 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [TEST] Test replication stream buffer becomes full on replica failed
+SOURCE: https://github.com/redis/redis/issues/15641
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1806 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] AUTH failure reply is silently dropped when the client already has pending replies (PROTOCOL DESYNC)
+SOURCE: https://github.com/redis/redis/issues/15640
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1807 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: redis.set_repl() does not suppress commands queued via alsoPropagate() (e.g. SPOP still replicates SREM after REPL_NONE)
+SOURCE: https://github.com/redis/redis/issues/15638
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1808 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Document and test Post-Quantum TLS with OpenSSL 3.5+ (X25519MLKEM768)
+SOURCE: https://github.com/redis/redis/issues/15625
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1809 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: v8.8.1 missing two security fixes present in master - please consider backport
+SOURCE: https://github.com/redis/redis/issues/15615
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1810 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RM_Fork clobbers errno before returning, so a module cannot tell a busy fork slot from a real fork failure
+SOURCE: https://github.com/redis/redis/issues/15612
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1811 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] fastjson : jsonSkipString advances pointer past end on trailing backslash
+SOURCE: https://github.com/redis/redis/issues/15610
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1812 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add cache-aside pattern example with Redis and PostgreSQL
+SOURCE: https://github.com/redis/redis/issues/15609
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1813 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [NEW] redis-cli: derive TLS SNI from the target hostname when `--sni` is not given
+SOURCE: https://github.com/redis/redis/issues/15602
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1814 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: BITFIELD OVERFLOW FAIL can mutate a string without persistence or replication
+SOURCE: https://github.com/redis/redis/issues/15599
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1815 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SETBIT and BITFIELD can leave the KEYSIZES histogram inconsistent
+SOURCE: https://github.com/redis/redis/issues/15597
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1816 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: LMOVEM emits reversed keyspace notification order when source and destination are the same key
+SOURCE: https://github.com/redis/redis/issues/15586
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1817 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Module GIL does not protect the event loop: RM_CreateTimer from a module thread races the timer-list walk in aeProcessEvents
+SOURCE: https://github.com/redis/redis/issues/15582
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1818 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [NEW] Support socat-style abstract AF_UNIX sockets via @ prefix
+SOURCE: https://github.com/redis/redis/issues/15577
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1819 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] VRANDMEMBER: hnsw_random_node() return not checked for NULL in two code paths
+SOURCE: https://github.com/redis/redis/issues/15567
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1820 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] handleClientsBlockedOnKey() use-after-free
+SOURCE: https://github.com/redis/redis/issues/15562
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1821 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CRASH] Redis 8.4.0 crashed by signal: 11, si_code: 1
+SOURCE: https://github.com/redis/redis/issues/15559
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1822 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Upgrade 8.8.1 to 8.10.0 hangs in VM with Ubuntu 24.04.4
+SOURCE: https://github.com/redis/redis/issues/15558
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1823 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] 8.10 debian/ubuntu packages are broken because of big changes in redis.conf
+SOURCE: https://github.com/redis/redis/issues/15557
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1824 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] BITFIELD signed overflow check invokes undefined behavior
+SOURCE: https://github.com/redis/redis/issues/15550
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1825 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Key-spec numkeys arithmetic can overflow before validation
+SOURCE: https://github.com/redis/redis/issues/15549
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1826 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Relative expiration options can trigger signed integer overflow
+SOURCE: https://github.com/redis/redis/issues/15548
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1827 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Rust Underflow error when using the redis search module
+SOURCE: https://github.com/redis/redis/issues/15515
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1828 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Expose tls-protocols as a configurable field on the Rediscp CR
+SOURCE: https://github.com/redis/redis/issues/15514
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1829 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Want to Configure TLS Curve Preferences to align with platform requirements, like tls-protocol, ciphers and ciphersuites.
+SOURCE: https://github.com/redis/redis/issues/15502
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1830 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Redis 7.0.11 replica crashes with SIGABRT after BGSAVE fork failure (fork: Resource temporarily unavailable)
+SOURCE: https://github.com/redis/redis/issues/15501
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1831 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Replication compression memory is invisible to client memory accounting, zstd context invisible to used_memory
+SOURCE: https://github.com/redis/redis/issues/15498
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1832 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] XSETID ... ENTRIESADDED can create a negative consumer-group lag and an unloadable RDB
+SOURCE: https://github.com/redis/redis/issues/15488
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1833 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Vendored deps/xxhash Makefile references missing tests/ directory — noisy 'make[4]: *** tests: No such file' on every clean
+SOURCE: https://github.com/redis/redis/issues/15484
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1834 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [NEW] support for post-quantum TLS
+SOURCE: https://github.com/redis/redis/issues/15474
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1835 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [QUESTION] Is bootstrapping a new replica via a temporary sub-replica safe in cluster mode?
+SOURCE: https://github.com/redis/redis/issues/15473
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1836 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Manual failover can permanently leave a sibling replica attached as a sub-replica (replica-of-replica)
+SOURCE: https://github.com/redis/redis/issues/15472
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1837 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Avoid duplicate KeyMeta restoration in RESTORE-based AOF rewrites
+SOURCE: https://github.com/redis/redis/issues/15465
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1838 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: test
+SOURCE: https://github.com/redis/redis/issues/15464
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1839 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MEMORY USAGE overcounts no_value=1 dict entries (dictMemUsage charges full dictEntry)
+SOURCE: https://github.com/redis/redis/issues/15461
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1840 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `BLMOVEM ... EXACTLY` is not woken when `SORT ... STORE` grows the list it is waiting on
+SOURCE: https://github.com/redis/redis/issues/15452
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1841 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Vector set: deterministic SIGSEGV in select_neighbors / hnsw_reconnect_nodes on VREM (8.4.0, aarch64), propagates to replicas
+SOURCE: https://github.com/redis/redis/issues/15424
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1842 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `RESTORE` of `RDB_TYPE_ZSET_LISTPACK` with a duplicate member crashes Redis on a later `ZADD` via `dictAdd` assertion
+SOURCE: https://github.com/redis/redis/issues/15415
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1843 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `RESTORE` of `RDB_TYPE_ZSET_LISTPACK` with a `nan` score crashes Redis on a later `ZADD` via `zslInsert` assertion
+SOURCE: https://github.com/redis/redis/issues/15414
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1844 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `RESTORE` of `RDB_TYPE_HASH` with duplicate fields crashes Redis on a later `HSET` via listpack→dict conversion panic (authenticated remote DoS)
+SOURCE: https://github.com/redis/redis/issues/15413
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1845 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Long-running client SCAN starves activeExpireCycle: expires cursor gets pinned in the SCAN's freshly-cleaned wake, expired keys accumulate unboundedly with an idle CPU
+SOURCE: https://github.com/redis/redis/issues/15411
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1846 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] FAST expire cycle's stale-percentage trigger is dead code since 6.0: stat_expired_stale_perc (0..1 fraction) is compared against a percentage threshold (1..10)
+SOURCE: https://github.com/redis/redis/issues/15410
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1847 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `CONFIG SET` of TLS options crashes non-TLS Redis builds via NULL connection-type deref (SIGSEGV DoS, `+config|set`-only)
+SOURCE: https://github.com/redis/redis/issues/15404
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
+QB2-1848 | Redis | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Key-spec `numkeys` signed-integer-overflow aborts trapping/hardened Redis builds via `COMMAND GETKEYS` (LMPOP/ZMPOP)
+SOURCE: https://github.com/redis/redis/issues/15403
+FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
+
