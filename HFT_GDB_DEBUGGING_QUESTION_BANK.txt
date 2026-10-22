@@ -1,0 +1,1224 @@
+HFT / SYSTEMS / GDB - NON-OBVIOUS DEBUGGING QUESTION BANK
+Published to learnrahulrai-ui/lowlatency main; 2026-10-23.
+TERMS: 312 distinct listed technical search phrases across 26 domains.
+QUESTION CASES: 104 first-step numerical/debugger exercises.
+No fixes, code implementation, debugger session output, solutions,
+benchmark results, or fabricated company assignments appear below.
+
+MATERIAL NOTE
+Every source link is an authority for the relevant TOOL/FEATURE/DOMAIN
+vocabulary, not proof that the synthetic failure scenario ever happened.
+Scenarios have deliberately chosen numeric boundaries and independent
+hidden assumptions. Never present a prompted state as an observed crash.
+'Hang' is only ONE kind of failure. This bank includes bad symbols,
+missed wakeups, corrupt data, dropped bytes, sampled skew, FD reuse,
+unexpected EOF, overlapping memory, torn teardown, lost IRQs and more.
+An unknown value must be marked UNKNOWN; do not fill missing inputs.
+
+ONE-STEP LOOP
+1. Copy ONLY the first stated input.
+2. Perform ONLY the first instructed primitive numerical action.
+3. Compare one invariant or source contract.
+4. STOP. Continue only after the first check succeeds.
+No pasted source solution. No jumping to the final state or writing code.
+
+SOURCE ANCHORS
+GDB = https://sourceware.org/gdb/current/onlinedocs/gdb
+WATCH = https://sourceware.org/gdb/current/onlinedocs/gdb.html/Set-Watchpoints.html
+REVERSE = https://sourceware.org/gdb/current/onlinedocs/gdb.html/Reverse-Execution.html
+RECORD = https://sourceware.org/gdb/current/onlinedocs/gdb.html/Process-Record-and-Replay.html
+RR = https://rr-project.org/
+DWARF = https://dwarfstd.org/
+ELF = https://refspecs.linuxfoundation.org/elf/elf.pdf
+CORE = https://man7.org/linux/man-pages/man5/core.5.html
+PROC = https://man7.org/linux/man-pages/man5/proc_pid_maps.5.html
+FUTEX = https://man7.org/linux/man-pages/man2/futex.2.html
+VAL = https://valgrind.org/docs/manual/mc-manual.html
+PERF = https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+TRACE = https://www.kernel.org/doc/html/latest/trace/ftrace.html
+SAN = https://clang.llvm.org/docs/ThreadSanitizer.html
+IO = https://man7.org/linux/man-pages/man7/io_uring.7.html
+TCP = https://man7.org/linux/man-pages/man2/send.2.html
+UDP = https://man7.org/linux/man-pages/man7/udp.7.html
+XDP = https://docs.kernel.org/networking/af_xdp.html
+DPDK = https://doc.dpdk.org/guides/prog_guide/ring_lib.html
+BLK = https://docs.kernel.org/block/blk-mq.html
+CXX = https://eel.is/c++draft/atomics
+ITCH = https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+
+
+DOMAIN 01: GDB stop/catchpoint filters
+REFERENCE: https://sourceware.org/gdb/current/onlinedocs/gdb
+OBSCURE / PRECISION SEARCH TERMS (12):
+T01.01 catch syscall
+T01.02 catch exec
+T01.03 catch fork
+T01.04 catch vfork
+T01.05 catch throw
+T01.06 catch rethrow
+T01.07 catch load
+T01.08 catch unload
+T01.09 pending breakpoint
+T01.10 temporary breakpoint
+T01.11 ignore count
+T01.12 conditional breakpoint
+
+DBG-01-1 [FOUNDATIONAL]
+INPUT: syscall-events=100; fd=7; close-calls=[7,7,7]; accepted=1
+FIRST ACTION: DRAW the three close attempts with their ordinal positions.
+HIDDEN TRAP TO VERIFY (not a solution): Do not confuse event count with distinct descriptor lifetimes.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-01-2 [BOUNDARY]
+INPUT: parent-PID=200; child-PID=201; fork=1; exec=1
+FIRST ACTION: DRAW two process identities before their exec transitions.
+HIDDEN TRAP TO VERIFY (not a solution): An exec changes process image, not necessarily the process ID.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-01-3 [MULTI-STATE]
+INPUT: breakpoint-hit=14; ignore-count=10; worker-count=3
+FIRST ACTION: CALCULATE 14-10 without deciding which thread was observed.
+HIDDEN TRAP TO VERIFY (not a solution): Ignore counts and thread conditions are distinct controls.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-01-4 [DECEPTIVE EVIDENCE]
+INPUT: libraries-loaded=17; unloaded=2; symbols-found=15
+FIRST ACTION: COPY the three observed counts into separate cells.
+HIDDEN TRAP TO VERIFY (not a solution): Library existence and symbol availability are different facts.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 02: GDB reverse history and hardware trace
+REFERENCE: https://sourceware.org/gdb/current/onlinedocs/gdb.html/Process-Record-and-Replay.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T02.01 record full
+T02.02 record btrace
+T02.03 reverse-continue
+T02.04 reverse-step
+T02.05 reverse-stepi
+T02.06 reverse-finish
+T02.07 record goto begin
+T02.08 record goto end
+T02.09 record save
+T02.10 record restore
+T02.11 set record full stop-at-limit
+T02.12 set record full insn-number-max
+
+DBG-02-1 [FOUNDATIONAL]
+INPUT: recorded-instructions=200000; target-event=199995; log-capacity=200000
+FIRST ACTION: CALCULATE 200000-199995 and do not claim backwards support yet.
+HIDDEN TRAP TO VERIFY (not a solution): A ring record can evict older history.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb.html/Process-Record-and-Replay.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-02-2 [BOUNDARY]
+INPUT: instruction-events=200001; capacity=200000; trigger-event=1
+FIRST ACTION: DRAW the history's first and last stored positions as blanks.
+HIDDEN TRAP TO VERIFY (not a solution): A recorded log limit matters at the first eviction.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb.html/Process-Record-and-Replay.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-02-3 [MULTI-STATE]
+INPUT: reverse-stop-address=0x401000; writer-address=0x401200; cpu=6
+FIRST ACTION: COPY the address of the observed bad value, not its presumed writer.
+HIDDEN TRAP TO VERIFY (not a solution): An address is not a proven instruction history.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb.html/Process-Record-and-Replay.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-02-4 [DECEPTIVE EVIDENCE]
+INPUT: record-type=btrace; reads=100; writes=30; data-trace=unknown
+FIRST ACTION: WRITE the number of data writes whose contents are actually available in a btrace-only record as UNKNOWN until checking the manual.
+HIDDEN TRAP TO VERIFY (not a solution): Branch history and data history are not equivalent.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb.html/Process-Record-and-Replay.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 03: GDB memory watchpoints
+REFERENCE: https://sourceware.org/gdb/current/onlinedocs/gdb.html/Set-Watchpoints.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T03.01 watch -location
+T03.02 watch -l
+T03.03 rwatch
+T03.04 awatch
+T03.05 watch thread
+T03.06 masked watchpoint
+T03.07 hardware debug register
+T03.08 set can-use-hw-watchpoints
+T03.09 software watchpoint
+T03.10 read watchpoint width
+T03.11 access watchpoint
+T03.12 object relocation invalidates watchpoint
+
+DBG-03-1 [FOUNDATIONAL]
+INPUT: watch-address=0x1000; bytes=8; alignment=8
+FIRST ACTION: CALCULATE 0x1000 modulo 8.
+HIDDEN TRAP TO VERIFY (not a solution): Supported watch widths depend on target debug registers.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb.html/Set-Watchpoints.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-03-2 [BOUNDARY]
+INPUT: object-address=0x2000; moved-address=0x4000; watch-old=0x2000
+FIRST ACTION: DRAW the two storage regions separately before deciding ownership.
+HIDDEN TRAP TO VERIFY (not a solution): Lifetime after movement may invalidate a location watch.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb.html/Set-Watchpoints.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-03-3 [MULTI-STATE]
+INPUT: available-hardware-watchpoints=4; desired-fields=5; field-width=8
+FIRST ACTION: CALCULATE 5-4.
+HIDDEN TRAP TO VERIFY (not a solution): Hardware limit does not imply GDB silently keeps all five.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb.html/Set-Watchpoints.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-03-4 [DECEPTIVE EVIDENCE]
+INPUT: worker-ID=3; other-writer-ID=5; watched-value=42; new-value=99
+FIRST ACTION: DRAW two writers and the watched location without assigning who changed it.
+HIDDEN TRAP TO VERIFY (not a solution): Thread-scoped watchpoints have architecture restrictions.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb.html/Set-Watchpoints.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 04: GDB process & thread scheduling
+REFERENCE: https://sourceware.org/gdb/current/onlinedocs/gdb
+OBSCURE / PRECISION SEARCH TERMS (12):
+T04.01 set scheduler-locking step
+T04.02 set scheduler-locking on
+T04.03 set scheduler-locking replay
+T04.04 set non-stop on
+T04.05 set target-async on
+T04.06 set follow-fork-mode
+T04.07 set detach-on-fork
+T04.08 set schedule-multiple
+T04.09 info inferiors
+T04.10 thread apply all
+T04.11 set print thread-events
+T04.12 interrupt -a
+
+DBG-04-1 [FOUNDATIONAL]
+INPUT: threads=8; runnable=7; stopped=1; scheduler-locking=step
+FIRST ACTION: DRAW eight thread boxes and mark one selected.
+HIDDEN TRAP TO VERIFY (not a solution): Stepping changes whether peers run, not the number of peers.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-04-2 [BOUNDARY]
+INPUT: inferiors=2; threads-per-inferior=[2,3]; breakpoint-on-inferior=1
+FIRST ACTION: CALCULATE 2+3.
+HIDDEN TRAP TO VERIFY (not a solution): Do not assume all inferiors resume when one continues.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-04-3 [MULTI-STATE]
+INPUT: futex-waiters=4; signal-count=1; woken=unknown
+FIRST ACTION: DRAW four waiters and one signal.
+HIDDEN TRAP TO VERIFY (not a solution): A wakeup is not ownership transfer.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-04-4 [DECEPTIVE EVIDENCE]
+INPUT: record-replay-events=1000; scheduler-locking=replay; thread-count=3
+FIRST ACTION: COPY the three thread identities before selecting a replay policy.
+HIDDEN TRAP TO VERIFY (not a solution): Replay and live scheduling modes must be separated.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 05: GDB frames and optimized state
+REFERENCE: https://sourceware.org/gdb/current/onlinedocs/gdb
+OBSCURE / PRECISION SEARCH TERMS (12):
+T05.01 tail-call frame
+T05.02 inline call site
+T05.03 optimized-out variable
+T05.04 DWARF location list
+T05.05 frame base CFA
+T05.06 unwind table
+T05.07 frame-pointer omission
+T05.08 prologue analyzer
+T05.09 signal trampoline frame
+T05.10 stack unwind ambiguity
+T05.11 return address corruption
+T05.12 unwind-on-signal
+
+DBG-05-1 [FOUNDATIONAL]
+INPUT: stack-pointer=0x7fff0000; frame-offset=-32; loaded-words=4
+FIRST ACTION: CALCULATE 0x7fff0000-32 in hexadecimal.
+HIDDEN TRAP TO VERIFY (not a solution): An address location requires unwind and type context.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-05-2 [BOUNDARY]
+INPUT: call-depth-source=10; visible-frames=7; optimization=O2
+FIRST ACTION: CALCULATE 10-7 but do not assume these are exactly inlined calls.
+HIDDEN TRAP TO VERIFY (not a solution): Tail calls, inlines and corrupted metadata are different possibilities.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-05-3 [MULTI-STATE]
+INPUT: signal-handler-stack=8192 bytes; used=8191; pending-write=16
+FIRST ACTION: CALCULATE 8192-8191.
+HIDDEN TRAP TO VERIFY (not a solution): Alternate signal stacks have alignment and guard requirements.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-05-4 [DECEPTIVE EVIDENCE]
+INPUT: program-counter=0x401234; map-start=0x400000; file-offset=0x1000
+FIRST ACTION: CALCULATE 0x401234-0x400000.
+HIDDEN TRAP TO VERIFY (not a solution): Relocation and symbols may change file-offset correlation.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 06: DWARF and ELF debug metadata
+REFERENCE: https://dwarfstd.org/
+OBSCURE / PRECISION SEARCH TERMS (12):
+T06.01 DW_AT_location
+T06.02 DW_AT_frame_base
+T06.03 DW_OP_piece
+T06.04 DW_OP_fbreg
+T06.05 DW_OP_entry_value
+T06.06 DW_AT_ranges
+T06.07 .debug_loclists
+T06.08 .debug_rnglists
+T06.09 .eh_frame
+T06.10 .debug_frame
+T06.11 .gnu_debuglink
+T06.12 .note.gnu.build-id
+
+DBG-06-1 [FOUNDATIONAL]
+INPUT: code-range=[0x401000,0x401100); observed-PC=0x4010FF
+FIRST ACTION: WRITE the lower and exclusive upper range bounds.
+HIDDEN TRAP TO VERIFY (not a solution): DWARF location validity can change within a function.
+SOURCE TO INSPECT: https://dwarfstd.org/
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-06-2 [BOUNDARY]
+INPUT: variable-pieces=[4,2,2] bytes; source-value=64 bits
+FIRST ACTION: CALCULATE 4+2+2.
+HIDDEN TRAP TO VERIFY (not a solution): Pieces need not be contiguous or share one location.
+SOURCE TO INSPECT: https://dwarfstd.org/
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-06-3 [MULTI-STATE]
+INPUT: build-id-bytes=20; debuglink-CRC=32 bits; binary-stripped=1
+FIRST ACTION: WRITE the lengths with units separately.
+HIDDEN TRAP TO VERIFY (not a solution): Debug symbols may live in another file.
+SOURCE TO INSPECT: https://dwarfstd.org/
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-06-4 [DECEPTIVE EVIDENCE]
+INPUT: map-bases=[0x400000,0x7f000000]; PC=0x7f001000
+FIRST ACTION: CALCULATE the difference from 0x7f000000.
+HIDDEN TRAP TO VERIFY (not a solution): An address range alone does not prove loaded library identity.
+SOURCE TO INSPECT: https://dwarfstd.org/
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 07: Core dumps and exit provenance
+REFERENCE: https://man7.org/linux/man-pages/man5/core.5.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T07.01 RLIMIT_CORE
+T07.02 core_pattern pipe handler
+T07.03 core_uses_pid
+T07.04 coredumpctl
+T07.05 NT_PRSTATUS
+T07.06 NT_FILE
+T07.07 NT_AUXV
+T07.08 NT_SIGINFO
+T07.09 si_code
+T07.10 SIGBUS BUS_ADRERR
+T07.11 SIGSEGV SEGV_MAPERR
+T07.12 SIGSEGV SEGV_ACCERR
+
+DBG-07-1 [FOUNDATIONAL]
+INPUT: core-limit=0; virtual-memory=4GiB; crash=SIGSEGV
+FIRST ACTION: WRITE the configured core limit as a number before expecting an artifact.
+HIDDEN TRAP TO VERIFY (not a solution): A crash does not promise a saved core.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man5/core.5.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-07-2 [BOUNDARY]
+INPUT: fault-address=0x0; mapping-start=0x1000; access-size=8
+FIRST ACTION: CALCULATE 0x1000-0x0.
+HIDDEN TRAP TO VERIFY (not a solution): No mapping, protection error, and bad pointer must be distinguished.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man5/core.5.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-07-3 [MULTI-STATE]
+INPUT: core-note-sections=5; threads=12; thread-note-count=unknown
+FIRST ACTION: DRAW 12 thread boxes with empty status slots.
+HIDDEN TRAP TO VERIFY (not a solution): Core files can omit relevant mappings or registers.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man5/core.5.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-07-4 [DECEPTIVE EVIDENCE]
+INPUT: signal=SIGBUS; mapped-file-length=4096; access-offset=8192
+FIRST ACTION: CALCULATE 8192-4096.
+HIDDEN TRAP TO VERIFY (not a solution): File-backed mappings can fail differently from anonymous memory.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man5/core.5.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 08: Memory overlap and ownership forensics
+REFERENCE: https://valgrind.org/docs/manual/mc-manual.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T08.01 overlapping memcpy
+T08.02 invalid read
+T08.03 invalid write
+T08.04 uninitialised-value use
+T08.05 track-origins
+T08.06 definite leak
+T08.07 indirect leak
+T08.08 reachable allocation
+T08.09 mismatched free
+T08.10 double free
+T08.11 use-after-free
+T08.12 use-after-return
+
+DBG-08-1 [FOUNDATIONAL]
+INPUT: source=[100,164); destination=[120,184); bytes=64
+FIRST ACTION: CALCULATE 120-100 then draw both half-open intervals.
+HIDDEN TRAP TO VERIFY (not a solution): Overlapping regions require semantics beyond simple copy size.
+SOURCE TO INSPECT: https://valgrind.org/docs/manual/mc-manual.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-08-2 [BOUNDARY]
+INPUT: allocated=1024; freed=768; unreachable=128; still-referenced=unknown
+FIRST ACTION: COPY the four quantities without adding distinct categories together.
+HIDDEN TRAP TO VERIFY (not a solution): Reported leak classes are not mutually interchangeable.
+SOURCE TO INSPECT: https://valgrind.org/docs/manual/mc-manual.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-08-3 [MULTI-STATE]
+INPUT: object-size=32; field-offset=30; write-size=8
+FIRST ACTION: CALCULATE 30+8.
+HIDDEN TRAP TO VERIFY (not a solution): Crossing an object end differs from crossing a cache line.
+SOURCE TO INSPECT: https://valgrind.org/docs/manual/mc-manual.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-08-4 [DECEPTIVE EVIDENCE]
+INPUT: alloc-count=1000; free-count=999; all-objects-same-size=64
+FIRST ACTION: CALCULATE 1000-999.
+HIDDEN TRAP TO VERIFY (not a solution): A count mismatch is a clue, not a proof of unreachable memory.
+SOURCE TO INSPECT: https://valgrind.org/docs/manual/mc-manual.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 09: C++ sanitizers and lifetime traps
+REFERENCE: https://clang.llvm.org/docs/ThreadSanitizer.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T09.01 ThreadSanitizer happens-before
+T09.02 AddressSanitizer redzone
+T09.03 stack-use-after-scope
+T09.04 init-order-fiasco
+T09.05 vptr sanitizer
+T09.06 UBSan alignment
+T09.07 integer overflow sanitizer
+T09.08 ASan quarantine
+T09.09 TSan fiber annotations
+T09.10 use-after-move
+T09.11 placement-new lifetime
+T09.12 std::launder
+
+DBG-09-1 [FOUNDATIONAL]
+INPUT: sequence=[load,store,load]; thread-count=2; initial=0
+FIRST ACTION: DRAW both thread timelines with empty slots for operations.
+HIDDEN TRAP TO VERIFY (not a solution): TSan reports depend on instrumentation and synchronization.
+SOURCE TO INSPECT: https://clang.llvm.org/docs/ThreadSanitizer.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-09-2 [BOUNDARY]
+INPUT: object-byte-size=24; write-offset=23; write-size=4
+FIRST ACTION: CALCULATE 23+4.
+HIDDEN TRAP TO VERIFY (not a solution): The boundary may trigger an object-level redzone.
+SOURCE TO INSPECT: https://clang.llvm.org/docs/ThreadSanitizer.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-09-3 [MULTI-STATE]
+INPUT: signed-width=32; value=2147483647; increment=1
+FIRST ACTION: WRITE 2147483647 as decimal without incrementing.
+HIDDEN TRAP TO VERIFY (not a solution): Signed overflow is not unsigned wrap.
+SOURCE TO INSPECT: https://clang.llvm.org/docs/ThreadSanitizer.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-09-4 [DECEPTIVE EVIDENCE]
+INPUT: construction-events=5; destruction-events=4; moved-objects=2
+FIRST ACTION: COPY three counts without deciding leak from counts alone.
+HIDDEN TRAP TO VERIFY (not a solution): Destruction and storage deallocation are separate events.
+SOURCE TO INSPECT: https://clang.llvm.org/docs/ThreadSanitizer.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 10: Futex, mutex and wait queues
+REFERENCE: https://man7.org/linux/man-pages/man2/futex.2.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T10.01 FUTEX_WAIT EAGAIN
+T10.02 FUTEX_WAKE_BITSET
+T10.03 FUTEX_REQUEUE
+T10.04 FUTEX_CMP_REQUEUE
+T10.05 FUTEX_LOCK_PI
+T10.06 FUTEX_WAIT_REQUEUE_PI
+T10.07 robust-list EOWNERDEAD
+T10.08 priority inversion
+T10.09 futex hash bucket
+T10.10 condition predicate loop
+T10.11 condvar generation count
+T10.12 lost notification
+
+DBG-10-1 [FOUNDATIONAL]
+INPUT: expected-futex=0; observed-futex=1; expected-waiters=3
+FIRST ACTION: COPY observed 1 and expected 0 in different cells.
+HIDDEN TRAP TO VERIFY (not a solution): Futex WAIT checks a value at sleep entry.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/futex.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-10-2 [BOUNDARY]
+INPUT: workers=4; signals=1; broadcasts=0; ready-count=1
+FIRST ACTION: DRAW the four waiters before assigning ownership of one job.
+HIDDEN TRAP TO VERIFY (not a solution): One signal and four eligible threads do not imply FIFO order.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/futex.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-10-3 [MULTI-STATE]
+INPUT: lock-order-A=[L1,L2]; lock-order-B=[L2,L1]
+FIRST ACTION: DRAW the two lock-acquisition orderings on separate lines.
+HIDDEN TRAP TO VERIFY (not a solution): Distinct lock ordering creates a graph problem, not necessarily immediate deadlock.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/futex.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-10-4 [DECEPTIVE EVIDENCE]
+INPUT: priority-low=10; priority-high=90; medium=50; lock-owner=low
+FIRST ACTION: WRITE the three priority values in ascending order.
+HIDDEN TRAP TO VERIFY (not a solution): Priority values and runtime scheduling policy must be distinguished.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/futex.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 11: Lock-free reclamation and generation
+REFERENCE: https://eel.is/c++draft/atomics
+OBSCURE / PRECISION SEARCH TERMS (12):
+T11.01 hazard-pointer publication
+T11.02 epoch-based reclamation EBR
+T11.03 quiescent-state-based reclamation QSBR
+T11.04 ABA generation tag
+T11.05 tagged pointer
+T11.06 reference-count resurrection
+T11.07 release sequence
+T11.08 SMR retire list
+T11.09 grace-period advance
+T11.10 RCU reader epoch
+T11.11 stale handle generation
+T11.12 atomic compare_exchange failure order
+
+DBG-11-1 [FOUNDATIONAL]
+INPUT: slot=7; generation=255; generation-width=8 bits
+FIRST ACTION: WRITE 255 as 8 binary digits.
+HIDDEN TRAP TO VERIFY (not a solution): Same slot reused with new generation is not same object identity.
+SOURCE TO INSPECT: https://eel.is/c++draft/atomics
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-11-2 [BOUNDARY]
+INPUT: retired=100; active-readers=3; completed-readers=2
+FIRST ACTION: DRAW all three reader epochs; do not reclaim anything yet.
+HIDDEN TRAP TO VERIFY (not a solution): A reader can delay reclamation without being blocked.
+SOURCE TO INSPECT: https://eel.is/c++draft/atomics
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-11-3 [MULTI-STATE]
+INPUT: reference-count=1; releasers=2; acquisition=1
+FIRST ACTION: DRAW each reference owner as a separate token.
+HIDDEN TRAP TO VERIFY (not a solution): Reference count arithmetic alone does not prove lifetime safety.
+SOURCE TO INSPECT: https://eel.is/c++draft/atomics
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-11-4 [DECEPTIVE EVIDENCE]
+INPUT: tag-width=16; allocations=65537; slot=3
+FIRST ACTION: CALCULATE 65537 / 65536 quotient plus remainder.
+HIDDEN TRAP TO VERIFY (not a solution): Finite tags eventually repeat if generation space is exhausted.
+SOURCE TO INSPECT: https://eel.is/c++draft/atomics
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 12: Kernel tracing: ftrace, tracefs, kprobes
+REFERENCE: https://www.kernel.org/doc/html/latest/trace/ftrace.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T12.01 function_graph tracer
+T12.02 irqsoff tracer
+T12.03 preemptoff tracer
+T12.04 wakeup tracer
+T12.05 wakeup_rt tracer
+T12.06 hwlat tracer
+T12.07 osnoise tracer
+T12.08 timerlat tracer
+T12.09 trace_marker
+T12.10 set_graph_function
+T12.11 kprobe_events
+T12.12 trace-cmd snapshot
+
+DBG-12-1 [FOUNDATIONAL]
+INPUT: events-written=9452052; events-in-buffer=144405; CPUs=4
+FIRST ACTION: CALCULATE 9452052-144405.
+HIDDEN TRAP TO VERIFY (not a solution): Recorded capacity is not total historical event count.
+SOURCE TO INSPECT: https://www.kernel.org/doc/html/latest/trace/ftrace.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-12-2 [BOUNDARY]
+INPUT: function-duration=2.553us; child-duration=1.389us; trace-depth=4
+FIRST ACTION: COPY the child duration as the first number.
+HIDDEN TRAP TO VERIFY (not a solution): Nested function durations can overlap.
+SOURCE TO INSPECT: https://www.kernel.org/doc/html/latest/trace/ftrace.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-12-3 [MULTI-STATE]
+INPUT: interrupt-disabled-intervals=[5,10,20]us; threshold=10us
+FIRST ACTION: MARK the threshold on a number line without classifying events.
+HIDDEN TRAP TO VERIFY (not a solution): A threshold boundary needs a strict or inclusive comparison.
+SOURCE TO INSPECT: https://www.kernel.org/doc/html/latest/trace/ftrace.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-12-4 [DECEPTIVE EVIDENCE]
+INPUT: tracing-cpus={0,2}; runnable-cpus={0,1,2,3}
+FIRST ACTION: DRAW four CPU boxes and mark trace coverage.
+HIDDEN TRAP TO VERIFY (not a solution): Absent events on an untraced CPU are not proof of absence.
+SOURCE TO INSPECT: https://www.kernel.org/doc/html/latest/trace/ftrace.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 13: eBPF observer distortion and verifier traps
+REFERENCE: https://www.kernel.org/doc/html/latest/trace/ftrace.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T13.01 kprobe return offset
+T13.02 kretprobe maxactive
+T13.03 fentry trampolines
+T13.04 fexit return probes
+T13.05 BPF CO-RE relocation
+T13.06 BTF type mismatch
+T13.07 BPF ringbuf reserve
+T13.08 BPF ringbuf discard
+T13.09 map update ENOMEM
+T13.10 perf event lost records
+T13.11 BPF verifier bounded loop
+T13.12 stack limit
+
+DBG-13-1 [FOUNDATIONAL]
+INPUT: events-produced=100000; events-captured=99900; drops-unknown
+FIRST ACTION: CALCULATE 100000-99900.
+HIDDEN TRAP TO VERIFY (not a solution): Dropped observations can bias any latency estimate.
+SOURCE TO INSPECT: https://www.kernel.org/doc/html/latest/trace/ftrace.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-13-2 [BOUNDARY]
+INPUT: event-size=64; ring-capacity=4096; outstanding=65
+FIRST ACTION: CALCULATE 4096/64 without assuming header overhead.
+HIDDEN TRAP TO VERIFY (not a solution): Ring reservations need metadata and alignment.
+SOURCE TO INSPECT: https://www.kernel.org/doc/html/latest/trace/ftrace.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-13-3 [MULTI-STATE]
+INPUT: kretprobe-maxactive=16; concurrent-calls=17; missed=unknown
+FIRST ACTION: CALCULATE 17-16.
+HIDDEN TRAP TO VERIFY (not a solution): Misses depend on actual registration and architecture.
+SOURCE TO INSPECT: https://www.kernel.org/doc/html/latest/trace/ftrace.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-13-4 [DECEPTIVE EVIDENCE]
+INPUT: percpu-map-value=8; CPUs=12; entries=256
+FIRST ACTION: CALCULATE 8*12*256 as an upper raw payload, ignoring overhead.
+HIDDEN TRAP TO VERIFY (not a solution): Per-CPU storage costs exceed simple single-value estimates.
+SOURCE TO INSPECT: https://www.kernel.org/doc/html/latest/trace/ftrace.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 14: Perf PMU sampling and counter multiplex
+REFERENCE: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T14.01 precise_ip skid
+T14.02 PEBS sampling
+T14.03 AMD IBS
+T14.04 Intel LBR branch stack
+T14.05 PERF_FORMAT_TOTAL_TIME_ENABLED
+T14.06 PERF_FORMAT_TOTAL_TIME_RUNNING
+T14.07 PMU multiplex scaling
+T14.08 sample_period
+T14.09 sample_freq
+T14.10 RDPMC user access
+T14.11 TSC invariant flag
+T14.12 CPU migration TSC offset
+
+DBG-14-1 [FOUNDATIONAL]
+INPUT: raw-events=500000; time-enabled=1000000ns; time-running=250000ns
+FIRST ACTION: WRITE the enabled/running fraction; do not scale counts yet.
+HIDDEN TRAP TO VERIFY (not a solution): Multiplexing can make raw counts incomparable.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-14-2 [BOUNDARY]
+INPUT: samples=1024; period=100000; dropped=20
+FIRST ACTION: CALCULATE 1024*100000.
+HIDDEN TRAP TO VERIFY (not a solution): Samples are an estimate of events, not a timestamp trace.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-14-3 [MULTI-STATE]
+INPUT: cycles=3000; instructions=6000; cores=1
+FIRST ACTION: WRITE instructions/cycles as a fraction.
+HIDDEN TRAP TO VERIFY (not a solution): IPC needs identical measurement window.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-14-4 [DECEPTIVE EVIDENCE]
+INPUT: branches=100000; misses=1234; target-latency=500ns
+FIRST ACTION: CALCULATE misses/branches as an exact fraction.
+HIDDEN TRAP TO VERIFY (not a solution): Miss fraction alone does not prove added latency.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 15: io_uring CQE lifetime and poll references
+REFERENCE: https://man7.org/linux/man-pages/man7/io_uring.7.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T15.01 IORING_CQE_F_MORE
+T15.02 IORING_CQE_F_BUFFER
+T15.03 IORING_CQE_F_NOTIF
+T15.04 IORING_SETUP_DEFER_TASKRUN
+T15.05 IORING_SETUP_SINGLE_ISSUER
+T15.06 IORING_OP_MSG_RING
+T15.07 registered buffer ring
+T15.08 multishot receive
+T15.09 poll_refs bias
+T15.10 IO_POLL_RETRY_FLAG
+T15.11 CQ overflow counter
+T15.12 CQE seen ownership
+
+DBG-15-1 [FOUNDATIONAL]
+INPUT: SQ=64; submitted=64; CQ=32; completions=33
+FIRST ACTION: CALCULATE 33-32.
+HIDDEN TRAP TO VERIFY (not a solution): Submissions and completions can have different capacities.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man7/io_uring.7.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-15-2 [BOUNDARY]
+INPUT: poll-refs-hex=0x40000080; mask-hex=0x80; observed-CQE=0
+FIRST ACTION: WRITE 0x40000080 as 32 binary digits.
+HIDDEN TRAP TO VERIFY (not a solution): Reference bits and retry flags have distinct roles.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man7/io_uring.7.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-15-3 [MULTI-STATE]
+INPUT: buffers=1024; buffer-size=32768; completed-buffers=1000
+FIRST ACTION: CALCULATE 1024-1000.
+HIDDEN TRAP TO VERIFY (not a solution): Reserved memory and actually filled buffers differ.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man7/io_uring.7.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-15-4 [DECEPTIVE EVIDENCE]
+INPUT: multishot-CQE-flags=[MORE,MORE,0]; received-chunks=[10,20,30]
+FIRST ACTION: DRAW three completions with flags before deciding whether request ended.
+HIDDEN TRAP TO VERIFY (not a solution): Completion visibility and persistent request lifetime are separate.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man7/io_uring.7.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 16: TCP send/receive error attribution
+REFERENCE: https://man7.org/linux/man-pages/man2/send.2.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T16.01 MSG_DONTWAIT
+T16.02 MSG_NOSIGNAL
+T16.03 MSG_MORE
+T16.04 SO_ERROR latch
+T16.05 EAGAIN partial write
+T16.06 EINTR short read
+T16.07 SO_SNDBUF double accounting
+T16.08 TCP_NOTSENT_LOWAT
+T16.09 TCP_USER_TIMEOUT
+T16.10 TCP_CORK
+T16.11 TCP_INFO state
+T16.12 SIOCOUTQ unsent bytes
+
+DBG-16-1 [FOUNDATIONAL]
+INPUT: pending=65536; send-return=16384; error=0
+FIRST ACTION: CALCULATE pending-minus-completed bytes.
+HIDDEN TRAP TO VERIFY (not a solution): TCP is a byte stream, not one-message-per-send.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/send.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-16-2 [BOUNDARY]
+INPUT: pending=65536; send-return=-1; errno=EAGAIN
+FIRST ACTION: WRITE -1 and EAGAIN separately before changing pending count.
+HIDDEN TRAP TO VERIFY (not a solution): A negative return does not mean negative bytes sent.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/send.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-16-3 [MULTI-STATE]
+INPUT: recv-buffer=4096; valid=4095; next-syscall-bytes=100
+FIRST ACTION: CALCULATE 4096-4095.
+HIDDEN TRAP TO VERIFY (not a solution): Bounds apply before the next read.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/send.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-16-4 [DECEPTIVE EVIDENCE]
+INPUT: accepted-FD=7; close-count=3; new-resource-FD=7
+FIRST ACTION: DRAW two separate lifetime generations for numeric descriptor 7.
+HIDDEN TRAP TO VERIFY (not a solution): A reused descriptor number can refer to a different resource.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/send.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 17: UDP multicast gaps and control metadata
+REFERENCE: https://man7.org/linux/man-pages/man7/udp.7.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T17.01 SO_RXQ_OVFL cumulative counter
+T17.02 IP_PKTINFO cmsg
+T17.03 IP_RECVERR error queue
+T17.04 IP_ADD_SOURCE_MEMBERSHIP
+T17.05 SSM source filter
+T17.06 IP_MULTICAST_IF
+T17.07 IP_MULTICAST_TTL
+T17.08 UDP_SEGMENT
+T17.09 UDP_GRO
+T17.10 FIONREAD zero datagram
+T17.11 IGMPv3 membership
+T17.12 MSG_TRUNC
+
+DBG-17-1 [FOUNDATIONAL]
+INPUT: sequence=[900,901,903,902,904]; expected=900
+FIRST ACTION: COPY the first expected sequence 900.
+HIDDEN TRAP TO VERIFY (not a solution): Out-of-order arrival is not necessarily permanent packet loss.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man7/udp.7.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-17-2 [BOUNDARY]
+INPUT: drop-counters=[3,3,7,7,12]; payloads=5
+FIRST ACTION: WRITE the first two cumulative observations only.
+HIDDEN TRAP TO VERIFY (not a solution): A cumulative total differs from a per-packet delta.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man7/udp.7.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-17-3 [MULTI-STATE]
+INPUT: recv-buffer=1500; datagram-size=2000; MSG_TRUNC=yes
+FIRST ACTION: CALCULATE 2000-1500.
+HIDDEN TRAP TO VERIFY (not a solution): Truncation flags can affect the reported length.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man7/udp.7.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-17-4 [DECEPTIVE EVIDENCE]
+INPUT: segments=4; each=1200; optional-last=100
+FIRST ACTION: CALCULATE 4*1200.
+HIDDEN TRAP TO VERIFY (not a solution): UDP segmentation constraints are different from TCP framing.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man7/udp.7.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 18: AF_XDP ownership and RX rings
+REFERENCE: https://docs.kernel.org/networking/af_xdp.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T18.01 XDP_UMEM_REG
+T18.02 XSKMAP redirect
+T18.03 XDP_REDIRECT
+T18.04 UMEM FILL ring
+T18.05 UMEM COMPLETION ring
+T18.06 XSK RX descriptor
+T18.07 XSK TX descriptor
+T18.08 XDP_USE_NEED_WAKEUP
+T18.09 XDP_ZEROCOPY bind
+T18.10 XDP_COPY bind
+T18.11 aligned chunk masking
+T18.12 unaligned UMEM chunks
+
+DBG-18-1 [FOUNDATIONAL]
+INPUT: UMEM=65536; chunk=2048; frame-address=3000
+FIRST ACTION: CALCULATE 3000/2048 quotient and remainder.
+HIDDEN TRAP TO VERIFY (not a solution): Whether chunk masking applies depends on mode.
+SOURCE TO INSPECT: https://docs.kernel.org/networking/af_xdp.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-18-2 [BOUNDARY]
+INPUT: RX=128; FILL=64; posted-frames=64; arrived=65
+FIRST ACTION: DRAW first 64 frame tokens as owned by FILL, nothing else.
+HIDDEN TRAP TO VERIFY (not a solution): No frame should have two simultaneous owners.
+SOURCE TO INSPECT: https://docs.kernel.org/networking/af_xdp.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-18-3 [MULTI-STATE]
+INPUT: TX-submitted=33; COMPLETION-returned=32; capacity=64
+FIRST ACTION: CALCULATE 33-32.
+HIDDEN TRAP TO VERIFY (not a solution): Completion ownership differs from device consumption.
+SOURCE TO INSPECT: https://docs.kernel.org/networking/af_xdp.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-18-4 [DECEPTIVE EVIDENCE]
+INPUT: ring-start=0; ring-end=255; producer=256; consumer=0
+FIRST ACTION: WRITE 256 as 9 binary digits.
+HIDDEN TRAP TO VERIFY (not a solution): Cursor convention determines full-versus-empty logic.
+SOURCE TO INSPECT: https://docs.kernel.org/networking/af_xdp.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 19: DPDK mempool and mbuf pointer validity
+REFERENCE: https://doc.dpdk.org/guides/prog_guide/ring_lib.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T19.01 rte_mbuf headroom
+T19.02 rte_pktmbuf_mtod
+T19.03 indirect mbuf
+T19.04 external mbuf buffer
+T19.05 mbuf refcnt
+T19.06 mempool per-lcore cache
+T19.07 ring bulk enqueue
+T19.08 ring burst enqueue
+T19.09 SP/SC mode
+T19.10 MP/MC mode
+T19.11 rte_flow AGE action
+T19.12 RSS RETA remapping
+
+DBG-19-1 [FOUNDATIONAL]
+INPUT: bulk=32; free=31; burst=32; occupancy=1
+FIRST ACTION: CALCULATE 32-31.
+HIDDEN TRAP TO VERIFY (not a solution): Bulk and burst operations have different admission contracts.
+SOURCE TO INSPECT: https://doc.dpdk.org/guides/prog_guide/ring_lib.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-19-2 [BOUNDARY]
+INPUT: mbuf-data-room=2048; headroom=128; packet=2000
+FIRST ACTION: CALCULATE 2048-128.
+HIDDEN TRAP TO VERIFY (not a solution): Actual usable payload is smaller than data room.
+SOURCE TO INSPECT: https://doc.dpdk.org/guides/prog_guide/ring_lib.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-19-3 [MULTI-STATE]
+INPUT: cores=12; per-core-cache=64; total-pool=1024
+FIRST ACTION: CALCULATE 12*64.
+HIDDEN TRAP TO VERIFY (not a solution): Local caches create availability asymmetry.
+SOURCE TO INSPECT: https://doc.dpdk.org/guides/prog_guide/ring_lib.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-19-4 [DECEPTIVE EVIDENCE]
+INPUT: refcount=2; first-free-call=1; second-free-call=1
+FIRST ACTION: DRAW two references to the same mbuf.
+HIDDEN TRAP TO VERIFY (not a solution): Object destruction differs from caller release.
+SOURCE TO INSPECT: https://doc.dpdk.org/guides/prog_guide/ring_lib.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 20: Filesystem, VFS and inode lifetimes
+REFERENCE: https://docs.kernel.org/filesystems/vfs.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T20.01 dentry negative cache
+T20.02 inode eviction
+T20.03 dentry alias
+T20.04 rename seqlock
+T20.05 openat2 RESOLVE_BENEATH
+T20.06 O_PATH file descriptor
+T20.07 O_TMPFILE
+T20.08 fsync directory durability
+T20.09 dirty folio writeback
+T20.10 delayed allocation
+T20.11 link count reuse
+T20.12 writeback error cursor
+
+DBG-20-1 [FOUNDATIONAL]
+INPUT: ino=100; rename-to=200; nlink=1; open-FD=7
+FIRST ACTION: DRAW pathname A and B referencing an inode, without changing the inode number by assumption.
+HIDDEN TRAP TO VERIFY (not a solution): Rename changes a name, not necessarily an inode identity.
+SOURCE TO INSPECT: https://docs.kernel.org/filesystems/vfs.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-20-2 [BOUNDARY]
+INPUT: file-bytes=8192; write=4096; sync=not-issued
+FIRST ACTION: CALCULATE 8192-4096.
+HIDDEN TRAP TO VERIFY (not a solution): Kernel cache contents are not the same as durable disk state.
+SOURCE TO INSPECT: https://docs.kernel.org/filesystems/vfs.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-20-3 [MULTI-STATE]
+INPUT: path-A-bytes=100; path-B-bytes=100; same-inode=unknown
+FIRST ACTION: DRAW two path strings and one inode placeholder.
+HIDDEN TRAP TO VERIFY (not a solution): Path equality and object identity are different.
+SOURCE TO INSPECT: https://docs.kernel.org/filesystems/vfs.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-20-4 [DECEPTIVE EVIDENCE]
+INPUT: open-FDs=1024; fd=7; close-reuse=7; generation=2
+FIRST ACTION: DRAW two lifetimes for descriptor 7.
+HIDDEN TRAP TO VERIFY (not a solution): FD reuse can mimic inode re-use bugs.
+SOURCE TO INSPECT: https://docs.kernel.org/filesystems/vfs.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 21: NVMe / blk-mq request lifecycle
+REFERENCE: https://docs.kernel.org/block/blk-mq.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T21.01 blk-mq hardware context
+T21.02 blk-mq software queue
+T21.03 blk-mq tag bitmap
+T21.04 NVMe completion phase tag
+T21.05 CQ head doorbell
+T21.06 SQ tail doorbell
+T21.07 NVMe fused compare/write
+T21.08 NVMe abort command
+T21.09 NVMe ANA state
+T21.10 NVMe namespace ID
+T21.11 DMA mapping segment
+T21.12 request timeout
+
+DBG-21-1 [FOUNDATIONAL]
+INPUT: queue-depth=64; submitted=65; completed=0
+FIRST ACTION: CALCULATE 65-64.
+HIDDEN TRAP TO VERIFY (not a solution): Tag limits and submission-queue size are separate.
+SOURCE TO INSPECT: https://docs.kernel.org/block/blk-mq.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-21-2 [BOUNDARY]
+INPUT: CQ-slots=16; head=15; incoming-completions=2
+FIRST ACTION: DRAW 16 positions with the head at 15.
+HIDDEN TRAP TO VERIFY (not a solution): Completion rings can wrap while phase changes.
+SOURCE TO INSPECT: https://docs.kernel.org/block/blk-mq.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-21-3 [MULTI-STATE]
+INPUT: block-size=4096; request-bytes=131072; segments=unknown
+FIRST ACTION: CALCULATE 131072/4096.
+HIDDEN TRAP TO VERIFY (not a solution): Pages and DMA segments are not always identical.
+SOURCE TO INSPECT: https://docs.kernel.org/block/blk-mq.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-21-4 [DECEPTIVE EVIDENCE]
+INPUT: timeout-ms=30000; observed-ms=29999; retry-count=1
+FIRST ACTION: CALCULATE 30000-29999.
+HIDDEN TRAP TO VERIFY (not a solution): Timeout detection and completion cancellation race.
+SOURCE TO INSPECT: https://docs.kernel.org/block/blk-mq.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 22: Compiler/build instrumentation and source mismatch
+REFERENCE: https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T22.01 -Og
+T22.02 split DWARF .dwo
+T22.03 .dwp linker packing
+T22.04 -fdebug-prefix-map
+T22.05 -fno-omit-frame-pointer
+T22.06 -fno-optimize-sibling-calls
+T22.07 LTO inline clone
+T22.08 PLT lazy binding
+T22.09 IFUNC resolver
+T22.10 symbol versioning
+T22.11 debug source mismatch
+T22.12 linker identical code folding
+
+DBG-22-1 [FOUNDATIONAL]
+INPUT: binary-build-id=128 bits; symbol-file-build-id=128 bits; matches=unknown
+FIRST ACTION: DRAW two 128-bit identifier boxes without equating file names.
+HIDDEN TRAP TO VERIFY (not a solution): Matching filenames do not establish identical build symbols.
+SOURCE TO INSPECT: https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-22-2 [BOUNDARY]
+INPUT: source-lines=100; emitted-functions=80; optimized-inline=15
+FIRST ACTION: WRITE counts separately, no causal inference.
+HIDDEN TRAP TO VERIFY (not a solution): Missing source frames can come from more than inlining.
+SOURCE TO INSPECT: https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-22-3 [MULTI-STATE]
+INPUT: PGO training-inputs=1000; production-inputs=1000000; mismatch-count=unknown
+FIRST ACTION: CALCULATE 1000000/1000.
+HIDDEN TRAP TO VERIFY (not a solution): Profile representativeness is a separate property.
+SOURCE TO INSPECT: https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-22-4 [DECEPTIVE EVIDENCE]
+INPUT: instr-count-debug=1000; instr-count-release=700; latency=unknown
+FIRST ACTION: CALCULATE 1000-700.
+HIDDEN TRAP TO VERIFY (not a solution): Fewer instructions do not prove shorter critical path.
+SOURCE TO INSPECT: https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 23: Market-data/book silent corruption
+REFERENCE: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+OBSCURE / PRECISION SEARCH TERMS (12):
+T23.01 ITCH Stock Directory
+T23.02 Order Executed With Price
+T23.03 Broken Trade
+T23.04 order replacement priority
+T23.05 stock trading action
+T23.06 NOII imbalance
+T23.07 non-displayed trade
+T23.08 cross trade
+T23.09 sequence reset
+T23.10 duplicate feed packet
+T23.11 ghost price level
+T23.12 trade volume mismatch
+
+DBG-23-1 [FOUNDATIONAL]
+INPUT: Add=100; Execute=30; Cancel=40; Order-ID=9001
+FIRST ACTION: WRITE 100 as initial order quantity.
+HIDDEN TRAP TO VERIFY (not a solution): Display volume and traded volume are not the same accumulator.
+SOURCE TO INSPECT: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-23-2 [BOUNDARY]
+INPUT: replace-old=9001; replace-new=9002; size=150
+FIRST ACTION: DRAW old and new identifiers separately.
+HIDDEN TRAP TO VERIFY (not a solution): Replace changes identity and priority according to venue rules.
+SOURCE TO INSPECT: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-23-3 [MULTI-STATE]
+INPUT: sequence=[10,11,12,12,14]; cancel=25
+FIRST ACTION: COPY first two sequence numbers.
+HIDDEN TRAP TO VERIFY (not a solution): Duplicates and missing values need independent classification.
+SOURCE TO INSPECT: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-23-4 [DECEPTIVE EVIDENCE]
+INPUT: feed-A=36 bytes; observed=35 bytes; next=40 bytes
+FIRST ACTION: CALCULATE 36-35.
+HIDDEN TRAP TO VERIFY (not a solution): Wire framing must distinguish incomplete body and next message.
+SOURCE TO INSPECT: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 24: FIX recovery / duplicate execution
+REFERENCE: https://www.fixtrading.org/standards/
+OBSCURE / PRECISION SEARCH TERMS (12):
+T24.01 PossDupFlag
+T24.02 GapFillFlag
+T24.03 SequenceReset
+T24.04 ResendRequest
+T24.05 ExecID uniqueness
+T24.06 CumQty
+T24.07 LeavesQty
+T24.08 OrigClOrdID
+T24.09 LastQty
+T24.10 OrderCancelReject
+T24.11 session reset
+T24.12 business reject
+
+DBG-24-1 [FOUNDATIONAL]
+INPUT: expected=197648; received=197650; reset=197651
+FIRST ACTION: CALCULATE 197650-197648.
+HIDDEN TRAP TO VERIFY (not a solution): An open-ended resend can be affected by later gaps.
+SOURCE TO INSPECT: https://www.fixtrading.org/standards/
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-24-2 [BOUNDARY]
+INPUT: origQty=100; CumQty=30; LastQty=30; replayedExecID=F1
+FIRST ACTION: DRAW two occurrences of F1 without applying a fill.
+HIDDEN TRAP TO VERIFY (not a solution): Idempotence requires execution identity semantics.
+SOURCE TO INSPECT: https://www.fixtrading.org/standards/
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-24-3 [MULTI-STATE]
+INPUT: orders=[buy100,sell150]; companies=[A,A]; security=IBM
+FIRST ACTION: DRAW the two orders with company labels.
+HIDDEN TRAP TO VERIFY (not a solution): Company-restricted cache matching differs from exchange matching.
+SOURCE TO INSPECT: https://www.fixtrading.org/standards/
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-24-4 [DECEPTIVE EVIDENCE]
+INPUT: next-seq=4294967295; following=0; integer-width=32
+FIRST ACTION: WRITE 4294967295 as 32 binary digits.
+HIDDEN TRAP TO VERIFY (not a solution): FIX sequence rules and integer wrap are not automatically the same.
+SOURCE TO INSPECT: https://www.fixtrading.org/standards/
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 25: Logging/profiling measurement distortion
+REFERENCE: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+OBSCURE / PRECISION SEARCH TERMS (12):
+T25.01 observer effect
+T25.02 timestamp source clock domain
+T25.03 PMU multiplexing
+T25.04 timer quantization
+T25.05 histogram bucket aliasing
+T25.06 percentile interpolation
+T25.07 sampling bias
+T25.08 coordinated omission
+T25.09 lost trace events
+T25.10 log queue backpressure
+T25.11 tail-latency floor
+T25.12 TSC migration skew
+
+DBG-25-1 [FOUNDATIONAL]
+INPUT: samples=[100,110,120,130,10000]ns; p99=not-given
+FIRST ACTION: COPY all five samples in ascending order.
+HIDDEN TRAP TO VERIFY (not a solution): Tiny samples cannot justify production p99.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-25-2 [BOUNDARY]
+INPUT: arrival-rate=100000/s; logged-rate=99900/s; interval=10s
+FIRST ACTION: CALCULATE 100000-99900.
+HIDDEN TRAP TO VERIFY (not a solution): Missing logs can make slow events invisible.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-25-3 [MULTI-STATE]
+INPUT: timer-resolution=100ns; observed=50ns; repeat=1000
+FIRST ACTION: CALCULATE 100/50.
+HIDDEN TRAP TO VERIFY (not a solution): Reported precision and clock resolution differ.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-25-4 [DECEPTIVE EVIDENCE]
+INPUT: CPU-count=12; TSC-offset=unknown; cross-core-span=30ns
+FIRST ACTION: DRAW a start timestamp on CPU2 and stop on CPU8.
+HIDDEN TRAP TO VERIFY (not a solution): Clocks need calibration before comparison.
+SOURCE TO INSPECT: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+
+DOMAIN 26: Shutdown/teardown and rare progress failures
+REFERENCE: https://sourceware.org/gdb/current/onlinedocs/gdb
+OBSCURE / PRECISION SEARCH TERMS (12):
+T26.01 destructor shutdown ordering
+T26.02 atexit thread teardown
+T26.03 TLS destructor iteration
+T26.04 static initialization order fiasco
+T26.05 stale callback invocation
+T26.06 lifetime generation mismatch
+T26.07 orphaned work queue
+T26.08 shutdown lost notification
+T26.09 readiness false-positive
+T26.10 spurious wakeup livelock
+T26.11 double close fd reuse
+T26.12 writer starvation under readers
+
+DBG-26-1 [FOUNDATIONAL]
+INPUT: workers=4; items-queued=100; worker-stopped=1; in-flight=8
+FIRST ACTION: WRITE all four worker states as UNKNOWN before stopping.
+HIDDEN TRAP TO VERIFY (not a solution): Shutdown correctness depends on in-flight ownership.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-26-2 [BOUNDARY]
+INPUT: close-fd=7; new-pipe-fd=7; stale-close=7
+FIRST ACTION: DRAW the two generations of descriptor 7.
+HIDDEN TRAP TO VERIFY (not a solution): Numerical equality of descriptors is not resource identity.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-26-3 [MULTI-STATE]
+INPUT: readers=4; writer=1; successful-read-loops=100000; successful-writes=0
+FIRST ACTION: CALCULATE the total successful operations from both classes.
+HIDDEN TRAP TO VERIFY (not a solution): Workload progress is not a starvation guarantee.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+DBG-26-4 [DECEPTIVE EVIDENCE]
+INPUT: ready=0; waiters=2; notify-count=1; stop-flag=1
+FIRST ACTION: DRAW the predicate states before each notifier runs.
+HIDDEN TRAP TO VERIFY (not a solution): A notification does not transfer mutex ownership.
+SOURCE TO INSPECT: https://sourceware.org/gdb/current/onlinedocs/gdb
+OUTPUT WORKSHEET: INPUT ______; OPERATION ______; OBSERVATION ______; NEXT STEP LOCKED.
+
+END DEBUGGING BANK
+FACT CHECK: Official GDB manual confirms scheduler-locking, watch/rwatch/
+awatch, reverse control, record methods and catchpoints. These features
+may have target/architecture restrictions. Valgrind, rr, perf, AF_XDP
+and tracefs each have separate measurement overhead and compatibility
+constraints. Do not assume any synthetic case was run.
