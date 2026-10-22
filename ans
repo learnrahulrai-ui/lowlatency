@@ -2,11 +2,27 @@
 | 00. MEMORY MAP AND HARDWARE TOPOLOGY AXIOMS                                                                                                                         |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 CPU₀ L1D = 32768B = 32KB | line_size = 64B = 0x40B | line_count = 32768 / 64 = 512 lines | latency_L1 = 4 cycles = 1.33ns (at 3.0GHz)
+FACT CHECK: These are artificial CPU/latency assumptions. No measured processor, benchmark, distribution or timestamp was supplied. 8,388,608 bytes means 8 MiB, not decimal 8 MB.
+FACT CHECK: Separate hexadecimal address notation from unit B; 0x40B is a different hexadecimal number from 0x40 followed by the unit byte.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 CPU₁ L1D = 32768B = 32KB | line_size = 64B = 0x40B | line_count = 32768 / 64 = 512 lines | latency_L1 = 4 cycles = 1.33ns
+FACT CHECK: These are artificial CPU/latency assumptions. No measured processor, benchmark, distribution or timestamp was supplied. 8,388,608 bytes means 8 MiB, not decimal 8 MB.
+FACT CHECK: Separate hexadecimal address notation from unit B; 0x40B is a different hexadecimal number from 0x40 followed by the unit byte.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 L3_shared = 8388608B = 8MB | line_size = 64B | latency_L3 = 40 cycles = 13.33ns
+FACT CHECK: These are artificial CPU/latency assumptions. No measured processor, benchmark, distribution or timestamp was supplied. 8,388,608 bytes means 8 MiB, not decimal 8 MB.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Interconnect (MESI coherence bus) invalidate latency = 120 cycles = 40.00ns
+FACT CHECK: These are artificial CPU/latency assumptions. No measured processor, benchmark, distribution or timestamp was supplied. 8,388,608 bytes means 8 MiB, not decimal 8 MB.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 DRAM = 16GB | page_size = 4096B = 0x1000B | latency_DRAM = 240 cycles = 80.00ns
+FACT CHECK: These are artificial CPU/latency assumptions. No measured processor, benchmark, distribution or timestamp was supplied. 8,388,608 bytes means 8 MiB, not decimal 8 MB.
+FACT CHECK: Separate hexadecimal address notation from unit B; 0x40B is a different hexadecimal number from 0x40 followed by the unit byte.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 TLB entry count = 64 (L1 DTLB) | miss penalty = 4-level page table walk = 4 × 80ns = 320ns
+FACT CHECK: These are artificial CPU/latency assumptions. No measured processor, benchmark, distribution or timestamp was supplied. 8,388,608 bytes means 8 MiB, not decimal 8 MB.
+FACT CHECK: A four-level page table does not imply four uncached DRAM accesses per TLB miss; cache hits, huge pages, overlapping work and the architecture change the cost.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 
 1.
 +---------------------------------------------------------------------------------------+
@@ -15,14 +31,23 @@ TLB entry count = 64 (L1 DTLB) | miss penalty = 4-level page table walk = 4 × 8
 | [0x108..0x13F]: padding = 0 (56 Bytes)                                                |
 +---------------------------------------------------------------------------------------+
 addr(head) = 0x100 | line_idx(head) = 0x100 >> 6 = 256 / 64 = 4 | offset(head) = 0x100 & 0x3F = 0
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 addr(tail) = 0x104 | line_idx(tail) = 0x104 >> 6 = 260 / 64 = 4 | offset(tail) = 0x104 & 0x3F = 4
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 line_idx(head) == line_idx(tail) = 4 == 4 = TRUE ∴ shared_cache_line = TRUE
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 iter₁: CPU₀ writes head=1 at time₀: MESI(CPU₀, line₄) = Exclusive → Modified (M) | MESI(CPU₁, line₄) = Invalid (I) | cost = 4 cycles
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 iter₂: CPU₁ writes tail=1 at time₁: CPU₁ detects I state → bus Read-For-Ownership (RFO) broadcast → CPU₀ forces M → I → writeback to L3 → CPU₁ line₄ = M | cost = 120 cycles
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 iter₃: CPU₀ writes head=2 at time₂: CPU₀ detects I state → bus RFO broadcast → CPU₁ forces M → I → CPU₀ line₄ = M | cost = 120 cycles
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 total_cycles(N=1000) = (1000 × 120) + (1000 × 120) = 240,000 cycles = 80,000ns = 80µs
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 expected_cycles_without_sharing(padded) = 1000 × 4 + 1000 × 4 = 8,000 cycles = 2.66µs
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 ratio = 240,000 / 8,000 = 30.0× slowdown ✓
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 User exercise 1.1: Calculate address of tail when aligned: addr(tail_aligned) = (0x100 + 64) = 0x140 | verify: 0x140 & 0x3F = 0 ✓
 User exercise 1.2: Fill new line index: line_idx(tail_aligned) = 0x140 >> 6 = 320 / 64 = [FILL]
 
@@ -34,13 +59,22 @@ User exercise 1.2: Fill new line index: line_idx(tail_aligned) = 0x140 >> 6 = 32
 | Slot 4: 0x220 | Slot 5: 0x228 | Slot 6: 0x230 | Slot 7: 0x238                         |
 +---------------------------------------------------------------------------------------+
 Producer CPU₀ writes msg=0xCAFE_BABE_0000_0001 at slot 0 (0x200) → Producer increments head: head: 0 → 1 at 0x100
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Out-of-order CPU store buffer: store(0x100)=1 drains to L1 at cycle 10; store(0x200)=0xCAFE drains to L1 at cycle 25
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Consumer CPU₁ loop: read(0x100) at cycle 12: head=1 > tail=0 → process slot[tail & 7] = slot[0] at 0x200
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Consumer CPU₁ reads 0x200 at cycle 14: memory returns old value = 0x0000_0000_0000_0000
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 corrupted_read = 0x0000_0000_0000_0000 ≠ 0xCAFE_BABE_0000_0001 ✗
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Axiom: barrier instruction smp_wmb() = SFENCE / DMB ISHST: store(0x200) drained BEFORE store(0x100) visible
+FACT CHECK CORRECTION: smp_wmb is an ordering requirement, not universally an SFENCE instruction; on x86 for ordinary cached memory it may need only a compiler barrier. https://cdn.kernel.org/doc/html/latest/core-api/wrappers/memory-barriers.html
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 sequence: store(0x200, val) → smp_wmb() → store(0x100, 1) ✓
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 consumer_sequence: load(0x100, head) → smp_rmb() → load(0x200, val) ✓
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 User exercise 2.1: slot_offset for entry 5 = 5 × 8 = 40 = 0x28 | addr(slot 5) = 0x200 + 0x28 = [FILL]
 User exercise 2.2: Compute slot index for sequential sequence numbers {0, 1, 7, 8, 9, 15, 16}: seq & 7 → {[FILL]}
 
@@ -50,16 +84,28 @@ User exercise 2.2: Compute slot index for sequential sequence numbers {0, 1, 7, 
 | uint32_t counter space: [0 .. 4294967295] | 2³² - 1 = 4294967295                      |
 +---------------------------------------------------------------------------------------+
 divmod: 4294967295 / 1000 = 4294967 remainder 295 | 4294967295 mod 1000 = 295
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 next_counter = 4294967295 + 1 = 0 (32-bit overflow)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 next_slot = 0 mod 1000 = 0
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 transition: slot 295 → slot 0 | expected transition: 295 → 296 | gap = 296 - 0 = 296 skipped slots ✗
+FACT CHECK: Ring wrap correctness depends on ring length and whether read/write indices are raw counters or wrapped positions; a modulo index is not automatically a lost record.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Bug pattern from 1990s mailing lists: programmer writes `idx = counter & 999` where 999 = 0x3E7 = 0b0011_1110_0111
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 test: counter = 8 = 0b0000_0000_1000 | idx = 8 & 0b0011_1110_0111 = 0b0000_0000_0000 = 0
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 test: counter = 0 → idx = 0 | counter = 8 → idx = 0 | duplicate destination slot = 0 ✗
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Axiom: power-of-two mask valid iff (N & (N - 1)) == 0
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 N = 1024 = 2¹⁰ | N - 1 = 1023 = 0x3FF = 0b0011_1111_1111 | 1024 & 1023 = 0 ✓
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 divmod(4294967295, 1024): 4294967295 / 1024 = 4194303 remainder 1023
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 4294967295 & 1023 = 1023 | 0 & 1023 = 0 | step: 1023 → 0 (continuous modulo ring) ✓
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 User exercise 3.1: Check if N = 512 is power of 2: 512 & 511 = [FILL]
 User exercise 3.2: Wrap boundary: (2³² - 1) & 511 = [FILL] | verify: 4294967295 mod 512 = [FILL] ✓
 
@@ -68,17 +114,37 @@ User exercise 3.2: Wrap boundary: (2³² - 1) & 511 = [FILL] | verify: 429496729
 | Network Latency: Packet 1 (Header: 40B) + Packet 2 (Payload: 200B)                    |
 | MSS = 1460B | Nagle Algorithm + Delayed ACK Interaction (Minshall 1999)               |
 +---------------------------------------------------------------------------------------+
+FACT CHECK SCOPE: ACK delay, Nagle interplay and packet scheduling vary by operating system and connection state; treat the 40-ms delay as an input, not a guaranteed TCP timer.
+FOLLOW-UP: DRAW the first state change shown in the boxed example.
 time₀ = 0.0ms: write(fd, header, 40B) → size < MSS ∧ in_flight = 0 → NIC transmits Packet 1 (40B) | in_flight = 40B
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 time₁ = 0.1ms: write(fd, payload, 200B) → size < MSS ∧ in_flight > 0 → Nagle rule: buffer in socket buffer! (Packet 2 queued)
+FACT CHECK SCOPE: ACK delay, Nagle interplay and packet scheduling vary by operating system and connection state; treat the 40-ms delay as an input, not a guaranteed TCP timer.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 time₂ = 0.2ms: Server receives Packet 1 (40B) → TCP Delayed ACK timer armed (timer = 40ms, RFC 1122 default 40ms-200ms)
+FACT CHECK SCOPE: ACK delay, Nagle interplay and packet scheduling vary by operating system and connection state; treat the 40-ms delay as an input, not a guaranteed TCP timer.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 time₃ = 0.2ms .. 40.1ms: Client waits for ACK(Packet 1) to send Packet 2; Server waits for Packet 2 to piggyback ACK
+FACT CHECK SCOPE: ACK delay, Nagle interplay and packet scheduling vary by operating system and connection state; treat the 40-ms delay as an input, not a guaranteed TCP timer.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 time₄ = 40.2ms: Server Delayed ACK timer expires → Server emits standalone ACK(40B) → ACK reaches Client at 40.3ms
+FACT CHECK SCOPE: ACK delay, Nagle interplay and packet scheduling vary by operating system and connection state; treat the 40-ms delay as an input, not a guaranteed TCP timer.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 time₅ = 40.3ms: Client receives ACK → in_flight = 0 → Nagle releases Packet 2 (200B) to wire
+FACT CHECK SCOPE: ACK delay, Nagle interplay and packet scheduling vary by operating system and connection state; treat the 40-ms delay as an input, not a guaranteed TCP timer.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 measured_latency = 40.3ms | expected_pipeline_latency = 0.2ms | penalty = 40.3 - 0.2 = 40.1ms (200× inflation) ✗
+FACT CHECK SCOPE: ACK delay, Nagle interplay and packet scheduling vary by operating system and connection state; treat the 40-ms delay as an input, not a guaranteed TCP timer.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Axiom: setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, &one, sizeof(one)) disables Nagle
+FACT CHECK SCOPE: ACK delay, Nagle interplay and packet scheduling vary by operating system and connection state; treat the 40-ms delay as an input, not a guaranteed TCP timer.
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 with TCP_NODELAY: Packet 1 transmitted at 0.0ms → Packet 2 transmitted at 0.1ms → latency = 0.2ms ✓
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 User exercise 4.1: Compute stall for 5 separate writes of 50B with Delayed ACK = 40ms: stall_count = [FILL] × 40ms
+FACT CHECK SCOPE: ACK delay, Nagle interplay and packet scheduling vary by operating system and connection state; treat the 40-ms delay as an input, not a guaranteed TCP timer.
 User exercise 4.2: Verify: writev() with 2 iovecs {40B, 200B} coalesces to 240B in 1 frame → in_flight = 1 packet → delay = [FILL]ms
+FACT CHECK CORRECTION: writev creates one logical write with scatter/gather buffers; no API promise says TCP transmits exactly one Ethernet frame.
 
 5.
 +---------------------------------------------------------------------------------------+
@@ -87,13 +153,21 @@ User exercise 4.2: Verify: writev() with 2 iovecs {40B, 200B} coalesces to 240B 
 | max_pps = 125,000,000 / 84 = 1,488,095 pkts/s | period = 1s / 1,488,095 = 672ns        |
 +---------------------------------------------------------------------------------------+
 top_half_ISR_cost = 900ns (context save + read register + ACK IRQ + schedule softirq)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 budget_required_per_second = 1,488,095 × 900ns = 1,339,285,500ns = 1.339s CPU time / second
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 ratio = 1.339s / 1.000s = 133.9% CPU load on Core 0
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 CPU Core 0 state: 100% time in hardirq (ISR) → bottom_half / userspace process gets 0% CPU
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 packets_received_by_NIC = 1,488,095 | packets_processed_by_app = 0 | throughput = 0% ✗ (Receive Livelock)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Axiom: NAPI polling loop: on packet arrival, disable hardware IRQ → switch to timer/event poll with budget = 64
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 poll_cost_per_packet = 45ns (no interrupt overhead)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 64 packets processed in: 64 × 45ns = 2880ns | CPU load = 1,488,095 × 45ns = 66,964,275ns/s = 6.69% CPU load ✓
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 User exercise 5.1: If packet arrival = 500,000 pps, calculate IRQ CPU time: 500,000 × 900ns = [FILL]s → load = [FILL]%
 User exercise 5.2: Calculate max packets drained per batch when budget = 64 and ring_depth = 512: batches = 512 / 64 = [FILL]
 
@@ -104,15 +178,25 @@ User exercise 5.2: Calculate max packets drained per batch when budget = 64 and 
 | Shared Mutex at 0x300                                                                 |
 +---------------------------------------------------------------------------------------+
 time₀ = 0ms: Task_L runs → acquires Mutex(0x300) → Mutex.owner = Task_L
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 time₁ = 2ms: Task_H wakes up (event arrival) → preempts Task_L (prio 99 > 10)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 time₂ = 3ms: Task_H attempts to acquire Mutex(0x300) → Mutex locked by Task_L → Task_H blocks (sleeps)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 time₃ = 4ms: Task_M wakes up (unrelated computation, no lock needed) → prio 50 > 10 → preempts Task_L!
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 time₄ = 4ms .. 204ms: Task_M executes 200ms CPU burst; Task_L starved; Task_H waiting on Task_L
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 latency(Task_H) = 200ms | expected_latency(Task_H) ≤ 1ms | penalty = 200× deadline miss ✗
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Axiom: Priority Inheritance Protocol (rt_mutex / PIP):
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 when Task_H blocks on Mutex held by Task_L → temp_prio(Task_L) := max(prio(Task_L), prio(Task_H)) = 99
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 time₃_fixed = 4ms: temp_prio(Task_L) = 99 > prio(Task_M) = 50 → Task_M CANNOT preempt Task_L
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Task_L completes critical section (1ms) → releases Mutex at 5ms → Task_H acquires Mutex at 5ms → latency = 2ms ✓
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 User exercise 6.1: Calculate starvation time if Task_M₁ (50ms) and Task_M₂ (100ms) run without PIP: stall = [FILL]ms
 User exercise 6.2: Verify PIP priority chain: Task_H(99) → Mutex_1 → Task_M(50) → Mutex_2 → Task_L(10): temp_prio(Task_L) = [FILL]
 
@@ -121,16 +205,28 @@ User exercise 6.2: Verify PIP priority chain: Task_H(99) → Mutex_1 → Task_M(
 | Virtual Memory Demand Paging: buffer size = 4194304B = 4MB = 1024 Pages               |
 | Virtual Address Range: [0x400000 .. 0x7FFFFF] | page_size = 4096B = 0x1000B           |
 +---------------------------------------------------------------------------------------+
+FACT CHECK: Separate hexadecimal address notation from unit B; 0x40B is a different hexadecimal number from 0x40 followed by the unit byte.
+FOLLOW-UP: DRAW the first state change shown in the boxed example.
 userspace: ptr = malloc(4194304) at 0x400000 → glibc mmap(PROT_READ|PROT_WRITE, MAP_ANONYMOUS|MAP_PRIVATE)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 kernel state: Page Table Entries (PTE) for [0x400000 .. 0x7FFFFF] set to 0x0 (Demand-Zero)
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 time₀ = 100ns: Fast path executes: ptr[0x1000] = 0x55 (writing Page 1 at 0x401000)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Hardware MMU checks PTE(0x401000): Present_Bit = 0 → triggers CPU Exception 14 (#PF Page Fault Trap)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 CPU executes: kernel do_page_fault() → down_read(&mm->mmap_sem) → alloc_page(GFP_KERNEL) → clear_page(0) → update PTE → TLB invalidation
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 fault_latency = 4800ns (4.8µs) | normal_store_latency = 1.33ns | jitter = 4800 / 1.33 = 3609× latency spike ✗
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Axiom: mlockall(MCL_CURRENT | MCL_FUTURE) + Prefault Page Walk:
+FOLLOW-UP: DRAW: Mark the first operation executed by each participant.
 for (i = 0; i < 1024; i++) { ((volatile char*)ptr)[i * 4096] = 0; }
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 result: 1024 PTEs allocated, zeroed, and locked into physical RAM at startup
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 fast_path write latency after prefault = 1.33ns ✓
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 User exercise 7.1: Calculate number of pages for 64MB buffer: 67108864 / 4096 = [FILL] pages
 User exercise 7.2: If page fault = 4.8µs, compute total cold-access penalty across 1024 pages: 1024 × 4.8µs = [FILL]ms
 
@@ -140,20 +236,36 @@ User exercise 7.2: If page fault = 4.8µs, compute total cold-access penalty acr
 | Memory Locations: [0x500] = payload | [0x508] = ready_flag                            |
 +---------------------------------------------------------------------------------------+
 code: volatile int ready_flag = 0; uint64_t payload = 0;
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Producer CPU₀: payload = 0xDEADBEEF; ready_flag = 1;
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Compiler generated assembly without store fence:
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 movq $0xDEADBEEF, 0x500
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 movl $1, 0x508
 Hardware execution: CPU₀ store buffer holds 0x500 (delayed due to cache miss on 0x500); 0x508 hits L1 cache → 0x508 drains first!
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Consumer CPU₁: while (!ready_flag); result = payload;
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 CPU₁ sees: ready_flag = 1 at time 20ns → reads payload at 0x500 at time 22ns
+FACT CHECK: These are artificial CPU/latency assumptions. No measured processor, benchmark, distribution or timestamp was supplied. 8,388,608 bytes means 8 MiB, not decimal 8 MB.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 CPU₁ reads 0x500 = 0x00000000 (payload store not yet committed from CPU₀ store buffer)
+FACT CHECK: These are artificial CPU/latency assumptions. No measured processor, benchmark, distribution or timestamp was supplied. 8,388,608 bytes means 8 MiB, not decimal 8 MB.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 result: payload = 0x00000000 ≠ 0xDEADBEEF ✗
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Axiom: `volatile` keyword guarantees compiler will not elide read/write; `volatile` gives ZERO hardware ordering guarantee
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 Required atomic operations with memory orders:
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Producer: __atomic_store_n(&payload, 0xDEADBEEF, __ATOMIC_RELAXED); __atomic_store_n(&ready_flag, 1, __ATOMIC_RELEASE);
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Consumer: while (__atomic_load_n(&ready_flag, __ATOMIC_ACQUIRE) == 0); result = __atomic_load_n(&payload, __ATOMIC_RELAXED);
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Hardware emits Release store fence → payload visible before ready_flag ✓
+FOLLOW-UP: DRAW: Mark the first operation executed by each participant.
 User exercise 8.1: Write state transition for Consumer: ready_flag: 0 → 1; payload: 0 → [FILL]
 User exercise 8.2: If memory fence cost = 8ns, and loop iteration = 1.5ns, compute total time if ready_flag polls 4 times: [FILL]ns
 
@@ -164,13 +276,23 @@ User exercise 8.2: If memory fence cost = 8ns, and loop iteration = 1.5ns, compu
 | Core 1: Low-latency isolated thread pinned with isolcpus / taskset                    |
 +---------------------------------------------------------------------------------------+
 Core 0 clears page table entry for address 0x600000
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Core 0 writes APIC ICR (Interrupt Command Register) → sends broadcast IPI to Core 1
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Core 1 pipeline interrupted: hardware jumps to sysvec_call_function_single / smp_invalidate_interrupt
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Core 1 CPU cycle stall = 8500ns (8.5µs) to flush TLB entry, acknowledge IPI, and restore pipeline
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 jitter on isolated Core 1 = 8500ns | SLA budget = 1000ns | SLA violation = 8500 > 1000 ✗
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Axiom: avoid runtime dynamic unmap in shared mm_struct:
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 Rule 1: no munmap / free / mprotect in worker threads
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Rule 2: use hugepages (2MB = 0x200000B): 1 TLB entry covers 512 standard pages → reduces TLB shootdown frequency by 512×
+FACT CHECK: Separate hexadecimal address notation from unit B; 0x40B is a different hexadecimal number from 0x40 followed by the unit byte.
+FACT CHECK CORRECTION: Larger pages reduce address-translation coverage pressure but do not guarantee a 512-fold reduction in shootdowns.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 User exercise 9.1: Calculate TLB reach: 64 entries × 4096B = 262,144B = [FILL]KB
 User exercise 9.2: Calculate TLB reach with 2MB hugepages: 64 entries × 2,097,152B = [FILL]MB
 
@@ -181,13 +303,22 @@ User exercise 9.2: Calculate TLB reach with 2MB hugepages: 64 entries × 2,097,1
 | Destination Address: 0x700 (PCIe MMIO BAR / DRAM)                                     |
 +---------------------------------------------------------------------------------------+
 Producer: executes `_mm_stream_si32(0x700, val₀)` (4 bytes) → allocates WC buffer line 0
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Producer writes 4 bytes every 10µs: byte 0..3 written at 0µs | byte 4..7 written at 10µs
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 WC buffer flush rule: buffer evicts to memory bus ONLY when: (1) line is completely full (64B), OR (2) SFENCE instruction executed, OR (3) serialization instruction (CPUID)
+FACT CHECK CORRECTION: WC buffers can drain for several reasons; SFENCE orders prior stores but does not give a universal fixed PCIe visibility time.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Receiver reads MMIO at 15µs: expects val₀ at 0x700 → reads 0xFFFFFFFF (data stuck in WC buffer line 0)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 latency = 160µs (time to fill 64 bytes at 4B/10µs) | expected = 0.05µs ✗
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 Axiom: after non-temporal streaming writes, execute `_mm_sfence()`:
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 _mm_stream_si32(0x700, val); _mm_sfence();
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 drain time = 22ns → data immediately visible on PCIe / DRAM bus ✓
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 User exercise 10.1: Calculate bytes remaining to trigger automatic flush if 28 bytes written: 64 - 28 = [FILL]B
 User exercise 10.2: Calculate WC buffer capacity for 8 entries × 64B = [FILL]B
 
@@ -195,67 +326,124 @@ User exercise 10.2: Calculate WC buffer capacity for 8 entries × 64B = [FILL]B
 | 50. ALL FAILURE PREDICTIONS (DERIVED FROM MAILING LISTS 1990s-2000s)                                                                                               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 F01: False sharing of head and tail in same 64B cache line
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - breaks: addr(head)=0x100, addr(tail)=0x104 -> same cache line 0x100..0x13F
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - expected: L1 write latency = 4 cycles = 1.33ns
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - actual: MESI ping-pong RFO bus invalidations = 120 cycles = 40ns per access
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - ✗ expected 1.33ns -> actual 40.0ns (30x latency degradation)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 
 F02: Missing write memory barrier in lockless SPSC queue
+FOLLOW-UP: DRAW: Mark the first operation executed by each participant.
 - breaks: out-of-order store buffer drains store(head) before store(data)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - expected: consumer reads valid payload 0xCAFEBABE
+FOLLOW-UP: DRAW: Mark the first operation executed by each participant.
 - actual: consumer reads uncommitted stale memory 0x00000000
+FOLLOW-UP: DRAW: Mark the first operation executed by each participant.
 - ✗ expected 0xCAFEBABE -> actual 0x00000000 (silent data corruption)
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 
 F03: Non-power-of-two ring buffer index wrap
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 - breaks: 4294967295 mod 1000 = 295 -> overflow to 0 mod 1000 = 0
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - expected: slot transition 295 -> 296
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - actual: slot transition 295 -> 0 (296 slots skipped)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - ✗ expected 296 -> actual 0 (ring buffer desynchronization)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 
 F04: Bitmasking with non-power-of-two modulus
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 - breaks: counter & (1000 - 1) = counter & 999 where 999 = 0b001111100111
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - expected: counter=8 maps to slot 8
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - actual: 8 & 999 = 0 (maps to slot 0, colliding with counter=0)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - ✗ expected slot 8 -> actual slot 0 (queue overwrite collision)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 
 F05: TCP_NODELAY disabled with separate header and payload writes
+FOLLOW-UP: DRAW: Mark the first operation executed by each participant.
 - breaks: packet 1 (40B) in flight -> packet 2 (200B) buffered by Nagle -> receiver Delayed ACK armed
+FACT CHECK SCOPE: ACK delay, Nagle interplay and packet scheduling vary by operating system and connection state; treat the 40-ms delay as an input, not a guaranteed TCP timer.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - expected: packet 2 delivery in 0.1ms
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - actual: packet 2 delayed until receiver 40ms timer expires
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - ✗ expected 0.1ms -> actual 40.1ms (400x latency spike)
+FACT CHECK SCOPE: ACK delay, Nagle interplay and packet scheduling vary by operating system and connection state; treat the 40-ms delay as an input, not a guaranteed TCP timer.
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 
 F06: Hardware interrupt flood causing receive livelock
+FOLLOW-UP: DRAW: Mark the first operation executed by each participant.
 - breaks: 1.488M pps * 900ns ISR = 1.339s CPU load per second on Core 0
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - expected: 1,488,095 packets forwarded to userspace
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - actual: 100% CPU in ISR, 0% CPU for userspace, 0 packets forwarded
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - ✗ expected 1.48M pps -> actual 0 pps (total system starvation)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 
 F07: Unbounded priority inversion on mutex acquisition
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 - breaks: Task_L (prio 10) holds mutex; Task_H (prio 99) blocks; Task_M (prio 50) preempts Task_L
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - expected: Task_H latency <= 1ms
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - actual: Task_M runs for 200ms -> Task_H blocked for 200ms
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - ✗ expected <= 1ms -> actual 200ms (real-time deadline violated)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 
 F08: Unprefaulted heap memory causing minor page fault trap
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 - breaks: fast path writes to newly allocated address 0x401000 with unmapped PTE
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 - expected: write store latency = 1.33ns
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - actual: CPU trap 14 -> do_page_fault() zero-page allocation = 4800ns
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - ✗ expected 1.33ns -> actual 4800ns (3600x jitter spike)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 
 F09: Volatile keyword assumed to guarantee memory ordering
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 - breaks: volatile prevents compiler elision but emits no CPU memory fence instructions
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - expected: consumer reads updated data 0xDEADBEEF after flag==1
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - actual: store buffer delay -> consumer reads 0x00000000
+FOLLOW-UP: DRAW: Mark the first operation executed by each participant.
 - ✗ expected 0xDEADBEEF -> actual 0x00000000 (race condition)
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 
 F10: Cross-CPU TLB shootdown IPI from memory deallocation
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - breaks: background thread calls munmap() -> kernel sends IPI to pinned real-time core
+FOLLOW-UP: DRAW: Mark the first operation executed by each participant.
 - expected: isolated core execution uninterrupted (jitter 0ns)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - actual: CPU handles smp_invalidate_interrupt -> stall of 8500ns
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - ✗ expected jitter 0ns -> actual 8500ns (SLA violated)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 
 F11: Non-temporal store WC buffer unflushed
+FOLLOW-UP: DRAW: Mark the first operation executed by each participant.
 - breaks: _mm_stream writes stuck in write-combining buffer waiting for 64B eviction
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
 - expected: PCIe device or consumer reads data at 0x700 immediately
+FOLLOW-UP: DRAW: Mark the first operation executed by each participant.
 - actual: data flushed only after 160us when line fills
+FOLLOW-UP: VERIFY: Locate an original source that could disprove the previous assertion.
 - ✗ expected 0.05us -> actual 160us (3200x latency stall)
+FOLLOW-UP: CALCULATE: Recompute the first numerical relation from the original inputs without copying the displayed result.
