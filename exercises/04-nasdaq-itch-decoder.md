@@ -33,3 +33,16 @@ FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assert
 ## Verify
 Compare decoded fields with the spec. Replay a synthetic feed against a simple reference implementation.
 FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
+
+
+Appendix: actual ITCH lengths and source-traced follow-up
+The specification's Add A is 36 bytes, not 32. Attributed Add F is
+40 bytes; Order Executed E is 31, Cancel X 23, Delete D 19.
+The printed PDF page 13 includes the detailed A and F field tables.
+ITCH A describes an order already accepted into the exchange's displayed
+book, not an instruction for a local matching engine to accept an order.
+The user-supplied 32-byte synthetic in-memory order record is not a
+universal ITCH message. Record it only as an invented storage example.
+SOURCE: https://classic.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+ONE ACTION: CALCULATE the byte count of A using the official field lengths,
+without using the asserted final count.
