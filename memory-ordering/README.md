@@ -1,3 +1,7 @@
+> SOURCE STATUS UPDATE — 2026-10-22: These are reconstructed memory-model exercises, not seven independently reproduced crashes. Hardware-store-buffer diagrams are illustrative, not captured state. Folly and Rigtorp can safely use wrapped cursors with a reserved slot. LLVM #109290 describes a possible model-level wakeup issue; the CPython issue title is not itself proof of an ARM64 segmentation fault. Invalid memory-order arguments, reference lifetime, and synchronization must be checked against the exact C++ version and implementation. The original claims are preserved below for comparison. See [../SOURCE_AUDIT.txt](../SOURCE_AUDIT.txt). No coding solutions are supplied.
+>
+> ONE ACTION: DRAW the initial values of the two distinct shared locations in the first diagram.
+
 # Memory-Ordering Bugs (ARM64 / POWER vs x86-64)
 
 > **Status: unverified.** This is reference material supplied by the repo owner. The bug-tracker IDs, file names, line numbers and failure descriptions have not been checked against the primary sources. Confirm each against its linked tracker or mailing-list thread before relying on it, and rewrite any statement you cannot confirm.
