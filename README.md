@@ -66,3 +66,13 @@ The original 54 questions and all pre-existing files are retained.
 'CORRECTNESS.md' and 'predictnext1.txt' include related additive corrections.
 Do not treat copied benchmark numbers or a course title as evidence of a
 measured production path or a firm-authenticated assessment.
+
+## External source and failure-prediction research (2026-10-23)
+
+- [faillure predictions](faillure%20predictions): 40 Packt source-traced unsolved cases and 2,270 GitHub issue leads (not 2,270 confirmed defects), plus four deeply read external reports.
+- [question bank2.txt](question%20bank2.txt): one unsolved verification task per distinct issue lead, with 25 low-latency search-page-two and 30 HFT-search repository discovery links.
+- [PACKT_SOURCE_MAP.txt](PACKT_SOURCE_MAP.txt): all 436 Packt source repository file paths, 163 distinct Git blobs across chapters, with pinned revision and MIT attribution.
+- [Packt source submodule](third_party/Building-Low-Latency-Applications-with-CPP): full upstream code linked at commit 11e3925f431f7c8c39739ed90b874d6ff2aa2966. The submodule contains its own MIT LICENSE. This is NOT an independently vendored copy.
+- For a complete local checkout: `git clone --recurse-submodules https://github.com/learnrahulrai-ui/lowlatency.git`; inside an existing checkout: `git submodule update --init --recursive`.
+
+No existing question bank was deleted or replaced. The linked upstream code includes the author's example implementations; our two new question files do not supply coding solutions. All uninspected issue bodies remain marked research leads.
