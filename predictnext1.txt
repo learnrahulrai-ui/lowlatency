@@ -1306,3 +1306,33 @@ FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without 
 FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - ✗ expected 30 -> actual 60 (phantom fill)
 FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
+
+
+SOURCE-VERIFIED FOLLOW-UP TO USER'S 32-BYTE ITCH SCENARIO
+Preserve the prior 811-line original and all previous annotations.
+This is an additive correction to assumptions, not a measurement.
+User supplied 1,000,000 events; 3.0GHz; 500 ns deadline; decimal
+64,000,000-byte mapping; 2,097,152-byte huge pages.
+ITCH v5.0 A message = 36 bytes, F = 40, E = 31, X = 23, D = 19.
+No evidence was provided for a universal 32-byte message format.
+No evidence was provided for fixed 1/4/6-cycle operation runtimes.
+mmap establishes virtual mappings, not user-chosen physical RAM addresses.
+Some C++ wire pointer casts would need validated lifetime, alignment,
+aliasing and endian handling; no copy is not automatically faster.
+Producer and consumer must define ownership of publication state before
+selecting release/acquire synchronization; SPSC differs from MPMC.
+The claim that isolcpus prevents all OS interruption is false.
+A producer-consumer lab does not establish an HFT firm take-home.
+The original course claim naming Northwestern CS343 is supported by its
+actual 2025 lab, but MCS/ticket/lock-free requirements were not part of
+the listed five tasks.
+
+ONE ACTION: CALCULATE 64,000,000 / 2,097,152 as quotient plus remainder.
+FOLLOW-UP ONLY AFTER RESULT IS VERIFIED: inspect Nasdaq Add A page 13.
+SOURCE URLS:
+https://users.cs.northwestern.edu/~pdinda/os-w25/labs/pclab.pdf
+https://classic.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+https://man7.org/linux/man-pages/man2/mmap.2.html
+https://cdn.kernel.org/doc/html/latest/admin-guide/cpu-isolation.html
+See 'question bank1.txt' Appendix G for Q55-Q102.
+END SOURCE-VERIFIED FOLLOW-UP
