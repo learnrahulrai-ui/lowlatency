@@ -49,3 +49,14 @@ FOLLOW-UP: VERIFY: Find the original sentence that supports the preceding claim.
 ## Caveat
 Public competitions, personal GitHub projects and candidate accounts are not confirmed recruitment assignments. No authenticated hiring take-home was verified for Citadel Securities, Jump Trading, Flow Traders or Tower Research Capital. Your own OrderCache project uses a company-restricted quantity-matching rule, which is different from exchange price-time matching; keep their specifications separate.
 FOLLOW-UP: VERIFY: Find the original sentence that supports the preceding claim.
+
+
+ADDITIONAL VERIFIED RESEARCH - 2026-10-22
+Open 'question bank1.txt' at Appendix G: 48 new unsolved questions Q55-Q102
+covering ITCH field lengths, memory mapping/huge pages, CPU timings,
+false sharing, C++ atomics, allocation, cache-line diagrams, Linux isolation
+and university lab/source provenance.
+The original 54 questions and all pre-existing files are retained.
+'CORRECTNESS.md' and 'predictnext1.txt' include related additive corrections.
+Do not treat copied benchmark numbers or a course title as evidence of a
+measured production path or a firm-authenticated assessment.
