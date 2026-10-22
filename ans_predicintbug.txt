@@ -1,3 +1,13 @@
+SOURCE REVIEW 2026-10-22 — NUMERICAL NOTES, NOT CODING SOLUTIONS
+The following original scenarios and all previous annotations are preserved.
+These contain pre-existing calculated figures and constructed failure cases.
+A value labelled 'actual' is NOT an observed measurement without primary
+benchmark or packet trace. Hardware frequencies, bus times, page walks,
+cache misses, scheduler/allocator costs and source code paths are assumptions.
+This file does not solve any of the 13 coding exercises. See SOURCE_AUDIT.txt.
+ONE ACTION: CALCULATE the first cache-line byte-count relation on your own.
+END SOURCE REVIEW
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 00. MEMORY MAP AND HARDWARE TOPOLOGY AXIOMS                                                                                                                         |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
