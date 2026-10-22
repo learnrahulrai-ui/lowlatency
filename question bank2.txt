@@ -1,0 +1,31 @@
+QUESTION BANK 2 - LOW-LATENCY/HFT PUBLIC ISSUE EVIDENCE INDEX
+Compiled 2026-10-23. No coding solutions.
+GitHub source discovery:
+https://github.com/search?q=low+latency&type=repositories&p=2
+https://github.com/search?q=hft&type=repositories
+
+EVIDENCE RULES
+Each numbered entry links to an actual public GitHub issue discovered with
+the connected account. ISSUE LEAD does not mean confirmed bug, fixed bug,
+or evidence of a particular root cause. An issue may be a user question,
+false positive, or enhancement request. Only its indexed title/link is
+collected in bulk; full discussions and fixes have NOT all been inspected.
+Do not call the final count a count of confirmed failures.
+Existing question bank1.txt is not modified. Entries already cited by
+exact URL there are excluded from this collection when possible.
+An unsolved first task appears with every case. NO SOLUTIONS or patches.
+
+SOURCE-INSPECTION ORDER
+Read full issue body; find failing input and actual observed outcome;
+check replies and exact source commit; find reproduction/regression test;
+compare alternative explanations; only then assign verdict.
+If original input missing, record 'NO REPRODUCER'.
+
+PACKT
+The MIT-licensed Packt upstream source is linked as a pinned git submodule
+at third_party/Building-Low-Latency-Applications-with-CPP.
+40 inspected source-level questions appear separately in 'faillure predictions'.
+The linked submodule is NOT a self-contained vendored archive.
+
+=== SOURCE-TRACED ISSUE QUESTIONS ===
+
