@@ -30,3 +30,8 @@ FOLLOW-UP: CALCULATE: Apply only the first described change to the stated numeri
 ## Order of work
 Single-threaded, deterministic tests first. Then concurrency: which shared quantities must be updated together? An order rejected by one rule must not change any exposure counter.
 FOLLOW-UP: CALCULATE: Apply only the first described change to the stated numerical input.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+Artificial per-order $5,000 notional and 100-share quantity limits are practice numbers. Their semantics cannot be attributed to SEC Rule 15c3-5 or to Cboe. The kill switch must declare whether it rejects future orders, cancels resting orders, or both; venue docs determine any real-world behavior. No exposure formula or result is supplied here.
+SOURCE: https://www.cboe.com/us/equities/trading/offerings/risk_management/
+ONE ACTION: WRITE the two configured maximums without checking an order.
