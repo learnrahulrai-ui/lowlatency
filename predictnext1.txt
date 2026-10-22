@@ -2,8 +2,14 @@
 | 00. ARCHIVAL PROTOCOL, CONCURRENCY, AND KERNEL MEMORY ADDRESS AXIOMS                                                                                               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 addr(order_cache) = 0x100000 | addr(rw_lock) = 0x100040 | addr(cv_wait) = 0x100080 | addr(fix_session) = 0x200000 | addr(ring_buf) = 0x300000
+FACT-CHECK 2026-10-22: The displayed addresses are synthetic; they are not observed addresses in a running process.
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 UDP_socket = 0x400000 | sk_drops_counter = 0x400080 | TCP_PCB = 0x500000 | risk_limits = 0x600000 | secondary_index = 0x700000
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time_unit = nanoseconds (ns) | 1 cycle = 0.333ns at 3.0GHz | page_size = 4096B = 0x1000B
+FACT-CHECK 2026-10-22: The 3 GHz speed is a numerical assumption, not a measurement of the running CPU.
+FACT-CHECK 2026-10-22: Separate hexadecimal values from unit B. 0x1000B is a different integer than 0x1000 bytes.
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 
 1.
 +---------------------------------------------------------------------------------------+
@@ -12,13 +18,22 @@ time_unit = nanoseconds (ns) | 1 cycle = 0.333ns at 3.0GHz | page_size = 4096B =
 | Readers R₁..R₄ continuous loop: hold read lock for 10µs, sleep 0µs                    |
 +---------------------------------------------------------------------------------------+
 time₀ = 0µs: R₁ acquires lock (Reader_Count: 0 → 1) | time₁ = 2µs: R₂ acquires lock (Reader_Count: 1 → 2)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₂ = 4µs: Writer W₁ calls lock() at 0x100040 → Writer_Pending: 0 → 1 → W₁ sleeps on wait queue
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₃ = 10µs: R₁ releases lock (Reader_Count: 2 → 1) | R₃ arrives concurrently at 10µs → implementation checks Reader_Count > 0 → grants read lock to R₃! (Reader_Count: 1 → 2)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₄ = 12µs: R₂ releases lock (Reader_Count: 2 → 1) | R₄ arrives at 12µs → granted read lock! (Reader_Count: 1 → 2)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 invariant: Reader_Count never drops to 0 ∴ Writer_Pending remains 1 indefinitely
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 measured_wait(W₁) = 760.0µs average, peak wait = 20,000,000µs (20.0s) | expected_wait(pthreads-win32 writer-priority) = 7.108µs
+FACT-CHECK 2026-10-22: The reported 760-microsecond mean and 20-second delay originate in different tests; this line improperly combines them as one measurement.
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 ratio = 760.0 / 7.108 = 106.9× delay; peak ratio = 20,000,000 / 7.108 = 2,813,731× delay ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: writer-preference rwlock: when Writer_Pending > 0, subsequent readers blocked; Reader_Count: 2 → 1 → 0 → W₁ acquires lock ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 1.1: If each reader holds lock 5µs and 4 readers overlap by 2µs, compute time to 0 readers without writer-preference: [FILL]µs
 User exercise 1.2: Calculate writer throughput: 1000 orders / 760µs = [FILL] orders/s vs 1000 / 7.108µs = [FILL] orders/s
 
@@ -28,14 +43,22 @@ User exercise 1.2: Calculate writer throughput: 1000 orders / 760µs = [FILL] or
 | Lock State at 0x100040: [Mutex: UNLOCKED] [Waiters: 10] [Gate_Bit: 0]                |
 +---------------------------------------------------------------------------------------+
 10 threads execute 1,000 iterations: lock_shared() → unlock_shared() ∧ lock() → unlock()
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Race condition in Boost 1.33 state machine: Writer thread releases internal spinlock before atomically clearing wait counter
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 State transition: thread T₁ exits write section → clears active flag at 0x100040 → fails to signal condition variable before T₂ enters wait
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Memory inspection at hang: Active_Writer = 0x0 | Active_Readers = 0x0 | Semaphore_Count = 0 | Blocked_Threads = 10
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Thread State: 10 threads blocked in pthread_cond_wait / WaitForSingleObject while lock is completely free
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Watchdog timer: threshold = 5,000ms | observed_wait = ∞ → watchdog SIGABRT triggered at 5001ms ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: state and wake notification must be coupled under same mutex invariant: `state = 0; cond_broadcast();` inside mutex boundary ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 2.1: Track state variable across 3 transitions: UNLOCKED(0) → WRITE_LOCKED(1) → READ_LOCKED(2) at address 0x100040: [FILL]
 User exercise 2.2: Compute watchdog timeout cycles at 3.0GHz: 5.0s × 3,000,000,000 = [FILL] cycles
+FACT-CHECK 2026-10-22: The 3 GHz speed is a numerical assumption, not a measurement of the running CPU.
 
 3.
 +---------------------------------------------------------------------------------------+
@@ -43,14 +66,23 @@ User exercise 2.2: Compute watchdog timeout cycles at 3.0GHz: 5.0s × 3,000,000,
 | Session State at 0x200000: [Expected_Seq: 197648] [Target_Seq: 216251]                |
 +---------------------------------------------------------------------------------------+
 Inbound Gap 1: Inbound message has MsgSeqNum = 200000 | Expected = 197648 → Gap size = 200000 - 197648 = 2352 messages
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Engine sends: ResendRequest(BeginSeqNo=197648, EndSeqNo=199999) | Resend_Pending_Flag at 0x200010 = TRUE
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Counterparty replays messages 197648 .. 199999 → Engine updates Expected_Seq = 200000
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Inbound Gap 2: Next incoming message has MsgSeqNum = 216251 | Expected = 200000 → Gap size = 216251 - 200000 = 16251 messages
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Bug in QuickFIX state logic: `if (m_state.resendRequested()) return;`
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Flag Resend_Pending_Flag at 0x200010 was NOT cleared upon finishing Gap 1 replay!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Result: Engine suppresses ResendRequest for missing message 200000 .. 216250
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Engine silently advances to 216251: 16,251 market trade/order execution messages dropped permanently ✗
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Axiom: `Resend_Pending_Flag := FALSE` immediately upon processing message where MsgSeqNum == EndSeqNo ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 3.1: Calculate total messages lost: 216250 - 200000 + 1 = [FILL] messages
 User exercise 3.2: Verify expected sequence transition: 199999 + 1 = [FILL]
 
@@ -60,15 +92,25 @@ User exercise 3.2: Verify expected sequence transition: 199999 + 1 = [FILL]
 | Wait Queue at 0x100080: [Head: Worker_A (entry_time=100ns)] → [Worker_B (entry_time=150ns)] |
 +---------------------------------------------------------------------------------------+
 Producer pushes task → executes `pthread_cond_signal(&cv)` at time 200ns
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 OS scheduler unparks Worker_A → Worker_A transitions from WAITING to RUNNABLE
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Race: Worker_B was already running on CPU 1 (just finished previous task, looped back to `pthread_mutex_lock`)
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Worker_B acquires mutex at time 210ns BEFORE Worker_A completes context switch from kernel
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Worker_B consumes task → releases mutex → loops back
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Producer pushes next task at time 250ns → signals CV → wakes Worker_A again or Worker_B grabs it directly!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Pass count: Worker_B processed 100 consecutive tasks; Worker_A executed 0 tasks
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Worker_A wait time = 500,000ns | Worker_B wait time = 10ns | ratio = 50,000× unfairness ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: POSIX CV signaling guarantees ONLY wakeup of at least 1 waiter; POSIX provides ZERO FIFO ordering guarantee
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Correct Pattern: application-level FIFO ticket lock or round-robin work queue index at 0x100090 ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 4.1: If Worker_A context switch = 1500ns, and Worker_B loop = 80ns, calculate Worker_B iterations during A switch: 1500 / 80 = [FILL] (floor)
 User exercise 4.2: Verify remaining tickets: total=100, consumed_B=100, consumed_A=[FILL]
 
@@ -78,21 +120,35 @@ User exercise 4.2: Verify remaining tickets: total=100, consumed_B=100, consumed
 | TCP Socket at 0x500000: [SRTT: 50ms] [RTO: 200ms] [Backoff_Count: 6]                 |
 +---------------------------------------------------------------------------------------+
 Packet loss event at time 0.0s: packet 101 dropped by switch
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Retransmission 1 at time 0.200s (RTO = 200ms) → dropped again
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Karn's Exponential Backoff: RTO_{n+1} = min(RTO_n × 2, Max_RTO)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 RTO sequence:
 n=0: 200ms = 0.2s
 n=1: 400ms = 0.4s (cum = 0.6s)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 n=2: 800ms = 0.8s (cum = 1.4s)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 n=3: 1600ms = 1.6s (cum = 3.0s)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 n=4: 3200ms = 3.2s (cum = 6.2s)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 n=5: 6400ms = 6.4s (cum = 12.6s)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 n=6: 12800ms = 12.8s (cum = 25.4s)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 n=7: 25600ms = 25.6s (cum = 51.0s)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 n=8: 51200ms = 51.2s (cum = 102.2s)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 n=9: 102400ms = 102.4s (capped at 120.0s, cum = 222.2s)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 observed_recovery_latency = 120.0s | SLA budget = 50ms | inflation = 120.0 / 0.05 = 2400× timeout stall ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: TCP Selective Acknowledgment (SACK, RFC 2018) + TCP QuickACK: prevents fallback to RTO timer on single packet drops ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 5.1: Calculate cumulative time elapsed after backoff step n=4: 0.2 + 0.4 + 0.8 + 1.6 + 3.2 = [FILL]s
 User exercise 5.2: Calculate ratio of RTO_9 to RTO_0: 120,000ms / 200ms = [FILL]×
 
@@ -102,15 +158,25 @@ User exercise 5.2: Calculate ratio of RTO_9 to RTO_0: 120,000ms / 200ms = [FILL]
 | Port Range: [32768 .. 61000] = 28,233 ports | TIME_WAIT duration = 2 × MSL = 60s     |
 +---------------------------------------------------------------------------------------+
 Connection churn rate = 1,000 connections/second (short-lived FIX HTTP/TCP session per request)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Socket state tracking: sockets_in_time_wait(t) = rate × duration = 1000 × 60 = 60,000 sockets
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 available_ephemeral_ports = 28,233
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time to port exhaustion: t_exhaust = 28,233 / 1000 = 28.233 seconds
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 At t = 29s: `connect()` returns -1 with errno = EADDRNOTAVAIL (99) ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Secondary kernel degradation: 60,000 TCP sockets in hash table `tcp_hashinfo.ehash`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Each packet ingress traverses hash bucket chains: lookup latency jumps from 15ns to 8500ns (566× slowdown)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 CPU utilization = 100% in `inet_lookup_established` softirq → system hangs ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: persistent TCP sessions + `SO_REUSEADDR` + `tcp_tw_reuse = 1`:
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 sockets_in_time_wait = 0 | active_connections = 4 | port_utilization = 4 / 28233 = 0.014% ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 6.1: Calculate available ports remaining at t=15s: 28233 - (15 × 1000) = [FILL]
 User exercise 6.2: Compute memory consumed by 60,000 struct sock (each 704 bytes): 60000 × 704 = [FILL]B = [FILL]MB
 
@@ -120,17 +186,28 @@ User exercise 6.2: Compute memory consumed by 60,000 struct sock (each 704 bytes
 | Condition: `work_queue.size > 0` | Consumers: C₁, C₂, C₃ | Producer: P                |
 +---------------------------------------------------------------------------------------+
 State: C₁, C₂, C₃ sleeping inside `pthread_cond_wait(&cv, &mutex)`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Producer P: pushes 1 task → `pthread_cond_signal(&cv)` → OS wakes C₁
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Flawed assumption: programmer writes `if (work_queue.empty()) wait()` (assumes C₁ has exclusive ownership immediately upon wake)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Reality: C₁ unparks, but must compete for `mutex` with P and other threads!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Trace:
 time₀: P wakes C₁ → P retains mutex for another 5µs
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 time₁: C₂ (running on another core) calls `pthread_mutex_lock(&mutex)` → acquires mutex before C₁!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 time₂: C₂ pops task → queue size becomes 0 → C₂ releases mutex
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 time₃: C₁ finally acquires mutex → resumes execution after `if` check without re-verifying queue!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 time₄: C₁ executes `work_queue.pop_front()` on EMPTY queue → NULL pointer dereference / crash! ✗
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Axiom: Butenhof Invariant: condition MUST ALWAYS be evaluated in a `while` loop:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `while (work_queue.empty()) { pthread_cond_wait(&cv, &mutex); }` ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 7.1: Verify queue size at time₄: size = [FILL]
 User exercise 7.2: If 3 threads wake up on broadcast, but queue has 1 item, calculate number of threads that loop back to wait: [FILL]
 
@@ -140,17 +217,29 @@ User exercise 7.2: If 3 threads wake up on broadcast, but queue has 1 item, calc
 | Class Memory Layout at 0x800000: [Thread: 0x800000] [Mutex: 0x800028] [Flag: 0x800050]|
 +---------------------------------------------------------------------------------------+
 Class definition order in C++ header:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 `pthread_t worker_thread;` (offset 0x00)
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 `pthread_mutex_t lock;`    (offset 0x28)
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 `bool is_running;`         (offset 0x50)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 C++ standard rule: class members initialized in ORDER OF DECLARATION, NOT initializer list!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Constructor executes: `worker_thread(pthread_create(&worker_thread, NULL, run, this))`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 OS immediately schedules `worker_thread`: runs function `run()`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Worker executes: `pthread_mutex_lock(&lock)` at address 0x800028
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Address 0x800028 contains uninitialized heap garbage: `lock.__data.__lock = 0xCDCDCDCD`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Result: `pthread_mutex_lock` returns EINVAL (22) or crashes with memory fault ✗
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Axiom: synchronization primitives MUST be declared BEFORE threads:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 order: (1) `is_running`, (2) `lock`, (3) `worker_thread` (thread launched ONLY when all invariants ready) ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 8.1: State byte offset of member 2 if member 1 is 40 bytes: 0x800000 + 40 = 0x[FILL]
 User exercise 8.2: Identify uninitialized field value: 0x[FILL]
 
@@ -160,15 +249,25 @@ User exercise 8.2: Identify uninitialized field value: 0x[FILL]
 | Consumer Thread T_c | Producer Thread T_p                                             |
 +---------------------------------------------------------------------------------------+
 Consumer T_c prepares to wait: calls `unlock_mutex_and_wait()`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Internal sequence of flawed CV implementation:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Step 9.1: T_c unlocks user mutex at time 100ns
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Step 9.2: CONTEXT SWITCH! T_c preempted BEFORE registering itself into kernel waiter list!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Step 9.3: Producer T_p acquires mutex at 105ns → inserts order 9001 → calls `cond_signal()` at 110ns
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Kernel executes signal: waiter list at 0x100080 is EMPTY (T_c not registered yet!) → signal discarded!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Step 9.4: T_p releases mutex at 115ns
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Step 9.5: T_c resumes at 120ns → registers in waiter list → enters sleep
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Deadlock: T_p assumes T_c is notified; T_c sleeps forever waiting for notification that already happened! ✗
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Axiom: atomic unlock-and-wait: POSIX `pthread_cond_wait` atomically places calling thread on wait queue and releases mutex inside kernel space ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 9.1: Compute window of vulnerability in nanoseconds: 120ns - 100ns = [FILL]ns
 User exercise 9.2: Verify count of active waiters when signal called at 110ns: count = [FILL]
 
@@ -180,14 +279,23 @@ User exercise 9.2: Verify count of active waiters when signal called at 110ns: c
 | Page 1 layout: Event 30 (16B), Event 40 (16B)                                         |
 +---------------------------------------------------------------------------------------+
 Reader at Page 0: reads Event 10, then Event 20 → current_offset = 0x300020
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Next record has type = `RINGBUF_TYPE_PADDING` (indicates remainder of page is padding)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Kernel helper 1 `rb_advance_reader()`: encounters padding → advances read pointer to next page: `Page 1 at 0x301000`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Bug in commit logic: enclosing loop caller ALSO executes unconditional advance: `rb_advance_iter()`:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Reader pointer incremented AGAIN: from 0x301000 (Event 30) → 0x301010 (Event 40)!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Event 30 is silently skipped!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 returned_sequence: [10, 20, 40] | expected_sequence: [10, 20, 30, 40] | missing = {30} ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: Steven Rostedt patch: when padding advances page pointer, return immediately without secondary step:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `if (type == RINGBUF_TYPE_PADDING) { rb_advance_page(reader); return rb_peek(reader); }` ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 10.1: Calculate total bytes consumed on Page 0 before padding: 16 + 16 = [FILL]B
 User exercise 10.2: Compute size of padding to 4096-byte boundary: 4096 - 32 = [FILL]B
 
@@ -196,15 +304,26 @@ User exercise 10.2: Compute size of padding to 4096-byte boundary: 4096 - 32 = [
 | RING BUFFER RESET CORRUPTS ACTIVE IN-FLIGHT WRITE (LKML 2009)                         |
 | Producer Thread P at 0x300000 | Administrative Thread A                               |
 +---------------------------------------------------------------------------------------+
+FACT-CHECK 2026-10-22: The September 2009 patches forbid specific active-commit operations; the illustrated corruption bytes are not a recorded kernel trace.
+FOLLOW-UP: DRAW the first change in the preceding boxed scenario.
 time₀ = 0ns: Producer P calls `ring_buffer_lock_reserve(16B)` → returns slot at 0x300040 | `committing = 1`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₁ = 10ns: P begins writing payload into 0x300040: writes first 8 bytes
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₂ = 12ns: Admin thread A calls `ring_buffer_reset()`:
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Flawed reset implementation resets `head = 0`, `tail = 0`, `write = 0` WITHOUT checking `committing` counter!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₃ = 15ns: Second producer P₂ calls `reserve(16B)` → allocated slot 0 (0x300000)!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₄ = 18ns: P continues writing second 8 bytes of original message into 0x300048 → overwrites P₂ memory!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Data corruption: partial write interleaved with new packet header ✗
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Axiom: `ring_buffer_reset()` must verify:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 `if (atomic_read(&buffer->committing) > 0) return -EBUSY;` ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 11.1: Calculate active reservations when P₁ and P₂ both hold slots: committing = [FILL]
 User exercise 11.2: State error code returned if committing > 0: [FILL]
 
@@ -213,12 +332,20 @@ User exercise 11.2: State error code returned if committing > 0: [FILL]
 | RING BUFFER CONCURRENT BUFFER SWAP ROUTING CORRUPTION (LKML 2009)                     |
 | Buffer A at 0x300000 | Buffer B at 0x310000 | Writer Thread W | Swapper Thread S      |
 +---------------------------------------------------------------------------------------+
+FACT-CHECK 2026-10-22: The September 2009 patches forbid specific active-commit operations; the illustrated corruption bytes are not a recorded kernel trace.
+FOLLOW-UP: DRAW the first change in the preceding boxed scenario.
 Writer W begins reserve on Buffer A: acquires pointer to Buffer A
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Swapper S executes: `swap(cpu_buffer->active_buffer, cpu_buffer->spare_buffer)` (Buffer A swapped with Buffer B)
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Writer W completes reservation: commits 64 bytes to Buffer A while Buffer A is now being read/freed by consumer!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Consumer reads corrupted/incomplete header; writer updates write pointer on decommissioned buffer
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Axiom: double check committing status before and after swap:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 atomic test-and-set `buffer->is_swapping = 1` ∧ synchronize with RCU/barrier before finalizing pointer swap ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 12.1: Track active buffer pointer: 0x300000 → 0x[FILL]
 User exercise 12.2: Compute memory delta between Buffer A and Buffer B: 0x310000 - 0x300000 = [FILL]B
 
@@ -229,16 +356,27 @@ User exercise 12.2: Compute memory delta between Buffer A and Buffer B: 0x310000
 +---------------------------------------------------------------------------------------+
 Trace sequence:
 Record 1: Insert 32B (Valid)   → entries_counter: 0 → 1
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Record 2: Insert 32B (Discard) → writer calls `ring_buffer_discard_commit()` → entries_counter NOT decremented!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Record 3: Insert 32B (Valid)   → entries_counter: 1 → 2 (actually 3 total written)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Record 4: Insert 32B (Discard) → writer calls discard → entries_counter untouched
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Record 5: Insert 32B (Valid)   → entries_counter: 2 → 3
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Padding record appended at page boundary: padding flag sets entries_counter: 3 → 4!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Application audit: reads actual records from buffer = [Record 1, Record 3, Record 5] (count = 3)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Reported entries statistic via sysfs = 5 (or 4 with padding counted as market event)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 discrepancy: reported_stat = 5 ≠ actual_records = 3 | delta = +2 ghost records ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: event counters must decrement on discard and ignore padding:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `entries = total_committed - total_discarded - total_padding` ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 13.1: Calculate correct count: 5 - 2 = [FILL] records
 User exercise 13.2: Verify ghost record ratio: 5 / 3 = [FILL]× reported inflation
 
@@ -248,14 +386,23 @@ User exercise 13.2: Verify ghost record ratio: 5 / 3 = [FILL]× reported inflati
 | Inbound Logon: 35=A | 34=1 | 141=Y (ResetSeqNumFlag)                                  |
 +---------------------------------------------------------------------------------------+
 Step 14.1: Counterparty connects → sends Logon with `34=1, 141=Y`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Step 14.2: QuickFIX processes Logon → acknowledges reset → sends Logon response with `34=1`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Step 14.3: Application immediately triggers MarketDataRequest (35=V):
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 QuickFIX bug: `m_state.getNextSenderMsgSeqNum()` returned 1 instead of incrementing to 2!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Step 14.4: QuickFIX transmits MarketDataRequest with `34=1`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Counterparty receives second consecutive message with `34=1`:
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Validation rule: MsgSeqNum (1) <= ExpectedSeqNum (2) → Counterparty emits Reject / Logout:
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 `35=3 | 45=1 | 58=MsgSeqNum too low, expected 2 but received 1` → Session Terminated! ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: processing Logon with `141=Y` resets counter to 1, but sending Logon response MUST consume sequence 1 and advance nextSenderMsgSeqNum to 2 ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 14.1: State expected MsgSeqNum for MarketDataRequest: [FILL]
 User exercise 14.2: Calculate sequence delta: actual(1) - expected(2) = [FILL]
 
@@ -265,13 +412,21 @@ User exercise 14.2: Calculate sequence delta: actual(1) - expected(2) = [FILL]
 | 4 Worker Threads W₁..W₄ | Single CV at 0x100080 | 4 Distinct Mutexes M₁..M₄ at 0x1000A0..0x1000D0 |
 +---------------------------------------------------------------------------------------+
 Flawed architecture: W₁ calls `wait(CV, M₁)`; W₂ calls `wait(CV, M₂)`; W₃ calls `wait(CV, M₃)`; W₄ calls `wait(CV, M₄)`
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Producer P acquires M₁ → calls `pthread_cond_broadcast(&CV)`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 POSIX standard requirement: all threads waiting on CV are unparked and must acquire their associated mutex
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Hardware execution: Linux futex implementation associates wait queue with CV, but mutex serialization requires single lock
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Futex unparks W₁ (holding M₁), but W₂..W₄ encounter undefined futex requeue behavior or deadlock in glibc internal waiter accounting
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Observed result: only W₁ wakes up; W₂..W₄ remain permanently asleep
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 active_workers = 1 | expected_workers = 4 | worker_starvation = 3 ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: ALL threads waiting on the same condition variable MUST serialize under the EXACT SAME shared mutex `M_shared` ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 15.1: Calculate starved thread count: 4 - 1 = [FILL]
 User exercise 15.2: State required mutex count for 100 threads sharing 1 CV: [FILL] mutex
 
@@ -281,13 +436,21 @@ User exercise 15.2: State required mutex count for 100 threads sharing 1 CV: [FI
 | Thread A | Thread B | Alternate 10,000 passes via `tennis.cpp`                        |
 +---------------------------------------------------------------------------------------+
 Implementation flaw in pthreads-win32 (pre-2001): condition variables emulated via Windows Event objects (`CreateEvent`)
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 `pthread_cond_broadcast()` calls `SetEvent()` followed by `ResetEvent()`:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Race: Broadcast wakes Thread A → Thread A runs on Core 0, sets state, and calls `ResetEvent()` BEFORE Thread B on Core 1 unparks!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Thread B misses event pulse entirely → remains blocked indefinitely
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Deadlock: 2 threads freeze after pass 42 out of 10,000 passes
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 hang_iteration = 42 | target_iterations = 10000 | completion = 0.42% ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: generation counter + semaphore-based CV emulation (Pietrek / Butenhof algorithm):
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 broadcast increments generation counter; every waiter checks local generation before re-sleeping ✓
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 User exercise 16.1: Compute remaining unexecuted passes: 10000 - 42 = [FILL]
 User exercise 16.2: Calculate completion percentage: (42 / 10000) × 100 = [FILL]%
 
@@ -297,14 +460,23 @@ User exercise 16.2: Calculate completion percentage: (42 / 10000) × 100 = [FILL
 | 4 Fast Senders S₁..S₄ | 1 Slow Receiver R | Socket Queue at 0x400000: Max = 10 pkts   |
 +---------------------------------------------------------------------------------------+
 Receiver socket buffer contains 10 packets (QUEUE FULL)
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Sender S₁ calls `poll(POLLOUT)`:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Kernel bug in `datagram_poll()`: checks sender's local write space (which is empty) rather than destination peer's receive queue!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `poll()` returns `POLLOUT` (indicates writable!)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Sender S₁ wakes immediately → executes `sendto(dest_fd, pkt, 64, MSG_DONTWAIT)`
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Kernel `unix_dgram_sendmsg()` checks peer receive queue → queue full! → returns -1 with `errno = EAGAIN` (Resource temporarily unavailable)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Loop: S₁ immediately calls `poll()` → returns `POLLOUT` again → `send()` fails with `EAGAIN` again
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 CPU utilization = 100% in busy-spin livelock; 0 useful packets delivered; syscalls/sec = 1,200,000
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: `unix_dgram_poll()` must inspect destination socket buffer capacity before asserting `POLLOUT` ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 17.1: Calculate wasted syscalls in 5 seconds: 5 × 1,200,000 = [FILL] syscalls
 User exercise 17.2: Verify errno value for EAGAIN / EWOULDBLOCK: [FILL]
 
@@ -314,13 +486,21 @@ User exercise 17.2: Verify errno value for EAGAIN / EWOULDBLOCK: [FILL]
 | Ingress: 10,000 pps | Application Drain: 100 pps | Queue Capacity = 256 pkts          |
 +---------------------------------------------------------------------------------------+
 time = 1.0s: Ingress = 10,000 pkts | Drained = 100 pkts | Drop count = 10,000 - 100 = 9,900 pkts
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Kernel locking refactor bug: removed `atomic_inc(&sk->sk_drops)` from IPv4 UDP receive path
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Application reads socket options: `getsockopt(fd, SOL_SOCKET, SO_RXQ_OVFL, ...)` or parses `/proc/net/udp`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Reported Drop Counter at 0x400080 = 0!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Network monitor concludes: 0 packet drops (falsely diagnosed as application stall or silent network blackhole)
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 actual_drops = 9,900 | reported_drops = 0 | discrepancy = 9,900 missing errors ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: restore atomic increment in `udp_queue_rcv_skb()`:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 `kfree_skb(skb); atomic_inc(&sk->sk_drops);` ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 18.1: Compute drop rate percentage: (9900 / 10000) × 100 = [FILL]%
 User exercise 18.2: State actual socket drop count after 10 seconds: 10 × 9900 = [FILL] pkts
 
@@ -330,14 +510,23 @@ User exercise 18.2: State actual socket drop count after 10 seconds: 10 × 9900 
 | Socket Memory Quota: `sk->sk_rcvbuf` = 131,072B | Allocated = 131,072B (Quota Maxed)  |
 +---------------------------------------------------------------------------------------+
 Packet with invalid checksum arrives: size = 1024B | `sk_rmem_alloc` incremented: 131,072B
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 `udp_poll()` detects bad checksum → frees packet skb via `kfree_skb()`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Bug: `kfree_skb()` does NOT decrement `sk->sk_forward_alloc` / `sk->sk_rmem_alloc` without holding socket lock!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Memory leak in accounting counter: `sk_rmem_alloc` remains 131,072B even though packet was destroyed!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Next valid packet arrives: kernel checks `sk_rmem_alloc >= sk_rcvbuf` (131,072 >= 131,072 = TRUE)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Kernel drops all subsequent VALID packets due to false memory exhaustion!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 valid_packets_dropped = 100% | throughput = 0 pps ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: separate receive queue detachment from buffer accounting:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 `skb_consume_udp(sk, skb, len)` releases memory quota under socket lock synchronization ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 19.1: Calculate buffer capacity in 1024B packets: 131,072 / 1024 = [FILL] pkts
 User exercise 19.2: Verify state of sk_rmem_alloc after failed free: [FILL]B
 
@@ -347,12 +536,19 @@ User exercise 19.2: Verify state of sk_rmem_alloc after failed free: [FILL]B
 | Ingress Sequence: Packet 1 (drops=3), Packet 2 (drops=3), Packet 3 (drops=7)          |
 +---------------------------------------------------------------------------------------+
 Cumulative drop counter emitted via control message `SO_RXQ_OVFL`:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Observation 1 (Packet 1): cumulative_drops = 3
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Observation 2 (Packet 2): cumulative_drops = 3 → delta = 3 - 3 = 0 lost packets between P₁ and P₂ ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Observation 3 (Packet 3): cumulative_drops = 7 → delta = 7 - 3 = 4 lost packets between P₂ and P₃ ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Flawed consumer code: assumes counter in cmsg is DELTA instead of CUMULATIVE:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Consumer logs: 7 packets lost instead of 4 packets lost! (Error inflation = 7 - 4 = +3)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: `delta_drops = current_cmsg_drops - previous_cmsg_drops; previous_cmsg_drops = current_cmsg_drops;` ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 20.1: If Observation 4 reports cumulative_drops = 15, calculate packets lost since Observation 3: 15 - 7 = [FILL]
 User exercise 20.2: Compute total drops across all 4 observations: [FILL]
 
@@ -362,14 +558,27 @@ User exercise 20.2: Compute total drops across all 4 observations: [FILL]
 | TCP PCB at 0x500000: [MSS: 0] [RCV_WND: 0] [SND_WND: 0]                               |
 +---------------------------------------------------------------------------------------+
 Remote peer sends SYN with advertised window = 0
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Linux 2.0.x initialization calculation: `mss = min(remote_mss, snd_wnd) = min(1460, 0) = 0`
+FACT-CHECK 2026-10-22: This exact infinite-loop execution is not established by the cited 1997 mailing-list patch; classify the trace as a hypothetical reproduction until source confirms it.
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Application calls `send(fd, buffer, 1000)` → triggers `tcp_do_sendmsg()`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Kernel loop: `while (bytes_left > 0) { chunk = min(bytes_left, mss); ... }`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Division by zero / infinite loop: `chunk = min(1000, 0) = 0`
+FACT-CHECK 2026-10-22: This exact infinite-loop execution is not established by the cited 1997 mailing-list patch; classify the trace as a hypothetical reproduction until source confirms it.
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Pointer advances by 0 bytes: `bytes_left = 1000 - 0 = 1000` → loop spins 100% CPU forever!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Kernel hang in `tcp_do_sendmsg` ✗
+FACT-CHECK 2026-10-22: This exact infinite-loop execution is not established by the cited 1997 mailing-list patch; classify the trace as a hypothetical reproduction until source confirms it.
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Axiom: David S. Miller patch: clamp MSS to minimum floor (MSS >= 1) independent of transient advertised window:
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 `mss = max(1, min(remote_mss, snd_wnd_clamped));` when window=0, probe timer handles persist probe ✓
+FACT-CHECK 2026-10-22: This exact infinite-loop execution is not established by the cited 1997 mailing-list patch; classify the trace as a hypothetical reproduction until source confirms it.
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 21.1: Calculate iterations if chunk=0 and stop condition is bytes_left == 0: [FILL] (infinite)
 User exercise 21.2: Minimum standard TCP MSS floor: [FILL]B
 
@@ -379,14 +588,23 @@ User exercise 21.2: Minimum standard TCP MSS floor: [FILL]B
 | TCP Stream: FIN 1 at seq 1904 | FIN 2 at seq 1905 | Retransmit FIN at seq 1905        |
 +---------------------------------------------------------------------------------------+
 Linux 2.0.30 socket teardown: application calls `close()`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Kernel transmits FIN packet at seq 1904
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Bug in sequence number tracking: kernel increments `tp->snd_nxt` twice → transmits second FIN at seq 1905!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Peer receives seq 1904, then receives unexpected seq 1905 without data → Peer ACK remains at 1904
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Linux retransmits seq 1905 repeatedly using exponential backoff:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Retransmit intervals: 2s, 4s, 8s, 16s, 32s, 64s → Total elapsed time = 102 seconds!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Connection sits in FIN_WAIT_1 / LAST_ACK for 102 seconds before emitting RST!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 FIX gateway blocked from reconnecting: local address/port bound to zombie socket ✗
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Axiom: FIN occupies exactly 1 sequence number: `snd_nxt` increments exactly once upon FIN generation ✓
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 User exercise 22.1: Sum retransmission sequence: 2 + 4 + 8 + 16 + 32 + 64 = [FILL]s
 User exercise 22.2: Sequence delta between consecutive FINs: 1905 - 1904 = [FILL]
 
@@ -396,14 +614,23 @@ User exercise 22.2: Sequence delta between consecutive FINs: 1905 - 1904 = [FILL
 | 8 Worker Processes W₁..W₈ blocked on listener fd 3 in `select()` / `poll()`           |
 +---------------------------------------------------------------------------------------+
 Single inbound TCP connection arrives: SYN completes 3-way handshake → connection placed in listen backlog
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Kernel wakes ALL 8 processes registered on listener wait queue!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 8 CPUs context switch simultaneously:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Process W₁ executes `accept(3)` → succeeds, returns new client_fd 4
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Processes W₂..W₈ execute `accept(3)` → backlog is empty! → return -1 with `errno = EAGAIN` / `EWOULDBLOCK`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Performance metrics: wakeups = 8 | successful_accepts = 1 | wasted_wakeups = 7 = 87.5% waste
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 CPU overhead: 7 context switches + 7 cache invalidations + 7 page table switches = 7 × 1500ns = 10,500ns wasted ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: `EPOLLEXCLUSIVE` / `SO_REUSEPORT` kernel load balancing:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 kernel wakes EXACTLY ONE thread on connection arrival: wakeups = 1, accepts = 1, waste = 0% ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 23.1: Calculate wasted context switches for 64 workers: 64 - 1 = [FILL]
 User exercise 23.2: Compute percentage waste for 64 workers: (63 / 64) × 100 = [FILL]%
 
@@ -413,6 +640,7 @@ User exercise 23.2: Compute percentage waste for 64 workers: (63 / 64) × 100 = 
 | Input Traffic: 0 to 6000 pkts/sec | Interrupt Cost = 166.6µs per packet                |
 +---------------------------------------------------------------------------------------+
 Throughput transfer table:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 | Input Rate (pps) | Interrupt Load (% CPU) | Processing Time Remaining (% CPU) | Delivered Rate (pps) |
 | 1,000            | 1000 × 0.0001666 = 16.7%| 83.3%                             | 1,000                |
 | 2,000            | 2000 × 0.0001666 = 33.3%| 66.7%                             | 2,000                |
@@ -420,7 +648,9 @@ Throughput transfer table:
 | 5,000            | 5000 × 0.0001666 = 83.3%| 16.7%                             | 1,000 (Degradation)  |
 | 6,000            | 6000 × 0.0001666 = 100% | 0.0%                              | 0 (Complete Livelock)|
 At 6,000 pps: CPU spends 100% time taking IRQs and dropping packets because receive queue is full; delivered throughput = 0! ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: Polling with early packet drop at NIC ring buffer before kernel allocation (NAPI architecture) ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 24.1: If interrupt cost = 100µs, calculate input rate causing 100% CPU load: 1.0 / 0.000100 = [FILL] pps
 User exercise 24.2: State delivered packets at 6,000 pps in unmitigated interrupt mode: [FILL]
 
@@ -430,13 +660,21 @@ User exercise 24.2: State delivered packets at 6,000 pps in unmitigated interrup
 | Polling Batches: Batch₁ = 10 | Batch₂ = 100 | Batch₃ = Unlimited                      |
 +---------------------------------------------------------------------------------------+
 System switches to polling, but polling loop has no batch quota limit (`Batch₃ = Unlimited`):
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Loop: `while (nic_has_packets()) { process_rx_packet(); }`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Flood: Ingress rate = 1,000,000 pps → `nic_has_packets()` is ALWAYS TRUE!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Result: CPU executes RX loop continuously; TX (output) routine NEVER RUNS!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Order responses, FIX heartbeats, and ACKs starved in egress queue: client disconnects due to heartbeat timeout!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 transmitted_packets = 0 | output_starvation = 100% ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: Fair queue budgeting (Linux NAPI `budget = 64`):
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 process up to 64 RX packets → force yield CPU to TX processing and userspace matching engine ✓
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 User exercise 25.1: If budget = 64, and each packet takes 50ns, calculate maximum continuous RX time before yield: 64 × 50ns = [FILL]ns
 User exercise 25.2: Verify state of TX queue when RX runs unlimited: TX_throughput = [FILL] pps
 
@@ -446,15 +684,25 @@ User exercise 25.2: Verify state of TX queue when RX runs unlimited: TX_throughp
 | Senders: E0 (100 msgs), E1 (100 msgs) | Receiver: E2                                  |
 +---------------------------------------------------------------------------------------+
 Flawed scheduler / IPC selection algorithm:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `for (int env_id = 0; env_id < N_ENVS; env_id++) { if (has_message(env_id)) return env_id; }`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Scan starts at index 0 every iteration!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 E0 is located at index 0; E1 is located at index 1:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Iteration 1..100: `has_message(0)` is TRUE (E0 has messages) → E0 always chosen!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 E1 remains blocked at index 1 until E0 is completely exhausted
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Total latency for E1 = 100 × processing_time = 100 × 5µs = 500µs delay
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 If E0 generates continuous messages at line rate: E1 STARVES FOREVER (delivered messages for E1 = 0) ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: Round-robin fair scheduling with rotating scan head:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `int selected = (last_selected + 1) % N_ENVS; ... last_selected = selected;` ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 26.1: Calculate messages processed for E1 after 50 iterations with round-robin: [FILL]
 User exercise 26.2: Compute unfairness ratio with static index scan: 100 / 0 = [FILL] (infinite)
 
@@ -464,13 +712,21 @@ User exercise 26.2: Compute unfairness ratio with static index scan: 100 / 0 = [
 | Destination Buffer: `char argv0buf[1024]` at 0x7FFF0000 | Input Length = 1024 Bytes    |
 +---------------------------------------------------------------------------------------+
 Input command / symbol string: length = 1024 characters (without null terminator)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 C code execution: `strcpy(argv0buf, input_str)`
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `strcpy` copies 1024 bytes into `[0x7FFF0000 .. 0x7FFF03FF]`, then writes NULL byte (`\0`) at address `0x7FFF0400`!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Address 0x7FFF0400 contains saved frame pointer (`%rbp`) or return instruction pointer (`%rip`)!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Single-byte off-by-one null overwrite: saved `%rbp` lowest byte set to 0x00
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Function returns → `%rsp` corrupted → jumps to invalid address → Segmentation fault (SIGSEGV) / buffer overflow ✗
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Axiom: bounded copy with explicit terminator room:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `size_t len = strnlen(input, sizeof(argv0buf) - 1); memcpy(argv0buf, input, len); argv0buf[len] = '\0';` ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 27.1: Calculate maximum safe characters for 1024-byte buffer: 1024 - 1 = [FILL]
 User exercise 27.2: State destination address of 1025th byte: 0x7FFF0000 + 1024 = 0x[FILL]
 
@@ -480,14 +736,23 @@ User exercise 27.2: State destination address of 1025th byte: 0x7FFF0000 + 1024 
 | Parent Process PID 100: opens socket fd 4 at 0x200000 | Creates 1,000 Child Processes   |
 +---------------------------------------------------------------------------------------+
 Parent creates listening / market data socket: `fd = 4` without `O_CLOEXEC`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Parent forks 1,000 child strategy / worker processes: `fork()` clones file descriptor table
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Child processes inherit open reference to fd 4: ref_count(fd 4) = 1 + 1000 = 1001
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Parent calls `close(4)` to shut down feed:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Kernel decrements ref_count: 1001 - 1 = 1000 > 0!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Result: Socket remains OPEN and active in kernel! Network port 443 / 80 stays bound!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Parent attempts to re-bind port on restart → `bind()` returns -1 with `errno = EADDRINUSE` (Address already in use) ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: atomic close-on-exec flag:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 `int fd = open(path, O_RDWR | O_CLOEXEC);` or `fcntl(fd, F_SETFD, FD_CLOEXEC);` ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 28.1: State reference count after 50 children exit: 1000 - 50 = [FILL]
 User exercise 28.2: Verify errno code for EADDRINUSE: [FILL]
 
@@ -497,17 +762,29 @@ User exercise 28.2: Verify errno code for EADDRINUSE: [FILL]
 | Outgoing Message Log vs Persistent MessageStore at 0x200000                           |
 +---------------------------------------------------------------------------------------+
 Sequence: Application sends 3 Orders:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Msg 1 (Order A, Seq 101) → persisted in MessageStore
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Msg 2 (Order B, Seq 102) → written to text log, but NOT flushed to MessageStore (unpersisted memory mode)
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Msg 3 (Order C, Seq 103) → persisted in MessageStore
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Broker detects gap at 102 → sends `ResendRequest(Begin=102, End=102)`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 QuickFIX queries `MessageStore.find(102)`: returns NULL (record not found)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 QuickFIX default fallback: emits `SequenceReset-GapFill(35=4, MsgSeqNum=102, NewSeqNo=103)`!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Broker receives GapFill: assumes Order B was administrative / canceled
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Broker matching engine NEVER receives Order B; application believes Order B was sent
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 financial_loss: unhedged position = 100% ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: verify message store durability before confirming order dispatch; distinguish administrative vs unrecoverable error:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 throw critical exception rather than silently emitting GapFill for trade-critical application messages ✓
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 User exercise 29.1: Calculate new sequence number in GapFill: 102 + 1 = [FILL]
 User exercise 29.2: Verify message sequence numbers missing in broker engine: {[FILL]}
 
@@ -517,14 +794,23 @@ User exercise 29.2: Verify message sequence numbers missing in broker engine: {[
 | Session State at 0x200000: `Session::m_state = DISCONNECTED` (0)                      |
 +---------------------------------------------------------------------------------------+
 Inbound Packet: `35=D` (NewOrderSingle), `34=1` arrives before `35=A` (Logon)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Flawed order handler: decodes message body directly into Limit Order Book BEFORE validating session state
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Order Book inserts Order at 0x53A980 (Price=15000, Qty=100)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Subsequent session validation checks `validLogonState()`: fails!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 QuickFIX terminates connection: disconnects socket
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Corrupted state: unauthenticated, unverified order sits live inside Order Book!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Matching engine executes trade against zombie order from unauthenticated session! ✗
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Axiom: strict state machine gating:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `if (m_state != SESSION_LOGGED_IN) { reject_and_drop(msg); return; }` before invoking parser or order book ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 30.1: State valid session state integer: DISCONNECTED=0, LOGGED_IN=[FILL]
 User exercise 30.2: State FIX MsgType for Logon: 35=[FILL]
 
@@ -534,14 +820,23 @@ User exercise 30.2: State FIX MsgType for Logon: 35=[FILL]
 | Local Sender Seq: 200 | Broker Expected Seq: 300 | Gap = 100 messages                 |
 +---------------------------------------------------------------------------------------+
 Gateway connects: sends Logon (`35=A, 34=200`)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Broker inspects MsgSeqNum: expected 300 > received 200 → Broker immediately terminates connection with Logout:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `35=5 | 58=MsgSeqNum too low, expected 300 but received 200`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 QuickFIX reconnect logic runs after 5s: increments local sequence: `nextSenderMsgSeqNum: 200 → 201`
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Reconnect 2: sends Logon (`35=A, 34=201`) → Broker rejects again!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Iterations required to sync without manual reset: 300 - 200 = 100 reconnect attempts!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 At 5s per reconnect: total downtime = 100 × 5s = 500 seconds (8.33 minutes) ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: sequence reconciliation protocol:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 detect `MsgSeqNum too low` in Logout response → synchronize local state: `setNextSenderMsgSeqNum(300)` after verifying persisted stores ✓
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 User exercise 31.1: Calculate downtime if reconnect interval = 10s: 100 × 10s = [FILL]s
 User exercise 31.2: Compute sequence gap: 300 - 200 = [FILL]
 
@@ -552,15 +847,25 @@ User exercise 31.2: Compute sequence gap: 300 - 200 = [FILL]
 | Secondary Index: `Map[A] = 0`, `Map[B] = 1`, `Map[C] = 2`                             |
 +---------------------------------------------------------------------------------------+
 Action 1: Cancel Order B at Pos 1
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Fast deletion optimization: swap-and-pop: move last element (Order C at Pos 2) into vacated slot 1:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 `Storage[1] = Storage[2]` (Order C now at Pos 1) | `Storage.pop_back()` (size: 3 → 2)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Bug: developer forgets to update secondary index for Order C: `Map[C]` still equals 2!
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Action 2: Cancel Order C:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Application looks up Pos of Order C: `pos = Map[C] = 2`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Application accesses `Storage[2]`: index 2 is OUT OF BOUNDS or points to garbage memory!
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Memory access: reads unallocated memory at 0x800040 → Segmentation fault or corrupts new order! ✗
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Axiom: secondary index must be updated synchronously during swap:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `Storage[pos] = Storage.back(); Map[Storage[pos].id] = pos; Storage.pop_back(); Map.erase(deleted_id);` ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 32.1: State correct index for Order C after swap: Map[C] = [FILL]
 User exercise 32.2: Verify Storage size after 2 cancellations: 3 - 2 = [FILL]
 
@@ -570,16 +875,27 @@ User exercise 32.2: Verify Storage size after 2 cancellations: 3 - 2 = [FILL]
 | Position at 0x600000: 90 units | Risk Limit: 100 units | Max Allowed = 100 - 90 = 10  |
 +---------------------------------------------------------------------------------------+
 Thread 1 (Order Request 1): quantity = 8 units | Thread 2 (Order Request 2): quantity = 8 units
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₀ = 0ns: Thread 1 reads `current_pos = 90` at 0x600000
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₁ = 2ns: Thread 2 reads `current_pos = 90` at 0x600000
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₂ = 4ns: Thread 1 checks: `90 + 8 = 98 <= 100` (APPROVED)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₃ = 6ns: Thread 2 checks: `90 + 8 = 98 <= 100` (APPROVED)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₄ = 8ns: Thread 1 updates: `current_pos = 90 + 8 = 98`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 time₅ = 10ns: Thread 2 updates: `current_pos = 98 + 8 = 106`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Final Position = 106 units | Risk Limit = 100 units | Breach = 106 - 100 = 6 units over limit ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: atomic compare-and-swap reservation:
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 `int old_pos = pos.load(); while (old_pos + qty <= limit && !pos.compare_exchange_weak(old_pos, old_pos + qty));`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Thread 1 succeeds: 90 → 98; Thread 2 CAS fails on retry: 98 + 8 = 106 > 100 (REJECTED) ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 33.1: Calculate exposure overflow: 106 - 100 = [FILL] units
 User exercise 33.2: Verify final approved quantity with atomic CAS: [FILL] units
 
@@ -589,16 +905,27 @@ User exercise 33.2: Verify final approved quantity with atomic CAS: [FILL] units
 | Order A at 0x800000: total_qty = 100 | executed_qty = 0 | open_qty = 100              |
 +---------------------------------------------------------------------------------------+
 Step 34.1: Gateway receives ExecutionReport 1: `ExecID = E1001, CumQty = 30, LeavesQty = 70`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Engine updates Order A: `executed_qty: 0 → 30`, `open_qty: 100 → 70`
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 Step 34.2: Network connection drops → Gateway reconnects → requests replay
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Step 34.3: Broker replays identical ExecutionReport: `ExecID = E1001, CumQty = 30, LeavesQty = 70`
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Flawed engine logic: increments executed_qty using last fill: `executed_qty := executed_qty + 30 = 30 + 30 = 60`!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Result: `executed_qty = 60`, `open_qty = 100 - 60 = 40` (Shares double counted!)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Application believes 60 shares filled when actual market fill was only 30 shares!
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 financial_discrepancy = 30 phantom shares ✗
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 Axiom: idempotency via ExecutionID tracking:
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 `if (processed_exec_ids.contains(report.exec_id)) { drop_duplicate(report); return; }`
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 Or update directly from cumulative field: `executed_qty = report.cum_qty` (30 = 30, no duplicate addition) ✓
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 User exercise 34.1: Calculate phantom shares: 60 - 30 = [FILL]
 User exercise 34.2: Verify correct leaves quantity after deduplication: 100 - 30 = [FILL]
 
@@ -606,205 +933,376 @@ User exercise 34.2: Verify correct leaves quantity after deduplication: 100 - 30
 | 50. ALL FAILURE PREDICTIONS (DERIVED FROM HISTORICAL ARCHIVES 1995-2009)                                                                                           |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 F01: Continuous readers starve pending writers in reader-preference shared_mutex
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: Writer_Pending at 0x100040 ignored while Reader_Count > 0
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: writer wait <= 7.1µs
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - actual: writer wait = 760µs average, peak wait = 20 seconds
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - ✗ expected 7.1µs -> actual 20,000,000µs (2,800,000x latency stall)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F02: State bit race in Boost 1.33 rwlock causes 10-thread deadlock
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: active writer clears flag without waking CV wait queue
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: threads acquire lock sequentially in 1000 iterations
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - actual: 10 threads block permanently while mutex is unlocked
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - ✗ expected completion -> actual deadlock (watchdog abort)
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 
 F03: QuickFIX suppresses second resend request after initial gap recovery
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: Resend_Pending_Flag at 0x200010 not cleared after gap 1
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: ResendRequest emitted for missing message 216250
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: engine silently drops 16,251 messages and advances sequence
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected ResendRequest -> actual silent data loss
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F04: POSIX condition variable unfairness starves oldest waiting thread
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: newly unparked worker preempted by already running thread
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: FIFO task dispatch across Worker A and Worker B
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: Worker B handles 100 tasks while Worker A executes 0
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected fair share -> actual 100% starvation
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F05: TCP Karn's algorithm exponentially inflates RTO to 120 seconds
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: repeated packet loss doubles retransmission timer
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: market connection recovery in 50ms
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - actual: TCP retransmission pauses for 120 seconds
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected 50ms -> actual 120,000ms (2400x timeout stall)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 
 F06: Ephemeral port exhaustion from unmitigated TIME_WAIT socket churn
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: 1,000 conns/sec exhausts 28,233 port pool in 28 seconds
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: connect() succeeds
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: connect() returns EADDRNOTAVAIL (99) and kernel ehash livelock
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - ✗ expected connection -> actual EADDRNOTAVAIL
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F07: Thread wakeup on condition variable does not grant mutex ownership
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: consumer checks queue state with if() instead of while()
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: safe pop from queue
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: popped by competitor -> pop on empty queue -> SIGSEGV
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected valid element -> actual crash
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F08: C++ class member initialization order causes uninitialized mutex lock
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: thread declared before mutex in class declaration
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: worker thread starts with valid mutex
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - actual: pthread_mutex_lock called on 0xCDCDCDCD uninitialized memory
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - ✗ expected locked mutex -> actual EINVAL / memory crash
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 
 F09: Lost notification race during condition variable wait transition
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: producer signals after consumer unlocks mutex but before wait queue sleep
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: consumer notified of new order
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - actual: signal discarded -> consumer sleeps permanently
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected wake -> actual permanent deadlock
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 
 F10: Ring buffer double advance skips valid record at page boundary
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: padding handler advances page; outer loop advances again
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: read returns records [10, 20, 30, 40]
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: read returns records [10, 20, 40] (record 30 lost)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected record 30 -> actual skipped record
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F11: Ring buffer reset corrupts memory during active reservation
+FACT-CHECK 2026-10-22: The September 2009 patches forbid specific active-commit operations; the illustrated corruption bytes are not a recorded kernel trace.
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: reset clears pointers while committing counter > 0
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: reset fails with -EBUSY
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: pointers reset -> concurrent write overwrites next record
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected -EBUSY -> actual memory corruption
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F12: Concurrent ring buffer swap writes data into decommissioned buffer
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: buffer swap occurs while write reservation active
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: write rejected or committed to active buffer
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - actual: data committed to swapped buffer being read/freed
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - ✗ expected valid commit -> actual data corruption
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F13: Discarded events and padding inflate reported event statistics
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: discard and padding paths fail to adjust entry counters
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: reported events = 3
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - actual: reported events = 5
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - ✗ expected 3 -> actual 5 (ghost record inflation)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F14: QuickFIX sequence reset repeats sequence number 1
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: Logon response does not increment nextSenderMsgSeqNum to 2
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: next message uses MsgSeqNum = 2
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - actual: next message uses MsgSeqNum = 1 -> counterparty drops session
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - ✗ expected MsgSeqNum 2 -> actual MsgSeqNum 1 (session terminated)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F15: Broadcast on condition variable with mismatched mutexes wakes single thread
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: 4 threads wait on 1 CV using 4 distinct mutexes
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: all 4 workers wake
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: 1 worker wakes, 3 workers remain permanently asleep
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected 4 workers -> actual 1 worker (75% loss)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F16: Windows Event emulation of CV loses broadcast pulse
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: SetEvent followed by ResetEvent resets before second waiter unparks
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: alternate 10,000 passes
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: deadlock at pass 42
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - ✗ expected 10000 -> actual 42 (thread hang)
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 
 F17: Unix datagram socket poll reports POLLOUT when peer receive queue full
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: poll checks sender local space instead of destination buffer
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: poll blocks until receiver drains queue
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - actual: poll returns POLLOUT -> send returns EAGAIN -> 100% CPU livelock
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - ✗ expected sleep -> actual 100% CPU burn
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F18: UDP packet drops occur silently without sk_drops increment
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: kernel commit removed sk_drops accounting in UDP path
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: sk_drops increments by 9,900
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: sk_drops remains 0
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected 9900 -> actual 0 (silent loss)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F19: Bad UDP checksum cleanup corrupts socket memory accounting
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: kfree_skb fails to adjust sk_rmem_alloc under lock
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: buffer quota restored
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - actual: sk_rmem_alloc stays full -> all subsequent valid packets dropped
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - ✗ expected valid receive -> actual 100% packet drop
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 
 F20: Misinterpreting cumulative drop counter as delta drops
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: SO_RXQ_OVFL reports cumulative drop count (7) not interval (4)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: interval drops = 4
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - actual: application calculates drops = 7
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - ✗ expected 4 -> actual 7 (75% false error inflation)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F21: Advertised zero window sets TCP MSS to 0 causing infinite loop
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: MSS calculation unminimized: min(1460, 0) = 0
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - expected: transmission paused via persist timer
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: tcp_do_sendmsg loops on 0-byte chunk indefinitely
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected pause -> actual 100% CPU freeze
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F22: Duplicate FIN transmission causes 102-second connection teardown hang
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: sequence number incremented twice on FIN generation
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: clean teardown in 50ms
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - actual: FIN retransmitted with backoff for 102 seconds
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected 50ms -> actual 102,000ms (reconnect blocked)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 
 F23: Thundering herd on accept causes 87.5% wasted wakeups
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: kernel wakes all 8 listening processes for 1 connection
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: 1 process wakes
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: 8 wake, 1 succeeds, 7 fail with EAGAIN
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected 1 wakeup -> actual 8 wakeups (10,500ns CPU burn)
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 
 F24: Receive livelock degrades throughput to zero under traffic flood
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: 6000 pps consumes 100% CPU in interrupt service routine
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: 6000 pps processed
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: 0 pps delivered to application
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected 6000 pps -> actual 0 pps (total livelock)
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 
 F25: Unlimited polling starves transmit queue
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: while(has_rx()) processes receive without batch budget
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: bidirectional traffic flow
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: 0 TX packets transmitted -> heartbeat timeout disconnect
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - ✗ expected TX flow -> actual 0 TX (session drop)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F26: Static index scan starves higher-indexed message senders
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: loop always checks env 0 before env 1
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: fair alternating dispatch
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: env 0 sends 100 msgs while env 1 blocked
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - ✗ expected fairness -> actual 100% starvation
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F27: Unchecked string copy overflows stack by 1 null byte
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: strcpy into 1024-byte buffer writes null byte at index 1024
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: string copied safely
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: saved frame pointer overwritten with 0x00 -> SIGSEGV
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected safe copy -> actual SIGSEGV crash
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F28: File descriptor leaked across fork blocks port re-bind
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: parent forks 1000 children without O_CLOEXEC on socket
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: socket closes when parent exits
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - actual: socket held open by 1000 children -> EADDRINUSE on restart
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - ✗ expected port free -> actual EADDRINUSE
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F29: QuickFIX emits GapFill instead of replaying missing application order
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: unpersisted message missing from MessageStore
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: trade message replayed or error raised
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: GapFill emitted -> broker skips trade -> unhedged risk
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected trade replay -> actual silent trade skip
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F30: Order message processed before session Logon completed
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: gateway decodes order into matching engine before validLogonState check
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: order rejected before touching order book
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - actual: order placed in book -> session dropped -> ghost order left live
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - ✗ expected drop -> actual ghost order executed
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 
 F31: Sequence mismatch causes 100 consecutive reconnect failures
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: gateway increments sequence by 1 per attempt instead of resyncing
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: immediate sequence resynchronization
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: 100 failed reconnects over 500 seconds
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected immediate sync -> actual 500s outage
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F32: Swap-and-pop order cancellation leaves stale secondary index
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - breaks: last element moved to vacated slot without updating index map
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: secondary index references new position
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - actual: index references out-of-bounds slot -> memory fault
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected valid index -> actual out-of-bounds corruption
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F33: Concurrent risk checks approve cumulative exposure exceeding limit
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: non-atomic check-then-act on position counter
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - expected: 1 order approved, 1 order rejected
+FOLLOW-UP: DRAW: Record the initial state and the first described operation.
 - actual: both approved -> position reaches 106 (limit 100)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - ✗ expected limit 100 -> actual 106 (risk violation)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 
 F34: Replayed execution report double-counts filled shares
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - breaks: replayed report increments executed shares instead of setting cumulative
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
 - expected: executed shares = 30
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - actual: executed shares = 60
+FOLLOW-UP: CALCULATE: Recompute the first stated numerical relationship without using the printed result.
 - ✗ expected 30 -> actual 60 (phantom fill)
+FOLLOW-UP: VERIFY: Find one original observation that could disprove this assertion.
