@@ -1,0 +1,810 @@
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 00. ARCHIVAL PROTOCOL, CONCURRENCY, AND KERNEL MEMORY ADDRESS AXIOMS                                                                                               |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+addr(order_cache) = 0x100000 | addr(rw_lock) = 0x100040 | addr(cv_wait) = 0x100080 | addr(fix_session) = 0x200000 | addr(ring_buf) = 0x300000
+UDP_socket = 0x400000 | sk_drops_counter = 0x400080 | TCP_PCB = 0x500000 | risk_limits = 0x600000 | secondary_index = 0x700000
+time_unit = nanoseconds (ns) | 1 cycle = 0.333ns at 3.0GHz | page_size = 4096B = 0x1000B
+
+1.
++---------------------------------------------------------------------------------------+
+| BOOST SHARED_MUTEX WRITER STARVATION (BOOST MAILING LIST 2008)                        |
+| State at 0x100040: [Reader_Count: 4] [Writer_Pending: 1] [Writer_Active: 0]          |
+| Readers R₁..R₄ continuous loop: hold read lock for 10µs, sleep 0µs                    |
++---------------------------------------------------------------------------------------+
+time₀ = 0µs: R₁ acquires lock (Reader_Count: 0 → 1) | time₁ = 2µs: R₂ acquires lock (Reader_Count: 1 → 2)
+time₂ = 4µs: Writer W₁ calls lock() at 0x100040 → Writer_Pending: 0 → 1 → W₁ sleeps on wait queue
+time₃ = 10µs: R₁ releases lock (Reader_Count: 2 → 1) | R₃ arrives concurrently at 10µs → implementation checks Reader_Count > 0 → grants read lock to R₃! (Reader_Count: 1 → 2)
+time₄ = 12µs: R₂ releases lock (Reader_Count: 2 → 1) | R₄ arrives at 12µs → granted read lock! (Reader_Count: 1 → 2)
+invariant: Reader_Count never drops to 0 ∴ Writer_Pending remains 1 indefinitely
+measured_wait(W₁) = 760.0µs average, peak wait = 20,000,000µs (20.0s) | expected_wait(pthreads-win32 writer-priority) = 7.108µs
+ratio = 760.0 / 7.108 = 106.9× delay; peak ratio = 20,000,000 / 7.108 = 2,813,731× delay ✗
+Axiom: writer-preference rwlock: when Writer_Pending > 0, subsequent readers blocked; Reader_Count: 2 → 1 → 0 → W₁ acquires lock ✓
+User exercise 1.1: If each reader holds lock 5µs and 4 readers overlap by 2µs, compute time to 0 readers without writer-preference: [FILL]µs
+User exercise 1.2: Calculate writer throughput: 1000 orders / 760µs = [FILL] orders/s vs 1000 / 7.108µs = [FILL] orders/s
+
+2.
++---------------------------------------------------------------------------------------+
+| BOOST 1.33 READER/WRITER INTERNAL STATE DEADLOCK (AUGUST 2005)                        |
+| Lock State at 0x100040: [Mutex: UNLOCKED] [Waiters: 10] [Gate_Bit: 0]                |
++---------------------------------------------------------------------------------------+
+10 threads execute 1,000 iterations: lock_shared() → unlock_shared() ∧ lock() → unlock()
+Race condition in Boost 1.33 state machine: Writer thread releases internal spinlock before atomically clearing wait counter
+State transition: thread T₁ exits write section → clears active flag at 0x100040 → fails to signal condition variable before T₂ enters wait
+Memory inspection at hang: Active_Writer = 0x0 | Active_Readers = 0x0 | Semaphore_Count = 0 | Blocked_Threads = 10
+Thread State: 10 threads blocked in pthread_cond_wait / WaitForSingleObject while lock is completely free
+Watchdog timer: threshold = 5,000ms | observed_wait = ∞ → watchdog SIGABRT triggered at 5001ms ✗
+Axiom: state and wake notification must be coupled under same mutex invariant: `state = 0; cond_broadcast();` inside mutex boundary ✓
+User exercise 2.1: Track state variable across 3 transitions: UNLOCKED(0) → WRITE_LOCKED(1) → READ_LOCKED(2) at address 0x100040: [FILL]
+User exercise 2.2: Compute watchdog timeout cycles at 3.0GHz: 5.0s × 3,000,000,000 = [FILL] cycles
+
+3.
++---------------------------------------------------------------------------------------+
+| QUICKFIX SUPPRESSED RESEND REQUEST AFTER GAP RECOVERY (JANUARY 2006)                  |
+| Session State at 0x200000: [Expected_Seq: 197648] [Target_Seq: 216251]                |
++---------------------------------------------------------------------------------------+
+Inbound Gap 1: Inbound message has MsgSeqNum = 200000 | Expected = 197648 → Gap size = 200000 - 197648 = 2352 messages
+Engine sends: ResendRequest(BeginSeqNo=197648, EndSeqNo=199999) | Resend_Pending_Flag at 0x200010 = TRUE
+Counterparty replays messages 197648 .. 199999 → Engine updates Expected_Seq = 200000
+Inbound Gap 2: Next incoming message has MsgSeqNum = 216251 | Expected = 200000 → Gap size = 216251 - 200000 = 16251 messages
+Bug in QuickFIX state logic: `if (m_state.resendRequested()) return;`
+Flag Resend_Pending_Flag at 0x200010 was NOT cleared upon finishing Gap 1 replay!
+Result: Engine suppresses ResendRequest for missing message 200000 .. 216250
+Engine silently advances to 216251: 16,251 market trade/order execution messages dropped permanently ✗
+Axiom: `Resend_Pending_Flag := FALSE` immediately upon processing message where MsgSeqNum == EndSeqNo ✓
+User exercise 3.1: Calculate total messages lost: 216250 - 200000 + 1 = [FILL] messages
+User exercise 3.2: Verify expected sequence transition: 199999 + 1 = [FILL]
+
+4.
++---------------------------------------------------------------------------------------+
+| CONDITION VARIABLE UNFAIR SCHEDULING (COMP.PROGRAMMING.THREADS 1996)                  |
+| Wait Queue at 0x100080: [Head: Worker_A (entry_time=100ns)] → [Worker_B (entry_time=150ns)] |
++---------------------------------------------------------------------------------------+
+Producer pushes task → executes `pthread_cond_signal(&cv)` at time 200ns
+OS scheduler unparks Worker_A → Worker_A transitions from WAITING to RUNNABLE
+Race: Worker_B was already running on CPU 1 (just finished previous task, looped back to `pthread_mutex_lock`)
+Worker_B acquires mutex at time 210ns BEFORE Worker_A completes context switch from kernel
+Worker_B consumes task → releases mutex → loops back
+Producer pushes next task at time 250ns → signals CV → wakes Worker_A again or Worker_B grabs it directly!
+Pass count: Worker_B processed 100 consecutive tasks; Worker_A executed 0 tasks
+Worker_A wait time = 500,000ns | Worker_B wait time = 10ns | ratio = 50,000× unfairness ✗
+Axiom: POSIX CV signaling guarantees ONLY wakeup of at least 1 waiter; POSIX provides ZERO FIFO ordering guarantee
+Correct Pattern: application-level FIFO ticket lock or round-robin work queue index at 0x100090 ✓
+User exercise 4.1: If Worker_A context switch = 1500ns, and Worker_B loop = 80ns, calculate Worker_B iterations during A switch: 1500 / 80 = [FILL] (floor)
+User exercise 4.2: Verify remaining tickets: total=100, consumed_B=100, consumed_A=[FILL]
+
+5.
++---------------------------------------------------------------------------------------+
+| TCP RECOVERY TIME OUT INFLATION / KARN'S ALGORITHM STALL (MAY 1997)                   |
+| TCP Socket at 0x500000: [SRTT: 50ms] [RTO: 200ms] [Backoff_Count: 6]                 |
++---------------------------------------------------------------------------------------+
+Packet loss event at time 0.0s: packet 101 dropped by switch
+Retransmission 1 at time 0.200s (RTO = 200ms) → dropped again
+Karn's Exponential Backoff: RTO_{n+1} = min(RTO_n × 2, Max_RTO)
+RTO sequence:
+n=0: 200ms = 0.2s
+n=1: 400ms = 0.4s (cum = 0.6s)
+n=2: 800ms = 0.8s (cum = 1.4s)
+n=3: 1600ms = 1.6s (cum = 3.0s)
+n=4: 3200ms = 3.2s (cum = 6.2s)
+n=5: 6400ms = 6.4s (cum = 12.6s)
+n=6: 12800ms = 12.8s (cum = 25.4s)
+n=7: 25600ms = 25.6s (cum = 51.0s)
+n=8: 51200ms = 51.2s (cum = 102.2s)
+n=9: 102400ms = 102.4s (capped at 120.0s, cum = 222.2s)
+observed_recovery_latency = 120.0s | SLA budget = 50ms | inflation = 120.0 / 0.05 = 2400× timeout stall ✗
+Axiom: TCP Selective Acknowledgment (SACK, RFC 2018) + TCP QuickACK: prevents fallback to RTO timer on single packet drops ✓
+User exercise 5.1: Calculate cumulative time elapsed after backoff step n=4: 0.2 + 0.4 + 0.8 + 1.6 + 3.2 = [FILL]s
+User exercise 5.2: Calculate ratio of RTO_9 to RTO_0: 120,000ms / 200ms = [FILL]×
+
+6.
++---------------------------------------------------------------------------------------+
+| TIME_WAIT ACCUMULATION AND EPHEMERAL PORT EXHAUSTION (LKML 1999)                      |
+| Port Range: [32768 .. 61000] = 28,233 ports | TIME_WAIT duration = 2 × MSL = 60s     |
++---------------------------------------------------------------------------------------+
+Connection churn rate = 1,000 connections/second (short-lived FIX HTTP/TCP session per request)
+Socket state tracking: sockets_in_time_wait(t) = rate × duration = 1000 × 60 = 60,000 sockets
+available_ephemeral_ports = 28,233
+time to port exhaustion: t_exhaust = 28,233 / 1000 = 28.233 seconds
+At t = 29s: `connect()` returns -1 with errno = EADDRNOTAVAIL (99) ✗
+Secondary kernel degradation: 60,000 TCP sockets in hash table `tcp_hashinfo.ehash`
+Each packet ingress traverses hash bucket chains: lookup latency jumps from 15ns to 8500ns (566× slowdown)
+CPU utilization = 100% in `inet_lookup_established` softirq → system hangs ✗
+Axiom: persistent TCP sessions + `SO_REUSEADDR` + `tcp_tw_reuse = 1`:
+sockets_in_time_wait = 0 | active_connections = 4 | port_utilization = 4 / 28233 = 0.014% ✓
+User exercise 6.1: Calculate available ports remaining at t=15s: 28233 - (15 × 1000) = [FILL]
+User exercise 6.2: Compute memory consumed by 60,000 struct sock (each 704 bytes): 60000 × 704 = [FILL]B = [FILL]MB
+
+7.
++---------------------------------------------------------------------------------------+
+| MISCONCEPTION: CV SIGNAL TRANSFERS MUTEX OWNERSHIP (BUTENHOF 2001)                    |
+| Condition: `work_queue.size > 0` | Consumers: C₁, C₂, C₃ | Producer: P                |
++---------------------------------------------------------------------------------------+
+State: C₁, C₂, C₃ sleeping inside `pthread_cond_wait(&cv, &mutex)`
+Producer P: pushes 1 task → `pthread_cond_signal(&cv)` → OS wakes C₁
+Flawed assumption: programmer writes `if (work_queue.empty()) wait()` (assumes C₁ has exclusive ownership immediately upon wake)
+Reality: C₁ unparks, but must compete for `mutex` with P and other threads!
+Trace:
+time₀: P wakes C₁ → P retains mutex for another 5µs
+time₁: C₂ (running on another core) calls `pthread_mutex_lock(&mutex)` → acquires mutex before C₁!
+time₂: C₂ pops task → queue size becomes 0 → C₂ releases mutex
+time₃: C₁ finally acquires mutex → resumes execution after `if` check without re-verifying queue!
+time₄: C₁ executes `work_queue.pop_front()` on EMPTY queue → NULL pointer dereference / crash! ✗
+Axiom: Butenhof Invariant: condition MUST ALWAYS be evaluated in a `while` loop:
+`while (work_queue.empty()) { pthread_cond_wait(&cv, &mutex); }` ✓
+User exercise 7.1: Verify queue size at time₄: size = [FILL]
+User exercise 7.2: If 3 threads wake up on broadcast, but queue has 1 item, calculate number of threads that loop back to wait: [FILL]
+
+8.
++---------------------------------------------------------------------------------------+
+| MEMBER INITIALIZATION ORDER RACE CONDITION (BOOST 2004)                               |
+| Class Memory Layout at 0x800000: [Thread: 0x800000] [Mutex: 0x800028] [Flag: 0x800050]|
++---------------------------------------------------------------------------------------+
+Class definition order in C++ header:
+`pthread_t worker_thread;` (offset 0x00)
+`pthread_mutex_t lock;`    (offset 0x28)
+`bool is_running;`         (offset 0x50)
+C++ standard rule: class members initialized in ORDER OF DECLARATION, NOT initializer list!
+Constructor executes: `worker_thread(pthread_create(&worker_thread, NULL, run, this))`
+OS immediately schedules `worker_thread`: runs function `run()`
+Worker executes: `pthread_mutex_lock(&lock)` at address 0x800028
+Address 0x800028 contains uninitialized heap garbage: `lock.__data.__lock = 0xCDCDCDCD`
+Result: `pthread_mutex_lock` returns EINVAL (22) or crashes with memory fault ✗
+Axiom: synchronization primitives MUST be declared BEFORE threads:
+order: (1) `is_running`, (2) `lock`, (3) `worker_thread` (thread launched ONLY when all invariants ready) ✓
+User exercise 8.1: State byte offset of member 2 if member 1 is 40 bytes: 0x800000 + 40 = 0x[FILL]
+User exercise 8.2: Identify uninitialized field value: 0x[FILL]
+
+9.
++---------------------------------------------------------------------------------------+
+| LOST NOTIFICATION IN CV WAIT TRANSITION RACE (BOOST 2005-2006)                        |
+| Consumer Thread T_c | Producer Thread T_p                                             |
++---------------------------------------------------------------------------------------+
+Consumer T_c prepares to wait: calls `unlock_mutex_and_wait()`
+Internal sequence of flawed CV implementation:
+Step 9.1: T_c unlocks user mutex at time 100ns
+Step 9.2: CONTEXT SWITCH! T_c preempted BEFORE registering itself into kernel waiter list!
+Step 9.3: Producer T_p acquires mutex at 105ns → inserts order 9001 → calls `cond_signal()` at 110ns
+Kernel executes signal: waiter list at 0x100080 is EMPTY (T_c not registered yet!) → signal discarded!
+Step 9.4: T_p releases mutex at 115ns
+Step 9.5: T_c resumes at 120ns → registers in waiter list → enters sleep
+Deadlock: T_p assumes T_c is notified; T_c sleeps forever waiting for notification that already happened! ✗
+Axiom: atomic unlock-and-wait: POSIX `pthread_cond_wait` atomically places calling thread on wait queue and releases mutex inside kernel space ✓
+User exercise 9.1: Compute window of vulnerability in nanoseconds: 120ns - 100ns = [FILL]ns
+User exercise 9.2: Verify count of active waiters when signal called at 110ns: count = [FILL]
+
+10.
++---------------------------------------------------------------------------------------+
+| KERNEL RING BUFFER SILENT EVENT SKIP AT PAGE BOUNDARY (ROSTEDT LKML 2009)             |
+| Page Size = 4096B | Page 0: [0x300000..0x300FFF] | Page 1: [0x301000..0x301FFF]       |
+| Page 0 layout: Event 10 (16B), Event 20 (16B), Padding (4064B to end of page)         |
+| Page 1 layout: Event 30 (16B), Event 40 (16B)                                         |
++---------------------------------------------------------------------------------------+
+Reader at Page 0: reads Event 10, then Event 20 → current_offset = 0x300020
+Next record has type = `RINGBUF_TYPE_PADDING` (indicates remainder of page is padding)
+Kernel helper 1 `rb_advance_reader()`: encounters padding → advances read pointer to next page: `Page 1 at 0x301000`
+Bug in commit logic: enclosing loop caller ALSO executes unconditional advance: `rb_advance_iter()`:
+Reader pointer incremented AGAIN: from 0x301000 (Event 30) → 0x301010 (Event 40)!
+Event 30 is silently skipped!
+returned_sequence: [10, 20, 40] | expected_sequence: [10, 20, 30, 40] | missing = {30} ✗
+Axiom: Steven Rostedt patch: when padding advances page pointer, return immediately without secondary step:
+`if (type == RINGBUF_TYPE_PADDING) { rb_advance_page(reader); return rb_peek(reader); }` ✓
+User exercise 10.1: Calculate total bytes consumed on Page 0 before padding: 16 + 16 = [FILL]B
+User exercise 10.2: Compute size of padding to 4096-byte boundary: 4096 - 32 = [FILL]B
+
+11.
++---------------------------------------------------------------------------------------+
+| RING BUFFER RESET CORRUPTS ACTIVE IN-FLIGHT WRITE (LKML 2009)                         |
+| Producer Thread P at 0x300000 | Administrative Thread A                               |
++---------------------------------------------------------------------------------------+
+time₀ = 0ns: Producer P calls `ring_buffer_lock_reserve(16B)` → returns slot at 0x300040 | `committing = 1`
+time₁ = 10ns: P begins writing payload into 0x300040: writes first 8 bytes
+time₂ = 12ns: Admin thread A calls `ring_buffer_reset()`:
+Flawed reset implementation resets `head = 0`, `tail = 0`, `write = 0` WITHOUT checking `committing` counter!
+time₃ = 15ns: Second producer P₂ calls `reserve(16B)` → allocated slot 0 (0x300000)!
+time₄ = 18ns: P continues writing second 8 bytes of original message into 0x300048 → overwrites P₂ memory!
+Data corruption: partial write interleaved with new packet header ✗
+Axiom: `ring_buffer_reset()` must verify:
+`if (atomic_read(&buffer->committing) > 0) return -EBUSY;` ✓
+User exercise 11.1: Calculate active reservations when P₁ and P₂ both hold slots: committing = [FILL]
+User exercise 11.2: State error code returned if committing > 0: [FILL]
+
+12.
++---------------------------------------------------------------------------------------+
+| RING BUFFER CONCURRENT BUFFER SWAP ROUTING CORRUPTION (LKML 2009)                     |
+| Buffer A at 0x300000 | Buffer B at 0x310000 | Writer Thread W | Swapper Thread S      |
++---------------------------------------------------------------------------------------+
+Writer W begins reserve on Buffer A: acquires pointer to Buffer A
+Swapper S executes: `swap(cpu_buffer->active_buffer, cpu_buffer->spare_buffer)` (Buffer A swapped with Buffer B)
+Writer W completes reservation: commits 64 bytes to Buffer A while Buffer A is now being read/freed by consumer!
+Consumer reads corrupted/incomplete header; writer updates write pointer on decommissioned buffer
+Axiom: double check committing status before and after swap:
+atomic test-and-set `buffer->is_swapping = 1` ∧ synchronize with RCU/barrier before finalizing pointer swap ✓
+User exercise 12.1: Track active buffer pointer: 0x300000 → 0x[FILL]
+User exercise 12.2: Compute memory delta between Buffer A and Buffer B: 0x310000 - 0x300000 = [FILL]B
+
+13.
++---------------------------------------------------------------------------------------+
+| EVENT STATISTICS DESYNCHRONIZATION FROM DISCARDED RECORDS (LKML 2009)                 |
+| Total Inserted: 5 | Discarded: 2 | Valid Remaining: 3 | Internal Padding: 1           |
++---------------------------------------------------------------------------------------+
+Trace sequence:
+Record 1: Insert 32B (Valid)   → entries_counter: 0 → 1
+Record 2: Insert 32B (Discard) → writer calls `ring_buffer_discard_commit()` → entries_counter NOT decremented!
+Record 3: Insert 32B (Valid)   → entries_counter: 1 → 2 (actually 3 total written)
+Record 4: Insert 32B (Discard) → writer calls discard → entries_counter untouched
+Record 5: Insert 32B (Valid)   → entries_counter: 2 → 3
+Padding record appended at page boundary: padding flag sets entries_counter: 3 → 4!
+Application audit: reads actual records from buffer = [Record 1, Record 3, Record 5] (count = 3)
+Reported entries statistic via sysfs = 5 (or 4 with padding counted as market event)
+discrepancy: reported_stat = 5 ≠ actual_records = 3 | delta = +2 ghost records ✗
+Axiom: event counters must decrement on discard and ignore padding:
+`entries = total_committed - total_discarded - total_padding` ✓
+User exercise 13.1: Calculate correct count: 5 - 2 = [FILL] records
+User exercise 13.2: Verify ghost record ratio: 5 / 3 = [FILL]× reported inflation
+
+14.
++---------------------------------------------------------------------------------------+
+| QUICKFIX SEQUENCE RESET REPEATS SEQUENCE NUMBER 1 (JUNE 2005)                         |
+| Inbound Logon: 35=A | 34=1 | 141=Y (ResetSeqNumFlag)                                  |
++---------------------------------------------------------------------------------------+
+Step 14.1: Counterparty connects → sends Logon with `34=1, 141=Y`
+Step 14.2: QuickFIX processes Logon → acknowledges reset → sends Logon response with `34=1`
+Step 14.3: Application immediately triggers MarketDataRequest (35=V):
+QuickFIX bug: `m_state.getNextSenderMsgSeqNum()` returned 1 instead of incrementing to 2!
+Step 14.4: QuickFIX transmits MarketDataRequest with `34=1`
+Counterparty receives second consecutive message with `34=1`:
+Validation rule: MsgSeqNum (1) <= ExpectedSeqNum (2) → Counterparty emits Reject / Logout:
+`35=3 | 45=1 | 58=MsgSeqNum too low, expected 2 but received 1` → Session Terminated! ✗
+Axiom: processing Logon with `141=Y` resets counter to 1, but sending Logon response MUST consume sequence 1 and advance nextSenderMsgSeqNum to 2 ✓
+User exercise 14.1: State expected MsgSeqNum for MarketDataRequest: [FILL]
+User exercise 14.2: Calculate sequence delta: actual(1) - expected(2) = [FILL]
+
+15.
++---------------------------------------------------------------------------------------+
+| PTHREAD_COND_BROADCAST WITH MISMATCHED MUTEXES (AUGUST 2008)                          |
+| 4 Worker Threads W₁..W₄ | Single CV at 0x100080 | 4 Distinct Mutexes M₁..M₄ at 0x1000A0..0x1000D0 |
++---------------------------------------------------------------------------------------+
+Flawed architecture: W₁ calls `wait(CV, M₁)`; W₂ calls `wait(CV, M₂)`; W₃ calls `wait(CV, M₃)`; W₄ calls `wait(CV, M₄)`
+Producer P acquires M₁ → calls `pthread_cond_broadcast(&CV)`
+POSIX standard requirement: all threads waiting on CV are unparked and must acquire their associated mutex
+Hardware execution: Linux futex implementation associates wait queue with CV, but mutex serialization requires single lock
+Futex unparks W₁ (holding M₁), but W₂..W₄ encounter undefined futex requeue behavior or deadlock in glibc internal waiter accounting
+Observed result: only W₁ wakes up; W₂..W₄ remain permanently asleep
+active_workers = 1 | expected_workers = 4 | worker_starvation = 3 ✗
+Axiom: ALL threads waiting on the same condition variable MUST serialize under the EXACT SAME shared mutex `M_shared` ✓
+User exercise 15.1: Calculate starved thread count: 4 - 1 = [FILL]
+User exercise 15.2: State required mutex count for 100 threads sharing 1 CV: [FILL] mutex
+
+16.
++---------------------------------------------------------------------------------------+
+| WINDOWS PTHREADS-WIN32 LOST SIGNALS / OVERLAPPING BROADCAST DEADLOCK (TENNIS.CPP 2001)|
+| Thread A | Thread B | Alternate 10,000 passes via `tennis.cpp`                        |
++---------------------------------------------------------------------------------------+
+Implementation flaw in pthreads-win32 (pre-2001): condition variables emulated via Windows Event objects (`CreateEvent`)
+`pthread_cond_broadcast()` calls `SetEvent()` followed by `ResetEvent()`:
+Race: Broadcast wakes Thread A → Thread A runs on Core 0, sets state, and calls `ResetEvent()` BEFORE Thread B on Core 1 unparks!
+Thread B misses event pulse entirely → remains blocked indefinitely
+Deadlock: 2 threads freeze after pass 42 out of 10,000 passes
+hang_iteration = 42 | target_iterations = 10000 | completion = 0.42% ✗
+Axiom: generation counter + semaphore-based CV emulation (Pietrek / Butenhof algorithm):
+broadcast increments generation counter; every waiter checks local generation before re-sleeping ✓
+User exercise 16.1: Compute remaining unexecuted passes: 10000 - 42 = [FILL]
+User exercise 16.2: Calculate completion percentage: (42 / 10000) × 100 = [FILL]%
+
+17.
++---------------------------------------------------------------------------------------+
+| POLL() REPORTS WRITABLE BUT SEND() RETURNS EAGAIN (UNIX DGRAM LKML 2008)              |
+| 4 Fast Senders S₁..S₄ | 1 Slow Receiver R | Socket Queue at 0x400000: Max = 10 pkts   |
++---------------------------------------------------------------------------------------+
+Receiver socket buffer contains 10 packets (QUEUE FULL)
+Sender S₁ calls `poll(POLLOUT)`:
+Kernel bug in `datagram_poll()`: checks sender's local write space (which is empty) rather than destination peer's receive queue!
+`poll()` returns `POLLOUT` (indicates writable!)
+Sender S₁ wakes immediately → executes `sendto(dest_fd, pkt, 64, MSG_DONTWAIT)`
+Kernel `unix_dgram_sendmsg()` checks peer receive queue → queue full! → returns -1 with `errno = EAGAIN` (Resource temporarily unavailable)
+Loop: S₁ immediately calls `poll()` → returns `POLLOUT` again → `send()` fails with `EAGAIN` again
+CPU utilization = 100% in busy-spin livelock; 0 useful packets delivered; syscalls/sec = 1,200,000
+Axiom: `unix_dgram_poll()` must inspect destination socket buffer capacity before asserting `POLLOUT` ✓
+User exercise 17.1: Calculate wasted syscalls in 5 seconds: 5 × 1,200,000 = [FILL] syscalls
+User exercise 17.2: Verify errno value for EAGAIN / EWOULDBLOCK: [FILL]
+
+18.
++---------------------------------------------------------------------------------------+
+| UDP PACKET DROPS WITHOUT SK_DROPS COUNTER INCREMENT (ERIC DUMAZET LKML 2009)          |
+| Ingress: 10,000 pps | Application Drain: 100 pps | Queue Capacity = 256 pkts          |
++---------------------------------------------------------------------------------------+
+time = 1.0s: Ingress = 10,000 pkts | Drained = 100 pkts | Drop count = 10,000 - 100 = 9,900 pkts
+Kernel locking refactor bug: removed `atomic_inc(&sk->sk_drops)` from IPv4 UDP receive path
+Application reads socket options: `getsockopt(fd, SOL_SOCKET, SO_RXQ_OVFL, ...)` or parses `/proc/net/udp`
+Reported Drop Counter at 0x400080 = 0!
+Network monitor concludes: 0 packet drops (falsely diagnosed as application stall or silent network blackhole)
+actual_drops = 9,900 | reported_drops = 0 | discrepancy = 9,900 missing errors ✗
+Axiom: restore atomic increment in `udp_queue_rcv_skb()`:
+`kfree_skb(skb); atomic_inc(&sk->sk_drops);` ✓
+User exercise 18.1: Compute drop rate percentage: (9900 / 10000) × 100 = [FILL]%
+User exercise 18.2: State actual socket drop count after 10 seconds: 10 × 9900 = [FILL] pkts
+
+19.
++---------------------------------------------------------------------------------------+
+| UDP CHECKSUM DISCARD CORRUPTS SOCKET MEMORY ACCOUNTING (LKML OCTOBER 2009)            |
+| Socket Memory Quota: `sk->sk_rcvbuf` = 131,072B | Allocated = 131,072B (Quota Maxed)  |
++---------------------------------------------------------------------------------------+
+Packet with invalid checksum arrives: size = 1024B | `sk_rmem_alloc` incremented: 131,072B
+`udp_poll()` detects bad checksum → frees packet skb via `kfree_skb()`
+Bug: `kfree_skb()` does NOT decrement `sk->sk_forward_alloc` / `sk->sk_rmem_alloc` without holding socket lock!
+Memory leak in accounting counter: `sk_rmem_alloc` remains 131,072B even though packet was destroyed!
+Next valid packet arrives: kernel checks `sk_rmem_alloc >= sk_rcvbuf` (131,072 >= 131,072 = TRUE)
+Kernel drops all subsequent VALID packets due to false memory exhaustion!
+valid_packets_dropped = 100% | throughput = 0 pps ✗
+Axiom: separate receive queue detachment from buffer accounting:
+`skb_consume_udp(sk, skb, len)` releases memory quota under socket lock synchronization ✓
+User exercise 19.1: Calculate buffer capacity in 1024B packets: 131,072 / 1024 = [FILL] pkts
+User exercise 19.2: Verify state of sk_rmem_alloc after failed free: [FILL]B
+
+20.
++---------------------------------------------------------------------------------------+
+| INVISIBLE SOCKET RECEIVE QUEUE OVERFLOW / SO_RXQ_OVFL (NEIL HORMAN NETDEV 2009)       |
+| Ingress Sequence: Packet 1 (drops=3), Packet 2 (drops=3), Packet 3 (drops=7)          |
++---------------------------------------------------------------------------------------+
+Cumulative drop counter emitted via control message `SO_RXQ_OVFL`:
+Observation 1 (Packet 1): cumulative_drops = 3
+Observation 2 (Packet 2): cumulative_drops = 3 → delta = 3 - 3 = 0 lost packets between P₁ and P₂ ✓
+Observation 3 (Packet 3): cumulative_drops = 7 → delta = 7 - 3 = 4 lost packets between P₂ and P₃ ✗
+Flawed consumer code: assumes counter in cmsg is DELTA instead of CUMULATIVE:
+Consumer logs: 7 packets lost instead of 4 packets lost! (Error inflation = 7 - 4 = +3)
+Axiom: `delta_drops = current_cmsg_drops - previous_cmsg_drops; previous_cmsg_drops = current_cmsg_drops;` ✓
+User exercise 20.1: If Observation 4 reports cumulative_drops = 15, calculate packets lost since Observation 3: 15 - 7 = [FILL]
+User exercise 20.2: Compute total drops across all 4 observations: [FILL]
+
+21.
++---------------------------------------------------------------------------------------+
+| ZERO TCP SEGMENT SIZE IN INITIALIZATION / ADVERTISED ZERO WINDOW (DAVID MILLER 1997)  |
+| TCP PCB at 0x500000: [MSS: 0] [RCV_WND: 0] [SND_WND: 0]                               |
++---------------------------------------------------------------------------------------+
+Remote peer sends SYN with advertised window = 0
+Linux 2.0.x initialization calculation: `mss = min(remote_mss, snd_wnd) = min(1460, 0) = 0`
+Application calls `send(fd, buffer, 1000)` → triggers `tcp_do_sendmsg()`
+Kernel loop: `while (bytes_left > 0) { chunk = min(bytes_left, mss); ... }`
+Division by zero / infinite loop: `chunk = min(1000, 0) = 0`
+Pointer advances by 0 bytes: `bytes_left = 1000 - 0 = 1000` → loop spins 100% CPU forever!
+Kernel hang in `tcp_do_sendmsg` ✗
+Axiom: David S. Miller patch: clamp MSS to minimum floor (MSS >= 1) independent of transient advertised window:
+`mss = max(1, min(remote_mss, snd_wnd_clamped));` when window=0, probe timer handles persist probe ✓
+User exercise 21.1: Calculate iterations if chunk=0 and stop condition is bytes_left == 0: [FILL] (infinite)
+User exercise 21.2: Minimum standard TCP MSS floor: [FILL]B
+
+22.
++---------------------------------------------------------------------------------------+
+| DUPLICATE FIN PACKETS AND 102-SECOND TEARDOWN HANG (LKML 1997)                        |
+| TCP Stream: FIN 1 at seq 1904 | FIN 2 at seq 1905 | Retransmit FIN at seq 1905        |
++---------------------------------------------------------------------------------------+
+Linux 2.0.30 socket teardown: application calls `close()`
+Kernel transmits FIN packet at seq 1904
+Bug in sequence number tracking: kernel increments `tp->snd_nxt` twice → transmits second FIN at seq 1905!
+Peer receives seq 1904, then receives unexpected seq 1905 without data → Peer ACK remains at 1904
+Linux retransmits seq 1905 repeatedly using exponential backoff:
+Retransmit intervals: 2s, 4s, 8s, 16s, 32s, 64s → Total elapsed time = 102 seconds!
+Connection sits in FIN_WAIT_1 / LAST_ACK for 102 seconds before emitting RST!
+FIX gateway blocked from reconnecting: local address/port bound to zombie socket ✗
+Axiom: FIN occupies exactly 1 sequence number: `snd_nxt` increments exactly once upon FIN generation ✓
+User exercise 22.1: Sum retransmission sequence: 2 + 4 + 8 + 16 + 32 + 64 = [FILL]s
+User exercise 22.2: Sequence delta between consecutive FINs: 1905 - 1904 = [FILL]
+
+23.
++---------------------------------------------------------------------------------------+
+| POLL() / SELECT() THUNDERING HERD ON ACCEPT (LKML 1999)                               |
+| 8 Worker Processes W₁..W₈ blocked on listener fd 3 in `select()` / `poll()`           |
++---------------------------------------------------------------------------------------+
+Single inbound TCP connection arrives: SYN completes 3-way handshake → connection placed in listen backlog
+Kernel wakes ALL 8 processes registered on listener wait queue!
+8 CPUs context switch simultaneously:
+Process W₁ executes `accept(3)` → succeeds, returns new client_fd 4
+Processes W₂..W₈ execute `accept(3)` → backlog is empty! → return -1 with `errno = EAGAIN` / `EWOULDBLOCK`
+Performance metrics: wakeups = 8 | successful_accepts = 1 | wasted_wakeups = 7 = 87.5% waste
+CPU overhead: 7 context switches + 7 cache invalidations + 7 page table switches = 7 × 1500ns = 10,500ns wasted ✗
+Axiom: `EPOLLEXCLUSIVE` / `SO_REUSEPORT` kernel load balancing:
+kernel wakes EXACTLY ONE thread on connection arrival: wakeups = 1, accepts = 1, waste = 0% ✓
+User exercise 23.1: Calculate wasted context switches for 64 workers: 64 - 1 = [FILL]
+User exercise 23.2: Compute percentage waste for 64 workers: (63 / 64) × 100 = [FILL]%
+
+24.
++---------------------------------------------------------------------------------------+
+| RECEIVE LIVELOCK: INPUT RATE VS COMPLETED PROCESSING (MOGUL & RAMAKRISHNAN 1995-1996) |
+| Input Traffic: 0 to 6000 pkts/sec | Interrupt Cost = 166.6µs per packet                |
++---------------------------------------------------------------------------------------+
+Throughput transfer table:
+| Input Rate (pps) | Interrupt Load (% CPU) | Processing Time Remaining (% CPU) | Delivered Rate (pps) |
+| 1,000            | 1000 × 0.0001666 = 16.7%| 83.3%                             | 1,000                |
+| 2,000            | 2000 × 0.0001666 = 33.3%| 66.7%                             | 2,000                |
+| 4,000            | 4000 × 0.0001666 = 66.7%| 33.3%                             | 2,000 (Saturation)   |
+| 5,000            | 5000 × 0.0001666 = 83.3%| 16.7%                             | 1,000 (Degradation)  |
+| 6,000            | 6000 × 0.0001666 = 100% | 0.0%                              | 0 (Complete Livelock)|
+At 6,000 pps: CPU spends 100% time taking IRQs and dropping packets because receive queue is full; delivered throughput = 0! ✗
+Axiom: Polling with early packet drop at NIC ring buffer before kernel allocation (NAPI architecture) ✓
+User exercise 24.1: If interrupt cost = 100µs, calculate input rate causing 100% CPU load: 1.0 / 0.000100 = [FILL] pps
+User exercise 24.2: State delivered packets at 6,000 pps in unmitigated interrupt mode: [FILL]
+
+25.
++---------------------------------------------------------------------------------------+
+| REMOVING INTERRUPTS ALONE FAILS TO ELIMINATE LIVELOCK (MOGUL & RAMAKRISHNAN 1996 §6.6)|
+| Polling Batches: Batch₁ = 10 | Batch₂ = 100 | Batch₃ = Unlimited                      |
++---------------------------------------------------------------------------------------+
+System switches to polling, but polling loop has no batch quota limit (`Batch₃ = Unlimited`):
+Loop: `while (nic_has_packets()) { process_rx_packet(); }`
+Flood: Ingress rate = 1,000,000 pps → `nic_has_packets()` is ALWAYS TRUE!
+Result: CPU executes RX loop continuously; TX (output) routine NEVER RUNS!
+Order responses, FIX heartbeats, and ACKs starved in egress queue: client disconnects due to heartbeat timeout!
+transmitted_packets = 0 | output_starvation = 100% ✗
+Axiom: Fair queue budgeting (Linux NAPI `budget = 64`):
+process up to 64 RX packets → force yield CPU to TX processing and userspace matching engine ✓
+User exercise 25.1: If budget = 64, and each packet takes 50ns, calculate maximum continuous RX time before yield: 64 × 50ns = [FILL]ns
+User exercise 25.2: Verify state of TX queue when RX runs unlimited: TX_throughput = [FILL] pps
+
+26.
++---------------------------------------------------------------------------------------+
+| MESSAGE QUEUE SENDER STARVATION (MIT 6.828 FALL 2006)                                 |
+| Senders: E0 (100 msgs), E1 (100 msgs) | Receiver: E2                                  |
++---------------------------------------------------------------------------------------+
+Flawed scheduler / IPC selection algorithm:
+`for (int env_id = 0; env_id < N_ENVS; env_id++) { if (has_message(env_id)) return env_id; }`
+Scan starts at index 0 every iteration!
+E0 is located at index 0; E1 is located at index 1:
+Iteration 1..100: `has_message(0)` is TRUE (E0 has messages) → E0 always chosen!
+E1 remains blocked at index 1 until E0 is completely exhausted
+Total latency for E1 = 100 × processing_time = 100 × 5µs = 500µs delay
+If E0 generates continuous messages at line rate: E1 STARVES FOREVER (delivered messages for E1 = 0) ✗
+Axiom: Round-robin fair scheduling with rotating scan head:
+`int selected = (last_selected + 1) % N_ENVS; ... last_selected = selected;` ✓
+User exercise 26.1: Calculate messages processed for E1 after 50 iterations with round-robin: [FILL]
+User exercise 26.2: Compute unfairness ratio with static index scan: 100 / 0 = [FILL] (infinite)
+
+27.
++---------------------------------------------------------------------------------------+
+| C BUFFER OVERFLOW IN UNCHECKED STRING COPY (MIT 6.828 2006 USER/SH.C)                 |
+| Destination Buffer: `char argv0buf[1024]` at 0x7FFF0000 | Input Length = 1024 Bytes    |
++---------------------------------------------------------------------------------------+
+Input command / symbol string: length = 1024 characters (without null terminator)
+C code execution: `strcpy(argv0buf, input_str)`
+`strcpy` copies 1024 bytes into `[0x7FFF0000 .. 0x7FFF03FF]`, then writes NULL byte (`\0`) at address `0x7FFF0400`!
+Address 0x7FFF0400 contains saved frame pointer (`%rbp`) or return instruction pointer (`%rip`)!
+Single-byte off-by-one null overwrite: saved `%rbp` lowest byte set to 0x00
+Function returns → `%rsp` corrupted → jumps to invalid address → Segmentation fault (SIGSEGV) / buffer overflow ✗
+Axiom: bounded copy with explicit terminator room:
+`size_t len = strnlen(input, sizeof(argv0buf) - 1); memcpy(argv0buf, input, len); argv0buf[len] = '\0';` ✓
+User exercise 27.1: Calculate maximum safe characters for 1024-byte buffer: 1024 - 1 = [FILL]
+User exercise 27.2: State destination address of 1025th byte: 0x7FFF0000 + 1024 = 0x[FILL]
+
+28.
++---------------------------------------------------------------------------------------+
+| FILE DESCRIPTOR LEAK ACROSS FORK PROCESS CREATION (MIT 6.828 2006)                    |
+| Parent Process PID 100: opens socket fd 4 at 0x200000 | Creates 1,000 Child Processes   |
++---------------------------------------------------------------------------------------+
+Parent creates listening / market data socket: `fd = 4` without `O_CLOEXEC`
+Parent forks 1,000 child strategy / worker processes: `fork()` clones file descriptor table
+Child processes inherit open reference to fd 4: ref_count(fd 4) = 1 + 1000 = 1001
+Parent calls `close(4)` to shut down feed:
+Kernel decrements ref_count: 1001 - 1 = 1000 > 0!
+Result: Socket remains OPEN and active in kernel! Network port 443 / 80 stays bound!
+Parent attempts to re-bind port on restart → `bind()` returns -1 with `errno = EADDRINUSE` (Address already in use) ✗
+Axiom: atomic close-on-exec flag:
+`int fd = open(path, O_RDWR | O_CLOEXEC);` or `fcntl(fd, F_SETFD, FD_CLOEXEC);` ✓
+User exercise 28.1: State reference count after 50 children exit: 1000 - 50 = [FILL]
+User exercise 28.2: Verify errno code for EADDRINUSE: [FILL]
+
+29.
++---------------------------------------------------------------------------------------+
+| QUICKFIX RESEND RETURNS GAPFILL INSTEAD OF APPLICATION MESSAGE (APRIL 2006)           |
+| Outgoing Message Log vs Persistent MessageStore at 0x200000                           |
++---------------------------------------------------------------------------------------+
+Sequence: Application sends 3 Orders:
+Msg 1 (Order A, Seq 101) → persisted in MessageStore
+Msg 2 (Order B, Seq 102) → written to text log, but NOT flushed to MessageStore (unpersisted memory mode)
+Msg 3 (Order C, Seq 103) → persisted in MessageStore
+Broker detects gap at 102 → sends `ResendRequest(Begin=102, End=102)`
+QuickFIX queries `MessageStore.find(102)`: returns NULL (record not found)
+QuickFIX default fallback: emits `SequenceReset-GapFill(35=4, MsgSeqNum=102, NewSeqNo=103)`!
+Broker receives GapFill: assumes Order B was administrative / canceled
+Broker matching engine NEVER receives Order B; application believes Order B was sent
+financial_loss: unhedged position = 100% ✗
+Axiom: verify message store durability before confirming order dispatch; distinguish administrative vs unrecoverable error:
+throw critical exception rather than silently emitting GapFill for trade-critical application messages ✓
+User exercise 29.1: Calculate new sequence number in GapFill: 102 + 1 = [FILL]
+User exercise 29.2: Verify message sequence numbers missing in broker engine: {[FILL]}
+
+30.
++---------------------------------------------------------------------------------------+
+| FIX APPLICATION MESSAGE ARRIVES BEFORE SESSION LOGON (QUICKFIX OCTOBER 2006)          |
+| Session State at 0x200000: `Session::m_state = DISCONNECTED` (0)                      |
++---------------------------------------------------------------------------------------+
+Inbound Packet: `35=D` (NewOrderSingle), `34=1` arrives before `35=A` (Logon)
+Flawed order handler: decodes message body directly into Limit Order Book BEFORE validating session state
+Order Book inserts Order at 0x53A980 (Price=15000, Qty=100)
+Subsequent session validation checks `validLogonState()`: fails!
+QuickFIX terminates connection: disconnects socket
+Corrupted state: unauthenticated, unverified order sits live inside Order Book!
+Matching engine executes trade against zombie order from unauthenticated session! ✗
+Axiom: strict state machine gating:
+`if (m_state != SESSION_LOGGED_IN) { reject_and_drop(msg); return; }` before invoking parser or order book ✓
+User exercise 30.1: State valid session state integer: DISCONNECTED=0, LOGGED_IN=[FILL]
+User exercise 30.2: State FIX MsgType for Logon: 35=[FILL]
+
+31.
++---------------------------------------------------------------------------------------+
+| SESSION SEQUENCE MISMATCH CREATES REPEATED RECONNECT CYCLES (QUICKFIX NOVEMBER 2007)  |
+| Local Sender Seq: 200 | Broker Expected Seq: 300 | Gap = 100 messages                 |
++---------------------------------------------------------------------------------------+
+Gateway connects: sends Logon (`35=A, 34=200`)
+Broker inspects MsgSeqNum: expected 300 > received 200 → Broker immediately terminates connection with Logout:
+`35=5 | 58=MsgSeqNum too low, expected 300 but received 200`
+QuickFIX reconnect logic runs after 5s: increments local sequence: `nextSenderMsgSeqNum: 200 → 201`
+Reconnect 2: sends Logon (`35=A, 34=201`) → Broker rejects again!
+Iterations required to sync without manual reset: 300 - 200 = 100 reconnect attempts!
+At 5s per reconnect: total downtime = 100 × 5s = 500 seconds (8.33 minutes) ✗
+Axiom: sequence reconciliation protocol:
+detect `MsgSeqNum too low` in Logout response → synchronize local state: `setNextSenderMsgSeqNum(300)` after verifying persisted stores ✓
+User exercise 31.1: Calculate downtime if reconnect interval = 10s: 100 × 10s = [FILL]s
+User exercise 31.2: Compute sequence gap: 300 - 200 = [FILL]
+
+32.
++---------------------------------------------------------------------------------------+
+| STALE SECONDARY INDEX AFTER SWAP-AND-POP ORDER CANCELLATION                           |
+| Storage Array: [Pos 0: Order A] [Pos 1: Order B] [Pos 2: Order C]                     |
+| Secondary Index: `Map[A] = 0`, `Map[B] = 1`, `Map[C] = 2`                             |
++---------------------------------------------------------------------------------------+
+Action 1: Cancel Order B at Pos 1
+Fast deletion optimization: swap-and-pop: move last element (Order C at Pos 2) into vacated slot 1:
+`Storage[1] = Storage[2]` (Order C now at Pos 1) | `Storage.pop_back()` (size: 3 → 2)
+Bug: developer forgets to update secondary index for Order C: `Map[C]` still equals 2!
+Action 2: Cancel Order C:
+Application looks up Pos of Order C: `pos = Map[C] = 2`
+Application accesses `Storage[2]`: index 2 is OUT OF BOUNDS or points to garbage memory!
+Memory access: reads unallocated memory at 0x800040 → Segmentation fault or corrupts new order! ✗
+Axiom: secondary index must be updated synchronously during swap:
+`Storage[pos] = Storage.back(); Map[Storage[pos].id] = pos; Storage.pop_back(); Map.erase(deleted_id);` ✓
+User exercise 32.1: State correct index for Order C after swap: Map[C] = [FILL]
+User exercise 32.2: Verify Storage size after 2 cancellations: 3 - 2 = [FILL]
+
+33.
++---------------------------------------------------------------------------------------+
+| CONCURRENT RISK CHECK EXPOSURE OVER-APPROVAL RACE                                     |
+| Position at 0x600000: 90 units | Risk Limit: 100 units | Max Allowed = 100 - 90 = 10  |
++---------------------------------------------------------------------------------------+
+Thread 1 (Order Request 1): quantity = 8 units | Thread 2 (Order Request 2): quantity = 8 units
+time₀ = 0ns: Thread 1 reads `current_pos = 90` at 0x600000
+time₁ = 2ns: Thread 2 reads `current_pos = 90` at 0x600000
+time₂ = 4ns: Thread 1 checks: `90 + 8 = 98 <= 100` (APPROVED)
+time₃ = 6ns: Thread 2 checks: `90 + 8 = 98 <= 100` (APPROVED)
+time₄ = 8ns: Thread 1 updates: `current_pos = 90 + 8 = 98`
+time₅ = 10ns: Thread 2 updates: `current_pos = 98 + 8 = 106`
+Final Position = 106 units | Risk Limit = 100 units | Breach = 106 - 100 = 6 units over limit ✗
+Axiom: atomic compare-and-swap reservation:
+`int old_pos = pos.load(); while (old_pos + qty <= limit && !pos.compare_exchange_weak(old_pos, old_pos + qty));`
+Thread 1 succeeds: 90 → 98; Thread 2 CAS fails on retry: 98 + 8 = 106 > 100 (REJECTED) ✓
+User exercise 33.1: Calculate exposure overflow: 106 - 100 = [FILL] units
+User exercise 33.2: Verify final approved quantity with atomic CAS: [FILL] units
+
+34.
++---------------------------------------------------------------------------------------+
+| EXECUTION REPLAY DOUBLE-COUNTING IN DISCONNECTED SESSION                              |
+| Order A at 0x800000: total_qty = 100 | executed_qty = 0 | open_qty = 100              |
++---------------------------------------------------------------------------------------+
+Step 34.1: Gateway receives ExecutionReport 1: `ExecID = E1001, CumQty = 30, LeavesQty = 70`
+Engine updates Order A: `executed_qty: 0 → 30`, `open_qty: 100 → 70`
+Step 34.2: Network connection drops → Gateway reconnects → requests replay
+Step 34.3: Broker replays identical ExecutionReport: `ExecID = E1001, CumQty = 30, LeavesQty = 70`
+Flawed engine logic: increments executed_qty using last fill: `executed_qty := executed_qty + 30 = 30 + 30 = 60`!
+Result: `executed_qty = 60`, `open_qty = 100 - 60 = 40` (Shares double counted!)
+Application believes 60 shares filled when actual market fill was only 30 shares!
+financial_discrepancy = 30 phantom shares ✗
+Axiom: idempotency via ExecutionID tracking:
+`if (processed_exec_ids.contains(report.exec_id)) { drop_duplicate(report); return; }`
+Or update directly from cumulative field: `executed_qty = report.cum_qty` (30 = 30, no duplicate addition) ✓
+User exercise 34.1: Calculate phantom shares: 60 - 30 = [FILL]
+User exercise 34.2: Verify correct leaves quantity after deduplication: 100 - 30 = [FILL]
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 50. ALL FAILURE PREDICTIONS (DERIVED FROM HISTORICAL ARCHIVES 1995-2009)                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+F01: Continuous readers starve pending writers in reader-preference shared_mutex
+- breaks: Writer_Pending at 0x100040 ignored while Reader_Count > 0
+- expected: writer wait <= 7.1µs
+- actual: writer wait = 760µs average, peak wait = 20 seconds
+- ✗ expected 7.1µs -> actual 20,000,000µs (2,800,000x latency stall)
+
+F02: State bit race in Boost 1.33 rwlock causes 10-thread deadlock
+- breaks: active writer clears flag without waking CV wait queue
+- expected: threads acquire lock sequentially in 1000 iterations
+- actual: 10 threads block permanently while mutex is unlocked
+- ✗ expected completion -> actual deadlock (watchdog abort)
+
+F03: QuickFIX suppresses second resend request after initial gap recovery
+- breaks: Resend_Pending_Flag at 0x200010 not cleared after gap 1
+- expected: ResendRequest emitted for missing message 216250
+- actual: engine silently drops 16,251 messages and advances sequence
+- ✗ expected ResendRequest -> actual silent data loss
+
+F04: POSIX condition variable unfairness starves oldest waiting thread
+- breaks: newly unparked worker preempted by already running thread
+- expected: FIFO task dispatch across Worker A and Worker B
+- actual: Worker B handles 100 tasks while Worker A executes 0
+- ✗ expected fair share -> actual 100% starvation
+
+F05: TCP Karn's algorithm exponentially inflates RTO to 120 seconds
+- breaks: repeated packet loss doubles retransmission timer
+- expected: market connection recovery in 50ms
+- actual: TCP retransmission pauses for 120 seconds
+- ✗ expected 50ms -> actual 120,000ms (2400x timeout stall)
+
+F06: Ephemeral port exhaustion from unmitigated TIME_WAIT socket churn
+- breaks: 1,000 conns/sec exhausts 28,233 port pool in 28 seconds
+- expected: connect() succeeds
+- actual: connect() returns EADDRNOTAVAIL (99) and kernel ehash livelock
+- ✗ expected connection -> actual EADDRNOTAVAIL
+
+F07: Thread wakeup on condition variable does not grant mutex ownership
+- breaks: consumer checks queue state with if() instead of while()
+- expected: safe pop from queue
+- actual: popped by competitor -> pop on empty queue -> SIGSEGV
+- ✗ expected valid element -> actual crash
+
+F08: C++ class member initialization order causes uninitialized mutex lock
+- breaks: thread declared before mutex in class declaration
+- expected: worker thread starts with valid mutex
+- actual: pthread_mutex_lock called on 0xCDCDCDCD uninitialized memory
+- ✗ expected locked mutex -> actual EINVAL / memory crash
+
+F09: Lost notification race during condition variable wait transition
+- breaks: producer signals after consumer unlocks mutex but before wait queue sleep
+- expected: consumer notified of new order
+- actual: signal discarded -> consumer sleeps permanently
+- ✗ expected wake -> actual permanent deadlock
+
+F10: Ring buffer double advance skips valid record at page boundary
+- breaks: padding handler advances page; outer loop advances again
+- expected: read returns records [10, 20, 30, 40]
+- actual: read returns records [10, 20, 40] (record 30 lost)
+- ✗ expected record 30 -> actual skipped record
+
+F11: Ring buffer reset corrupts memory during active reservation
+- breaks: reset clears pointers while committing counter > 0
+- expected: reset fails with -EBUSY
+- actual: pointers reset -> concurrent write overwrites next record
+- ✗ expected -EBUSY -> actual memory corruption
+
+F12: Concurrent ring buffer swap writes data into decommissioned buffer
+- breaks: buffer swap occurs while write reservation active
+- expected: write rejected or committed to active buffer
+- actual: data committed to swapped buffer being read/freed
+- ✗ expected valid commit -> actual data corruption
+
+F13: Discarded events and padding inflate reported event statistics
+- breaks: discard and padding paths fail to adjust entry counters
+- expected: reported events = 3
+- actual: reported events = 5
+- ✗ expected 3 -> actual 5 (ghost record inflation)
+
+F14: QuickFIX sequence reset repeats sequence number 1
+- breaks: Logon response does not increment nextSenderMsgSeqNum to 2
+- expected: next message uses MsgSeqNum = 2
+- actual: next message uses MsgSeqNum = 1 -> counterparty drops session
+- ✗ expected MsgSeqNum 2 -> actual MsgSeqNum 1 (session terminated)
+
+F15: Broadcast on condition variable with mismatched mutexes wakes single thread
+- breaks: 4 threads wait on 1 CV using 4 distinct mutexes
+- expected: all 4 workers wake
+- actual: 1 worker wakes, 3 workers remain permanently asleep
+- ✗ expected 4 workers -> actual 1 worker (75% loss)
+
+F16: Windows Event emulation of CV loses broadcast pulse
+- breaks: SetEvent followed by ResetEvent resets before second waiter unparks
+- expected: alternate 10,000 passes
+- actual: deadlock at pass 42
+- ✗ expected 10000 -> actual 42 (thread hang)
+
+F17: Unix datagram socket poll reports POLLOUT when peer receive queue full
+- breaks: poll checks sender local space instead of destination buffer
+- expected: poll blocks until receiver drains queue
+- actual: poll returns POLLOUT -> send returns EAGAIN -> 100% CPU livelock
+- ✗ expected sleep -> actual 100% CPU burn
+
+F18: UDP packet drops occur silently without sk_drops increment
+- breaks: kernel commit removed sk_drops accounting in UDP path
+- expected: sk_drops increments by 9,900
+- actual: sk_drops remains 0
+- ✗ expected 9900 -> actual 0 (silent loss)
+
+F19: Bad UDP checksum cleanup corrupts socket memory accounting
+- breaks: kfree_skb fails to adjust sk_rmem_alloc under lock
+- expected: buffer quota restored
+- actual: sk_rmem_alloc stays full -> all subsequent valid packets dropped
+- ✗ expected valid receive -> actual 100% packet drop
+
+F20: Misinterpreting cumulative drop counter as delta drops
+- breaks: SO_RXQ_OVFL reports cumulative drop count (7) not interval (4)
+- expected: interval drops = 4
+- actual: application calculates drops = 7
+- ✗ expected 4 -> actual 7 (75% false error inflation)
+
+F21: Advertised zero window sets TCP MSS to 0 causing infinite loop
+- breaks: MSS calculation unminimized: min(1460, 0) = 0
+- expected: transmission paused via persist timer
+- actual: tcp_do_sendmsg loops on 0-byte chunk indefinitely
+- ✗ expected pause -> actual 100% CPU freeze
+
+F22: Duplicate FIN transmission causes 102-second connection teardown hang
+- breaks: sequence number incremented twice on FIN generation
+- expected: clean teardown in 50ms
+- actual: FIN retransmitted with backoff for 102 seconds
+- ✗ expected 50ms -> actual 102,000ms (reconnect blocked)
+
+F23: Thundering herd on accept causes 87.5% wasted wakeups
+- breaks: kernel wakes all 8 listening processes for 1 connection
+- expected: 1 process wakes
+- actual: 8 wake, 1 succeeds, 7 fail with EAGAIN
+- ✗ expected 1 wakeup -> actual 8 wakeups (10,500ns CPU burn)
+
+F24: Receive livelock degrades throughput to zero under traffic flood
+- breaks: 6000 pps consumes 100% CPU in interrupt service routine
+- expected: 6000 pps processed
+- actual: 0 pps delivered to application
+- ✗ expected 6000 pps -> actual 0 pps (total livelock)
+
+F25: Unlimited polling starves transmit queue
+- breaks: while(has_rx()) processes receive without batch budget
+- expected: bidirectional traffic flow
+- actual: 0 TX packets transmitted -> heartbeat timeout disconnect
+- ✗ expected TX flow -> actual 0 TX (session drop)
+
+F26: Static index scan starves higher-indexed message senders
+- breaks: loop always checks env 0 before env 1
+- expected: fair alternating dispatch
+- actual: env 0 sends 100 msgs while env 1 blocked
+- ✗ expected fairness -> actual 100% starvation
+
+F27: Unchecked string copy overflows stack by 1 null byte
+- breaks: strcpy into 1024-byte buffer writes null byte at index 1024
+- expected: string copied safely
+- actual: saved frame pointer overwritten with 0x00 -> SIGSEGV
+- ✗ expected safe copy -> actual SIGSEGV crash
+
+F28: File descriptor leaked across fork blocks port re-bind
+- breaks: parent forks 1000 children without O_CLOEXEC on socket
+- expected: socket closes when parent exits
+- actual: socket held open by 1000 children -> EADDRINUSE on restart
+- ✗ expected port free -> actual EADDRINUSE
+
+F29: QuickFIX emits GapFill instead of replaying missing application order
+- breaks: unpersisted message missing from MessageStore
+- expected: trade message replayed or error raised
+- actual: GapFill emitted -> broker skips trade -> unhedged risk
+- ✗ expected trade replay -> actual silent trade skip
+
+F30: Order message processed before session Logon completed
+- breaks: gateway decodes order into matching engine before validLogonState check
+- expected: order rejected before touching order book
+- actual: order placed in book -> session dropped -> ghost order left live
+- ✗ expected drop -> actual ghost order executed
+
+F31: Sequence mismatch causes 100 consecutive reconnect failures
+- breaks: gateway increments sequence by 1 per attempt instead of resyncing
+- expected: immediate sequence resynchronization
+- actual: 100 failed reconnects over 500 seconds
+- ✗ expected immediate sync -> actual 500s outage
+
+F32: Swap-and-pop order cancellation leaves stale secondary index
+- breaks: last element moved to vacated slot without updating index map
+- expected: secondary index references new position
+- actual: index references out-of-bounds slot -> memory fault
+- ✗ expected valid index -> actual out-of-bounds corruption
+
+F33: Concurrent risk checks approve cumulative exposure exceeding limit
+- breaks: non-atomic check-then-act on position counter
+- expected: 1 order approved, 1 order rejected
+- actual: both approved -> position reaches 106 (limit 100)
+- ✗ expected limit 100 -> actual 106 (risk violation)
+
+F34: Replayed execution report double-counts filled shares
+- breaks: replayed report increments executed shares instead of setting cumulative
+- expected: executed shares = 30
+- actual: executed shares = 60
+- ✗ expected 30 -> actual 60 (phantom fill)

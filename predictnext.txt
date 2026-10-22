@@ -1,0 +1,295 @@
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 00. HARDWARE TOPOLOGY, CACHE ARCHITECTURE, AND PHYSICAL MEMORY LAYOUT AXIOMS                                                                                         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+CPU_freq = 3.0GHz = 3,000,000,000 cycles/s | cycle_period = 1 / 3.0GHz = 0.3333ns | budget_cycles = 1500 cycles = 500.0ns
+L1D_cache = 32KB | line_size = 64B = 0x40B | latency_L1 = 4 cycles = 1.33ns
+L2_cache = 512KB | latency_L2 = 14 cycles = 4.67ns
+L3_shared = 16MB | latency_L3 = 45 cycles = 15.00ns
+DRAM_latency = 210 cycles = 70.00ns | Interconnect_MESI_invalidate = 180 cycles = 60.00ns
+Page_standard = 4096B = 4KB = 0x1000B | Page_huge = 2097152B = 2MB = 0x200000B
+Total_RAM_pool = 64000000B = 64MB | Hugepage_count = ceil(64000000 / 2097152) = ceil(30.517) = 31 pages = 65011712B = 0x3E00000B
+
+1.
++---------------------------------------------------------------------------------------+
+| VIRTUAL MEMORY TRANSLATION AND TLB REACH (64MB ALLOCATION)                            |
+| Base: 0x800000 | Range: [0x800000 .. 0x4500000] (64,000,000 Bytes)                    |
+| Standard Pages: 64,000,000 / 4,096 = 15,625 PTEs                                      |
+| Huge Pages: ceil(64,000,000 / 2,097,152) = 31 PTEs                                    |
++---------------------------------------------------------------------------------------+
+TLB_capacity_L1 = 64 entries | TLB_reach_standard = 64 × 4096B = 262,144B = 256KB
+ratio_standard = 64,000,000 / 262,144 = 244.14× TLB capacity oversubscription
+PTE_miss_penalty = 4-level page walk (CR3 → PML4 → PDPT → PD → PT) = 4 × 70ns = 280ns = 840 cycles
+TLB_reach_huge = 64 × 2,097,152B = 134,217,728B = 128MB
+ratio_huge = 64,000,000 / 134,217,728 = 0.4769 < 1.0 (100% of 64MB pool permanently resident in L1 DTLB) ✓
+sys_call: mmap(0x800000, 64000000, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_HUGETLB|MAP_FIXED, -1, 0)
+execution_cost: TLB_miss_rate = 0.000% | cost_per_access = 4 cycles = 1.33ns vs standard_page_walk = 840 cycles = 280ns
+speedup = 840 / 4 = 210.0× ✓
+User exercise 1.1: Calculate exact bytes wasted by 31 hugepages: 65,011,712 - 64,000,000 = [FILL]B
+User exercise 1.2: Calculate TLB entries required if using 1GB pages: ceil(64,000,000 / 1,073,741,824) = [FILL] entry
+
+2.
++---------------------------------------------------------------------------------------+
+| RAW HARDWARE MEMORY DUMP (64-BYTE CPU CACHE LINE AT ADDRESS 0x1000 TO 0x103F)         |
+| 0x1000: [OrderID: 9001] [Price: 15000] [Qty: 100] [Side: 1] (32 Bytes: Order A)      |
+| 0x1020: [OrderID: 9002] [Price: 15000] [Qty: 250] [Side: 1] (32 Bytes: Order B)      |
++---------------------------------------------------------------------------------------+
+Packet_Arrival_NIC_BAR = 0x00400000 | struct OrderMsg { uint64_t id; uint32_t price; uint32_t qty; uint32_t side; uint8_t pad[12]; } = 32B
+Optimization: zero-copy pointer cast: const OrderMsg* msg = (const OrderMsg*)0x00400000
+instruction_cost: movq 0x00400000(%rax), %rdx → 3 cycles = 1.0ns
+Alternative memcpy(dest, src, 32): 4 × movq load + 4 × movq store + call overhead = 45 cycles = 15.0ns
+cycles_saved = 45 - 3 = 42 cycles | ratio = 45 / 3 = 15.0× faster ✓
+data_verification: msg->id = 9001 | msg->price = 15000 | msg->qty = 100 | msg->side = 1 ✓
+User exercise 2.1: Calculate memory address of Order B in NIC ring: 0x00400000 + 32 = [FILL]
+User exercise 2.2: Compute cache line index for 0x1000: 0x1000 / 64 = 4096 / 64 = [FILL]
+
+3.
++---------------------------------------------------------------------------------------+
+| CONCURRENT RING BUFFER CACHE LINE SPLIT (256 BYTES AT 0x2000 TO 0x20FF)               |
+| 0x2000: [Write_Index: 5 (4B)] [Padding: 60B Zeroes .................................] |
+| 0x2040: [Read_Index:  4 (4B)] [Padding: 60B Zeroes .................................] |
+| 0x2080: [Slot 0] [Slot 1] [Slot 2] [Slot 3] [Slot 4: Order 9002] [Slot 5: Empty]     |
++---------------------------------------------------------------------------------------+
+Core₂ = Producer (Network Ingest) | Core₃ = Consumer (Matching Engine)
+addr(Write_Index) = 0x2000 | cache_line(Write_Index) = 0x2000 / 64 = 8192 / 64 = 128 | range: [0x2000..0x203F]
+addr(Read_Index)  = 0x2040 | cache_line(Read_Index)  = 0x2040 / 64 = 8256 / 64 = 129 | range: [0x2040..0x207F]
+line_diff = 129 - 128 = 1 line = 64 bytes ∴ MESI_collision = FALSE ✓
+False sharing anti-pattern (if unpadded): addr(Write_Index)=0x2000, addr(Read_Index)=0x2004 → line_diff = 0
+Cost of unpadded false sharing: Core₂ writes Write_Index=5 → MESI state Core₃ L1 line 128 = I → Core₃ reads Read_Index=4 → bus RFO stall = 180 cycles (60ns)
+Cost of padded split: Core₂ writes 0x2000 = 4 cycles (1.33ns) | Core₃ reads 0x2040 = 4 cycles (1.33ns) | MESI bus traffic = 0 cycles
+delta_cycles = 180 - 4 = 176 cycles saved per ring buffer push ✓
+User exercise 3.1: Calculate byte offset of Slot 4 in ring buffer: 0x2080 + (4 × 32) = 0x2080 + 128 = [FILL]
+User exercise 3.2: Verify queue occupancy: (Write_Index - Read_Index) = (5 - 4) = [FILL] element
+
+4.
++---------------------------------------------------------------------------------------+
+| PRICE LEVEL FLAT ARRAY (BASE ADDRESS 0x500000, INDEX 15000 AT 0x53A980)               |
+| Index 14999 (0x53A970): [Total_Qty: 0  ] [Head_Offset: -1] [Tail_Offset: -1] (16B)    |
+| Index 15000 (0x53A980): [Total_Qty: 350] [Head_Offset:  0] [Tail_Offset:  1] (16B)    |
+| Index 15001 (0x53A990): [Total_Qty: 0  ] [Head_Offset: -1] [Tail_Offset: -1] (16B)    |
++---------------------------------------------------------------------------------------+
+struct PriceLevel { uint64_t total_qty; int32_t head_offset; int32_t tail_offset; } = 8 + 4 + 4 = 16 Bytes = 0x10 Bytes
+target_price = 15000 = 0x3A98
+offset = target_price × sizeof(PriceLevel) = 15000 × 16 = 240,000 Bytes = 0x3A980
+addr(PriceLevel[15000]) = base + offset = 0x500000 + 0x3A980 = 0x53A980 ✓
+execution_time = 1 assembly instruction: `lea 0x500000(,%rdi,16), %rax` = 1 clock cycle = 0.333ns
+Alternative std::map<uint32_t, PriceLevel> (Red-Black Tree, N=1,000,000 levels):
+tree_depth = ceil(log₂(1000000)) = 20 levels
+traversal = 20 node pointer dereferences across disjoint heap memory
+cost_per_dereference = L3 miss / DRAM hit = 210 cycles (70ns)
+total_tree_cost = 20 × 210 = 4200 clock cycles = 1400.0ns
+cycles_saved = 4200 - 1 = 4199 cycles | speedup = 4200 / 1 = 4200.0× ✓
+User exercise 4.1: Compute address of Price 14999: 0x500000 + (14999 × 16) = [FILL]
+User exercise 4.2: Compute address of Price 15001: 0x500000 + (15001 × 16) = [FILL]
+
+5.
++---------------------------------------------------------------------------------------+
+| INTRUSIVE ORDER POOL ARRAY (BASE ADDRESS 0x800000)                                     |
+| Offset 0 (0x800000): [ID: 9001] [Qty: 100] [Prev: -1] [Next:  1] (32 Bytes)           |
+| Offset 1 (0x800020): [ID: 9002] [Qty: 250] [Prev:  0] [Next: -1] (32 Bytes)           |
++---------------------------------------------------------------------------------------+
+struct OrderNode { uint64_t id; uint32_t qty; uint32_t price; int32_t prev; int32_t next; uint8_t pad[8]; } = 32 Bytes = 0x20 Bytes
+Action: Append Order 9002 (Pool Offset 1 at 0x800020) behind Order 9001 (Pool Offset 0 at 0x800000)
+Initial state: PriceLevel[15000].total_qty = 100 | head = 0 | tail = 0
+Step 5.1: Write Next pointer of Offset 0: addr = 0x800000 + offsetof(next) = 0x800000 + 20 = 0x800014 → write 1 (cost = 1 cycle)
+Step 5.2: Write Prev pointer of Offset 1: addr = 0x800020 + offsetof(prev) = 0x800020 + 16 = 0x800030 → write 0 (cost = 1 cycle)
+Step 5.3: Update Tail of PriceLevel: addr = 0x53A980 + offsetof(tail) = 0x53A980 + 12 = 0x53A98C → write 1 (cost = 1 cycle)
+Step 5.4: Accumulate Total Qty: 100 + 250 = 350 → write 0x53A980 = 350 (cost = 1 cycle)
+total_append_cycles = 1 + 1 + 1 + 1 = 4 clock cycles = 1.33ns ✓
+Alternative heap allocation (`new OrderNode` / `malloc(32)`):
+glibc ptmalloc: thread arena lock acquisition + size bin lookup + chunk split = 6000 clock cycles = 2000.0ns
+cycles_saved = 6000 - 4 = 5996 cycles | ratio = 6000 / 4 = 1500.0× faster ✓
+User exercise 5.1: If Order 9003 (Offset 2 at 0x800040) is appended with qty 500, calculate new total_qty: 350 + 500 = [FILL]
+User exercise 5.2: State Next offset for Offset 1 after Order 9003 append: Next: -1 → [FILL]
+
+6.
++---------------------------------------------------------------------------------------+
+| DIRECT-INDEX ORDER CANCELLATION AND TICK-TO-TRADE AUDIT                               |
+| Order_Map Array Base: 0x900000 | Lookup ID: 9001 → Index 9001 at 0x908CA4              |
++---------------------------------------------------------------------------------------+
+Lookup: pool_offset = Order_Map[9001] = 0 (cost = 1 cycle)
+Order 9001 location = 0x800000 + (0 × 32) = 0x800000 | read qty = 100 (cost = 1 cycle)
+Update price level aggregate: 350 - 100 = 250 at 0x53A980 (cost = 1 cycle)
+Unlink node 0 from doubly-linked list:
+next_node = OrderNode[0].next = 1
+prev_node = OrderNode[0].prev = -1
+PriceLevel[15000].head_offset = next_node = 1 (cost = 1 cycle)
+OrderNode[1].prev = prev_node = -1 at address 0x800030 (cost = 1 cycle)
+Free pool push: return offset 0 to free stack (cost = 1 cycle)
+total_cancel_cycles = 1 + 1 + 1 + 1 + 1 + 1 = 6 clock cycles = 2.0ns ✓
+Full Tick-To-Trade Budget Verification:
+Step 2 (Read raw packet from NIC ring): 3 cycles
+Step 4 (Direct price array index calculation): 1 cycle
+Step 5 (Intrusive list append order 9002): 4 cycles
+Step 6 (Cancel order 9001 and adjust volume): 6 cycles
+Total Execution Cycles = 3 + 1 + 4 + 6 = 14 clock cycles = 4.666ns
+Budget Limit = 1500 clock cycles = 500.0ns
+Headroom = 1500 - 14 = 1486 clock cycles = 495.33ns (99.06% headroom under SLA) ✓
+User exercise 6.1: Calculate tick-to-trade throughput capacity: 3,000,000,000 / 14 = [FILL] messages/sec
+User exercise 6.2: Compute percentage of L1 cache consumed by PriceLevel array of 2000 levels: (2000 × 16) / 32768 = 32000 / 32768 = [FILL]%
+
+7.
++---------------------------------------------------------------------------------------+
+| UIUC IE 421 / CS 498 LAB BUG: ETHERNET PACKET UNALIGNED 64-BIT LOAD                   |
+| Network Frame: 14-Byte Ethernet Header + 20-Byte IP Header + 8-Byte UDP Header        |
++---------------------------------------------------------------------------------------+
+frame_base = 0x00400000 (aligned to 64 bytes: 0x00400000 & 0x3F = 0)
+payload_offset = 14 + 20 + 8 = 42 bytes | payload_addr = 0x00400000 + 42 = 0x0040002A
+uint64_t order_id sits at offset 24 inside ITCH payload: addr(order_id) = 0x0040002A + 24 = 0x00400042
+offset_in_line = 0x00400042 & 0x3F = 0x02 | end_offset = 0x02 + 8 = 0x0A (inside same line 1)
+Trap: payload without IP/UDP (raw Ethernet Layer 2): ITCH message starts at offset 14!
+addr(timestamp_64) = 0x00400000 + 14 + 54 = 0x00400044 (offset 68 = 64 + 4)
+uint64_t spans: [0x0040003E .. 0x00400045] → spans Cache Line 0 (0x00400000..0x0040003F) AND Cache Line 1 (0x00400040..0x0040007F)
+Hardware execution of unaligned 8-byte load spanning cache boundary:
+Hardware splits 1 load into 2 bus requests + activates bus lock arbitration (#AC Alignment Check / Split Lock)
+cost = 1200 clock cycles (400ns) vs aligned load = 3 clock cycles (1ns)
+ratio = 1200 / 3 = 400.0× penalty ✗
+Fix: align payload buffers using `__attribute__((aligned(64)))` with 2-byte header pre-padding so IP/ITCH headers align to 4/8-byte boundaries ✓
+User exercise 7.1: Calculate byte offset of next 64-byte boundary from 0x0040002A: 0x00400040 - 0x0040002A = [FILL] bytes
+User exercise 7.2: Verify: (0x00400040 & 0x3F) = [FILL] ✓
+
+8.
++---------------------------------------------------------------------------------------+
+| STEVENS FE 522 / FE 545 BUG: SPARSE PRICE LEVEL HASH COLLISION BLOWOUT                |
+| Stock Price Range: $0.01 to $5000.00 = 500,000 tick levels                            |
++---------------------------------------------------------------------------------------+
+Flawed design: std::unordered_map<uint32_t, PriceLevel> with default bucket count = 1031
+Bucket count N = 1031 | Insert M = 50,000 active price levels
+load_factor = 50,000 / 1031 = 48.49 elements per bucket
+Collision chain: bucket 42 contains 52 linked nodes scattered across disjoint heap addresses
+Lookup traversal cost: 52 pointer dereferences × 70ns DRAM latency = 3640ns = 10,920 clock cycles
+Target budget = 1500 cycles | violation = 10,920 > 1500 (7.28× SLA breach) ✗
+Secondary trap: `unordered_map` bucket reallocation: when load_factor exceeds threshold, triggers `rehash()`:
+allocates new bucket array + re-links 50,000 nodes → latency spike = 2,400,000ns (2.4ms) ✗
+Axiom: direct flat array indexing with bounding: `PriceLevel book[500000]` pre-allocated at 0x500000
+book size = 500,000 × 16B = 8,000,000B = 8MB (fits entirely in 16MB L3 cache)
+lookup time = 1 cycle = 0.333ns | collisions = 0 | rehash = 0 ✓
+User exercise 8.1: Compute memory footprint for 1,000,000 price levels at 16B each: 1000000 × 16 = [FILL]MB
+User exercise 8.2: Calculate cache line coverage: 8,000,000B / 64B = [FILL] cache lines
+
+9.
++---------------------------------------------------------------------------------------+
+| BARUCH CUNY MFE BUG: STD::VECTOR REALLOCATION SPIKE IN ORDER EXECUTION                |
+| Order Fill Log: std::vector<ExecutionReport> fills; capacity = 1024                   |
++---------------------------------------------------------------------------------------+
+State: 1024 executions recorded | capacity = 1024 | size = 1024
+Event: Message 1025 arrives → `fills.push_back(report)`
+Capacity exhausted: std::vector allocates new_capacity = 1024 × 2 = 2048 entries
+Allocation sequence:
+(1) glibc `brk()` / `mmap()` syscall to acquire 2048 × 64B = 131,072B: 4500ns
+(2) Sequential copy of 1024 structs from old buffer to new buffer: 1024 × 8ns = 8192ns
+(3) glibc `free()` of old buffer: 1200ns
+total_push_latency = 4500 + 8192 + 1200 = 13,892ns = 41,676 clock cycles
+Normal push_back latency = 4 cycles (1.33ns) | spike_ratio = 41,676 / 4 = 10,419× latency blowout ✗
+SLA deadline = 500ns | violation = 13,892ns > 500ns (27.7× SLA failure) ✗
+Axiom: pre-allocated static ring buffer with fixed capacity: `ExecutionReport fills[65536]` at 0xA00000
+mask = 65536 - 1 = 65535 = 0xFFFF
+push: `fills[write_idx++ & 0xFFFF] = report` → cost = 4 cycles = 1.33ns unconditionally ✓
+User exercise 9.1: Calculate memory footprint of 65,536 execution reports at 64B each: 65536 × 64 = [FILL]B = [FILL]MB
+User exercise 9.2: Verify wrap mask: (65536 & 0xFFFF) = [FILL] ✓
+
+10.
++---------------------------------------------------------------------------------------+
+| NORTHWESTERN CS 343 (`pclab`) BUG: PRINTF / DEBUG I/O IN CRITICAL MATCHING LOOP       |
+| Command Harness: `./harness -i pc -t 100000 2 4 16 1024`                               |
++---------------------------------------------------------------------------------------+
+Developer leaves debug log in hot path: `printf("Matched Order %lu at Price %u\n", id, price)`
+printf execution breakdown:
+(1) Format string parsing (`vsnprintf`): 850 cycles = 283ns
+(2) `fputc` / buffer write acquires internal `FILE*` mutex lock (`flockfile`): 320 cycles = 106ns
+(3) User buffer (4096B) fills → triggers `write(1, buf, 4096)` syscall: 2200 cycles = 733ns
+(4) TTY driver / PTS line discipline context switch to terminal emulator: 45,000 cycles = 15,000ns
+total_logging_cost = 283 + 106 + 733 + 15000 = 16,122ns = 48,366 clock cycles
+throughput_with_printf = 1s / 16.122µs = 62,027 msgs/sec
+throughput_without_printf (14 cycles = 4.66ns) = 1s / 4.66ns = 214,592,274 msgs/sec
+ratio = 214,592,274 / 62,027 = 3459.6× throughput destruction ✗
+Axiom: compile-time stripping of all I/O via preprocessor: `#define DEBUG_LOG(...) ((void)0)`
+Production audit: ring buffer shared memory trace dump written only on error via non-blocking SPSC queue ✓
+User exercise 10.1: Calculate total time lost to printf across 1,000,000 orders: 1,000,000 × 16.122µs = [FILL] seconds
+User exercise 10.2: Compute percentage of budget consumed by printf: (16122ns / 500ns) × 100 = [FILL]%
+
+11.
++---------------------------------------------------------------------------------------+
+| ROCHESTER CSC 258/458 BUG: MICHAEL-SCOTT QUEUE ABA AND CAS BUS SATURATION             |
+| Head Pointer: 0xB00000 | Tail Pointer: 0xB00008 | Node A: 0xB00100 | Node B: 0xB00140 |
++---------------------------------------------------------------------------------------+
+Thread 1 reads Head = Node A (0xB00100) and Next = Node B (0xB00140) at cycle 0
+Thread 1 preempted before executing CAS(&Head, Node A, Node B)
+Thread 2 dequeues Node A, dequeues Node B → frees Node A and Node B
+Thread 2 allocates new node → memory allocator re-returns address 0xB00100 (Node A recycled!)
+Thread 2 enqueues Node A (0xB00100) with Next = Node C (0xB00180)
+Thread 1 resumes: executes `CAS(&Head, 0xB00100, 0xB00140)`
+Condition check: `*Head == 0xB00100` is TRUE! (Pointer match, but object identity corrupted!)
+CAS succeeds: Head set to Node B (0xB00140) which was ALREADY FREED!
+Memory state: Head points to freed/corrupted memory → Segmentation Fault / Data Corruption ✗
+Secondary trap: 8 cores execute tight `while (!CAS(...))` loop:
+Each failed CAS issues `LOCK CMPXCHG` on x86 → asserts hardware bus lock / broadcasts cache invalidations
+bus bandwidth consumption = 100% | core-to-core memory latency jumps from 40ns to 350ns ✗
+Axiom: tagged pointers (versioned counter) + SPSC dedicated queues:
+`struct TaggedPointer { uint32_t version; uint32_t node_offset; }` = 64-bit atomic integer
+CAS checks version: version increments 0 → 1 → 2: `CAS(&Head, {0, Node A}, {1, Node B})` fails because version is now 2 ✓
+Better Low-Latency Axiom: eliminate MPMC completely in matching path; single-writer SPSC ring buffers require ZERO CAS instructions ✓
+User exercise 11.1: If version is 16-bit, calculate wrap count: 2¹⁶ = [FILL] operations
+User exercise 11.2: Compare instructions: SPSC load + store (2 instructions) vs CAS loop with lock prefix (1 instruction + bus lock = [FILL] cycles)
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 50. ALL FAILURE PREDICTIONS (DERIVED FROM ACADEMIC HFT SYLLABI AND MATCHING ENGINE AXIOMS)                                                                         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+F01: L1 DTLB capacity collapse from standard 4KB page allocation
+- breaks: 64MB order pool allocated with 4KB pages requires 15,625 TLB entries (L1 DTLB capacity = 64)
+- expected: zero-overhead L1 memory access in 4 clock cycles (1.33ns)
+- actual: 244x TLB oversubscription causes 4-level page table walks costing 840 cycles (280ns) per miss
+- ✗ expected 1.33ns -> actual 280.0ns (210x latency collapse)
+
+F02: Split-lock bus lock from unaligned network packet struct cast (UIUC IE 421)
+- breaks: Ethernet 14-byte offset places 64-bit uint64 across 64-byte cache line boundary
+- expected: 64-bit register load in 3 clock cycles (1.0ns)
+- actual: CPU triggers split-lock bus arbitration across interconnect costing 1200 cycles (400ns)
+- ✗ expected 1.0ns -> actual 400.0ns (400x throughput penalty)
+
+F03: Ring buffer index false sharing across producer and consumer cores
+- breaks: Write_Index (0x2000) and Read_Index (0x2004) placed in single 64-byte cache line
+- expected: independent core updates in 4 clock cycles (1.33ns)
+- actual: MESI protocol ping-pongs cache line between Core 2 and Core 3 costing 180 cycles (60ns) per message
+- ✗ expected 1.33ns -> actual 60.0ns (45x latency penalty)
+
+F04: Binary search tree pointer chasing in limit order book (std::map)
+- breaks: 20-level red-black tree traversal dereferences 20 disjoint heap nodes
+- expected: direct array offset calculation in 1 clock cycle (0.33ns)
+- actual: 20 sequential cache misses to DRAM costing 4200 clock cycles (1400ns)
+- ✗ expected 0.33ns -> actual 1400.0ns (4200x SLA violation)
+
+F05: Dynamic memory allocation lock contention in hot order insertion (`malloc`)
+- breaks: heap node allocation invokes glibc ptmalloc arena mutex
+- expected: intrusive pre-allocated pool link in 4 clock cycles (1.33ns)
+- actual: kernel heap expansion and thread lock acquisition costs 6000 clock cycles (2000ns)
+- ✗ expected 1.33ns -> actual 2000.0ns (1500x latency blowout)
+
+F06: Hash table bucket chain collision and rehash spike (Stevens FE 522)
+- breaks: std::unordered_map with 1031 buckets accumulates 50,000 price levels
+- expected: O(1) price level lookup in 1 clock cycle (0.33ns)
+- actual: 52-node linked list traversal takes 10,920 cycles; table rehash takes 2.4ms
+- ✗ expected 0.33ns -> actual 2,400,000ns (7,200,000x latency disaster)
+
+F07: Amortized vector capacity doubling during order execution logging (Baruch MFE)
+- breaks: std::vector reaches capacity 1024; message 1025 triggers heap realloc + copy
+- expected: deterministic push in 4 clock cycles (1.33ns)
+- actual: mmap allocation + memory copy costs 41,676 clock cycles (13,892ns)
+- ✗ expected 1.33ns -> actual 13,892ns (10,419x latency explosion)
+
+F08: Userspace file stream synchronization in matching engine loop (Northwestern CS 343)
+- breaks: debug printf left in critical path acquires FILE* mutex and writes to TTY line discipline
+- expected: non-blocking memory update in 14 clock cycles (4.66ns)
+- actual: system call context switch to terminal emulator costs 48,366 cycles (16,122ns)
+- ✗ expected 4.66ns -> actual 16,122ns (3459x throughput destruction)
+
+F09: Michael-Scott non-blocking queue ABA node reuse corruption (Rochester CSC 258)
+- breaks: pointer recycled by allocator matches stale pointer in suspended thread CAS
+- expected: atomic pop returns valid order node
+- actual: CAS succeeds with freed address, corrupting queue head pointer
+- ✗ expected valid node -> actual SIGSEGV memory corruption
+
+F10: Compare-And-Swap spinlock bus lock interconnect saturation
+- breaks: multiple producer threads spin on atomic CAS without exponential backoff
+- expected: lock-free message enqueue
+- actual: LOCK prefix saturates hardware cache coherency bus, inflating memory latency from 40ns to 350ns
+- ✗ expected 40ns -> actual 350ns (8.75x system-wide memory stall)
