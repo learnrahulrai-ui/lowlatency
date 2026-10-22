@@ -18,3 +18,8 @@ FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
 ## Task
 Build a program that receives market information, decides whether to quote buy or sell, and competes in a simulated exchange under position and resource limits. Lot size, position limit and window length found in the example repository are that participant's values; take limits from the official rules.
 FOLLOW-UP: VERIFY: Find the original sentence that supports the preceding claim.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+This is a published competition. Fix the competition season before relying on any particular compiler, limits or file names; the linked participant repository is a sample implementation and NOT the source of official rules. No strategy implementation or order decisions are supplied.
+SOURCES: https://readytradergo.optiver.com/faqs/ and https://github.com/russellstanley/optiver-trading
+ONE ACTION: IDENTIFY the official publication containing the version constraint.
