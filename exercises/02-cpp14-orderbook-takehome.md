@@ -34,3 +34,8 @@ FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated
 ## Tests you must write
 Duplicate order IDs, negative quantities, unknown cancellations, undefined midquotes (empty side).
 FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+IMPORTANT CORRECTION: The original assignment is a FEED HANDLER. Its input already includes separate Order A/X/M and Trade T messages. The background matching example describes what the EXCHANGE does; it does not authorize a local feed handler to generate executions from a new BUY on its own. The published 'Problem' has five requirements plus a sixth item containing C++ starter code. Midquotes are output on each input message; a missing side yields the sample NAN. Traded volume is accumulated only for consecutive trades at the most recent trade price; a price change resets that tally. Read the original Problem section before the author's Solution section.
+SOURCE: https://github.com/olibre/Cpp14-OrderBook
+ONE ACTION: COPY the original action letters from the source's 'Messages' definition.
