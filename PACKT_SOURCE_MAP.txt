@@ -1,0 +1,486 @@
+PACKT PUBLISHING - ORIGINAL CODE SOURCE MAP AND UNSOLVED LAB ROUTE
+Source: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP
+Pinned tree commit: 11e3925f431f7c8c39739ed90b874d6ff2aa2966
+License: MIT; Copyright (c) 2022 Packt. Original LICENSE is in submodule.
+Upstream source available under third_party/Building-Low-Latency-Applications-with-CPP
+with recursive clone/submodule update.
+This is an INDEX ONLY: not a copy of the book's chapters or solutions.
+The GitHub tree listing was checked for EVERY path, but the contents of
+every file below were NOT individually inspected.
+Total upstream entries: 507; tracked files: 436;
+unique blob hashes across chapters: 163.
+Repeated chapter paths often reuse identical content SHAs.
+The full upstream repo contains binary/large assets too, not only C++.
+The submodule stores one pinned Git commit reference, NOT 33 MB of
+independently vendored source in this repository.
+
+ONE TASK AT A TIME
+1. Read a single upstream file at the pinned version.
+2. Identify one state or data structure in the file, no implementation.
+3. Produce one numeric or boundary example by hand.
+4. Write expected result before any test implementation.
+5. Verify any performance claim by actual measurement.
+6. Only after finishing first step select the next file.
+NO CODING SOLUTIONS IN THIS MANIFEST.
+
+AUTHOR'S CHAPTER PATH PROGRESSION (FILENAMES AS EVIDENCE)
+Chapter3: C++ source-level performance concepts
+Chapter4: Memory pool, queue, sockets, threading and logging
+Chapter6: Early exchange interfaces and common utilities
+Chapter7: Exchange matching book and request sequencing
+Chapter8: Trading components and market data integration
+Chapter9: Integration and iteration
+Chapter10: Expanded exchange/trading build and scripts
+Chapter11: Instrumentation and iterative trading ecosystem
+Chapter12: Extended full system, benchmarks and performance experiments
+
+COMPLETE GIT TREE FILE INDEX AT PINNED COMMIT
+.gitignore | DATA/DOC/OTHER | 299 bytes | sha f037cf4d4c6d19ab167d2acf0ce8d149bc7d9aae
+Chapter10/CMakeLists.txt | BUILD | 770 bytes | sha 48417aa06b3a97fb5505ad7a17f6b1f36e11f3fc
+Chapter10/common/CMakeLists.txt | BUILD | 857 bytes | sha 2fceda4ea0452c4c98bb2c662297736670df1f5f
+Chapter10/common/lf_queue_example.cpp | SOURCE | 1141 bytes | sha abe374d69c7d60b00ab08a16b019da4c0935dca8
+Chapter10/common/lf_queue.h | SOURCE | 1610 bytes | sha bebf7031765cdf9bdc79eccbbd4beb95aa6b05fd
+Chapter10/common/logging_example.cpp | SOURCE | 511 bytes | sha ee26cb47cc10f4822a235bf016ad625378a6fc5b
+Chapter10/common/logging.h | SOURCE | 6717 bytes | sha 170c5cb1c95a07b886fe065e8f98c8fc314f1996
+Chapter10/common/macros.h | SOURCE | 515 bytes | sha 00613a3b0d771ccd8d229cf3d965f589f2cf93a7
+Chapter10/common/mcast_socket.cpp | SOURCE | 2174 bytes | sha a734f5656c69a68ee6f0b27a49069f22fd8a8202
+Chapter10/common/mcast_socket.h | SOURCE | 1536 bytes | sha 24336386542dbc5277cdce560a80d09426e26efc
+Chapter10/common/mem_pool_example.cpp | SOURCE | 891 bytes | sha 3e37e00afe3383eabc8fa9387ecbeb39d4dbc622
+Chapter10/common/mem_pool.h | SOURCE | 3105 bytes | sha f47b93108a0a812221cad15bb0ac64d0a5e01c02
+Chapter10/common/socket_example.cpp | SOURCE | 2399 bytes | sha ed6450e170c3d5724b1c55646647c7aad6a2b429
+Chapter10/common/socket_utils.h | SOURCE | 5672 bytes | sha 72dffbe11d688f9cc49afecd516c3ec29468c6e3
+Chapter10/common/tcp_server.cpp | SOURCE | 4539 bytes | sha 17288f7205a008186ed5c428f13f4ea3e31d5dea
+Chapter10/common/tcp_server.h | SOURCE | 1442 bytes | sha 744ea0954823c87bc579ec3bd8f3cc03d7835e72
+Chapter10/common/tcp_socket.cpp | SOURCE | 2669 bytes | sha d1fad993b4abaeebfa64727c5a2f1b063bae40fa
+Chapter10/common/tcp_socket.h | SOURCE | 1737 bytes | sha 95bf126bcc13c19bde6ac671dc9381e49c7dc387
+Chapter10/common/thread_example.cpp | SOURCE | 808 bytes | sha 1298b4f9986cd281bf1a5bd6bf5755c9a59ac1bc
+Chapter10/common/thread_utils.h | SOURCE | 1287 bytes | sha e0541b8b8b4a9a362becb3a53959416e33662b1f
+Chapter10/common/time_utils.h | SOURCE | 846 bytes | sha d1f7b62734d94b8b8c4fca1b238d2493f21f3e11
+Chapter10/common/types.h | SOURCE | 5306 bytes | sha 20906d3ea15e6cf860df34b572863dbc22277f3c
+Chapter10/exchange/CMakeLists.txt | BUILD | 323 bytes | sha 46fa65ecbf6c78580e42fdc46b1bff3ed7f318f7
+Chapter10/exchange/exchange_main.cpp | SOURCE | 2704 bytes | sha 08e2a71cf9269ca50d09b1fde99fb22379c25750
+Chapter10/exchange/market_data/market_data_publisher.cpp | SOURCE | 2290 bytes | sha c8de5d63aeb9183c16aa3567c78f20f00e2cc32b
+Chapter10/exchange/market_data/market_data_publisher.h | SOURCE | 2520 bytes | sha 53190dbb40f74b3b6d6dba45f47c0b5ffbc7d896
+Chapter10/exchange/market_data/market_update.h | SOURCE | 2805 bytes | sha 4cbc6a30c5430f28a8ce0b77119e301e326f018b
+Chapter10/exchange/market_data/snapshot_synthesizer.cpp | SOURCE | 6747 bytes | sha 7c7218692d71fcc672e01136129ab834254863c8
+Chapter10/exchange/market_data/snapshot_synthesizer.h | SOURCE | 2297 bytes | sha a50200be1d1302004420b32d1f554f7ee9da21bd
+Chapter10/exchange/matcher/matching_engine.cpp | SOURCE | 1241 bytes | sha d5865602ac99bd222ba4371b9e226243557a214a
+Chapter10/exchange/matcher/matching_engine.h | SOURCE | 4216 bytes | sha 694209b2e535d20d15d82bf40b95eb51de8fdb62
+Chapter10/exchange/matcher/me_order_book.cpp | SOURCE | 9280 bytes | sha 50bcd8185e90a1c6c50909913e39085acdb2a20e
+Chapter10/exchange/matcher/me_order_book.h | SOURCE | 9878 bytes | sha 9bb2192e73fa3a15443afa07ef77c2429a665d04
+Chapter10/exchange/matcher/me_order.cpp | SOURCE | 828 bytes | sha 5ba82d3d3086032d93b83dcfefb90332754ea1bb
+Chapter10/exchange/matcher/me_order.h | SOURCE | 3074 bytes | sha 6b7b561b7ce0175e7ea32d22b87c645b2b51ece8
+Chapter10/exchange/order_server/client_request.h | SOURCE | 2281 bytes | sha 34dbbc16b9e0e5ea3cfd46236544c6d79650a8fd
+Chapter10/exchange/order_server/client_response.h | SOURCE | 2728 bytes | sha 8d05ca5797b7be870ac9ea19cfeae9cbcc087607
+Chapter10/exchange/order_server/fifo_sequencer.h | SOURCE | 3046 bytes | sha 4357c14b33488d5aa0bc3a3434d7033966cbce76
+Chapter10/exchange/order_server/order_server.cpp | SOURCE | 1170 bytes | sha 175fc122fa166e06ed4457d0cf8e37d80ac9a6bd
+Chapter10/exchange/order_server/order_server.h | SOURCE | 5994 bytes | sha de169baceba57fce74e0ad874e925d4b43babf85
+Chapter10/scripts/build.sh | SCRIPT | 606 bytes | sha 78f50d0c8e9cedbc1410eb23440b680395d70955
+Chapter10/scripts/no_clean_build.sh | SCRIPT | 494 bytes | sha 6e72d5233f5cd50546ab510bda978232f9e5c40e
+Chapter10/scripts/run_clients.sh | SCRIPT | 2346 bytes | sha e78a88a0eea31b687e63d61a92a78503e153e4e1
+Chapter10/scripts/run_exchange_and_clients.sh | SCRIPT | 874 bytes | sha ac1a93f95dabb100e87642755d347d3117ed279b
+Chapter10/trading/CMakeLists.txt | BUILD | 347 bytes | sha 2b9ae8fad82fd60ed0dcfbdd5b0dc16548639dbc
+Chapter10/trading/market_data/market_data_consumer.cpp | SOURCE | 10927 bytes | sha 462dfe2c08f93f39aeef613ebf2dfa9a080983a0
+Chapter10/trading/market_data/market_data_consumer.h | SOURCE | 3634 bytes | sha 661409932b4693ae155f20246d128f9489af4878
+Chapter10/trading/order_gw/order_gateway.cpp | SOURCE | 3786 bytes | sha 56bbdb69ed375dc51923c37f8c7baee8c402ffeb
+Chapter10/trading/order_gw/order_gateway.h | SOURCE | 2869 bytes | sha 0881f03e5206aea801ae8bb881eae73f0fb4ec61
+Chapter10/trading/strategy/feature_engine.h | SOURCE | 2691 bytes | sha f6dedb14d3987655cdb245863f9c5b3b45a6be0f
+Chapter10/trading/strategy/liquidity_taker.cpp | SOURCE | 850 bytes | sha f7ef9bdd530af692058b833fbb3442b035fb5374
+Chapter10/trading/strategy/liquidity_taker.h | SOURCE | 3438 bytes | sha c725500f89083e36a4ce75932f1d86b27befe056
+Chapter10/trading/strategy/market_maker.cpp | SOURCE | 802 bytes | sha aed99f5439dbe924830aed9b345ce4a6fe74b757
+Chapter10/trading/strategy/market_maker.h | SOURCE | 3308 bytes | sha fb900b82d0d4cb4265d2cc223359f835797187c4
+Chapter10/trading/strategy/market_order_book.cpp | SOURCE | 6176 bytes | sha 3e345c90e35841703f50d3bd737b9fcc85d16308
+Chapter10/trading/strategy/market_order_book.h | SOURCE | 9368 bytes | sha c0456b43650d3c806bd0363a6ef75fdfaef44565
+Chapter10/trading/strategy/market_order.cpp | SOURCE | 641 bytes | sha 31c5c8435b67caa6eaa5b370fbf4550c42c91732
+Chapter10/trading/strategy/market_order.h | SOURCE | 3290 bytes | sha e5d9890b01ab9bb6616190db6f93b5dda285ff31
+Chapter10/trading/strategy/om_order.h | SOURCE | 1814 bytes | sha cc7ead3f0107cac95d70e0bb554cd7f613d82b61
+Chapter10/trading/strategy/order_manager.cpp | SOURCE | 1671 bytes | sha f8408048cf5b20d2b281afe6c2fb1bf430760e67
+Chapter10/trading/strategy/order_manager.h | SOURCE | 5439 bytes | sha 5a6c9fcc6415210105efc685d157e42610e4248f
+Chapter10/trading/strategy/position_keeper.h | SOURCE | 6043 bytes | sha 91b51276513a1034e02d888f44cfc5e8b516ca5e
+Chapter10/trading/strategy/risk_manager.cpp | SOURCE | 437 bytes | sha fa8cc61ff2c16d844639724e4e5602b512cc51a5
+Chapter10/trading/strategy/risk_manager.h | SOURCE | 3179 bytes | sha 3ae4755ff8fa9413926d0e1606b382e327107547
+Chapter10/trading/strategy/trade_engine.cpp | SOURCE | 6612 bytes | sha 7bab55efab975ddcef3253a93a15c2951e57744a
+Chapter10/trading/strategy/trade_engine.h | SOURCE | 6494 bytes | sha d1160becca5414ce672f6d48a792c240c1085438
+Chapter10/trading/trading_main.cpp | SOURCE | 6040 bytes | sha 1a40beaef0d081cd1906ca14d7e3d1ec6d3cc938
+Chapter11/CMakeLists.txt | BUILD | 770 bytes | sha 48417aa06b3a97fb5505ad7a17f6b1f36e11f3fc
+Chapter11/common/CMakeLists.txt | BUILD | 857 bytes | sha 2fceda4ea0452c4c98bb2c662297736670df1f5f
+Chapter11/common/lf_queue_example.cpp | SOURCE | 1141 bytes | sha abe374d69c7d60b00ab08a16b019da4c0935dca8
+Chapter11/common/lf_queue.h | SOURCE | 1610 bytes | sha bebf7031765cdf9bdc79eccbbd4beb95aa6b05fd
+Chapter11/common/logging_example.cpp | SOURCE | 511 bytes | sha ee26cb47cc10f4822a235bf016ad625378a6fc5b
+Chapter11/common/logging.h | SOURCE | 6717 bytes | sha 170c5cb1c95a07b886fe065e8f98c8fc314f1996
+Chapter11/common/macros.h | SOURCE | 515 bytes | sha 00613a3b0d771ccd8d229cf3d965f589f2cf93a7
+Chapter11/common/mcast_socket.cpp | SOURCE | 2174 bytes | sha a734f5656c69a68ee6f0b27a49069f22fd8a8202
+Chapter11/common/mcast_socket.h | SOURCE | 1536 bytes | sha 24336386542dbc5277cdce560a80d09426e26efc
+Chapter11/common/mem_pool_example.cpp | SOURCE | 891 bytes | sha 3e37e00afe3383eabc8fa9387ecbeb39d4dbc622
+Chapter11/common/mem_pool.h | SOURCE | 3105 bytes | sha f47b93108a0a812221cad15bb0ac64d0a5e01c02
+Chapter11/common/perf_utils.h | SOURCE | 1436 bytes | sha 2fefcb8da43539f482da5b39967c6d1cedfe3860
+Chapter11/common/socket_example.cpp | SOURCE | 2399 bytes | sha ed6450e170c3d5724b1c55646647c7aad6a2b429
+Chapter11/common/socket_utils.h | SOURCE | 5672 bytes | sha 72dffbe11d688f9cc49afecd516c3ec29468c6e3
+Chapter11/common/tcp_server.cpp | SOURCE | 4539 bytes | sha 17288f7205a008186ed5c428f13f4ea3e31d5dea
+Chapter11/common/tcp_server.h | SOURCE | 1442 bytes | sha 744ea0954823c87bc579ec3bd8f3cc03d7835e72
+Chapter11/common/tcp_socket.cpp | SOURCE | 2669 bytes | sha d1fad993b4abaeebfa64727c5a2f1b063bae40fa
+Chapter11/common/tcp_socket.h | SOURCE | 1737 bytes | sha 95bf126bcc13c19bde6ac671dc9381e49c7dc387
+Chapter11/common/thread_example.cpp | SOURCE | 808 bytes | sha 1298b4f9986cd281bf1a5bd6bf5755c9a59ac1bc
+Chapter11/common/thread_utils.h | SOURCE | 1287 bytes | sha e0541b8b8b4a9a362becb3a53959416e33662b1f
+Chapter11/common/time_utils.h | SOURCE | 1242 bytes | sha 4c6d51c8680eca1c1eea8526edfbdda3ded8ae81
+Chapter11/common/types.h | SOURCE | 5306 bytes | sha 20906d3ea15e6cf860df34b572863dbc22277f3c
+Chapter11/exchange/CMakeLists.txt | BUILD | 323 bytes | sha 46fa65ecbf6c78580e42fdc46b1bff3ed7f318f7
+Chapter11/exchange/exchange_main.cpp | SOURCE | 2704 bytes | sha 08e2a71cf9269ca50d09b1fde99fb22379c25750
+Chapter11/exchange/market_data/market_data_publisher.cpp | SOURCE | 2528 bytes | sha 759abe63971bf48aefc23c5399575612bd563636
+Chapter11/exchange/market_data/market_data_publisher.h | SOURCE | 2520 bytes | sha 53190dbb40f74b3b6d6dba45f47c0b5ffbc7d896
+Chapter11/exchange/market_data/market_update.h | SOURCE | 2805 bytes | sha 4cbc6a30c5430f28a8ce0b77119e301e326f018b
+Chapter11/exchange/market_data/snapshot_synthesizer.cpp | SOURCE | 6747 bytes | sha 7c7218692d71fcc672e01136129ab834254863c8
+Chapter11/exchange/market_data/snapshot_synthesizer.h | SOURCE | 2297 bytes | sha a50200be1d1302004420b32d1f554f7ee9da21bd
+Chapter11/exchange/matcher/matching_engine.cpp | SOURCE | 1241 bytes | sha d5865602ac99bd222ba4371b9e226243557a214a
+Chapter11/exchange/matcher/matching_engine.h | SOURCE | 4777 bytes | sha 2b028da158bed7cbb2174576264539d53ad4879f
+Chapter11/exchange/matcher/me_order_book.cpp | SOURCE | 9978 bytes | sha 7c9755bf772bd17b2f9fe4930e410b2eaaf2311b
+Chapter11/exchange/matcher/me_order_book.h | SOURCE | 9878 bytes | sha 9bb2192e73fa3a15443afa07ef77c2429a665d04
+Chapter11/exchange/matcher/me_order.cpp | SOURCE | 828 bytes | sha 5ba82d3d3086032d93b83dcfefb90332754ea1bb
+Chapter11/exchange/matcher/me_order.h | SOURCE | 3074 bytes | sha 6b7b561b7ce0175e7ea32d22b87c645b2b51ece8
+Chapter11/exchange/order_server/client_request.h | SOURCE | 2281 bytes | sha 34dbbc16b9e0e5ea3cfd46236544c6d79650a8fd
+Chapter11/exchange/order_server/client_response.h | SOURCE | 2728 bytes | sha 8d05ca5797b7be870ac9ea19cfeae9cbcc087607
+Chapter11/exchange/order_server/fifo_sequencer.h | SOURCE | 3109 bytes | sha 69ab72cbf19ecd3425addd59dbccbcf1a61a14c8
+Chapter11/exchange/order_server/order_server.cpp | SOURCE | 1170 bytes | sha 175fc122fa166e06ed4457d0cf8e37d80ac9a6bd
+Chapter11/exchange/order_server/order_server.h | SOURCE | 6550 bytes | sha 21811005df8bf4a6f6321226778ef8ebb9758997
+Chapter11/scripts/build.sh | SCRIPT | 606 bytes | sha 78f50d0c8e9cedbc1410eb23440b680395d70955
+Chapter11/scripts/no_clean_build.sh | SCRIPT | 494 bytes | sha 6e72d5233f5cd50546ab510bda978232f9e5c40e
+Chapter11/scripts/run_clients.sh | SCRIPT | 2378 bytes | sha 657c5e7fc1b7a89af22182ee0025e1e9eedd266d
+Chapter11/scripts/run_exchange_and_clients.sh | SCRIPT | 874 bytes | sha ac1a93f95dabb100e87642755d347d3117ed279b
+Chapter11/trading/CMakeLists.txt | BUILD | 347 bytes | sha 2b9ae8fad82fd60ed0dcfbdd5b0dc16548639dbc
+Chapter11/trading/market_data/market_data_consumer.cpp | SOURCE | 11182 bytes | sha d5367546f59138328ebe5f08fc870d3754921406
+Chapter11/trading/market_data/market_data_consumer.h | SOURCE | 3634 bytes | sha 661409932b4693ae155f20246d128f9489af4878
+Chapter11/trading/order_gw/order_gateway.cpp | SOURCE | 4238 bytes | sha cbad88e4b8f3b562938f1c83c0fb43a44ac1a28b
+Chapter11/trading/order_gw/order_gateway.h | SOURCE | 2869 bytes | sha 0881f03e5206aea801ae8bb881eae73f0fb4ec61
+Chapter11/trading/strategy/feature_engine.h | SOURCE | 2691 bytes | sha f6dedb14d3987655cdb245863f9c5b3b45a6be0f
+Chapter11/trading/strategy/liquidity_taker.cpp | SOURCE | 850 bytes | sha f7ef9bdd530af692058b833fbb3442b035fb5374
+Chapter11/trading/strategy/liquidity_taker.h | SOURCE | 3688 bytes | sha f1319b0de2d6d489b54e497d72140ac1a3fce032
+Chapter11/trading/strategy/market_maker.cpp | SOURCE | 802 bytes | sha aed99f5439dbe924830aed9b345ce4a6fe74b757
+Chapter11/trading/strategy/market_maker.h | SOURCE | 3554 bytes | sha fffa103b29183d54a594c593358489aef12ec10d
+Chapter11/trading/strategy/market_order_book.cpp | SOURCE | 6548 bytes | sha 023d0865704145b0afb61feb6878555c6d414cb7
+Chapter11/trading/strategy/market_order_book.h | SOURCE | 9368 bytes | sha c0456b43650d3c806bd0363a6ef75fdfaef44565
+Chapter11/trading/strategy/market_order.cpp | SOURCE | 641 bytes | sha 31c5c8435b67caa6eaa5b370fbf4550c42c91732
+Chapter11/trading/strategy/market_order.h | SOURCE | 3290 bytes | sha e5d9890b01ab9bb6616190db6f93b5dda285ff31
+Chapter11/trading/strategy/om_order.h | SOURCE | 1814 bytes | sha cc7ead3f0107cac95d70e0bb554cd7f613d82b61
+Chapter11/trading/strategy/order_manager.cpp | SOURCE | 1671 bytes | sha f8408048cf5b20d2b281afe6c2fb1bf430760e67
+Chapter11/trading/strategy/order_manager.h | SOURCE | 6083 bytes | sha 7f68dc86786f8787f52009b9cd9ad0cfb1b41bdd
+Chapter11/trading/strategy/position_keeper.h | SOURCE | 6043 bytes | sha 91b51276513a1034e02d888f44cfc5e8b516ca5e
+Chapter11/trading/strategy/risk_manager.cpp | SOURCE | 437 bytes | sha fa8cc61ff2c16d844639724e4e5602b512cc51a5
+Chapter11/trading/strategy/risk_manager.h | SOURCE | 3179 bytes | sha 3ae4755ff8fa9413926d0e1606b382e327107547
+Chapter11/trading/strategy/trade_engine.cpp | SOURCE | 7645 bytes | sha 5c80fd44f00feca0cbcc1f07709ebe986200719a
+Chapter11/trading/strategy/trade_engine.h | SOURCE | 6494 bytes | sha d1160becca5414ce672f6d48a792c240c1085438
+Chapter11/trading/trading_main.cpp | SOURCE | 6040 bytes | sha 1a40beaef0d081cd1906ca14d7e3d1ec6d3cc938
+Chapter12/benchmarks/CMakeLists.txt | BUILD | 197 bytes | sha 59794ca672fe13f779cb656d2803dd275809c012
+Chapter12/benchmarks/hash_benchmark.cpp | SOURCE | 2887 bytes | sha 3b109c93c7c1dd434293a3d914d9185ac131a098
+Chapter12/benchmarks/logger_benchmark.cpp | SOURCE | 1439 bytes | sha ed19f1a0ba52d210b2b61a50966120473273caeb
+Chapter12/benchmarks/release_benchmark.cpp | SOURCE | 1348 bytes | sha 6668ae9340ba6f30e7092d808f94ea3c458aea5c
+Chapter12/CMakeLists.txt | BUILD | 1159 bytes | sha 9d5e9531080bebea9a7d269b7de4bff71cbe45e6
+Chapter12/common/CMakeLists.txt | BUILD | 857 bytes | sha 2fceda4ea0452c4c98bb2c662297736670df1f5f
+Chapter12/common/lf_queue_example.cpp | SOURCE | 1141 bytes | sha abe374d69c7d60b00ab08a16b019da4c0935dca8
+Chapter12/common/lf_queue.h | SOURCE | 1610 bytes | sha bebf7031765cdf9bdc79eccbbd4beb95aa6b05fd
+Chapter12/common/logging_example.cpp | SOURCE | 511 bytes | sha ee26cb47cc10f4822a235bf016ad625378a6fc5b
+Chapter12/common/logging.h | SOURCE | 6717 bytes | sha 170c5cb1c95a07b886fe065e8f98c8fc314f1996
+Chapter12/common/macros.h | SOURCE | 515 bytes | sha 00613a3b0d771ccd8d229cf3d965f589f2cf93a7
+Chapter12/common/mcast_socket.cpp | SOURCE | 2174 bytes | sha a734f5656c69a68ee6f0b27a49069f22fd8a8202
+Chapter12/common/mcast_socket.h | SOURCE | 1536 bytes | sha 24336386542dbc5277cdce560a80d09426e26efc
+Chapter12/common/mem_pool_example.cpp | SOURCE | 891 bytes | sha 3e37e00afe3383eabc8fa9387ecbeb39d4dbc622
+Chapter12/common/mem_pool.h | SOURCE | 3105 bytes | sha f47b93108a0a812221cad15bb0ac64d0a5e01c02
+Chapter12/common/opt_logging.h | SOURCE | 6952 bytes | sha 32880703cd4e4de9e7e32eaf33be4c6048f28836
+Chapter12/common/opt_mem_pool.h | SOURCE | 3225 bytes | sha 280445b4073044e8265c2da3bedcf5ce352b0886
+Chapter12/common/perf_utils.h | SOURCE | 1436 bytes | sha 2fefcb8da43539f482da5b39967c6d1cedfe3860
+Chapter12/common/socket_example.cpp | SOURCE | 2399 bytes | sha ed6450e170c3d5724b1c55646647c7aad6a2b429
+Chapter12/common/socket_utils.h | SOURCE | 5672 bytes | sha 72dffbe11d688f9cc49afecd516c3ec29468c6e3
+Chapter12/common/tcp_server.cpp | SOURCE | 4539 bytes | sha 17288f7205a008186ed5c428f13f4ea3e31d5dea
+Chapter12/common/tcp_server.h | SOURCE | 1442 bytes | sha 744ea0954823c87bc579ec3bd8f3cc03d7835e72
+Chapter12/common/tcp_socket.cpp | SOURCE | 2669 bytes | sha d1fad993b4abaeebfa64727c5a2f1b063bae40fa
+Chapter12/common/tcp_socket.h | SOURCE | 1737 bytes | sha 95bf126bcc13c19bde6ac671dc9381e49c7dc387
+Chapter12/common/thread_example.cpp | SOURCE | 808 bytes | sha 1298b4f9986cd281bf1a5bd6bf5755c9a59ac1bc
+Chapter12/common/thread_utils.h | SOURCE | 1287 bytes | sha e0541b8b8b4a9a362becb3a53959416e33662b1f
+Chapter12/common/time_utils.h | SOURCE | 1242 bytes | sha 4c6d51c8680eca1c1eea8526edfbdda3ded8ae81
+Chapter12/common/types.h | SOURCE | 5306 bytes | sha 20906d3ea15e6cf860df34b572863dbc22277f3c
+Chapter12/exchange/CMakeLists.txt | BUILD | 323 bytes | sha 46fa65ecbf6c78580e42fdc46b1bff3ed7f318f7
+Chapter12/exchange/exchange_main.cpp | SOURCE | 2704 bytes | sha 08e2a71cf9269ca50d09b1fde99fb22379c25750
+Chapter12/exchange/market_data/market_data_publisher.cpp | SOURCE | 2528 bytes | sha 759abe63971bf48aefc23c5399575612bd563636
+Chapter12/exchange/market_data/market_data_publisher.h | SOURCE | 2520 bytes | sha 53190dbb40f74b3b6d6dba45f47c0b5ffbc7d896
+Chapter12/exchange/market_data/market_update.h | SOURCE | 2834 bytes | sha 9d44553b5d7a599920564f3e2953a528fe2f30cc
+Chapter12/exchange/market_data/snapshot_synthesizer.cpp | SOURCE | 6747 bytes | sha 7c7218692d71fcc672e01136129ab834254863c8
+Chapter12/exchange/market_data/snapshot_synthesizer.h | SOURCE | 2297 bytes | sha a50200be1d1302004420b32d1f554f7ee9da21bd
+Chapter12/exchange/matcher/matching_engine.cpp | SOURCE | 1241 bytes | sha d5865602ac99bd222ba4371b9e226243557a214a
+Chapter12/exchange/matcher/matching_engine.h | SOURCE | 4777 bytes | sha 2b028da158bed7cbb2174576264539d53ad4879f
+Chapter12/exchange/matcher/me_order_book.cpp | SOURCE | 9978 bytes | sha 7c9755bf772bd17b2f9fe4930e410b2eaaf2311b
+Chapter12/exchange/matcher/me_order_book.h | SOURCE | 9878 bytes | sha 9bb2192e73fa3a15443afa07ef77c2429a665d04
+Chapter12/exchange/matcher/me_order.cpp | SOURCE | 828 bytes | sha 5ba82d3d3086032d93b83dcfefb90332754ea1bb
+Chapter12/exchange/matcher/me_order.h | SOURCE | 3074 bytes | sha 6b7b561b7ce0175e7ea32d22b87c645b2b51ece8
+Chapter12/exchange/matcher/unordered_map_me_order_book.cpp | SOURCE | 10166 bytes | sha 87b8bb53a0da8ab4cc9b8d61bde83cd6648fb6ea
+Chapter12/exchange/matcher/unordered_map_me_order_book.h | SOURCE | 10102 bytes | sha 56ff0843442aa18cf000596381b89c7643b0f6d2
+Chapter12/exchange/order_server/client_request.h | SOURCE | 2281 bytes | sha 34dbbc16b9e0e5ea3cfd46236544c6d79650a8fd
+Chapter12/exchange/order_server/client_response.h | SOURCE | 2728 bytes | sha 8d05ca5797b7be870ac9ea19cfeae9cbcc087607
+Chapter12/exchange/order_server/fifo_sequencer.h | SOURCE | 3109 bytes | sha 69ab72cbf19ecd3425addd59dbccbcf1a61a14c8
+Chapter12/exchange/order_server/order_server.cpp | SOURCE | 1170 bytes | sha 175fc122fa166e06ed4457d0cf8e37d80ac9a6bd
+Chapter12/exchange/order_server/order_server.h | SOURCE | 6550 bytes | sha 21811005df8bf4a6f6321226778ef8ebb9758997
+Chapter12/notebooks/perf_analysis.ipynb | DATA/DOC/OTHER | 8370 bytes | sha fa902b791c0e12faea36dc73c3cd8f495564d047
+Chapter12/perf_analysis.html | DATA/DOC/OTHER | 31827434 bytes | sha 8ab537008dff908fcf0ee424d9db852638dc7c71
+Chapter12/scripts/build.sh | SCRIPT | 606 bytes | sha 78f50d0c8e9cedbc1410eb23440b680395d70955
+Chapter12/scripts/no_clean_build.sh | SCRIPT | 494 bytes | sha 6e72d5233f5cd50546ab510bda978232f9e5c40e
+Chapter12/scripts/run_benchmarks.sh | SCRIPT | 1346 bytes | sha 30c8ad98bbf2333feae6796b8d158df0ba0b7e45
+Chapter12/scripts/run_clients.sh | SCRIPT | 2378 bytes | sha 657c5e7fc1b7a89af22182ee0025e1e9eedd266d
+Chapter12/scripts/run_exchange_and_clients.sh | SCRIPT | 874 bytes | sha ac1a93f95dabb100e87642755d347d3117ed279b
+Chapter12/trading/CMakeLists.txt | BUILD | 347 bytes | sha 2b9ae8fad82fd60ed0dcfbdd5b0dc16548639dbc
+Chapter12/trading/market_data/market_data_consumer.cpp | SOURCE | 11182 bytes | sha d5367546f59138328ebe5f08fc870d3754921406
+Chapter12/trading/market_data/market_data_consumer.h | SOURCE | 3634 bytes | sha 661409932b4693ae155f20246d128f9489af4878
+Chapter12/trading/order_gw/order_gateway.cpp | SOURCE | 4238 bytes | sha cbad88e4b8f3b562938f1c83c0fb43a44ac1a28b
+Chapter12/trading/order_gw/order_gateway.h | SOURCE | 2869 bytes | sha 0881f03e5206aea801ae8bb881eae73f0fb4ec61
+Chapter12/trading/strategy/feature_engine.h | SOURCE | 2691 bytes | sha f6dedb14d3987655cdb245863f9c5b3b45a6be0f
+Chapter12/trading/strategy/liquidity_taker.cpp | SOURCE | 850 bytes | sha f7ef9bdd530af692058b833fbb3442b035fb5374
+Chapter12/trading/strategy/liquidity_taker.h | SOURCE | 3688 bytes | sha f1319b0de2d6d489b54e497d72140ac1a3fce032
+Chapter12/trading/strategy/market_maker.cpp | SOURCE | 802 bytes | sha aed99f5439dbe924830aed9b345ce4a6fe74b757
+Chapter12/trading/strategy/market_maker.h | SOURCE | 3554 bytes | sha fffa103b29183d54a594c593358489aef12ec10d
+Chapter12/trading/strategy/market_order_book.cpp | SOURCE | 6548 bytes | sha 023d0865704145b0afb61feb6878555c6d414cb7
+Chapter12/trading/strategy/market_order_book.h | SOURCE | 9368 bytes | sha c0456b43650d3c806bd0363a6ef75fdfaef44565
+Chapter12/trading/strategy/market_order.cpp | SOURCE | 641 bytes | sha 31c5c8435b67caa6eaa5b370fbf4550c42c91732
+Chapter12/trading/strategy/market_order.h | SOURCE | 3290 bytes | sha e5d9890b01ab9bb6616190db6f93b5dda285ff31
+Chapter12/trading/strategy/om_order.h | SOURCE | 1814 bytes | sha cc7ead3f0107cac95d70e0bb554cd7f613d82b61
+Chapter12/trading/strategy/order_manager.cpp | SOURCE | 1671 bytes | sha f8408048cf5b20d2b281afe6c2fb1bf430760e67
+Chapter12/trading/strategy/order_manager.h | SOURCE | 6083 bytes | sha 7f68dc86786f8787f52009b9cd9ad0cfb1b41bdd
+Chapter12/trading/strategy/position_keeper.h | SOURCE | 6043 bytes | sha 91b51276513a1034e02d888f44cfc5e8b516ca5e
+Chapter12/trading/strategy/risk_manager.cpp | SOURCE | 437 bytes | sha fa8cc61ff2c16d844639724e4e5602b512cc51a5
+Chapter12/trading/strategy/risk_manager.h | SOURCE | 3179 bytes | sha 3ae4755ff8fa9413926d0e1606b382e327107547
+Chapter12/trading/strategy/trade_engine.cpp | SOURCE | 7645 bytes | sha 5c80fd44f00feca0cbcc1f07709ebe986200719a
+Chapter12/trading/strategy/trade_engine.h | SOURCE | 6494 bytes | sha d1160becca5414ce672f6d48a792c240c1085438
+Chapter12/trading/trading_main.cpp | SOURCE | 6040 bytes | sha 1a40beaef0d081cd1906ca14d7e3d1ec6d3cc938
+Chapter3/alignment.cpp | SOURCE | 1050 bytes | sha 89f311013acd9d6a80b04d66dc437ea59436263c
+Chapter3/branch.cpp | SOURCE | 1180 bytes | sha b34cda4170d17942ea5801842378224f232a04c0
+Chapter3/composition.cpp | SOURCE | 457 bytes | sha 7b6b98a74c30636be97c951f8b388391bf696ff7
+Chapter3/crtp.cpp | SOURCE | 909 bytes | sha 49fd0480cabef1f1c5a86a22f8bcf548cb982df1
+Chapter3/induction.cpp | SOURCE | 220 bytes | sha 3d9908488d5f2ace998fe44429289f51068e95de
+Chapter3/loop_invariant.cpp | SOURCE | 350 bytes | sha dc4e956d3b5725dde7642ae71679b95ac63d9da1
+Chapter3/loop_unroll.cpp | SOURCE | 268 bytes | sha d2856e8417bd61dd469f409f4c54d4e6b7e5c8be
+Chapter3/pointer_alias.cpp | SOURCE | 286 bytes | sha 1bbb8bc4952618258691ba806d26134ad34bc910
+Chapter3/rvo.cpp | SOURCE | 215 bytes | sha 2f69dd84d6da97af4dbe7e0bde22048032031b1e
+Chapter3/strength.cpp | SOURCE | 408 bytes | sha 0ae3669d9d9067170ad4288c67e156e9535827d0
+Chapter3/strict_alias.cpp | SOURCE | 246 bytes | sha 4fbaf56824c889c205a175e953a3a84b2ae21c30
+Chapter3/tail_call.cpp | SOURCE | 181 bytes | sha 9dfb15a18d51f109b8ded62259eb40ea3bfdc148
+Chapter3/vector.cpp | SOURCE | 400 bytes | sha 59ce726b6a3c2a6e13c5156b19f472d419b3388b
+Chapter4/build.sh | SCRIPT | 362 bytes | sha bc722a034c92b8892c01de3f0941cab13878586b
+Chapter4/CMakeLists.txt | BUILD | 918 bytes | sha 4ec8567855d58730c1dc1e96f197568790bf5456
+Chapter4/lf_queue_example.cpp | SOURCE | 1141 bytes | sha abe374d69c7d60b00ab08a16b019da4c0935dca8
+Chapter4/lf_queue.h | SOURCE | 1410 bytes | sha 8241f1f7aa8272e5e14af5bdca22701eb10355a1
+Chapter4/logging_example.cpp | SOURCE | 511 bytes | sha ee26cb47cc10f4822a235bf016ad625378a6fc5b
+Chapter4/logging.h | SOURCE | 5884 bytes | sha 9179b1524bd92badb4f3dfac21c9a57c87f8894f
+Chapter4/macros.h | SOURCE | 444 bytes | sha 283f89dacaf1c8c480a2a1618a3491b9cbebef4e
+Chapter4/mcast_socket.cpp | SOURCE | 2174 bytes | sha a734f5656c69a68ee6f0b27a49069f22fd8a8202
+Chapter4/mcast_socket.h | SOURCE | 1536 bytes | sha 24336386542dbc5277cdce560a80d09426e26efc
+Chapter4/mem_pool_example.cpp | SOURCE | 891 bytes | sha 3e37e00afe3383eabc8fa9387ecbeb39d4dbc622
+Chapter4/mem_pool.h | SOURCE | 2760 bytes | sha 8ba93e0d43c231484f7c5416921e23f492bae6eb
+Chapter4/run_examples.sh | SCRIPT | 93 bytes | sha 74b7644e4e4ff7966fe662a9c11dd2296abd4a36
+Chapter4/socket_example.cpp | SOURCE | 2399 bytes | sha ed6450e170c3d5724b1c55646647c7aad6a2b429
+Chapter4/socket_utils.h | SOURCE | 5672 bytes | sha 72dffbe11d688f9cc49afecd516c3ec29468c6e3
+Chapter4/tcp_server.cpp | SOURCE | 4539 bytes | sha 17288f7205a008186ed5c428f13f4ea3e31d5dea
+Chapter4/tcp_server.h | SOURCE | 1442 bytes | sha 744ea0954823c87bc579ec3bd8f3cc03d7835e72
+Chapter4/tcp_socket.cpp | SOURCE | 2669 bytes | sha d1fad993b4abaeebfa64727c5a2f1b063bae40fa
+Chapter4/tcp_socket.h | SOURCE | 1737 bytes | sha 95bf126bcc13c19bde6ac671dc9381e49c7dc387
+Chapter4/thread_example.cpp | SOURCE | 808 bytes | sha 1298b4f9986cd281bf1a5bd6bf5755c9a59ac1bc
+Chapter4/thread_utils.h | SOURCE | 1287 bytes | sha e0541b8b8b4a9a362becb3a53959416e33662b1f
+Chapter4/time_utils.h | SOURCE | 846 bytes | sha d1f7b62734d94b8b8c4fca1b238d2493f21f3e11
+Chapter6/build.sh | SCRIPT | 362 bytes | sha bc722a034c92b8892c01de3f0941cab13878586b
+Chapter6/CMakeLists.txt | BUILD | 559 bytes | sha d47ee6e0d73fbb65a675b983120513ceaa176b54
+Chapter6/common/CMakeLists.txt | BUILD | 267 bytes | sha af1543915b6b4f69f0490557115a9b3342ecf096
+Chapter6/common/lf_queue.h | SOURCE | 1410 bytes | sha 8241f1f7aa8272e5e14af5bdca22701eb10355a1
+Chapter6/common/logging.cpp | SOURCE | 49 bytes | sha a6350771d0e40f3783b2d3dfbb50c2ea4c4147c8
+Chapter6/common/logging.h | SOURCE | 5884 bytes | sha 9179b1524bd92badb4f3dfac21c9a57c87f8894f
+Chapter6/common/macros.h | SOURCE | 444 bytes | sha 283f89dacaf1c8c480a2a1618a3491b9cbebef4e
+Chapter6/common/mem_pool.h | SOURCE | 2721 bytes | sha ebb3154e4186f6500dbfde0fd4b2af9da4eb4268
+Chapter6/common/thread_utils.h | SOURCE | 1287 bytes | sha e0541b8b8b4a9a362becb3a53959416e33662b1f
+Chapter6/common/time_utils.h | SOURCE | 826 bytes | sha 0d921275921a01def00b452a1caddbdcf0c0b46c
+Chapter6/common/types.h | SOURCE | 2414 bytes | sha d0a06d5f94696ad507ab824ad4520f71d173a6b5
+Chapter6/exchange/CMakeLists.txt | BUILD | 323 bytes | sha 46fa65ecbf6c78580e42fdc46b1bff3ed7f318f7
+Chapter6/exchange/exchange_main.cpp | SOURCE | 1269 bytes | sha ca2095e84b523607bc461ab73410899213608e70
+Chapter6/exchange/market_data/market_update.h | SOURCE | 1585 bytes | sha 50eca821cd06005ccb356c1c677365342713b36d
+Chapter6/exchange/matcher/matching_engine.cpp | SOURCE | 1193 bytes | sha f1d0352cf013faa2bc51cea69793174fc30ec6ad
+Chapter6/exchange/matcher/matching_engine.h | SOURCE | 3404 bytes | sha edd40fee7aff7fe94de8a70b4d48645b2d8804ef
+Chapter6/exchange/matcher/me_order_book.cpp | SOURCE | 8286 bytes | sha 16164eada4b5efdd9330d254581ac92946350303
+Chapter6/exchange/matcher/me_order_book.h | SOURCE | 7865 bytes | sha 97af9a4b99164ba9d51f0238b0a580b03aefd90f
+Chapter6/exchange/matcher/me_order.cpp | SOURCE | 828 bytes | sha 5ba82d3d3086032d93b83dcfefb90332754ea1bb
+Chapter6/exchange/matcher/me_order.h | SOURCE | 2375 bytes | sha bc81251df44e1c5c99c270a3bd68813c84fcc7b2
+Chapter6/exchange/order_server/client_request.h | SOURCE | 1454 bytes | sha 04cad7de611fa34704884f95e6c101374057c45a
+Chapter6/exchange/order_server/client_response.h | SOURCE | 1900 bytes | sha e7b565cd4acb157026137b8f296a57ff6f6624c0
+Chapter7/build.sh | SCRIPT | 362 bytes | sha bc722a034c92b8892c01de3f0941cab13878586b
+Chapter7/CMakeLists.txt | BUILD | 559 bytes | sha 4b664228077519c312b5ca573e64740f0095d6bb
+Chapter7/common/CMakeLists.txt | BUILD | 857 bytes | sha 2fceda4ea0452c4c98bb2c662297736670df1f5f
+Chapter7/common/lf_queue_example.cpp | SOURCE | 1141 bytes | sha abe374d69c7d60b00ab08a16b019da4c0935dca8
+Chapter7/common/lf_queue.h | SOURCE | 1410 bytes | sha 8241f1f7aa8272e5e14af5bdca22701eb10355a1
+Chapter7/common/logging_example.cpp | SOURCE | 511 bytes | sha ee26cb47cc10f4822a235bf016ad625378a6fc5b
+Chapter7/common/logging.h | SOURCE | 5884 bytes | sha 9179b1524bd92badb4f3dfac21c9a57c87f8894f
+Chapter7/common/macros.h | SOURCE | 444 bytes | sha 283f89dacaf1c8c480a2a1618a3491b9cbebef4e
+Chapter7/common/mcast_socket.cpp | SOURCE | 2174 bytes | sha a734f5656c69a68ee6f0b27a49069f22fd8a8202
+Chapter7/common/mcast_socket.h | SOURCE | 1536 bytes | sha 24336386542dbc5277cdce560a80d09426e26efc
+Chapter7/common/mem_pool_example.cpp | SOURCE | 891 bytes | sha 3e37e00afe3383eabc8fa9387ecbeb39d4dbc622
+Chapter7/common/mem_pool.h | SOURCE | 2760 bytes | sha 8ba93e0d43c231484f7c5416921e23f492bae6eb
+Chapter7/common/socket_example.cpp | SOURCE | 2399 bytes | sha ed6450e170c3d5724b1c55646647c7aad6a2b429
+Chapter7/common/socket_utils.h | SOURCE | 5672 bytes | sha 72dffbe11d688f9cc49afecd516c3ec29468c6e3
+Chapter7/common/tcp_server.cpp | SOURCE | 4539 bytes | sha 17288f7205a008186ed5c428f13f4ea3e31d5dea
+Chapter7/common/tcp_server.h | SOURCE | 1442 bytes | sha 744ea0954823c87bc579ec3bd8f3cc03d7835e72
+Chapter7/common/tcp_socket.cpp | SOURCE | 2669 bytes | sha d1fad993b4abaeebfa64727c5a2f1b063bae40fa
+Chapter7/common/tcp_socket.h | SOURCE | 1737 bytes | sha 95bf126bcc13c19bde6ac671dc9381e49c7dc387
+Chapter7/common/thread_example.cpp | SOURCE | 808 bytes | sha 1298b4f9986cd281bf1a5bd6bf5755c9a59ac1bc
+Chapter7/common/thread_utils.h | SOURCE | 1287 bytes | sha e0541b8b8b4a9a362becb3a53959416e33662b1f
+Chapter7/common/time_utils.h | SOURCE | 846 bytes | sha d1f7b62734d94b8b8c4fca1b238d2493f21f3e11
+Chapter7/common/types.h | SOURCE | 2415 bytes | sha 9be97e163bfc0e36abd4f1a55b0dd49bd9a7f062
+Chapter7/exchange/CMakeLists.txt | BUILD | 323 bytes | sha 46fa65ecbf6c78580e42fdc46b1bff3ed7f318f7
+Chapter7/exchange/exchange_main.cpp | SOURCE | 2427 bytes | sha 20132391a6107e76bf85cf710d410bd43a46327f
+Chapter7/exchange/market_data/market_data_publisher.cpp | SOURCE | 1954 bytes | sha 26653e67e6544aaf9445b0c8f35289f4f3e8fdbf
+Chapter7/exchange/market_data/market_data_publisher.h | SOURCE | 1711 bytes | sha 02ef536171212062b967d493ead8fde918f4793d
+Chapter7/exchange/market_data/market_update.h | SOURCE | 2263 bytes | sha b39e4bcdfe026d8c2054d4b1e1ec81bcd0695e78
+Chapter7/exchange/market_data/snapshot_synthesizer.cpp | SOURCE | 5755 bytes | sha 23cb09d130192280a73143dcf5d317b5453cc5e1
+Chapter7/exchange/market_data/snapshot_synthesizer.h | SOURCE | 1536 bytes | sha 8308485b53d45e4e243b9bd540e7224601f4c59d
+Chapter7/exchange/matcher/matching_engine.cpp | SOURCE | 1187 bytes | sha c7f7fe89bb88148ed688a96f4a573508ec0928c1
+Chapter7/exchange/matcher/matching_engine.h | SOURCE | 3404 bytes | sha edd40fee7aff7fe94de8a70b4d48645b2d8804ef
+Chapter7/exchange/matcher/me_order_book.cpp | SOURCE | 8286 bytes | sha 16164eada4b5efdd9330d254581ac92946350303
+Chapter7/exchange/matcher/me_order_book.h | SOURCE | 7865 bytes | sha 97af9a4b99164ba9d51f0238b0a580b03aefd90f
+Chapter7/exchange/matcher/me_order.cpp | SOURCE | 828 bytes | sha 5ba82d3d3086032d93b83dcfefb90332754ea1bb
+Chapter7/exchange/matcher/me_order.h | SOURCE | 2375 bytes | sha bc81251df44e1c5c99c270a3bd68813c84fcc7b2
+Chapter7/exchange/order_server/client_request.h | SOURCE | 1783 bytes | sha 9325ddc6095a4c1d5c6ea557b2c0fcfd97fb7ed6
+Chapter7/exchange/order_server/client_response.h | SOURCE | 2234 bytes | sha f37953dfb3aa1b1adaa066706fb4cbf583647f15
+Chapter7/exchange/order_server/fifo_sequencer.h | SOURCE | 2403 bytes | sha 210e188ef88cf2ab7e457024a8e142d7dea9c637
+Chapter7/exchange/order_server/order_server.cpp | SOURCE | 1119 bytes | sha 7a76b24046adc5c8f870136d5d01a1b1f2a8badc
+Chapter7/exchange/order_server/order_server.h | SOURCE | 5994 bytes | sha de169baceba57fce74e0ad874e925d4b43babf85
+Chapter8/CMakeLists.txt | BUILD | 665 bytes | sha 5361d647e5853d7c82da4511d78650fc50dbcb16
+Chapter8/common/CMakeLists.txt | BUILD | 857 bytes | sha 2fceda4ea0452c4c98bb2c662297736670df1f5f
+Chapter8/common/lf_queue_example.cpp | SOURCE | 1141 bytes | sha abe374d69c7d60b00ab08a16b019da4c0935dca8
+Chapter8/common/lf_queue.h | SOURCE | 1410 bytes | sha 8241f1f7aa8272e5e14af5bdca22701eb10355a1
+Chapter8/common/logging_example.cpp | SOURCE | 511 bytes | sha ee26cb47cc10f4822a235bf016ad625378a6fc5b
+Chapter8/common/logging.h | SOURCE | 5884 bytes | sha 9179b1524bd92badb4f3dfac21c9a57c87f8894f
+Chapter8/common/macros.h | SOURCE | 444 bytes | sha 283f89dacaf1c8c480a2a1618a3491b9cbebef4e
+Chapter8/common/mcast_socket.cpp | SOURCE | 2174 bytes | sha a734f5656c69a68ee6f0b27a49069f22fd8a8202
+Chapter8/common/mcast_socket.h | SOURCE | 1536 bytes | sha 24336386542dbc5277cdce560a80d09426e26efc
+Chapter8/common/mem_pool_example.cpp | SOURCE | 891 bytes | sha 3e37e00afe3383eabc8fa9387ecbeb39d4dbc622
+Chapter8/common/mem_pool.h | SOURCE | 2760 bytes | sha 8ba93e0d43c231484f7c5416921e23f492bae6eb
+Chapter8/common/socket_example.cpp | SOURCE | 2399 bytes | sha ed6450e170c3d5724b1c55646647c7aad6a2b429
+Chapter8/common/socket_utils.h | SOURCE | 5672 bytes | sha 72dffbe11d688f9cc49afecd516c3ec29468c6e3
+Chapter8/common/tcp_server.cpp | SOURCE | 4539 bytes | sha 17288f7205a008186ed5c428f13f4ea3e31d5dea
+Chapter8/common/tcp_server.h | SOURCE | 1442 bytes | sha 744ea0954823c87bc579ec3bd8f3cc03d7835e72
+Chapter8/common/tcp_socket.cpp | SOURCE | 2669 bytes | sha d1fad993b4abaeebfa64727c5a2f1b063bae40fa
+Chapter8/common/tcp_socket.h | SOURCE | 1737 bytes | sha 95bf126bcc13c19bde6ac671dc9381e49c7dc387
+Chapter8/common/thread_example.cpp | SOURCE | 808 bytes | sha 1298b4f9986cd281bf1a5bd6bf5755c9a59ac1bc
+Chapter8/common/thread_utils.h | SOURCE | 1287 bytes | sha e0541b8b8b4a9a362becb3a53959416e33662b1f
+Chapter8/common/time_utils.h | SOURCE | 846 bytes | sha d1f7b62734d94b8b8c4fca1b238d2493f21f3e11
+Chapter8/common/types.h | SOURCE | 4396 bytes | sha 8cc87362da4ad7a1431b9fdd5b6845880fcb48b5
+Chapter8/exchange/CMakeLists.txt | BUILD | 323 bytes | sha 46fa65ecbf6c78580e42fdc46b1bff3ed7f318f7
+Chapter8/exchange/exchange_main.cpp | SOURCE | 2427 bytes | sha 20132391a6107e76bf85cf710d410bd43a46327f
+Chapter8/exchange/market_data/market_data_publisher.cpp | SOURCE | 1954 bytes | sha 26653e67e6544aaf9445b0c8f35289f4f3e8fdbf
+Chapter8/exchange/market_data/market_data_publisher.h | SOURCE | 1711 bytes | sha 02ef536171212062b967d493ead8fde918f4793d
+Chapter8/exchange/market_data/market_update.h | SOURCE | 2263 bytes | sha b39e4bcdfe026d8c2054d4b1e1ec81bcd0695e78
+Chapter8/exchange/market_data/snapshot_synthesizer.cpp | SOURCE | 5755 bytes | sha 23cb09d130192280a73143dcf5d317b5453cc5e1
+Chapter8/exchange/market_data/snapshot_synthesizer.h | SOURCE | 1536 bytes | sha 8308485b53d45e4e243b9bd540e7224601f4c59d
+Chapter8/exchange/matcher/matching_engine.cpp | SOURCE | 1187 bytes | sha c7f7fe89bb88148ed688a96f4a573508ec0928c1
+Chapter8/exchange/matcher/matching_engine.h | SOURCE | 3404 bytes | sha edd40fee7aff7fe94de8a70b4d48645b2d8804ef
+Chapter8/exchange/matcher/me_order_book.cpp | SOURCE | 8286 bytes | sha 16164eada4b5efdd9330d254581ac92946350303
+Chapter8/exchange/matcher/me_order_book.h | SOURCE | 7865 bytes | sha 97af9a4b99164ba9d51f0238b0a580b03aefd90f
+Chapter8/exchange/matcher/me_order.cpp | SOURCE | 828 bytes | sha 5ba82d3d3086032d93b83dcfefb90332754ea1bb
+Chapter8/exchange/matcher/me_order.h | SOURCE | 2375 bytes | sha bc81251df44e1c5c99c270a3bd68813c84fcc7b2
+Chapter8/exchange/order_server/client_request.h | SOURCE | 1783 bytes | sha 9325ddc6095a4c1d5c6ea557b2c0fcfd97fb7ed6
+Chapter8/exchange/order_server/client_response.h | SOURCE | 2234 bytes | sha f37953dfb3aa1b1adaa066706fb4cbf583647f15
+Chapter8/exchange/order_server/fifo_sequencer.h | SOURCE | 2403 bytes | sha 210e188ef88cf2ab7e457024a8e142d7dea9c637
+Chapter8/exchange/order_server/order_server.cpp | SOURCE | 1119 bytes | sha 7a76b24046adc5c8f870136d5d01a1b1f2a8badc
+Chapter8/exchange/order_server/order_server.h | SOURCE | 5994 bytes | sha de169baceba57fce74e0ad874e925d4b43babf85
+Chapter8/scripts/build.sh | SCRIPT | 606 bytes | sha 78f50d0c8e9cedbc1410eb23440b680395d70955
+Chapter8/scripts/no_clean_build.sh | SCRIPT | 494 bytes | sha 6e72d5233f5cd50546ab510bda978232f9e5c40e
+Chapter8/trading/CMakeLists.txt | BUILD | 321 bytes | sha ccca458754a68974cb1976033a7579b0628dd502
+Chapter8/trading/market_data/market_data_consumer.cpp | SOURCE | 10927 bytes | sha 462dfe2c08f93f39aeef613ebf2dfa9a080983a0
+Chapter8/trading/market_data/market_data_consumer.h | SOURCE | 2141 bytes | sha 32b07354497741423ff842999ddf863de447b975
+Chapter8/trading/order_gw/order_gateway.cpp | SOURCE | 3786 bytes | sha 56bbdb69ed375dc51923c37f8c7baee8c402ffeb
+Chapter8/trading/order_gw/order_gateway.h | SOURCE | 2026 bytes | sha 4ac2142bd94f2d10a0ea9afbfbe1a11e6d83f9de
+Chapter8/trading/strategy/feature_engine.h | SOURCE | 2335 bytes | sha 7c7d83b1efa54ee6d092524f69796bfbd0cb2d84
+Chapter8/trading/strategy/liquidity_taker.cpp | SOURCE | 850 bytes | sha f7ef9bdd530af692058b833fbb3442b035fb5374
+Chapter8/trading/strategy/liquidity_taker.h | SOURCE | 2917 bytes | sha 2b7a4403b9bc708c5e576f98d32fd887de28fb12
+Chapter8/trading/strategy/market_maker.cpp | SOURCE | 802 bytes | sha aed99f5439dbe924830aed9b345ce4a6fe74b757
+Chapter8/trading/strategy/market_maker.h | SOURCE | 2797 bytes | sha a8e3ba2357bd2334bccb0f2606f4891cba20ee0a
+Chapter8/trading/strategy/market_order_book.cpp | SOURCE | 6015 bytes | sha 88820f63306def6cbf4d0b0d11543f7dfca54511
+Chapter8/trading/strategy/market_order_book.h | SOURCE | 8178 bytes | sha 5e04b88feb7b19f1ad20f302f2a535b9b1a80eb2
+Chapter8/trading/strategy/market_order.cpp | SOURCE | 641 bytes | sha 31c5c8435b67caa6eaa5b370fbf4550c42c91732
+Chapter8/trading/strategy/market_order.h | SOURCE | 2464 bytes | sha 3774ceecc4f36987d4d58705f6269dba69cd05e8
+Chapter8/trading/strategy/om_order.h | SOURCE | 1558 bytes | sha 03df5d9241518b81f4a13111449203922e7975e2
+Chapter8/trading/strategy/order_manager.cpp | SOURCE | 1491 bytes | sha 35697892e07b85cf37316652f48dc64d58dfed7d
+Chapter8/trading/strategy/order_manager.h | SOURCE | 4049 bytes | sha 4e4cdac8e0c547e76053745437a5efcc344a76dc
+Chapter8/trading/strategy/position_keeper.h | SOURCE | 5587 bytes | sha c8d035d448e1bcae431d6f6300d47ab0e4468cac
+Chapter8/trading/strategy/risk_manager.cpp | SOURCE | 437 bytes | sha fa8cc61ff2c16d844639724e4e5602b512cc51a5
+Chapter8/trading/strategy/risk_manager.h | SOURCE | 2542 bytes | sha fa415ebf83f7a71bb4f80022065f708988951917
+Chapter8/trading/strategy/trade_engine.cpp | SOURCE | 5658 bytes | sha 88fd03a16706b70d5b49f6157ba459b044388fd6
+Chapter8/trading/strategy/trade_engine.h | SOURCE | 4732 bytes | sha 09587820ad22d1b868206ef419a442f8f9184314
+Chapter9/CMakeLists.txt | BUILD | 665 bytes | sha 5361d647e5853d7c82da4511d78650fc50dbcb16
+Chapter9/common/CMakeLists.txt | BUILD | 857 bytes | sha 2fceda4ea0452c4c98bb2c662297736670df1f5f
+Chapter9/common/lf_queue_example.cpp | SOURCE | 1141 bytes | sha abe374d69c7d60b00ab08a16b019da4c0935dca8
+Chapter9/common/lf_queue.h | SOURCE | 1410 bytes | sha 8241f1f7aa8272e5e14af5bdca22701eb10355a1
+Chapter9/common/logging_example.cpp | SOURCE | 511 bytes | sha ee26cb47cc10f4822a235bf016ad625378a6fc5b
+Chapter9/common/logging.h | SOURCE | 5884 bytes | sha 9179b1524bd92badb4f3dfac21c9a57c87f8894f
+Chapter9/common/macros.h | SOURCE | 444 bytes | sha 283f89dacaf1c8c480a2a1618a3491b9cbebef4e
+Chapter9/common/mcast_socket.cpp | SOURCE | 2174 bytes | sha a734f5656c69a68ee6f0b27a49069f22fd8a8202
+Chapter9/common/mcast_socket.h | SOURCE | 1536 bytes | sha 24336386542dbc5277cdce560a80d09426e26efc
+Chapter9/common/mem_pool_example.cpp | SOURCE | 891 bytes | sha 3e37e00afe3383eabc8fa9387ecbeb39d4dbc622
+Chapter9/common/mem_pool.h | SOURCE | 2760 bytes | sha 8ba93e0d43c231484f7c5416921e23f492bae6eb
+Chapter9/common/socket_example.cpp | SOURCE | 2399 bytes | sha ed6450e170c3d5724b1c55646647c7aad6a2b429
+Chapter9/common/socket_utils.h | SOURCE | 5672 bytes | sha 72dffbe11d688f9cc49afecd516c3ec29468c6e3
+Chapter9/common/tcp_server.cpp | SOURCE | 4539 bytes | sha 17288f7205a008186ed5c428f13f4ea3e31d5dea
+Chapter9/common/tcp_server.h | SOURCE | 1442 bytes | sha 744ea0954823c87bc579ec3bd8f3cc03d7835e72
+Chapter9/common/tcp_socket.cpp | SOURCE | 2669 bytes | sha d1fad993b4abaeebfa64727c5a2f1b063bae40fa
+Chapter9/common/tcp_socket.h | SOURCE | 1737 bytes | sha 95bf126bcc13c19bde6ac671dc9381e49c7dc387
+Chapter9/common/thread_example.cpp | SOURCE | 808 bytes | sha 1298b4f9986cd281bf1a5bd6bf5755c9a59ac1bc
+Chapter9/common/thread_utils.h | SOURCE | 1287 bytes | sha e0541b8b8b4a9a362becb3a53959416e33662b1f
+Chapter9/common/time_utils.h | SOURCE | 846 bytes | sha d1f7b62734d94b8b8c4fca1b238d2493f21f3e11
+Chapter9/common/types.h | SOURCE | 4396 bytes | sha 8cc87362da4ad7a1431b9fdd5b6845880fcb48b5
+Chapter9/exchange/CMakeLists.txt | BUILD | 323 bytes | sha 46fa65ecbf6c78580e42fdc46b1bff3ed7f318f7
+Chapter9/exchange/exchange_main.cpp | SOURCE | 2427 bytes | sha 20132391a6107e76bf85cf710d410bd43a46327f
+Chapter9/exchange/market_data/market_data_publisher.cpp | SOURCE | 1954 bytes | sha 26653e67e6544aaf9445b0c8f35289f4f3e8fdbf
+Chapter9/exchange/market_data/market_data_publisher.h | SOURCE | 1711 bytes | sha 02ef536171212062b967d493ead8fde918f4793d
+Chapter9/exchange/market_data/market_update.h | SOURCE | 2263 bytes | sha b39e4bcdfe026d8c2054d4b1e1ec81bcd0695e78
+Chapter9/exchange/market_data/snapshot_synthesizer.cpp | SOURCE | 5755 bytes | sha 23cb09d130192280a73143dcf5d317b5453cc5e1
+Chapter9/exchange/market_data/snapshot_synthesizer.h | SOURCE | 1536 bytes | sha 8308485b53d45e4e243b9bd540e7224601f4c59d
+Chapter9/exchange/matcher/matching_engine.cpp | SOURCE | 1187 bytes | sha c7f7fe89bb88148ed688a96f4a573508ec0928c1
+Chapter9/exchange/matcher/matching_engine.h | SOURCE | 3404 bytes | sha edd40fee7aff7fe94de8a70b4d48645b2d8804ef
+Chapter9/exchange/matcher/me_order_book.cpp | SOURCE | 8286 bytes | sha 16164eada4b5efdd9330d254581ac92946350303
+Chapter9/exchange/matcher/me_order_book.h | SOURCE | 7865 bytes | sha 97af9a4b99164ba9d51f0238b0a580b03aefd90f
+Chapter9/exchange/matcher/me_order.cpp | SOURCE | 828 bytes | sha 5ba82d3d3086032d93b83dcfefb90332754ea1bb
+Chapter9/exchange/matcher/me_order.h | SOURCE | 2375 bytes | sha bc81251df44e1c5c99c270a3bd68813c84fcc7b2
+Chapter9/exchange/order_server/client_request.h | SOURCE | 1783 bytes | sha 9325ddc6095a4c1d5c6ea557b2c0fcfd97fb7ed6
+Chapter9/exchange/order_server/client_response.h | SOURCE | 2234 bytes | sha f37953dfb3aa1b1adaa066706fb4cbf583647f15
+Chapter9/exchange/order_server/fifo_sequencer.h | SOURCE | 2403 bytes | sha 210e188ef88cf2ab7e457024a8e142d7dea9c637
+Chapter9/exchange/order_server/order_server.cpp | SOURCE | 1119 bytes | sha 7a76b24046adc5c8f870136d5d01a1b1f2a8badc
+Chapter9/exchange/order_server/order_server.h | SOURCE | 5994 bytes | sha de169baceba57fce74e0ad874e925d4b43babf85
+Chapter9/scripts/build.sh | SCRIPT | 606 bytes | sha 78f50d0c8e9cedbc1410eb23440b680395d70955
+Chapter9/scripts/no_clean_build.sh | SCRIPT | 494 bytes | sha 6e72d5233f5cd50546ab510bda978232f9e5c40e
+Chapter9/trading/CMakeLists.txt | BUILD | 347 bytes | sha 2b9ae8fad82fd60ed0dcfbdd5b0dc16548639dbc
+Chapter9/trading/market_data/market_data_consumer.cpp | SOURCE | 10927 bytes | sha 462dfe2c08f93f39aeef613ebf2dfa9a080983a0
+Chapter9/trading/market_data/market_data_consumer.h | SOURCE | 2141 bytes | sha 32b07354497741423ff842999ddf863de447b975
+Chapter9/trading/order_gw/order_gateway.cpp | SOURCE | 3786 bytes | sha 56bbdb69ed375dc51923c37f8c7baee8c402ffeb
+Chapter9/trading/order_gw/order_gateway.h | SOURCE | 2026 bytes | sha 4ac2142bd94f2d10a0ea9afbfbe1a11e6d83f9de
+Chapter9/trading/strategy/feature_engine.h | SOURCE | 2335 bytes | sha 7c7d83b1efa54ee6d092524f69796bfbd0cb2d84
+Chapter9/trading/strategy/liquidity_taker.cpp | SOURCE | 850 bytes | sha f7ef9bdd530af692058b833fbb3442b035fb5374
+Chapter9/trading/strategy/liquidity_taker.h | SOURCE | 2917 bytes | sha 2b7a4403b9bc708c5e576f98d32fd887de28fb12
+Chapter9/trading/strategy/market_maker.cpp | SOURCE | 802 bytes | sha aed99f5439dbe924830aed9b345ce4a6fe74b757
+Chapter9/trading/strategy/market_maker.h | SOURCE | 2797 bytes | sha a8e3ba2357bd2334bccb0f2606f4891cba20ee0a
+Chapter9/trading/strategy/market_order_book.cpp | SOURCE | 6015 bytes | sha 88820f63306def6cbf4d0b0d11543f7dfca54511
+Chapter9/trading/strategy/market_order_book.h | SOURCE | 8178 bytes | sha 5e04b88feb7b19f1ad20f302f2a535b9b1a80eb2
+Chapter9/trading/strategy/market_order.cpp | SOURCE | 641 bytes | sha 31c5c8435b67caa6eaa5b370fbf4550c42c91732
+Chapter9/trading/strategy/market_order.h | SOURCE | 2464 bytes | sha 3774ceecc4f36987d4d58705f6269dba69cd05e8
+Chapter9/trading/strategy/om_order.h | SOURCE | 1558 bytes | sha 03df5d9241518b81f4a13111449203922e7975e2
+Chapter9/trading/strategy/order_manager.cpp | SOURCE | 1491 bytes | sha 35697892e07b85cf37316652f48dc64d58dfed7d
+Chapter9/trading/strategy/order_manager.h | SOURCE | 4049 bytes | sha 4e4cdac8e0c547e76053745437a5efcc344a76dc
+Chapter9/trading/strategy/position_keeper.h | SOURCE | 5587 bytes | sha c8d035d448e1bcae431d6f6300d47ab0e4468cac
+Chapter9/trading/strategy/risk_manager.cpp | SOURCE | 437 bytes | sha fa8cc61ff2c16d844639724e4e5602b512cc51a5
+Chapter9/trading/strategy/risk_manager.h | SOURCE | 2542 bytes | sha fa415ebf83f7a71bb4f80022065f708988951917
+Chapter9/trading/strategy/trade_engine.cpp | SOURCE | 5658 bytes | sha 88fd03a16706b70d5b49f6157ba459b044388fd6
+Chapter9/trading/strategy/trade_engine.h | SOURCE | 4732 bytes | sha 09587820ad22d1b868206ef419a442f8f9184314
+LICENSE | DATA/DOC/OTHER | 1062 bytes | sha d9a6248c668fb0e3bb34c90ea9591d80fbec8e1e
+README.md | DATA/DOC/OTHER | 5900 bytes | sha 048c31e7a8d7f3e1aca844440ee7388c8e8cc388
+
+PINNED BROWSER URL
+https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/tree/11e3925f431f7c8c39739ed90b874d6ff2aa2966
+
+CASE-BASED RESEARCH REFERENCES
+https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/4
+https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/5
+https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/7
+https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/9
+Unsolved first-step questions from inspected source appear in:
+faillure predictions
+Further external issue leads appear in:
+question bank2.txt
