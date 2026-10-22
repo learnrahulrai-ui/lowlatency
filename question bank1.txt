@@ -1,292 +1,518 @@
 LOW-LATENCY SYSTEMS QUESTION BANK 1
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Historical bugs, 1990s-2000s source trails, and trading-system take-home exercises
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 Prepared: 2026-10-22
 Target requested: learnrahulrai-ui/lowlatency, main, question bank1.txt
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 
 NOT A SOLUTION KEY. No claim that the listed bugs exist in the user's own code.
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 
 EVIDENCE KEY
 PATCH: a primary source-level change explains the particular failure.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 REPORT: a contemporary developer or user reports the behavior; not automatically reproduced or fixed.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 DISPUTED: an archival complaint is countered or the cause remains unsettled.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 COURSE/RESEARCH: an academic or teaching problem, not a company production bug.
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 DERIVED: new practice counterexample inspired by historical failure modes.
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 CANDIDATE: claimed assessment from candidate account; not authenticated by employer.
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 PUBLIC: officially published challenge/workshop, not necessarily a hiring assignment.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 UNVERIFIED: promising trail, exact underlying document requires further confirmation.
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 
 For every question: (1) read the source body and replies, (2) trace the example using numbers, (3) write expected outputs before code, (4) build deterministic tests, (5) implement a slow reference, (6) run relevant sanitizers, and (7) only then benchmark.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 
 PART A: HISTORICAL THREADING, MEMORY, AND FIX SESSION FAILURES
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 
 01. Writer starvation under continuous readers [REPORT, Boost, 2008]
+FACT CHECK: The historical waiting times are reports from particular lock implementations and test machines, not a portable fairness guarantee.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: 4 reader threads repeatedly query shared order data; 1 writer adds 1,000 orders. The April 2008 archive reports a particular 2-reader/1-writer benchmark with shared_mutex mean writer wait of about 760 microseconds versus about 7.108 microseconds for pthreads-win32. A separate September post reports waits exceeding 20 seconds under a different workload.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Identify whether readers can overtake a queued writer. Measure writer maximum, p99 and mean waits separately. Repeat 30 times and record whether every write completes. Do not extrapolate performance to all C++ shared mutexes.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Sources:
 https://lists.boost.org/archives/list/boost%40lists.boost.org/message/PY2JLUZCY4VSDDPP3LQY3HLJNAK2GBDL/
 https://lists.boost.org/archives/list/boost-users%40lists.boost.org/message/HCCXEBYBWPHDKVSMGG4AZUDCPTKKNKGZ/
 
 02. Waiting writers deadlock despite no active owner [REPORT, Boost 1.33, 2005]
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: 10 threads acquire reader/writer locks in 1,000 iterations; the recorded condition is waiting threads with no active lock owner.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Instrument reader count, writer flag and queued waiters. Contrast alleged Boost 1.33 behavior with earlier 1.32 under equivalent conditions. Find the original discussion and code before asserting a library bug.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Source trail: Boost shared_mutex mailing-list discussions, August 2005. Direct thread URL not reverified here.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 03. QuickFIX suppresses a second, necessary resend [REPORT with developer reply, January 2006]
+FACT CHECK VERIFIED: The 2006 QuickFIX developer thread contains both missing sequence 216250 and the earlier open-ended resend. https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992c95d08f7c0c1f%40mail.gmail.com
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Original trace: expected 197648, got 197650, requested resend from 197648; recovered via SequenceReset to 197651. Later expected 216250, got 216251. The prior resend remained marked outstanding, suppressing the new request.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Tasks: Replay two disjoint gaps. Identify the exact transition that clears the outstanding resend range. Check whether application messages stop while the TCP session appears connected. Do not supply a patch before proving that transition.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Primary thread (includes original report and reply):
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992c95d08f7c0c1f%40mail.gmail.com/
 
 04. Condition-variable waiter starves although another worker progresses [REPORT, 1996]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: workers A and B wait; B repeatedly reacquires mutex ahead of A over 100 producer notifications.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Distinguish a condition becoming true from FIFO fairness. Does signal transfer mutex ownership? Log notify order, wakeup order and actual work claim order separately.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 Source trail: comp.programming.threads, June 1996; exact messages not reverified in this pass.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 05. TCP retransmission seems stalled for 120 seconds [DISPUTED, Linux 2.0.x, May 1997]
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 Input: temporarily interrupt ACKs on a TCP connection while tracing every sent segment and ACK.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Distinguish legitimate retransmission backoff/Karn's algorithm from a timer defect. Compare the reporter's claim against the response that did not reproduce the complete stall. Do not label normal exponential backoff a kernel bug.
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 Source trail: Linux-kernel May 1997 TCP retransmission discussion; original replies require follow-up.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 06. Many short-lived connections accompany server freezes [REPORT, Linux 2.2.x, May 1999]
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Input: create 10,000 short connections; inspect TIME_WAIT, FD count, port availability and CPU time.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Which observation proves actual failure? Why does a large TIME_WAIT population not itself prove a defect? Correlate failures with socket/resource counters.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Source trail: Linux-kernel May 1999 Linux 2.2.7/2.2.9 connection-churn report.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 07. Notified condition-variable thread incorrectly assumes mutex ownership [REPORT, 2001]
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: three consumers wait, producer notifies one, then producer or another consumer acquires the lock first.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Check predicate in a loop. Prove how another worker can consume an event before the notified worker runs. Separate signaling and lock acquisition.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Source trail: David Butenhof, comp.programming.threads, January 2001.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 08. Worker thread launches before its mutex/condition-variable members are constructed [CODE-DERIVED, 2004]
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: declare class members in the order worker, mutex, condition_variable, running; launch worker from constructor.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Derive C++ member initialization order; identify what may be accessed before initialization. Test 10,000 immediate constructions/destructions and inspect races on running.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Source trail: Boost user's reported code, June 2004; primary post not re-opened here.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 09. Notify occurs between unlock and starting to wait [REPORT, 2005-06]
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: consumer sees empty queue and is paused between dropping mutex and blocking; producer inserts 1 item and notifies.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Why can sleeping without a predicate loop lose progress? How does the real condition-variable wait avoid an unlock-to-sleep race? Force the interleaving with a barrier.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Source trail: Boost condition-variable threads, 2005-2006, including implementation objections. Exact patch unverified here.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 10. Ring iterator skips first event of next page [PATCH, Linux, Sep 4 2009]
+FACT CHECK VERIFIED: Steven Rostedt's 2009 patch names static iterator read and a double advance past page padding; peek-before-read masked the bug. https://lkml.iu.edu/0909.0/01672.html
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: page A contains events 10,20,padding; page B contains 30,40.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Trace rb_iter_peek followed by ring_buffer_read. Which function advances at padding? What happens with and without caller pre-peek? Assert every visible event appears exactly once.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Original patch and diff:
 https://lkml.iu.edu/0909.0/01672.html
 
 11. Reset corrupts an in-progress ring-buffer commit [PATCH, Linux, Sep 4 2009]
+FACT CHECK VERIFIED: The patch guards reset against an active commit; the patch does not prove every hypothetical test's observed corruption. https://lkml.iu.edu/0909.0/01682.html
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: reserve 16 bytes, write first 8, pause; another thread resets buffer; writer resumes commit.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Identify the active-commit guard and the earliest safe reset point. Create a scheduler-controlled test that verifies reset is denied or safely deferred.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Original patch:
 https://lkml.iu.edu/0909.0/01682.html
 
 12. Swap ring buffers A/B during active commit [PATCH, Linux, Sep 4 2009]
+FACT CHECK VERIFIED: The 2009 patch checks both buffers' committing counters and returns EBUSY; a separate later patch addressed another race. https://lkml.iu.edu/0909.0/01687.html
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: writer starts committing into A; another thread swaps A and B.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Check both buffers' committing indicators. Find how a failed swap is reported. Assert exactly-once event ownership. Read later counterexamples before claiming the 2009 patch solved every possible race.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Original patch:
 https://lkml.iu.edu/0909.0/01687.html
 Later historical follow-up (2014):
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 https://lkml.iu.edu/hypermail/linux/kernel/1406.3/02193.html
 
 13. Ring event counter includes discarded records and padding [PATCH, Linux, Sep 4 2009]
+FACT CHECK VERIFIED: The patch describes discarded events and end-of-page padding contributing to counts. https://lkml.iu.edu/0909.0/01686.html
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: reserve five events; discard two; append page padding; count iterator output.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Should the counter report three, five, or six actual events? Read how the patch corrects accounting and check against independently enumerated records.
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 Source and code diff:
 https://lkml.iu.edu/0909.0/01686.html
 
 14. FIX reset sends sequence number 1 twice [REPORT, QuickFIX, June 2005]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: Logon tags 35=A,34=1,141=Y; immediately next application message also 34=1.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Trace outgoing counter persistence and reset order. Write a two-message test and reconnect test; distinguish an actual repeated sequence from a deliberately reset session.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 Source trail: QuickFIX mailing-list June 2005 reset thread. Archive index:
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 https://sourceforge.net/p/quickfix/mailman/quickfix-users/
 
 15. pthread_cond_broadcast wakes only some workers [REPORTED APPLICATION BUG, 2008]
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: four waiters share one condition variable but use different mutexes and inconsistent shared predicates.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Determine whether all threads are waiting on the same properly protected condition. Compare count of awakened workers versus count of work items. Avoid misattributing misuse to the pthreads library.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Source trail: pthreads/Linux discussion August 2008, direct URL not rechecked.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 16. Waiter accounting and overlapping broadcast race in pthreads-win32 [REPORT, Jan-Feb 2001]
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: two threads play 10,000 alternating turns; a third initiates shutdown during broadcast.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Determine if a newly joined waiter belongs to the prior broadcast generation. Try to reproduce incomplete handoffs; inspect tennis.cpp and tennisb.cpp before accepting proposed incomplete fixes.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Source trail: pthreads-win32 mailing-list code and IBM developer report, early 2001.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 PART B: SOCKETS, UDP, TCP, AND PACKET SCHEDULING
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 
 17. poll(POLLOUT) followed by send(EAGAIN) [PATCH REPORT, AF_UNIX datagrams, June 2008]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: one slow Unix datagram receiver and four fast nonblocking senders.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Compare write-readiness notifications with actual send attempts; determine how receiver-queue saturation can cause an EAGAIN and repeated fruitless wakeups. Count failed sends and CPU cycles.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Source trail: Linux netdev June 2008 Unix datagram writable-poll discussion.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 18. UDP packets dropped but sk_drops not incremented [PATCH REPORT, Feb 2009]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: receiver consumes 100 packets/s while sender sends 10,000/s.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Compare application sequence gaps and kernel counters. Find the changed UDP path omitting the counter increment. A zero instrumentation counter does not establish zero packet loss.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Source trail: Eric Dumazet, netdev February 2009, ipv4/udp.c.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 19. Bad-checksum discard races with socket memory accounting [PATCH REPORT, Oct 2009]
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: one thread calls udp_poll, one generates packets with invalid checksums, one receives valid packets.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Check what locks protect skb removal and memory accounting. Confirm later valid packets still arrive and counters are consistent.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Source trail: Eric Dumazet, netdev October 2009 UDP checksum discard.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 20. Receive overflow counter is cumulative, not per-packet delta [PATCH and REVIEW, Oct 2009]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: successive received packets carry observed drop counters 3, 3, 7.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Derive loss between observations. Handle a missing observation or wrap; cross-check market sequence gaps. Understand the change from a packet-socket-only reporting mechanism to SO_RXQ_OVFL.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Original discussion and review:
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 https://lists.openwall.net/netdev/2009/10/12/6
 https://groups.google.com/g/linux_net/c/wl-EZQmOSfg
 
 21. Zero TCP segment size enters send path [PATCH REPORT, Linux 2.0.x, May 1997]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: peer advertises zero receive window during initialization; local app queues bytes.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Contrast valid TCP zero-window behavior with invalid internal maximum segment size of zero. Trace when a usable MSS is established.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Source trail: David S. Miller, tcp_do_sendmsg patch, May 1997.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 22. FIN retransmits and connection close delays ~102 seconds [REPORT, May 1997]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: trace reported FIN sequence positions 1904 and 1905 and later reset.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Reconstruct TCP teardown from packet capture and strace. Determine what the network proves versus what FIX Logout state proves; don't assume causal attribution without full trace.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Source trail: Linux 2.0.30 mailing-list reports May 1997.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 23. Eight listener workers awaken for one connection [DESIGN DISCUSSION, May 1999]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: eight workers wait on one listening socket; client makes exactly one connection.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Count wakeups, accepts and unsuccessful attempts. Explain why waking a single waiter has its own races if readiness is not protected.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Source trail: Linux-kernel wake-all versus wake-one poll/select/accept discussions, May 1999.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 24. Receive livelock: input increases while useful output collapses [ORIGINAL RESEARCH, 1995-96]
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: gradually increase packet input until software can no longer forward work. Measure delivered packets rather than interrupts handled. Published setup showed severe overload collapse; individual measurements are platform-specific.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Plot offered load, completed output, CPU and interrupt handling. Can 100% busy CPU mean zero useful output? Reproduce a scheduler-starvation analogue in a synthetic feed-handler pipeline.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 1995 report / 1996 paper:
 https://bitsavers.trailing-edge.com/pdf/dec/tech_reports/WRL-95-8.pdf
 https://www.usenix.org/conference/usenix-1996-annual-technical-conference/eliminating-receive-livelock-interrupt-driven
 
 25. Receive livelock optimization still starves output stage [ORIGINAL RESEARCH, 1996]
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: producer injects data indefinitely; receiver processes in batches of 10, 100, then unbounded items; output stage has 200 queued items.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Why is reducing interrupts insufficient if the receiver monopolizes execution? Measure delivered output and worker scheduling fairness, not just input handling throughput.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Source: Mogul/Ramakrishnan paper above, methodology/experiments.
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 PART C: MIT COURSE AND QUICKFIX STATE-MACHINE EXERCISES
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 
 26. Message sender E1 starves behind E0 [COURSE, MIT 6.828 2006]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: E0->E2 sends 100 messages; E1->E2 sends 100; receiving code always probes E0 first.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Derive starvation schedule; separate system-wide throughput from individual sender progress. Design finite deterministic assertions for fairness.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Course archive (locate and inspect actual exam pages):
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 https://pdos.csail.mit.edu/6.828/2006/
 
 27. Buffer overflow from unchecked copy [COURSE, MIT 6.828 2006]
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 Input: target buffer length 1,024; source lengths 1,023 and 1,024, plus terminating NUL.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Verify memory bounds and inspect shell argv0buf/strcpy exercise. Translate the boundary test to a binary-protocol string field.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Course archive: https://pdos.csail.mit.edu/6.828/2006/
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 
 28. File descriptor wrongly inherited across process creation [COURSE, MIT 6.828 2006]
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 Input: parent opens data file then forks/execs 1,000 children.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Inspect child FD tables; locate the point where FD table is copied and close-on-exec is applied. Check for leaked sockets after restart.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Course archive: https://pdos.csail.mit.edu/6.828/2006/
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 
 29. FIX resend emits GapFill when application expected replay [DEVELOPER EXPLANATION, Apr 2006]
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 Input: send application msgs 1, 2, 3; delete stored msg 2; request replay of seq 2.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Is seeing a message in a log proof that it exists in the persistent MessageStore? Compare administrative and application replay policy. Identify what is actually retransmittable.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Archive: https://sourceforge.net/p/quickfix/mailman/quickfix-developers/
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 30. FIX application message received before valid Logon [REPORTED ERROR, Oct 2006]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: new TCP session sends order before the FIX Logon is accepted.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Write session-state transition assertions; determine whether an order may change the book before successful Logon.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Archive: https://sourceforge.net/p/quickfix/mailman/quickfix-users/
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 31. FIX reconnect loop advances sequence but does not reconcile [REPORT, Nov 2007]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: local next-sender sequence 200; counterparty expects 300; reconnect ten times.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Check whether unsuccessful reconnects mutate persistent counters. Decide when manual coordination/reset is required and what happens to unseen execution reports.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 Archive: https://sourceforge.net/p/quickfix/mailman/quickfix-users/
+FOLLOW-UP: VERIFY: Locate the exact supporting sentence in the original source.
 
 PART D: ORIGINAL PRACTICE BUGS DERIVED FROM THE ABOVE HISTORY
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 
 32. Index becomes stale after swap-erase [DERIVED; not confirmed in user's OrderCache]
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 Input: orders [A,B,C], map A:0 B:1 C:2; cancel B, move C into B's slot; cancel C.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Trace vector and every index map after EACH operation. Assert that all surviving IDs point to correct objects and removed IDs are absent.
+FOLLOW-UP: DRAW: Mark the first operation performed by each participant.
 
 33. Concurrent risk checks each approve 8 while only 10 units remain [DERIVED]
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 Input: position 90; limit 100; thread A requests +8; thread B requests +8; pause both after initial read.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Determine which read-check-reserve transition must be atomic. Assert position never exceeds 100 and rejected orders reserve no exposure.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 
 34. Replayed execution consumes quantity twice [DERIVED]
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 Input: original order 100; execution F1 fills 30; disconnect; replay F1 after logon.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Identify the invariant and deduplication key. Compare two identical replays with a truly new execution of the same quantity.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 
 PART E: PUBLICLY AVAILABLE TAKE-HOME / PRACTICE ASSIGNMENTS
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 
 35. Akuna matching engine [CANDIDATE; unconfirmed by employer]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: BUY GFD 1000 10 order1; BUY GFD 1001 20 order2; SELL GFD 1000 15 order3; PRINT.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Derive price-time execution, remaining book, IOC behavior, CANCEL and MODIFY; test duplicates and partially executed orders.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 https://www.1point3acres.com/bbs/forum.php?mod=viewthread&page=1&tid=892408
 
 36. C++14 order-book take-home [PRESERVED PUBLIC SPEC, employer unverified]
+FACT CHECK CORRECTION: Requirement 6 of the posted test supplies a starter C++ program; it is not a sixth independent output requirement. The assignment's order-book processor consumes reported order/trade messages; do not silently turn it into a matching-engine assignment. https://github.com/olibre/Cpp14-OrderBook
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 Input: resting sells 2@1025, 5@1025, 10@1050; incoming buy 3@1050.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Derive priority; inspect original specification for all deliverables, ten-message snapshots, midquotes and trade-volume calculations. Don't copy the posted solution.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 https://github.com/olibre/Cpp14-OrderBook
 
 37. Hudson River Trading order-book workshop [PUBLIC OFFICIAL WORKSHOP]
+FACT CHECK VERIFIED: HRT calls this an Inside@HRT coding workshop; the optional matching-engine rules are separate from the book builder. https://github.com/hudson-trading/inside-at-hrt
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 Input: add 100; cancel 30; update an older same-price order.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Read Book.py, MatchingEngine.py and run_test.sh; predict reference output before running tests and optional matching mode.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 https://github.com/hudson-trading/inside-at-hrt
 
 38. Nasdaq ITCH 5.0 binary decoder [OFFICIAL SPEC, DERIVED TASK]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: order ID 42, add 100, execute 25, cancel 35.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Decode message lengths, big-endian fields, sequence gaps and remaining book. Do not assume a historical BinaryFile feed must have PCAP/MoldUDP64 encapsulation.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
 https://www.nasdaqtrader.com/content/technicalSupport/specifications/dataproducts/ITCHFTP.pdf
 
 39. Cboe Multicast PITCH [OFFICIAL SPEC, DERIVED TASK]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: visible execution type 0x23; non-displayed trade 0x2A; execution at price/size type 0x24.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Track displayed book quantity separately from traded volume and explain hidden liquidity behavior.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 https://www.cboe.com/document/tech-spec/document/technical-specifications/cboe-titanium-u.s.-equitiesoptions-multicast-pitch-specification
 
 40. FIX 4.4 order gateway [EXCHANGE EXAMPLES, DERIVED TASK]
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 Input: order 100; fill 30; fill 25; cancellation request; possible late fill.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Trace tags 38,14,151, execution IDs, checksum, session sequence, GapFill and duplicate replay.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 https://developer.gemini.com/trading/fix/order-entry/examples/execution-reports
 
 41. Pre-trade risk and kill switch [EXCHANGE RULES, DERIVED TASK]
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 Input: maximum quantity 100, maximum order notional 5,000; order A 30@200, B 80@40, C 101@40.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Determine independent failures; avoid exposure changes from rejected orders; race two approval threads and verify kill-switch semantics.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 https://www.cboe.com/us/equities/trading/offerings/risk_management/
 
 42. Single-producer/single-consumer queue [OPEN SOURCE REFERENCE]
+FACT CHECK CORRECTION: The Folly implementation intentionally uses a physical ring with one reserved slot; wrapped positions are valid when the full/empty test accounts for that slot. https://github.com/facebook/folly/blob/main/folly/ProducerConsumerQueue.h
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: capacity 4, producer adds 10,20,30,40, attempts 50, consumer removes 10, producer retries 50.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Trace full/empty detection; then investigate cache-line separation, acquire/release, object lifetime and 100,000 ordered transfers.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 https://github.com/rigtorp/SPSCQueue
 
 43. Optiver Ready Trader Go [OFFICIAL PUBLIC COMPETITION, not verified hiring test]
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 Tasks: Read competition rules; implement C++17 trading agent callbacks, position tracking, risk limits and replay-based tests.
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 https://readytradergo.optiver.com/faqs/
 
 44. DRW Tetris-style simulation [CANDIDATE ACCOUNT, full original spec unavailable]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: six-column board, a two-cell horizontal piece, then a vertical piece.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Define collision, placement and row-removal rules before computing final height. Reconstruct rather than claim exact employer prompt.
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 https://news.ycombinator.com/item?id=26629891
 
 45. IMC Prosperity 4 [OFFICIAL PUBLIC COMPETITION, Python]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Input: ask 8@100, 12@101, fair price 103, position +15, artificial limit +20.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Calculate permitted buy sizes and effects of other outstanding orders; verify program interface in competition source.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 https://www.imc.com/ap/articles/prosperity-4-imc-global-trading-challenge
 
 46. Akuna-labelled binary messages [UNVERIFIED CANDIDATE CODE]
+FOLLOW-UP: VERIFY: Identify one primary record that would establish or contradict this assertion.
 Input: trader ABC instrument X qty100, DEF/X qty60, ABC/Y qty25.
+FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
 Tasks: Aggregate safely, parse fields without serializing process pointers, test truncated messages and 32/64-bit differences.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 https://gist.github.com/jeb2239/227acb7833948f30c7f4e60982d44ee6
 
 47. HRT x Partcl macro placement [OFFICIAL PUBLIC HARDWARE COMPETITION]
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 Tasks: Read SETUP.md, SCORING.md and a benchmark; prove legal placement; then benchmark wirelength, density, congestion and timing constraints.
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 https://github.com/partcleda/macro-place-challenge-2026
 
 PART F: SEVEN UNVERIFIED MEMORY-ORDERING LEADS ALREADY ON THE DRAFT BRANCH
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 These leads are copied as QUESTIONS ONLY from the inspected draft-branch README. Their issue IDs and alleged defects were explicitly marked unverified there; verify original issues and commit diffs before stating facts.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 
 48. LLVM libc++ atomic wait/notify, issue lead #109290: Which ordering is necessary so a notifier cannot fail to see a registered waiter?
+FACT CHECK CORRECTION: The author reported a model-level possible lost wakeup, explicitly not a demonstrated x86/ARM production failure. The current library source references issue 109290. https://github.com/llvm/llvm-project/issues/109290
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 49. CPython free-threading managed-dict pointer, leads #133980/#133988: Can published pointer become visible before fully initialized payload under the actual source memory orders?
+FACT CHECK: Examine the exact managed-dictionary publication writes and their synchronization; neither an ARM64 crash nor a specific stale value is established by the issue title alone. https://github.com/python/cpython/issues/133980
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 50. Last-reference destruction: Under which C++ release/acquire conditions can separate owners' prior writes happen before the final object's destruction?
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 51. Invalid memory-order arguments, leads GCC PR124827 and Bloomberg quantum #160: Why is acq_rel not a valid plain-store order, and release not a valid compare_exchange failure order?
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 52. SPSC wrapped cursors: Can cursor modulo arithmetic make full indistinguishable from empty? Compare index representation, reserved slot and local cached indexes separately.
+FACT CHECK CORRECTION: Equal wrapped cursors are not inherently a defect when a reserved empty slot distinguishes full and empty; Folly's implementation explicitly reserves that slot. https://github.com/facebook/folly/blob/main/folly/ProducerConsumerQueue.h
+FOLLOW-UP: DERIVE: Write the first independently checkable premise of the assertion.
 53. C++ memory_order_consume, GCC 59448 / WG21 N4215: Can the compiler optimize away a data dependency such as payload[f-f]?
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 54. Relaxed atomics plus fences: Where must release and acquire fences appear around an observed publication flag to establish cross-thread ordering?
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 Draft source: https://github.com/learnrahulrai-ui/lowlatency/tree/claude/serene-noether-38mu6q/memory-ordering
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 
 VALIDATION GATE
 Do not present any reported bug as confirmed without reopening original messages, replies and patch history. Reproductions of 1990s or 2000s systems may require historical configurations. Do not invent output numbers, swap an order-cache rule for exchange price-time priority, confuse an educational exercise with a production defect, or confuse a public trading competition with a recruiting assessment. Every completed exercise should produce an input generator, a simple correctness reference, deterministic unit tests, a benchmark and a short measurement report.
+FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
+FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
 
 Suggested study order: 35,36,37,32,01,10,11,12,13,42,38,39,20,40,03,14,41,33,34.
+FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 END
