@@ -339,3 +339,72 @@ FOLLOW-UP: CALCULATE: Reconstruct the first numerical relation on the previous l
 FOLLOW-UP: CALCULATE: Reconstruct the first numerical relation on the previous line without using the supplied result.
 138. NEW THINGS INTRODUCED WITHOUT DERIVATION: none outside axiom sources A1–A7 (lines 01–09); every term defined on or before its first line of use; constants taken from A5/A6/A7 carry their source at point of use; constants marked ⚠ = taken from source not re-fetched during writing, listed in line 137.
 FOLLOW-UP: CALCULATE: Reconstruct the first numerical relation on the previous line without using the supplied result.
+
+
+APPENDIX: EVIDENCE-TESTED USER SCENARIO, 22 OCT 2026
+Do not treat this appended section as a tested trading engine. All pre-existing
+lines are preserved; question bank1.txt Appendix G now holds Q55-Q102.
+
+C1: "one million 32-byte NASDAQ ITCH messages" mixes a valid sample length
+with a false universal wire format. In ITCH v5.0 A=36, F=40, E=31, X=23,
+D=19 bytes. A historical-file wrapper can add framing bytes.
+ONE ACTION: CALCULATE the total length of one A event from printed page 13.
+
+C2: A Nasdaq ITCH Add Order message reports an order already accepted onto
+the exchange's displayed book; a reconstructed feed is not automatically
+a matching-engine instruction or a directly submitted order.
+ONE ACTION: DRAW exchange -> Add A event -> local book.
+
+C3: mmap creates a virtual mapping. MAP_HUGETLB is backed by huge pages;
+length is rounded to huge-page size and availability may prevent success.
+The 30-page assertion for decimal 64,000,000 bytes is insufficient.
+ONE ACTION: CALCULATE the whole-page count for 64,000,000 / 2,097,152.
+
+C4: One source-level cast of a raw NIC buffer to a packed struct does not
+establish legal C++ object lifetime, alignment, aliasing or endian decoding.
+No published result establishes the claimed 3 versus 45 cycle measurements.
+ONE ACTION: DRAW three distinct boxes: wire bytes, decoded integer, C++ object.
+
+C5: CPU 'L1 = 1 ns', 'L2 = 4 ns', 'DRAM = 100 ns', mutex = 2 us,
+NIC ingress = 50 ns and 14-cycle tick-to-trade are artificial assumptions.
+Arithmetic within those figures does not measure live performance.
+ONE ACTION: CALCULATE the cycle budget for 500 ns at the supplied 3 GHz.
+
+C6: alignas(64) and 60 bytes of padding are sufficient only for a layout
+meeting concrete alignment/size checks and a machine whose interference
+region matches the chosen alignment. False sharing is conditional on
+concurrent accesses and coherence; no fixed 180-cycle penalty is universal.
+ONE ACTION: DRAW the starting position of the second counter in the example.
+
+C7: std::pmr::monotonic_buffer_resource may request upstream storage
+after exhausting its initial arena; it is not inherently stack storage.
+Zero runtime allocations cannot be inferred from one preallocated vector.
+ONE ACTION: DRAW initial buffer -> exhaustion -> upstream allocation.
+
+C8: std::memory_order_seq_cst means specified total order, not a universal
+CPU pipeline flush. [[likely]] is C++20, not portable as standard C++17.
+The leading-zero/trailing-zero count builtins have undefined zero input
+when using GCC __builtin_ctz/ctzll.
+ONE ACTION: WRITE 64 zeros as eight groups of eight zero digits.
+
+C9: isolcpus and thread affinity alone cannot eliminate device interrupts,
+timer ticks, sibling SMT interference and every involuntary disturbance.
+Linux's official CPU isolation guide separates those controls.
+ONE ACTION: DRAW the arrival of one IRQ to an otherwise pinned CPU.
+
+C10: The pasted university ranking contains stronger claims than official
+syllabi prove. Northwestern CS343 (Winter 2025) really provides a 13-page
+producer-consumer lab with ring.[ch], atomics.[ch], harness.c and
+spinlock/mutex/semaphore/signal tasks. It does not require MCS lock or
+prove that any HFT employer uses the exact lab as a recruiting assessment.
+ONE ACTION: CALCULATE threads from the lab's two-producer/four-consumer test.
+
+References:
+https://classic.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+https://users.cs.northwestern.edu/~pdinda/os-w25/labs/pclab.pdf
+https://man7.org/linux/man-pages/man2/mmap.2.html
+https://cdn.kernel.org/doc/html/latest/admin-guide/cpu-isolation.html
+https://en.cppreference.com/w/cpp/memory/monotonic_buffer_resource/do_allocate
+https://en.cppreference.com/w/cpp/atomic/memory_order
+https://gcc.gnu.org/onlinedocs/gcc/Bit-Operation-Builtins.html
+END APPENDIX
