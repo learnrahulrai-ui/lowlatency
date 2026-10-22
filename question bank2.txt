@@ -29,3 +29,2503 @@ The linked submodule is NOT a self-contained vendored archive.
 
 === SOURCE-TRACED ISSUE QUESTIONS ===
 
+QB2-0001 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Having issue with `io_uring_clone_buffers_offset()`
+SOURCE: https://github.com/axboe/liburing/issues/1660
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0002 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `IOU_PBUF_RING_INC` + read/recv results in misaligned data
+SOURCE: https://github.com/axboe/liburing/issues/1657
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0003 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: DEFER_TASKRUN: local task_work backlog grows unbounded with LINK_TIMEOUT, delaying poll-driven recv retries
+SOURCE: https://github.com/axboe/liburing/issues/1645
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0004 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Multishot recv on a kTLS socket hangs: wakeup lost once `poll_refs` reach `IO_POLL_REF_BIAS`
+SOURCE: https://github.com/axboe/liburing/issues/1644
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0005 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: soft lockup with io-wrk and zombie process eating a core when running test program from gdb
+SOURCE: https://github.com/axboe/liburing/issues/1642
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0006 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Recommended way to wake up one ring if I have access to another
+SOURCE: https://github.com/axboe/liburing/issues/1641
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0007 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_uring timeout may overrun significantly.
+SOURCE: https://github.com/axboe/liburing/issues/1635
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0008 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: pdf is 404 in readme
+SOURCE: https://github.com/axboe/liburing/issues/1633
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0009 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `test/sqpoll-disable-exit.c` always crashes
+SOURCE: https://github.com/axboe/liburing/issues/1632
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0010 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Does IORING_OP_READ_MULTISHOT return an error if the underlying file fails?
+SOURCE: https://github.com/axboe/liburing/issues/1631
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0011 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: When using io_uring, file locks can outlive the process
+SOURCE: https://github.com/axboe/liburing/issues/1627
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0012 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Confusing documentation of IORING_OP_FUTEX_WAIT
+SOURCE: https://github.com/axboe/liburing/issues/1625
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0013 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_file_supports_nowait causes lockup in io_uring_enter
+SOURCE: https://github.com/axboe/liburing/issues/1623
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0014 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_uring backend silently drops WebSocket messages above ~2KB( works reliably on epoll)
+SOURCE: https://github.com/axboe/liburing/issues/1622
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0015 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `recvmsg(MSG_TRUNC)` over-consumes incremental provided buffers
+SOURCE: https://github.com/axboe/liburing/issues/1619
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0016 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `IORING_SETUP_NO_MMAP` can application limit or determine how big buffers should be?
+SOURCE: https://github.com/axboe/liburing/issues/1618
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0017 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Memory fragmentation produces spurious ENOMEM
+SOURCE: https://github.com/axboe/liburing/issues/1614
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0018 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: many new tests in 2.15 fail when testing on kernel 6.12
+SOURCE: https://github.com/axboe/liburing/issues/1611
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0019 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: man: Small typo in io_uring_register_eventfd.3
+SOURCE: https://github.com/axboe/liburing/issues/1604
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0020 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Proposal: Add minimal multishot-echo-server example
+SOURCE: https://github.com/axboe/liburing/issues/1596
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0021 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unnecessarily failing IO when the submitting thread exits before the IO completes
+SOURCE: https://github.com/axboe/liburing/issues/1595
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0022 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is a Single io_uring and Proxy Submission Thread Suitable for M:N Coroutines?
+SOURCE: https://github.com/axboe/liburing/issues/1584
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0023 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: make user_data a uintptr_t?
+SOURCE: https://github.com/axboe/liburing/issues/1579
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0024 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_uring_resize_rings: ring left in unusable state on mmap failure
+SOURCE: https://github.com/axboe/liburing/issues/1574
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0025 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Documentation: Unclear how to handle failed submissions
+SOURCE: https://github.com/axboe/liburing/issues/1573
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0026 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Documentation: Unclear how to clean up synchronously
+SOURCE: https://github.com/axboe/liburing/issues/1572
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0027 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: iou-wrk thread getting created on socket shutdown - is this expected?
+SOURCE: https://github.com/axboe/liburing/issues/1569
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0028 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: iou-wrk threads interfering with performance
+SOURCE: https://github.com/axboe/liburing/issues/1568
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0029 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Memory access violation when using io_uring_submit_and_wait_reg()
+SOURCE: https://github.com/axboe/liburing/issues/1567
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0030 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_uring_queue_init() sporadically fails to allocate memory
+SOURCE: https://github.com/axboe/liburing/issues/1560
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0031 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: QUESTION: out of source builds
+SOURCE: https://github.com/axboe/liburing/issues/1557
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0032 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_uring_prep_futex_* hard coded?
+SOURCE: https://github.com/axboe/liburing/issues/1556
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0033 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Wrong offset for incremental buffers after non-pollable files
+SOURCE: https://github.com/axboe/liburing/issues/1555
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0034 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Missing `IORING_CQE_F_BUF_MORE` flag in CQE
+SOURCE: https://github.com/axboe/liburing/issues/1553
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0035 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_uring_register_ifq() returns EEIXST when testing zero-copy RX
+SOURCE: https://github.com/axboe/liburing/issues/1550
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0036 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Recv Multishot misses EOF with AF_UNIX
+SOURCE: https://github.com/axboe/liburing/issues/1549
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0037 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Buggy incremental provided buffer with read_multishot
+SOURCE: https://github.com/axboe/liburing/issues/1548
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0038 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Missing commands for `io_uring_prep_cmd_sock`
+SOURCE: https://github.com/axboe/liburing/issues/1547
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0039 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: IORING_CQE_F_BUF_MORE flag missing when multishot read hits EOF
+SOURCE: https://github.com/axboe/liburing/issues/1545
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0040 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to check if the kernel supports RECV_MULTISHOT?
+SOURCE: https://github.com/axboe/liburing/issues/1542
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0041 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: undefined symbol: `__io_uring_peek_cqe`
+SOURCE: https://github.com/axboe/liburing/issues/1541
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0042 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Statx Conflict
+SOURCE: https://github.com/axboe/liburing/issues/1540
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0043 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Possible io_uring buf_ring + IOSQE_BUFFER_SELECT misbehavior with 2 in-flight recv() sharing one buf_group (legacy provide_buffers OK)
+SOURCE: https://github.com/axboe/liburing/issues/1538
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0044 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `io_uring_cqe_nr` type mixing doesn't compile in Zig
+SOURCE: https://github.com/axboe/liburing/issues/1537
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0045 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Missing `io_uring_cqe_iter_init` & `io_uring_cqe_iter_next` from `liburing-ffi.map`
+SOURCE: https://github.com/axboe/liburing/issues/1536
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0046 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Link to Original pdf is dead
+SOURCE: https://github.com/axboe/liburing/issues/1535
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0047 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Missing `io_uring_bpf` struct fields
+SOURCE: https://github.com/axboe/liburing/issues/1534
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0048 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Test io-wq-unused-exit.t failed with ret 1 - timeout waiting for iou-wrk threads (want_any=0, nr=1)
+SOURCE: https://github.com/axboe/liburing/issues/1531
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0049 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Provided buffer selected twice for two concurrent reads (same bid) on Linux 6.12, while 6.6 returns -ENOBUFS for the second op
+SOURCE: https://github.com/axboe/liburing/issues/1530
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0050 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to test zcrx without specialized hardware?
+SOURCE: https://github.com/axboe/liburing/issues/1527
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0051 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: IORING_OP_PIPE missing manual page entry
+SOURCE: https://github.com/axboe/liburing/issues/1518
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0052 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: zero-copy receive (zcrx) CQE with ENOSPC error
+SOURCE: https://github.com/axboe/liburing/issues/1515
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0053 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Does IORING_OP_MSG_RING provide happens-before synchronization?
+SOURCE: https://github.com/axboe/liburing/issues/1514
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0054 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Correct handling of errors returned from io_uring_submit()
+SOURCE: https://github.com/axboe/liburing/issues/1511
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0055 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: cmsg corruption in recvmsg
+SOURCE: https://github.com/axboe/liburing/issues/1509
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0056 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: test/epwait: test_race() - epwait.t:test_race() can hang indefinitely on CI (indefinite epoll_wait with no wakeup)
+SOURCE: https://github.com/axboe/liburing/issues/1508
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0057 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Higher CPU utilization with io_uring based design for Rx Packet processing via AF_PACKET RAW socket
+SOURCE: https://github.com/axboe/liburing/issues/1506
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0058 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Tests failed (1): <min-timeout-wait.t> Expected 20 msec, got 250 msec
+SOURCE: https://github.com/axboe/liburing/issues/1504
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0059 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: compile errors with some header compat.h
+SOURCE: https://github.com/axboe/liburing/issues/1503
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0060 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Tests failed (1): <send_recv.t>
+SOURCE: https://github.com/axboe/liburing/issues/1501
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0061 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Performance Degredation] 2x NFS Performance Degradation Between 5.15.0 and 6.17.0
+SOURCE: https://github.com/axboe/liburing/issues/1499
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0062 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Feature request] sharing registered file descriptors between rings
+SOURCE: https://github.com/axboe/liburing/issues/1497
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0063 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_uring_prep_fadvise with POSIX_FADV_WILLNEED doesn't issue nonblocking read
+SOURCE: https://github.com/axboe/liburing/issues/1496
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0064 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: support file lock/unlock
+SOURCE: https://github.com/axboe/liburing/issues/1492
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0065 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Man page for `io_uring_prep_readv2` has wrong liburing version?
+SOURCE: https://github.com/axboe/liburing/issues/1487
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0066 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to safely submit operations from another thread while a thread is blocked on `io_uring_submit_and_wait_timeout`?
+SOURCE: https://github.com/axboe/liburing/issues/1478
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0067 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `io_uring_submit_and_wait_min_timeout` only returns after `min_wait_usec` if `wait_nr` completions have been posted instead of just any completion
+SOURCE: https://github.com/axboe/liburing/issues/1477
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0068 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Keeping the queue full
+SOURCE: https://github.com/axboe/liburing/issues/1476
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0069 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Comment in linux/io_uring.h regarding COOP_TASKRUN and TASKRUN_FLAG seems misleading?
+SOURCE: https://github.com/axboe/liburing/issues/1475
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0070 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Getting all completed events with IORING_SETUP_DEFER_TASKRUN
+SOURCE: https://github.com/axboe/liburing/issues/1474
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0071 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Issue linking events with IOSQE_FIXED_FILE (ECANCELED & EBADF)
+SOURCE: https://github.com/axboe/liburing/issues/1472
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0072 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: query.h not installed
+SOURCE: https://github.com/axboe/liburing/issues/1470
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0073 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Question] Writing to a file with a depth of 8 operations with IOSQE_ASYNC causes the creation of a lot of worker threads.
+SOURCE: https://github.com/axboe/liburing/issues/1466
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0074 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: send_zc / sendmsg_zc not consistent in when notifications are posted
+SOURCE: https://github.com/axboe/liburing/issues/1462
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0075 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Leakage of TU-local entities when build C++ modules with GCC
+SOURCE: https://github.com/axboe/liburing/issues/1457
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0076 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: iouring is not really non-block on syscall 'close' ?
+SOURCE: https://github.com/axboe/liburing/issues/1456
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0077 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_uring_register_napi and IORING_SETUP_IOPOLL
+SOURCE: https://github.com/axboe/liburing/issues/1454
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0078 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Question] why multiple receviePings make user CPU Usage 100% in napi-busy-poll-server.c
+SOURCE: https://github.com/axboe/liburing/issues/1451
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0079 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `IORING_OP_LISTEN` in `io_uring_enter(2)` man page is wrong
+SOURCE: https://github.com/axboe/liburing/issues/1450
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0080 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [question] sq->ring_sz with IORING_SETUP_NO_SQARRAY
+SOURCE: https://github.com/axboe/liburing/issues/1448
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0081 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Sharing the rx buffer ring of recv_multishot across multiple connections implies synchronization issues? Kernel 6.14.0-27
+SOURCE: https://github.com/axboe/liburing/issues/1447
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0082 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Question] Difference between SEND_ZC and provided buffers
+SOURCE: https://github.com/axboe/liburing/issues/1444
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0083 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `io_uring_prep_send` returning zero in the CQE with polling
+SOURCE: https://github.com/axboe/liburing/issues/1435
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0084 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: compile fail
+SOURCE: https://github.com/axboe/liburing/issues/1434
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0085 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: recvmsg_multishot + IOU_PBUF_RING_INC causes spurious BADADDR errors
+SOURCE: https://github.com/axboe/liburing/issues/1433
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0086 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Does io_uring support asynchronous lseek?
+SOURCE: https://github.com/axboe/liburing/issues/1430
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0087 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: is the liburing rust crate the preferred way for rustaceans?
+SOURCE: https://github.com/axboe/liburing/issues/1426
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0088 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Out-of-Order *Incremental* Buffer Assignment with IORING_RECVSEND_BUNDLE on Kernel 6.3.11+
+SOURCE: https://github.com/axboe/liburing/issues/1423
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0089 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: About the issue with using IORING_OP_LINK_TIMEOUT
+SOURCE: https://github.com/axboe/liburing/issues/1422
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0090 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [perf tuning discussion] liburing failed to run in main and worker thread model if we enable ring direct access
+SOURCE: https://github.com/axboe/liburing/issues/1421
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0091 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Defining aligned_alloc unconditionally leads to duplicate symbol error
+SOURCE: https://github.com/axboe/liburing/issues/1420
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0092 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [perf tuning discussion] params.sq_thread_idle will impact performance a lot
+SOURCE: https://github.com/axboe/liburing/issues/1418
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0093 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: use latest code building liburing, make step failed
+SOURCE: https://github.com/axboe/liburing/issues/1417
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0094 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Weird behaviour when using io_uring_queue_init_mem
+SOURCE: https://github.com/axboe/liburing/issues/1416
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0095 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [question on perf tuning] need expert help
+SOURCE: https://github.com/axboe/liburing/issues/1415
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0096 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: example code with io_uring nvme passthrough command failed with invalid argument error
+SOURCE: https://github.com/axboe/liburing/issues/1413
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0097 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_uring_wait_cqe_timeout does not respect timeout parameter
+SOURCE: https://github.com/axboe/liburing/issues/1412
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0098 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Running test recv-bundle-short-ooo.t Recv data ordering mismatch
+SOURCE: https://github.com/axboe/liburing/issues/1411
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0099 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Potential Out-of-Order Buffer Assignment with IORING_RECVSEND_BUNDLE on Kernel 6.3.11+
+SOURCE: https://github.com/axboe/liburing/issues/1409
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0100 | io_uring | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: io_uring_setup fails with ENOMEM when tracy profiler is enabled
+SOURCE: https://github.com/axboe/liburing/issues/1408
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0101 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: NonStopSession=Y resets previous-day FileStore during session construction (1.16.0)
+SOURCE: https://github.com/quickfix/quickfix/issues/778
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0102 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Data races on SessionState enabled, receivedLogon and sentLogon flags
+SOURCE: https://github.com/quickfix/quickfix/issues/771
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0103 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Data race on SessionState::lastSentTime between sending and heartbeat checks
+SOURCE: https://github.com/quickfix/quickfix/issues/770
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0104 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Mutex data race on m_count and m_threadID
+SOURCE: https://github.com/quickfix/quickfix/issues/769
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0105 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Performance comparison: NSFix vs quickfix/quickfix
+SOURCE: https://github.com/quickfix/quickfix/issues/768
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0106 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compiler warning: -Wmissing-field-initializers in FIX::DateTime::getTmUtc() (FieldTypes.h)
+SOURCE: https://github.com/quickfix/quickfix/issues/753
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0107 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Make the separator in `Message::toString` an argument
+SOURCE: https://github.com/quickfix/quickfix/issues/752
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0108 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Bug] HttpServer double-closes accepted socket fd per request, causing unintended close of another thread's fd
+SOURCE: https://github.com/quickfix/quickfix/issues/747
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0109 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SocketInitiator::onDisconnect not firing after a logout message is sent from an acceptor
+SOURCE: https://github.com/quickfix/quickfix/issues/741
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0110 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: IncorrectTagValue thrown during dictionary validation is not converted into a FIX session reject
+SOURCE: https://github.com/quickfix/quickfix/issues/732
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0111 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Inquiry regarding secure disclosure channel for a verified critical structural flaw
+SOURCE: https://github.com/quickfix/quickfix/issues/706
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0112 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: One extra warning in the main branch compiling process
+SOURCE: https://github.com/quickfix/quickfix/issues/705
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0113 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Too low inbound sequence number logout
+SOURCE: https://github.com/quickfix/quickfix/issues/700
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0114 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Anyone knows if I add a new message to FIX.xml, and execute ruby Generator.rb, need I rebuild the project to get a new so?
+SOURCE: https://github.com/quickfix/quickfix/issues/697
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0115 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: generated code fails the clang-format check and is broken on windows
+SOURCE: https://github.com/quickfix/quickfix/issues/693
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0116 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: cannot compile from master branch
+SOURCE: https://github.com/quickfix/quickfix/issues/688
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0117 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Where can I find the quickfix Versionsnumber?
+SOURCE: https://github.com/quickfix/quickfix/issues/687
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0118 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SSLSocketInitator leaks file descriptors on connection error and goes into a busy-spinning state
+SOURCE: https://github.com/quickfix/quickfix/issues/682
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0119 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: erroer
+SOURCE: https://github.com/quickfix/quickfix/issues/676
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0120 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: processPollList does not handle POLLHUP
+SOURCE: https://github.com/quickfix/quickfix/issues/674
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0121 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `SendingTime` can only contain seconds on Windows
+SOURCE: https://github.com/quickfix/quickfix/issues/672
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0122 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Windows compilation error: "d: undeclared identifier" in SSLSocketInitiator.cpp (even if the source code is not modified)
+SOURCE: https://github.com/quickfix/quickfix/issues/670
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0123 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: how to catch quickfix exception: FIX::SocketRecvFailed
+SOURCE: https://github.com/quickfix/quickfix/issues/669
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0124 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Building in Python - Linux
+SOURCE: https://github.com/quickfix/quickfix/issues/667
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0125 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SessionState is inherited from and has a member of type MessageStore
+SOURCE: https://github.com/quickfix/quickfix/issues/666
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0126 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: C++ build failure with HAVE_SSL enabled
+SOURCE: https://github.com/quickfix/quickfix/issues/662
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0127 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add type conversion operator from FIX::StringField to std::string_view
+SOURCE: https://github.com/quickfix/quickfix/issues/659
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0128 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Master branch : Can't set Multiple sessions from code ?
+SOURCE: https://github.com/quickfix/quickfix/issues/657
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0129 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Memory leak in quickfix/src/C++/test/UtilityTestCase.cpp
+SOURCE: https://github.com/quickfix/quickfix/issues/654
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0130 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Communicating through a SOCKS proxy
+SOURCE: https://github.com/quickfix/quickfix/issues/653
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0131 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add spdlog compatible logger
+SOURCE: https://github.com/quickfix/quickfix/issues/652
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0132 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add a `std::chrono::system_clock::time_point` convertion to `Datetime`
+SOURCE: https://github.com/quickfix/quickfix/issues/646
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0133 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add templated and `std::optional` to `Message.get`
+SOURCE: https://github.com/quickfix/quickfix/issues/645
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0134 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Session framework of the quickfix c++ code base could use a rework to align with quickfix/n and quickfix/j
+SOURCE: https://github.com/quickfix/quickfix/issues/643
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0135 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Disable time filtering by omitting StartTime and EndTime
+SOURCE: https://github.com/quickfix/quickfix/issues/642
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0136 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: add a new version release ？
+SOURCE: https://github.com/quickfix/quickfix/issues/641
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0137 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: TIMESTAMP_PRECISION eliminated by merge of clangd format #623
+SOURCE: https://github.com/quickfix/quickfix/issues/639
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0138 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: getField().getString() Returns Corrupted Strings on Specific Linux Environment
+SOURCE: https://github.com/quickfix/quickfix/issues/638
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0139 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Missed tag in dictionary leads to a message rejection
+SOURCE: https://github.com/quickfix/quickfix/issues/637
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0140 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: A bug in SSLSocketInitiator.cpp
+SOURCE: https://github.com/quickfix/quickfix/issues/635
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0141 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Password needed?
+SOURCE: https://github.com/quickfix/quickfix/issues/634
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0142 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Incorrect formatting for FIX fields
+SOURCE: https://github.com/quickfix/quickfix/issues/633
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0143 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Randomly getting IO Error: Unable to get file pointer position from ...\\Logs\FIXT.1.1-C_B-Fix.body
+SOURCE: https://github.com/quickfix/quickfix/issues/632
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0144 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: checkGroupCount does not validate nested groups 
+SOURCE: https://github.com/quickfix/quickfix/issues/631
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0145 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build fails on Apple Silicon (ARM64) due to incompatible atomic operations in `AtomicCount.h`
+SOURCE: https://github.com/quickfix/quickfix/issues/630
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0146 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can't build with --with-openssl for C++ in the newest version
+SOURCE: https://github.com/quickfix/quickfix/issues/629
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0147 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: New release of the C++ library
+SOURCE: https://github.com/quickfix/quickfix/issues/626
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0148 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Buffer overflow when reconnecting a session
+SOURCE: https://github.com/quickfix/quickfix/issues/621
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0149 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: building with clang 12 
+SOURCE: https://github.com/quickfix/quickfix/issues/620
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0150 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Openssl FIX Certificate verification issue with NCDEX Exchange 
+SOURCE: https://github.com/quickfix/quickfix/issues/619
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0151 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Could not open body file
+SOURCE: https://github.com/quickfix/quickfix/issues/618
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0152 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: quickfix unable to connect with CQG FIX API because of missing variables
+SOURCE: https://github.com/quickfix/quickfix/issues/617
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0153 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Python 3.12.7 windows 11
+SOURCE: https://github.com/quickfix/quickfix/issues/616
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0154 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MillisecondsInTimeStamp=N does not set timestamp precisions to seconds
+SOURCE: https://github.com/quickfix/quickfix/issues/615
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0155 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Conflicting Member Variable m_settings in SocketInitiator and Initiator
+SOURCE: https://github.com/quickfix/quickfix/issues/614
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0156 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SocketInitiator::getHost call Dictionary.has may have thread problem
+SOURCE: https://github.com/quickfix/quickfix/issues/613
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0157 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Incorrect data format tag for value
+SOURCE: https://github.com/quickfix/quickfix/issues/612
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0158 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Quickfix on new Pyhton 3.13 free-threaded
+SOURCE: https://github.com/quickfix/quickfix/issues/611
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0159 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Question] Release process? Next version of quickfix?
+SOURCE: https://github.com/quickfix/quickfix/issues/610
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0160 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Session is hung
+SOURCE: https://github.com/quickfix/quickfix/issues/608
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0161 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: quickfix PyPI package has no wheels
+SOURCE: https://github.com/quickfix/quickfix/issues/607
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0162 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: error while trying to install latest code on Linux machine
+SOURCE: https://github.com/quickfix/quickfix/issues/606
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0163 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can't find the correct way to download SSL enabled Quickfix package for Windows.
+SOURCE: https://github.com/quickfix/quickfix/issues/605
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0164 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ReconnectInterval not picked from [SESSION] sections, only from [DEFAULT] section
+SOURCE: https://github.com/quickfix/quickfix/issues/604
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0165 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: dynamic exception specifications invalid in C++ 17 
+SOURCE: https://github.com/quickfix/quickfix/issues/602
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0166 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: "configure" executable nonexistent in zip and autoconf fails to generate it
+SOURCE: https://github.com/quickfix/quickfix/issues/601
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0167 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Cannot open include file: 'SSLStubs.h': 
+SOURCE: https://github.com/quickfix/quickfix/issues/600
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0168 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Updated Release Tag(s)
+SOURCE: https://github.com/quickfix/quickfix/issues/596
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0169 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: (Suggestion) Session ctor fail
+SOURCE: https://github.com/quickfix/quickfix/issues/593
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0170 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: (Question) sequence number got reset
+SOURCE: https://github.com/quickfix/quickfix/issues/592
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0171 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: what is C++ standard of the library?
+SOURCE: https://github.com/quickfix/quickfix/issues/590
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0172 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Value of fields being checked, even if setting 'ValidateFieldsHaveValues' if 'UseDataDictionary' is 'N'?
+SOURCE: https://github.com/quickfix/quickfix/issues/589
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0173 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Improving the Quickfix Python wrapper interface
+SOURCE: https://github.com/quickfix/quickfix/issues/588
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0174 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: (Question) Is it possible to run a FIX server with Quickfix?
+SOURCE: https://github.com/quickfix/quickfix/issues/586
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0175 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Python 11.0 compatible wheels
+SOURCE: https://github.com/quickfix/quickfix/issues/579
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0176 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compilation Issues with OpenSSL Due to Source Code Errors in UtilitySSL Files
+SOURCE: https://github.com/quickfix/quickfix/issues/576
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0177 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: usage of sizeof(buffer) inside the snprintf call
+SOURCE: https://github.com/quickfix/quickfix/issues/575
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0178 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [c++] split resend request but max message count
+SOURCE: https://github.com/quickfix/quickfix/issues/571
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0179 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: log output "NextExpectedMsgSeqNum too low" is wrong
+SOURCE: https://github.com/quickfix/quickfix/issues/564
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0180 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Sequence number management post logon ACK with ResetSeqNumFlag[141]=Y
+SOURCE: https://github.com/quickfix/quickfix/issues/562
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0181 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Receiving ResendRequest following a Logon Request
+SOURCE: https://github.com/quickfix/quickfix/issues/561
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0182 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Using two sessions that have the same SessionId crashes quickfix
+SOURCE: https://github.com/quickfix/quickfix/issues/560
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0183 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: error_wsaerror should use LocalFree to release the buffer
+SOURCE: https://github.com/quickfix/quickfix/issues/555
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0184 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [python] Release a new version to make it compatible for local and production integration
+SOURCE: https://github.com/quickfix/quickfix/issues/554
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0185 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Quickfix release to mitigate Apache mina-core vulnerabilities
+SOURCE: https://github.com/quickfix/quickfix/issues/553
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0186 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unhandled exceptions from initiator thread
+SOURCE: https://github.com/quickfix/quickfix/issues/550
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0187 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: C++ compiler warning "overflow in implicit constant conversion"
+SOURCE: https://github.com/quickfix/quickfix/issues/547
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0188 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Quickfix for python with Pycharm
+SOURCE: https://github.com/quickfix/quickfix/issues/546
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0189 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Workdays for daily sessions
+SOURCE: https://github.com/quickfix/quickfix/issues/544
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0190 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: python quickfix disconnects after initiator.start()
+SOURCE: https://github.com/quickfix/quickfix/issues/543
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0191 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: QuickFIX Python Binding Issue - SSL - MacOS
+SOURCE: https://github.com/quickfix/quickfix/issues/541
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0192 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The Session’s CreationTime is accessed before the Session’s state is refreshed when RefreshOnLogon=Y.
+SOURCE: https://github.com/quickfix/quickfix/issues/540
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0193 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Sequence number incrementing from logout message even when replay is in progress
+SOURCE: https://github.com/quickfix/quickfix/issues/538
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0194 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Undefined behaviour with SocketAcceptor / SocketInitator when stop is not called
+SOURCE: https://github.com/quickfix/quickfix/issues/536
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0195 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: New release to support Python/Ruby on ARM
+SOURCE: https://github.com/quickfix/quickfix/issues/534
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0196 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Rust lang support
+SOURCE: https://github.com/quickfix/quickfix/issues/533
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0197 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Connection host rotation policy
+SOURCE: https://github.com/quickfix/quickfix/issues/531
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0198 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: FixFieldNumbers.h - ReplaceText
+SOURCE: https://github.com/quickfix/quickfix/issues/530
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0199 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: warnings emitted during build due to incorrect build flag orders
+SOURCE: https://github.com/quickfix/quickfix/issues/529
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0200 | FIX | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: DataDictionary::validate() does not validate fields in groups
+SOURCE: https://github.com/quickfix/quickfix/issues/527
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0201 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C Driver] Use-after-free of receive channel endpoint during async publication image creation
+SOURCE: https://github.com/aeron-io/aeron/issues/2213
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0202 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C Archive] `aeron_archive_async_connect` spins forever if the media driver goes away during `aeron_archive_context_conclude` (agent invoker mode)
+SOURCE: https://github.com/aeron-io/aeron/issues/2211
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0203 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] Three archive persistent-subscription tests read the live image before the flood has landed, and hang waiting for it to drop
+SOURCE: https://github.com/aeron-io/aeron/issues/2197
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0204 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C Driver] three changes to the C driver's receive path: reads one datagram a poll, builds its descriptors once, and stays out of epoll below the iteration threshold
+SOURCE: https://github.com/aeron-io/aeron/issues/2187
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0205 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Consensus module throws ArrayIndexOutOfBoundsException for a service message with an out-of-range service ID
+SOURCE: https://github.com/aeron-io/aeron/issues/2185
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0206 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: C media driver fails on UDP multicast publication + subscription on different multicast IPs, same port
+SOURCE: https://github.com/aeron-io/aeron/issues/2170
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0207 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: A start that dies inside `ArchiveMarkFile` / `ClusterMarkFile` after activation strands `ACTIVATION_IN_PROGRESS_TIMESTAMP` in the mark file — every later start fails with `active mark file detected`, and nothing expires it
+SOURCE: https://github.com/aeron-io/aeron/issues/2148
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0208 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] Pre-touch writes into live log buffers on macOS, corrupting term buffers and metadata
+SOURCE: https://github.com/aeron-io/aeron/issues/2139
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0209 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] aeron_client_conductor_on_cmd_destination_by_id
+SOURCE: https://github.com/aeron-io/aeron/issues/2138
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0210 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Java] PersistentSubscription does not receive UDP response replay when replayChannel includes session-id
+SOURCE: https://github.com/aeron-io/aeron/issues/2137
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0211 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Client/C] const correctness question on aeron_subscription_resolved_endpoint
+SOURCE: https://github.com/aeron-io/aeron/issues/2130
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0212 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Driver/C] Receive destination can leak when Driver closes after add acknowledgement
+SOURCE: https://github.com/aeron-io/aeron/issues/2127
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0213 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Driver/C] Native resource command queue can retain mapped log buffers during shutdown
+SOURCE: https://github.com/aeron-io/aeron/issues/2123
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0214 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: test issue - delete this
+SOURCE: https://github.com/aeron-io/aeron/issues/2118
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0215 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Rolling CRC support for the Archive
+SOURCE: https://github.com/aeron-io/aeron/issues/2103
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0216 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 32-bit Windows C++ Client Connecting to a 64-bit Aeron Media Driver
+SOURCE: https://github.com/aeron-io/aeron/issues/2101
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0217 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ArchiveTool dump aborts on DELETED/INVALID catalog entries (missing the state filter that describe has)
+SOURCE: https://github.com/aeron-io/aeron/issues/2100
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0218 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unhandled RegistrationException resulting in stale member
+SOURCE: https://github.com/aeron-io/aeron/issues/2099
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0219 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Driver Sender busy-spins (ignores idle strategy) when idle since 1.52.0
+SOURCE: https://github.com/aeron-io/aeron/issues/2092
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0220 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MDC unexpected network traffic
+SOURCE: https://github.com/aeron-io/aeron/issues/2061
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0221 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Custom implementations of AppVersionValidator
+SOURCE: https://github.com/aeron-io/aeron/issues/2056
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0222 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why does recording not allow to startReplay from stopPosition
+SOURCE: https://github.com/aeron-io/aeron/issues/2044
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0223 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `resolver_bootstrap_neighbor_resolution_interval_ns` defaults to 0 instead of 10s
+SOURCE: https://github.com/aeron-io/aeron/issues/2035
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0224 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C Driver] Default name resolver uses AF_INET only, breaks on IPv6-only networks
+SOURCE: https://github.com/aeron-io/aeron/issues/2020
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0225 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: findExclusivePublication broken by recent change
+SOURCE: https://github.com/aeron-io/aeron/issues/2002
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0226 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: C implementation of Aeron Cluster (client, service, consensus, backup)
+SOURCE: https://github.com/aeron-io/aeron/issues/1970
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0227 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Possible integer overflow in NetworkPublication
+SOURCE: https://github.com/aeron-io/aeron/issues/1967
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0228 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] Out-of-Bounds Write When `aeron_mpsc_rb_try_claim` Fails in `aeron_context_request_driver_termination`
+SOURCE: https://github.com/aeron-io/aeron/issues/1966
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0229 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] Question - debugging a subscription in media driver
+SOURCE: https://github.com/aeron-io/aeron/issues/1962
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0230 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Media driver name resolution bootstrap failing to retry?
+SOURCE: https://github.com/aeron-io/aeron/issues/1951
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0231 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: cpp_wrapper: addPublication(const std::string&, std::int32_t) leaks memory if findPublication doesn't succeed
+SOURCE: https://github.com/aeron-io/aeron/issues/1948
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0232 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Question] Loss gap fill behaviour on poor network line
+SOURCE: https://github.com/aeron-io/aeron/issues/1946
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0233 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why throw an exception after giving the consensusModule ack
+SOURCE: https://github.com/aeron-io/aeron/issues/1945
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0234 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] aeron_append_block ignores term_offset, resulting in silent data corruption
+SOURCE: https://github.com/aeron-io/aeron/issues/1944
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0235 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why throw an exception after giving the consensusModule ack
+SOURCE: https://github.com/aeron-io/aeron/issues/1942
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0236 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can Network Publication not send data when there is no receiver
+SOURCE: https://github.com/aeron-io/aeron/issues/1941
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0237 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can ClusterStandby's commitPosition exceed the cluster's commitPosition?
+SOURCE: https://github.com/aeron-io/aeron/issues/1940
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0238 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: System-property based defaults prevent running multiple isolated Aeron stacks in a single JVM
+SOURCE: https://github.com/aeron-io/aeron/issues/1937
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0239 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Jave] [Aeron Cluster] braft `transfer_leadership_to` support
+SOURCE: https://github.com/aeron-io/aeron/issues/1936
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0240 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RecoveryState counter key length limits maximum ClusteredService count to 10
+SOURCE: https://github.com/aeron-io/aeron/issues/1935
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0241 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Potential Log Gap Issue When Slow ClusterService Follower Becomes Leader
+SOURCE: https://github.com/aeron-io/aeron/issues/1923
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0242 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to integrate the ClusterBackup component when starting an Aeron Cluster?
+SOURCE: https://github.com/aeron-io/aeron/issues/1921
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0243 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Java][Aeron Cluster] Allow sending messages from the cluster to the client while in LIFECYCLE_CALLBACK_DO_BACKGROUND_WORK
+SOURCE: https://github.com/aeron-io/aeron/issues/1916
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0244 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Aeron dynamic MDS publication DNS re-resolution issue
+SOURCE: https://github.com/aeron-io/aeron/issues/1913
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0245 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can I have a "class DisruptorTransport implements Transport" ?
+SOURCE: https://github.com/aeron-io/aeron/issues/1912
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0246 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Service messages silently dropped after leadership transition due to PendingServiceMessageTracker state mismatch
+SOURCE: https://github.com/aeron-io/aeron/issues/1903
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0247 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Handling of unflushed segment files in Archive
+SOURCE: https://github.com/aeron-io/aeron/issues/1900
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0248 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can the standby function be implemented without making any changes to the source code
+SOURCE: https://github.com/aeron-io/aeron/issues/1899
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0249 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question: Memory Allocation - Logbuffers
+SOURCE: https://github.com/aeron-io/aeron/issues/1896
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0250 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ArchiveException "endpoint has port=0 for publication"
+SOURCE: https://github.com/aeron-io/aeron/issues/1890
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0251 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C Archive] Unicast Aeron Archive replay with stopPosition = -1 (follow/tail mode) drops messages for slow subscriber even with reliable=true
+SOURCE: https://github.com/aeron-io/aeron/issues/1889
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0252 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Reserved value timestamps not applied when they could be
+SOURCE: https://github.com/aeron-io/aeron/issues/1883
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0253 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CRITICAL] Messages from `Cluster.offer()` can be silently dropped if Aeron Cluster crashes
+SOURCE: https://github.com/aeron-io/aeron/issues/1879
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0254 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] Not possible to release a retained image that becomes unavailable
+SOURCE: https://github.com/aeron-io/aeron/issues/1874
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0255 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] controlled_poll for archive replay merge
+SOURCE: https://github.com/aeron-io/aeron/issues/1872
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0256 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] aeron_archive_replay_merge_close hangs in loop
+SOURCE: https://github.com/aeron-io/aeron/issues/1871
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0257 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Regarding Aeron Cluster
+SOURCE: https://github.com/aeron-io/aeron/issues/1862
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0258 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Possible subscription leak in ClientConductor
+SOURCE: https://github.com/aeron-io/aeron/issues/1859
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0259 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] aeron-spy slow subscribers influence flow control even with tagged subscriptions
+SOURCE: https://github.com/aeron-io/aeron/issues/1857
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0260 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Jepsen test
+SOURCE: https://github.com/aeron-io/aeron/issues/1853
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0261 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: No Response from MediaDriver with unresolvable names
+SOURCE: https://github.com/aeron-io/aeron/issues/1849
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0262 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Closing AeronArchive ends with status = DISCONNECTED
+SOURCE: https://github.com/aeron-io/aeron/issues/1848
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0263 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Recovering from `ClusterClient` that reaches status `CLOSED`
+SOURCE: https://github.com/aeron-io/aeron/issues/1847
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0264 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Using MDS across machines
+SOURCE: https://github.com/aeron-io/aeron/issues/1846
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0265 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: build error std::index_sequence
+SOURCE: https://github.com/aeron-io/aeron/issues/1839
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0266 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C] aeron_randomised_int32 on macos starts with the same random number as seed is not being changed
+SOURCE: https://github.com/aeron-io/aeron/issues/1836
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0267 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: aeron_udp_channel_data_paths_init use outgoing_init_func without check
+SOURCE: https://github.com/aeron-io/aeron/issues/1834
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0268 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: "loss" interceptor without incoming_close_func, lead to aeron_alloc without free
+SOURCE: https://github.com/aeron-io/aeron/issues/1833
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0269 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Regarding Aeron Cluster
+SOURCE: https://github.com/aeron-io/aeron/issues/1832
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0270 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Subscription following port clash is successful but never connects
+SOURCE: https://github.com/aeron-io/aeron/issues/1830
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0271 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Taking a copy of the io.aeron.logbuffer.Header
+SOURCE: https://github.com/aeron-io/aeron/issues/1829
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0272 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: agent_on_start_func overwirte by main
+SOURCE: https://github.com/aeron-io/aeron/issues/1828
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0273 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: aeron_cnc_is_file_length_sufficient did not calculate error_log_buffer_length
+SOURCE: https://github.com/aeron-io/aeron/issues/1826
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0274 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Multiple UDP messages for a single Publication-Subscription pair
+SOURCE: https://github.com/aeron-io/aeron/issues/1825
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0275 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is there a way to recover the invalid latest snapshot on the standby node?
+SOURCE: https://github.com/aeron-io/aeron/issues/1823
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0276 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is there a way to recover the invalid latest snapshot on the standby node?
+SOURCE: https://github.com/aeron-io/aeron/issues/1822
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0277 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to reuse archive replay to consume the same recording data when the recording has been stoped
+SOURCE: https://github.com/aeron-io/aeron/issues/1821
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0278 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Documentation: when setting aeron.dir property, make sure it ends with a slash
+SOURCE: https://github.com/aeron-io/aeron/issues/1820
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0279 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Aeron Archive - replication question
+SOURCE: https://github.com/aeron-io/aeron/issues/1813
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0280 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ArchiveException: Found potentially incomplete last fragment straddling page boundary in file
+SOURCE: https://github.com/aeron-io/aeron/issues/1812
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0281 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Replay a live ipc channel limitation
+SOURCE: https://github.com/aeron-io/aeron/issues/1811
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0282 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Single Node Cluster start failed sometimes
+SOURCE: https://github.com/aeron-io/aeron/issues/1809
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0283 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Occasional request publication image unavailable from cpp aeron archive
+SOURCE: https://github.com/aeron-io/aeron/issues/1802
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0284 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [feat] Upload Release Java artifacts to GitHub releases
+SOURCE: https://github.com/aeron-io/aeron/issues/1798
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0285 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Aeron tether=false subscriptions do not get booted if all subscriptions are untethered
+SOURCE: https://github.com/aeron-io/aeron/issues/1790
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0286 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: WARN level exception thrown during shut down of ClusteredMediaDriver
+SOURCE: https://github.com/aeron-io/aeron/issues/1784
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0287 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Minor/Wiki: Misleading "support for Java 8 only"
+SOURCE: https://github.com/aeron-io/aeron/issues/1782
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0288 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: What are the best practices for logging egress messages in an Aeron cluster?
+SOURCE: https://github.com/aeron-io/aeron/issues/1780
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0289 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: What are the best practices for recording egress messages in Aeron cluster?
+SOURCE: https://github.com/aeron-io/aeron/issues/1779
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0290 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Invalidate older snapshots after truncating the log
+SOURCE: https://github.com/aeron-io/aeron/issues/1777
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0291 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: failed to send response error message after upgrade
+SOURCE: https://github.com/aeron-io/aeron/issues/1776
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0292 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Aeron publication - when is it actually ready?
+SOURCE: https://github.com/aeron-io/aeron/issues/1769
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0293 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: AeronArchive fails to start on some versions of linux.
+SOURCE: https://github.com/aeron-io/aeron/issues/1766
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0294 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Null pointer dereference in aeron_client_conductor_subscription_add_image
+SOURCE: https://github.com/aeron-io/aeron/issues/1764
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0295 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Response channels and IPC
+SOURCE: https://github.com/aeron-io/aeron/issues/1761
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0296 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Client timeouts because of time adjustments made by NTP
+SOURCE: https://github.com/aeron-io/aeron/issues/1758
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0297 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Aeron Archive disconnects C++ wrapper clients after some time
+SOURCE: https://github.com/aeron-io/aeron/issues/1757
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0298 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Aeron socket/transport return codes lose context, resulting in erroneous short send reports
+SOURCE: https://github.com/aeron-io/aeron/issues/1756
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0299 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crash in aeron_subscription_image_retain
+SOURCE: https://github.com/aeron-io/aeron/issues/1752
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0300 | Aeron | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Strange insufficient storage space exception
+SOURCE: https://github.com/aeron-io/aeron/issues/1751
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0301 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: PLAIN sends and expects a malformed ERROR command ("\x05ERROR" parses as "^RROR")
+SOURCE: https://github.com/zeromq/libzmq/issues/4943
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0302 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: PUB leaks incomplete multipart frames when a subscriber disconnects
+SOURCE: https://github.com/zeromq/libzmq/issues/4940
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0303 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow to use post quantum safe encryption with CurveZMQ
+SOURCE: https://github.com/zeromq/libzmq/issues/4933
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0304 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Release timeline for libzmq 4.3.6
+SOURCE: https://github.com/zeromq/libzmq/issues/4929
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0305 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: sould curve_publickey be required on clients?
+SOURCE: https://github.com/zeromq/libzmq/issues/4927
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0306 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Race condition in ctx_t::send_command() causes UAF during concurrent socket destruction
+SOURCE: https://github.com/zeromq/libzmq/issues/4926
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0307 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Backpressure Propagation via zmq_proxy using ZMQ_XPUB_NODROP
+SOURCE: https://github.com/zeromq/libzmq/issues/4921
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0308 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Security advisory leads to 404
+SOURCE: https://github.com/zeromq/libzmq/issues/4920
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0309 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: one zmq.PUSH socket permanently blocks on send_pyobj() while other PUSH sockets to the same PULL continue working
+SOURCE: https://github.com/zeromq/libzmq/issues/4917
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0310 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Authorization bypassed when using GSSAPI
+SOURCE: https://github.com/zeromq/libzmq/issues/4912
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0311 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Clarification on libzmq Project Status
+SOURCE: https://github.com/zeromq/libzmq/issues/4910
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0312 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Linux function detection can fail
+SOURCE: https://github.com/zeromq/libzmq/issues/4907
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0313 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Proposal] - Application scheduled I/O execution
+SOURCE: https://github.com/zeromq/libzmq/issues/4903
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0314 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Memory leak in GSSAPI codepath
+SOURCE: https://github.com/zeromq/libzmq/issues/4856
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0315 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Timer sockets
+SOURCE: https://github.com/zeromq/libzmq/issues/4854
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0316 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ZAP does not receive ip address of the client
+SOURCE: https://github.com/zeromq/libzmq/issues/4851
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0317 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Curve encryption failing in 7.3.5
+SOURCE: https://github.com/zeromq/libzmq/issues/4849
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0318 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Corrupt subscriptions on re-connect when using encrypted GSSAPI
+SOURCE: https://github.com/zeromq/libzmq/issues/4847
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0319 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: cmake 4.2.3 dropped support for cmake_minimum_required below 3.5
+SOURCE: https://github.com/zeromq/libzmq/issues/4844
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0320 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: <Removed>
+SOURCE: https://github.com/zeromq/libzmq/issues/4843
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0321 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Assertion failure in `stream_engine_base.cpp: out_event()` when `_io_error` is set
+SOURCE: https://github.com/zeromq/libzmq/issues/4842
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0322 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Race condition: assertion failure in `stream_engine_base.cpp: out_event()` when `_io_error` is set
+SOURCE: https://github.com/zeromq/libzmq/issues/4841
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0323 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ZMQ fails with "Interrupted system call" when a signal is delivered to the process
+SOURCE: https://github.com/zeromq/libzmq/issues/4837
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0324 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The #4486 fix for `CACHELINE_SIZE` probe on qemu-user is incomplete, libzmq v4.3.5 compilation still fails
+SOURCE: https://github.com/zeromq/libzmq/issues/4834
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0325 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ZMQ_STREAM server cannot disconnect client when sndhwm reached
+SOURCE: https://github.com/zeromq/libzmq/issues/4828
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0326 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unable to bind ZMQ TCP address
+SOURCE: https://github.com/zeromq/libzmq/issues/4826
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0327 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: application Spyder launch produced may have errors
+SOURCE: https://github.com/zeromq/libzmq/issues/4825
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0328 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Assertion "dummy == 0" in signaler_t::recv_failable() during zmq_connect via azmq on Windows 11 with statically linked libzmq 4.3.5
+SOURCE: https://github.com/zeromq/libzmq/issues/4824
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0329 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Problem: `ZMQ_MULTICAST_HOPS` doesn't affect `ZMQ_DGRAM` sockets
+SOURCE: https://github.com/zeromq/libzmq/issues/4821
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0330 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ThreadSanitizer support for GCC
+SOURCE: https://github.com/zeromq/libzmq/issues/4819
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0331 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: AIX 7.3 core dump issue with libzmq
+SOURCE: https://github.com/zeromq/libzmq/issues/4818
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0332 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Any plan to support RDMA?
+SOURCE: https://github.com/zeromq/libzmq/issues/4817
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0333 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Macos crash when call send()
+SOURCE: https://github.com/zeromq/libzmq/issues/4816
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0334 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Libzmq 4.3.5 configure options for building on AIX 7.3
+SOURCE: https://github.com/zeromq/libzmq/issues/4815
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0335 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Subscriber messages leak when subscribing in one thread and publishing in another
+SOURCE: https://github.com/zeromq/libzmq/issues/4811
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0336 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: New release soon?
+SOURCE: https://github.com/zeromq/libzmq/issues/4810
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0337 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: issue building curve-keygen
+SOURCE: https://github.com/zeromq/libzmq/issues/4808
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0338 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add a callback mechanism for ZeroMQ sockets to handle incoming messages asynchronously
+SOURCE: https://github.com/zeromq/libzmq/issues/4807
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0339 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Double free happening in ZMQ 4.3.4 version, causing reaper and IO thread crashes when system goes down
+SOURCE: https://github.com/zeromq/libzmq/issues/4806
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0340 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Assertion failed after poll
+SOURCE: https://github.com/zeromq/libzmq/issues/4805
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0341 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `alt_clock_gettime()` does not check return value of `host_get_clock_service()` (macOS)
+SOURCE: https://github.com/zeromq/libzmq/issues/4804
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0342 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: libzmq5 install failing with SIGNATURE: NOT OK error
+SOURCE: https://github.com/zeromq/libzmq/issues/4801
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0343 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Missing recommended citation
+SOURCE: https://github.com/zeromq/libzmq/issues/4798
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0344 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ZMQ guide is missing DEALER-DEALER example
+SOURCE: https://github.com/zeromq/libzmq/issues/4794
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0345 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: zeromq test non-deterministic failure: reconnect_stop_on_refused after upgrade to 4.3.5
+SOURCE: https://github.com/zeromq/libzmq/issues/4793
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0346 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ZeroMQ multipart message delivery
+SOURCE: https://github.com/zeromq/libzmq/issues/4792
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0347 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support for native websockets
+SOURCE: https://github.com/zeromq/libzmq/issues/4791
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0348 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ZeroMQ OS native socket access and pipe capacity adjustment
+SOURCE: https://github.com/zeromq/libzmq/issues/4790
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0349 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Auto Reconnect not working on ROUTER-ROUTER pattern
+SOURCE: https://github.com/zeromq/libzmq/issues/4788
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0350 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: python script crashed with Assertion failed: false (src/object.cpp:170)
+SOURCE: https://github.com/zeromq/libzmq/issues/4787
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0351 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: LibZMQ cannot be built with CMake Version 4.0.1 on Windows
+SOURCE: https://github.com/zeromq/libzmq/issues/4786
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0352 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The ZeroMQ_LIBRARY variable points to a DLL file.
+SOURCE: https://github.com/zeromq/libzmq/issues/4785
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0353 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Doc] ROUTER-to-DEALER in C different from Python
+SOURCE: https://github.com/zeromq/libzmq/issues/4784
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0354 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Router with 6 Dealers creates a SIGABORT failure
+SOURCE: https://github.com/zeromq/libzmq/issues/4783
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0355 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [issue] no websocket response from ws://echo.websocket.events
+SOURCE: https://github.com/zeromq/libzmq/issues/4782
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0356 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Websocket transport with native websockets
+SOURCE: https://github.com/zeromq/libzmq/issues/4781
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0357 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: FFMPEG with zmq support
+SOURCE: https://github.com/zeromq/libzmq/issues/4780
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0358 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: When using inproc mode, the closure of an open socket will still affect the creation of new sockets
+SOURCE: https://github.com/zeromq/libzmq/issues/4778
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0359 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [4.3.5] pub-sub crash
+SOURCE: https://github.com/zeromq/libzmq/issues/4777
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0360 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Bug] ThreadSanitizer: lock-order-inversion (potential deadlock)
+SOURCE: https://github.com/zeromq/libzmq/issues/4775
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0361 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question re "localhost" binding
+SOURCE: https://github.com/zeromq/libzmq/issues/4774
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0362 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: error compiling (static assertion failed)
+SOURCE: https://github.com/zeromq/libzmq/issues/4771
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0363 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: double free or corruption (!prev)
+SOURCE: https://github.com/zeromq/libzmq/issues/4770
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0364 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: use ZMQ comunication between QNX and Linux
+SOURCE: https://github.com/zeromq/libzmq/issues/4769
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0365 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can't send message with serialized NumPy array that is larger than 2 GB in size
+SOURCE: https://github.com/zeromq/libzmq/issues/4768
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0366 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Slow subscriber generates an assert when ZMTP heartbeat is enabled 
+SOURCE: https://github.com/zeromq/libzmq/issues/4767
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0367 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: First message lost between pub/sub sockets 
+SOURCE: https://github.com/zeromq/libzmq/issues/4766
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0368 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Has the zmq_curve_keypair function been deprecated in version 4.3.5？
+SOURCE: https://github.com/zeromq/libzmq/issues/4765
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0369 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [bug] stream_engine may terminate prematurely with data unsent (under insufficient tcp rcvbuf)
+SOURCE: https://github.com/zeromq/libzmq/issues/4763
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0370 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Curve + Plain autentication possible?
+SOURCE: https://github.com/zeromq/libzmq/issues/4762
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0371 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The program ocassionly crash in zmq, when program exits
+SOURCE: https://github.com/zeromq/libzmq/issues/4760
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0372 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Assertion failed: dummy == 0 at src/signaler.cpp:369
+SOURCE: https://github.com/zeromq/libzmq/issues/4759
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0373 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: zmq_getsockopt on sub unable to make connection, triggers segfault not returning sockopt_invalid
+SOURCE: https://github.com/zeromq/libzmq/issues/4758
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0374 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The example of zmq_timers document is wrong
+SOURCE: https://github.com/zeromq/libzmq/issues/4755
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0375 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Request for New Release
+SOURCE: https://github.com/zeromq/libzmq/issues/4754
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0376 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compilation fails with gcc 14+
+SOURCE: https://github.com/zeromq/libzmq/issues/4753
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0377 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hangs on recv when using -fsanitize=thread 
+SOURCE: https://github.com/zeromq/libzmq/issues/4752
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0378 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Req-Rep threaded message lost with HWM=1
+SOURCE: https://github.com/zeromq/libzmq/issues/4750
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0379 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: where is version 5.2.2 ?
+SOURCE: https://github.com/zeromq/libzmq/issues/4749
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0380 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow I/O thread to be interrupted by some signal.
+SOURCE: https://github.com/zeromq/libzmq/issues/4748
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0381 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: EPGM couldn't receive message under pub-sub mode
+SOURCE: https://github.com/zeromq/libzmq/issues/4747
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0382 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Delay required after PUB bind before messages can be sent
+SOURCE: https://github.com/zeromq/libzmq/issues/4746
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0383 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ZMQ compilation failed（-DWITH_OPENPGM=ON）
+SOURCE: https://github.com/zeromq/libzmq/issues/4745
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0384 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Libzmq Android build fails with NDK r27
+SOURCE: https://github.com/zeromq/libzmq/issues/4744
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0385 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Windows Build with MinGW-64 failed on windres command
+SOURCE: https://github.com/zeromq/libzmq/issues/4742
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0386 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: microcontrollers 
+SOURCE: https://github.com/zeromq/libzmq/issues/4741
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0387 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ./configure failed with syntax error near unexpected token `ZMQ,'
+SOURCE: https://github.com/zeromq/libzmq/issues/4740
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0388 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: zmq_socket document format error
+SOURCE: https://github.com/zeromq/libzmq/issues/4738
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0389 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: libzmq/ffmpeg: "Address family not supported by protocol (src/ip_resolver.cpp:542) / Aborted" from mpd.service "RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX AF_NETLINK"
+SOURCE: https://github.com/zeromq/libzmq/issues/4737
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0390 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: BUG to monitor ZMQ_EVENT_CONNECTED
+SOURCE: https://github.com/zeromq/libzmq/issues/4736
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0391 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM:  Crash in zmq::msg_t::data { check () } During zmq::xsub_t::match Call
+SOURCE: https://github.com/zeromq/libzmq/issues/4735
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0392 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: what is the licence for the older version of libzmq?
+SOURCE: https://github.com/zeromq/libzmq/issues/4733
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0393 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Reason for zmq_assert (!_current_out) in xsend
+SOURCE: https://github.com/zeromq/libzmq/issues/4731
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0394 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Problem: epoll crashes for some Windows users
+SOURCE: https://github.com/zeromq/libzmq/issues/4730
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0395 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Never closed sockets when remote ZYRE node goes offline
+SOURCE: https://github.com/zeromq/libzmq/issues/4729
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0396 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Calling unbind() on a UDP DISH always returns ENOENT, unconditionally.
+SOURCE: https://github.com/zeromq/libzmq/issues/4728
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0397 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unable to bind source IP to send data
+SOURCE: https://github.com/zeromq/libzmq/issues/4727
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0398 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CI build android on ubuntu-latest failed
+SOURCE: https://github.com/zeromq/libzmq/issues/4725
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0399 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build fails on Win-On-ARM when compiled with gcc/clang
+SOURCE: https://github.com/zeromq/libzmq/issues/4723
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0400 | ZeroMQ | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: is using push/pull <-> router a valid socket combination?
+SOURCE: https://github.com/zeromq/libzmq/issues/4722
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0401 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Classic consumer stays in join-state `wait-metadata` until `topic.metadata.refresh.interval.ms` when its "consumer join" Metadata request is lost to a broker decommission (routine in 2.16.0 when the consumer starts during broker s
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5647
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0402 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Producer retry backoff overflows `int` after 25 retries with default settings
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5646
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0403 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: BUG: `rd_kafka_buf_finalize_arraycnt` varint overflow causes silent protocol corruption
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5645
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0404 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Dangling `rk->rk_mock.cluster` back-pointer causes use-after-free in `rd_kafka_destroy` after explicit `rd_kafka_mock_cluster_destroy`
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5644
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0405 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Intermittent `RD_KAFKA_RESP_ERR__ALL_BROKERS_DOWN` on librdkafka with AWS MSK
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5643
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0406 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unconnected broker threads wake up every second: measurable CPU with many clients on large clusters
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5639
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0407 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: crc32c: add hardware CRC-32C on AArch64 (ARMv8 CRC32 instructions)
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5637
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0408 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Windows NuGet packages ship non-LTS OpenSSL 3.6 (EOL 2026-11-01) while other platforms get 3.5 LTS
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5635
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0409 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Subtracting `rktp_msgs_inflight` from `RD_KAFKA_IDEMP_MAX_INFLIGHT` request limit incorrectly caps/throttles requests
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5632
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0410 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: librdkafka.redist 2.16.0: linux-arm64 alpine-librdkafka.so now depends on libsasl2.so.3
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5630
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0411 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Producer partition can remain on a non-leader broker thread after a leader change with the same epoch
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5629
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0412 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: KIP-848: unsubscribe during a pending incremental revoke strands the consumer at epoch 0: fatal INVALID_REQUEST on resubscribe, or no rejoin
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5623
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0413 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Share consumer: records acquired by an in-flight fetch stay locked after rd_kafka_share_unsubscribe()
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5621
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0414 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Share consumer: async acknowledgements merged out of order are rejected with INVALID_REQUEST
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5620
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0415 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Share consumer: (`rd_kafka_share_t`) exposes no way to read the client name
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5619
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0416 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Idempotent producer: broker thread spins with zero-timeout polls while a partition is at the in-flight cap (next_wakeup lowered to now before the cap is applied)
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5617
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0417 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: consumer_close() blocks for the whole rebalance when called mid-round
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5612
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0418 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: KIP-1102: `REBOOTSTRAP_REQUIRED` does not make the client reconnect to its bootstrap servers
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5605
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0419 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Utilize streaming decompression for zstd in the consumer
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5595
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0420 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: builtin regexp: lexcount overflow → heap-buffer-overflow WRITE in emit (sibling of #3597)
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5594
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0421 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support client-side throttling (KIP-219)
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5592
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0422 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Consumer pause-assign-resume may leave some partitions permanently paused
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5591
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0423 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: OffsetFetch request-level NOT_COORDINATOR leaves partition in .queried; fetcher never starts and never retries
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5586
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0424 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Security] Broker-controlled response parsing: pre-auth SIGSEGV via nullable array -1 (default-enabled), share-consumer error fan-out OOM, SASL SCRAM pre-auth stack exhaustion
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5577
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0425 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Duplicate FETCH_STOP can be enqueued for the same toppar during assignment removal
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5573
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0426 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: OIDC client_credentials token request does not include audience parameter
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5571
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0427 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Classic consumer abandons the member id assigned by the broker (KIP-394), stalling the group for session.timeout.ms
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5569
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0428 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Upgrade bundled libcurl to >= 8.21.0
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5567
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0429 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CMake][Linux] OIDC/OAuth2 authentication incorrectly requires Cyrus SASL (libsasl2) dependency
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5564
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0430 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support message headers in rd_kafka_produce_batch()
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5559
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0431 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Clang CFI icall type mismatch in rd_list_remove_cmp and string comparators
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5558
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0432 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Backward compatibility regression in ssl.certificate.pem parsing introduced by #4894
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5556
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0433 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: int_latency stat is wildly wrong (huge negative value) when message.timeout.ms is set to infinite (0)
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5555
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0434 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Make OpenTelemetry support a build-time optional
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5553
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0435 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Consumer returns NULL key/value for legacy MessageSet format (message.format.version < 0.11) since v2.5.0
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5549
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0436 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Upgrade OpenSSL to 3.6.3 to resolve several security vulnerabilities
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5548
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0437 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Repeated ALL_BROKERS_DOWN error on every re-bootstrap cycle during sustained outage (metadata.recovery.strategy=rebootstrap)
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5546
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0438 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [KIP-848] Some issues with KIP-848 based consumer group heartbeat error handling
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5541
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0439 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Snappy disabled by default with vcpkg
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5531
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0440 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Permanent CPU degradation and bloated Producer statistics JSON after pod overlap during deployment
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5528
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0441 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `rd_kafka_send_offsets_to_transaction()` hangs when the group coordinator is decommissioned
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5511
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0442 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Data loss consuming legacy (magic v0/v1) message-format topics over flexible Fetch
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5504
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0443 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support for KIP-664: Admin API for detecting and aborting hanging transactions
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5497
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0444 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Potential deadlock / lock-order inversion between rkb_lock and rktp_lock
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5490
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0445 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Deadlock: rd_kafka_destroy hangs on rk_wrlock — rk_lock<->toppar lock-order inversion (toppar_forget_leader vs OffsetForLeaderEpoch leader-query) when a broker is unreachable
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5476
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0446 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Latency issues/potential kafka issue
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5464
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0447 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `rd_kafka_send_offsets_to_transaction()` ignores timeout
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5456
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0448 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Feature] Add Share Group consumer support (KIP-932)
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5441
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0449 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Intermittent hangs in calling rd_kafka_destroy to destroy consumer
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5434
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0450 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: BUG: `rd_kafka_metadata_update_op`: `leader=-1` skips partition update, causing permanent `NO_INFO` state after transient leader unavailability
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5430
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0451 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Request for KIP-890 support
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5423
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0452 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: TSan Incompatibility] SEGV in __tsan_func_entry via getaddrinfo on RHEL8/glibc (NSS Loader Re-entrancy) iwth librdkafka 2.6.1
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5418
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0453 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: UBSanitizer runtime error: left shift of negative value -1
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5395
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0454 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bug: Sometimes statistics JSON is malformed
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5390
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0455 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bug: Documentation for statistics parameter "desired" not understood
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5389
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0456 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bug: Statistics are cut off at around 41692 characters
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5379
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0457 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bug: Statistics contains invalid or undocumented values
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5378
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0458 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Feature] Support for RFC 7523 Section 2.2 (Private Key JWT) and OBO flow in OIDC Handler
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5377
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0459 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Window Cmake build ignores WITH_CURL affecting WITH_OAUTHBEARER_OIDC
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5369
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0460 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: A large number of OffsetForLeaderEpochRequest when broker node shutdown or leader elections
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5357
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0461 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: NULL Dereference in LeaveGroup When Coordinator Is Unavailable
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5347
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0462 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Race condition: `rd_kafka_assign()` with `RD_KAFKA_OFFSET_INVALID` followed by `rd_kafka_assign()` with explicit offsets — stale `OffsetFetchResponse` overwrites explicit offsets
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5345
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0463 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Consumer should not throw away already fetched data for paused partitions
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5343
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0464 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Libcurl <8.18.0 security vulnerability
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5331
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0465 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Homebrew installation is broken
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5326
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0466 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `poll(0)` blocks indefinitely when `log.queue=true` and `debug` is enabled — `goto retry` in `rd_kafka_q_pop_serve()` skips timeout check
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5325
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0467 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `EXC_BAD_ACCESS` (NULL pointer dereference) on `rdk:main` thread when connected broker goes down
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5315
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0468 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CLA signing tool links to restricted document
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5306
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0469 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: OpenSSL CMS Buffer Overflow Vulnerability
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5305
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0470 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: librdkafka v2.13.0 Stops Rebootstrap and Clears Brokers on "0 brokers but topic>0" MetadataResponse, Causing Permanent Client Disconnection
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5301
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0471 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add a new configuration to specify the path to the kerberos ticket cache
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5296
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0472 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is there an alternative to sasl.kerberos.kinit.cmd for automatic Kerberos ticket refresh in librdkafka?
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5292
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0473 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: librdkafka++1 Debian/Ubuntu package downloads fail with "NoSuchKeyError" due to missing URL encoding/decoding for plus signs
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5291
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0474 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Intermittent Message Latency in Consumer
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5284
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0475 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Guard "sys/random.h" with HAVE_GETENTROPY
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5283
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0476 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: librdkafka v2.6.1 Crash (Memory out-of-bounds read) during update metadata
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5280
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0477 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: TERMINATE OP is received as internal error after parsing metadata response
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5273
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0478 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: librdkafka repeatedly receives empty FetchResponses and cannot receive messages from AWS MSK Serverless
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5268
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0479 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Member ID collision for multiple consumers in same process (KIP-848 / on Windows)
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5263
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0480 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Datarace in `rd_kafka_broker_fetch_toppars`
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5262
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0481 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: zstd buffer management leads to consumer unable to proceed
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5260
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0482 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: LoongArch support
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5259
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0483 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: worker & broker threads have signals blocked perpetually
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5255
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0484 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Setting a custom RdKafka::PartitionerCb doesn't work in certain circumstances
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5245
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0485 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Building librdkafka with vendored sasl for musl target fails
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5242
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0486 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: PWO using kafka to write data to eventhub---Error
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5236
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0487 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: consumer thread is generation segfault in pstack
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5235
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0488 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Leaks handling member_id
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5234
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0489 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Feature Request] KIP-546 support
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5227
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0490 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Consumer pause/Resume funtionality leasks memory
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5218
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0491 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [KIP-1106] Feature Request: Implement Duration-Based Offset Reset for Consumers
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5211
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0492 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Debugging sasl_plaintext... Timed out 1 in-flight
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5206
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0493 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: listGroups version used doesnt match docs
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5205
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0494 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: WITH_CURL off still tries to include curl.h
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5204
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0495 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Topic partition errors are not cleared on successful commit
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5199
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0496 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: runtime error: call to function rd_kafka_assignor_destroy through pointer to incorrect function type 'void (*)(void *)'
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5195
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0497 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bug Report: READ memory access in regexp.c:497:23 at regexp.c
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5193
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0498 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support for Admin request DescribeLogDirs which allows to query partition sizes
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5192
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0499 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow building with system copies of cJSON, nanopb, OpenTelemetry-proto, ...
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5186
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
+QB2-0500 | librdkafka | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: src/opentelemetry only includes compiled code - no source is provided
+SOURCE: https://github.com/confluentinc/librdkafka/issues/5185
+FIRST ACTION: EXTRACT the exact first failing input and observed result from the issue body; mark NO REPRODUCER if missing.
+
