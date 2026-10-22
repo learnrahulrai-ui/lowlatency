@@ -23,3 +23,8 @@ FOLLOW-UP: CALCULATE: Apply only the first described change to the stated numeri
 
 Define the rules first (collision, completed-row removal, invalid placements). Write tests before the engine.
 FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+The employer-authenticated original specification is unavailable. The six-column board, horizontal/vertical shapes and row-clearing choices in this exercise are invented practice parameters. Do not label a derived board rule as something DRW required.
+SOURCE: https://news.ycombinator.com/item?id=26629891
+ONE ACTION: DRAW six empty board columns.
