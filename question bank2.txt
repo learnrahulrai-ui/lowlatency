@@ -11379,3 +11379,123 @@ CLAIM: Which course is it ?
 SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/1
 FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
 
+
+
+SEARCH-RESULT REPOSITORY DISCOVERY — NOT VERIFIED BUGS
+The following names came from actual GitHub repository search requests.
+A repository result is NOT bug evidence. Follow file -> test -> issue -> fix.
+No one in this list is automatically a hiring assessment, a tested library,
+or a reproduction of any issue in question bank2.
+LOW LATENCY, page 2 of general search (25 returned)
+1. https://github.com/phoboslab/jsmpeg-vnc
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+2. https://github.com/justjanne/powerline-go
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+3. https://github.com/Ameobea/tickgrinder
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+4. https://github.com/KoljaB/RealtimeSTT
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+5. https://github.com/odygrd/quill
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+6. https://github.com/deepspeedai/DeepSpeed-MII
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+7. https://github.com/alexeyvasilyev/rtsp-client-android
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+8. https://github.com/berdvana/ultra-low-latency-orderbook
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+9. https://github.com/didi/DDMQ
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+10. https://github.com/floatinghotpot/cordova-plugin-nativeaudio
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+11. https://github.com/libtrading/libtrading
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+12. https://github.com/OpenHFT/Chronicle-Engine
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+13. https://github.com/superpoweredSDK/Low-Latency-Android-iOS-Linux-Windows-tvOS-macOS-Interactive-Audio-Platform
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+14. https://github.com/yahoo/streaming-benchmarks
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+15. https://github.com/InterviewReady/Low-Level-Design
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+16. https://github.com/ant-media/Ant-Media-Server
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+17. https://github.com/haierkeys/fast-note-sync-service
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+18. https://github.com/nvidia-isaac/cuVSLAM
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+19. https://github.com/agntcy/slim
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+20. https://github.com/cloudflare/lol-html
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+21. https://github.com/streamlinevideo/low-latency-preview
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+22. https://github.com/propeller-heads/tycho
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+23. https://github.com/Korthos-Software/low_latency_layer
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+24. https://github.com/CESNET/UltraGrid
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+25. https://github.com/rigtorp/nanomq
+   FIRST ACTION: Locate the first actual test or bug issue, not its README heading.
+HFT, page 1 of general search (30 returned)
+1. https://github.com/nkaz001/hftbacktest
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+2. https://github.com/jshellen/HFT
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+3. https://github.com/Crypto-toolbox/HFT-Orderbook
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+4. https://github.com/keyianpai/hft
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+5. https://github.com/visualHFT/VisualHFT
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+6. https://github.com/alpacahq/example-hftish
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+7. https://github.com/0burak/imperial_hft
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+8. https://github.com/OpenHFT/OpenHFT
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+9. https://github.com/fedecaccia/avellaneda-stoikov
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+10. https://github.com/bradleyboyuyang/ML-HFT
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+11. https://github.com/Bitfinex-Trading-Kit/Bitfinex-HFT-trading-bot
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+12. https://github.com/sbenzev/hft
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+13. https://github.com/javifalces/HFTFramework
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+14. https://github.com/alexey-ernest/go-hft-orderbook
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+15. https://github.com/hzjken/HFT-price-prediction
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+16. https://github.com/mirkovicdev/HFTENGINE
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+17. https://github.com/Unays7/HFT-Interview-Prep
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+18. https://github.com/DrAshBooth/HFTrader
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+19. https://github.com/ZONG0004/MacroHFT
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+20. https://github.com/ua1arn/hftrx
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+21. https://github.com/ghgr/HFT_Bitcoin
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+22. https://github.com/clfrenchgit/gdax-bot
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+23. https://github.com/theopenstreet/VPIN_HFT
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+24. https://github.com/TradeMaster-NTU/EarnHFT
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+25. https://github.com/rorysroes/SGX-Full-OrderBook-Tick-Data-Trading-Strategy
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+26. https://github.com/armoreal/hft
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+27. https://github.com/JiayuZou2020/HFT
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+28. https://github.com/mmssss/hft-market-making
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+29. https://github.com/algosenses/Order_Imbalance_HFT
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+30. https://github.com/nyarosu/hft
+   FIRST ACTION: Check whether the repository implements a feed, matching engine, backtest or unrelated tool.
+END DISCOVERY
