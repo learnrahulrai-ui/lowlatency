@@ -1,3 +1,14 @@
+SOURCE REVIEW 2026-10-22 — SYNTHETIC LOW-LATENCY TRACES
+Everything below is retained verbatim for study and correction.
+The timed scenarios describe hypothetical numbers, not measured CPU paths.
+A user-space program cannot pick physical DRAM addresses via mmap; a packet
+pointer cast is not automatically legal or faster; 4-level page walks are
+not universally 4 DRAM misses. Split-lock exceptions require locked atomic
+operations; ordinary unaligned reads need independent treatment.
+This file does not solve any of the 13 coding exercises. See SOURCE_AUDIT.txt.
+ONE ACTION: CALCULATE the first explicit time conversion without copying.
+END SOURCE REVIEW
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 00. HARDWARE TOPOLOGY, CACHE ARCHITECTURE, AND PHYSICAL MEMORY LAYOUT AXIOMS                                                                                         |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
