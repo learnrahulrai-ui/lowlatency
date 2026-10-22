@@ -1,3 +1,34 @@
+SOURCE STATUS UPDATE 2026-10-22 — READ FIRST
+This is a QUESTION BANK, not a proof catalogue and not a source of coding
+solutions. See SOURCE_AUDIT.txt for an inventory of all 27 pre-existing files,
+original-document checks, and the unresolved source trails.
+Q01-Q102 below are retained. Some older mailing-list items have historical
+search leads but NOT a complete primary thread review; keep UNVERIFIED status.
+Q36: the olibre C++14 requirement (1) reconstructs already reported feed
+messages; the background exchange matching example does not automatically
+require the local feed handler to execute matching. Clause (6) is starter code,
+not a sixth independent deliverable. Published problem:
+https://github.com/olibre/Cpp14-OrderBook
+Q37: HRT Book.py updates preserve PIQ, while the optional MatchingEngine
+rejects size-increasing updates. Distinguish the APIs:
+https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+Q38: Nasdaq explicitly identifies ITCH as an OUTBOUND feed, not order entry.
+The Add A body is 36 bytes; it is not a universal 32-byte message.
+https://nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+Q42: Rigtorp implements one slack physical ring slot (capacity_++) and its
+try_emplace method is nonblocking; do not label all wrapped indices incorrect:
+https://github.com/rigtorp/SPSCQueue/blob/master/include/rigtorp/SPSCQueue.h
+Q10-Q13: Steven Rostedt's Sept 2009 code patches confirm a specific
+iterator skip, reset/commit guard, swap/commit EBUSY, and discarded-event
+accounting fix; those are NOT verified bugs in any user's implementation:
+https://lkml.iu.edu/0909.0/01672.html
+https://lkml.iu.edu/0909.0/01682.html
+https://lkml.iu.edu/0909.0/01687.html
+https://lkml.iu.edu/0909.0/01686.html
+One action before the next question: DRAW the empty starting state and do
+not read or implement the remaining steps until that state is verified.
+END SOURCE STATUS UPDATE
+
 LOW-LATENCY SYSTEMS QUESTION BANK 1
 FACT CHECK SCOPE: Hardware numbers in this statement are exercise assumptions unless accompanied by a dated measured platform and method; do not report them as universal processor performance.
 FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated quantities.
