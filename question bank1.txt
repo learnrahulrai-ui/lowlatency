@@ -516,3 +516,298 @@ FOLLOW-UP: CALCULATE: Recompute one stated time conversion using only the stated
 Suggested study order: 35,36,37,32,01,10,11,12,13,42,38,39,20,40,03,14,41,33,34.
 FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulting quantity.
 END
+
+
+APPENDIX G - VERIFIED LOW-LATENCY HARDWARE / COURSE CLAIM AUDIT (2026-10-22)
+SOURCE OF CLAIMS: user-supplied repeated memory diagrams, six-stage '32-byte ITCH,
+1500 cycles' scenario, optimization advice, and 9 named university courses.
+The repeated pasted blocks constitute ONE claim family, not four corroborations.
+PRESERVATION RULE: Every original line above remains unchanged.
+NO SOLUTION KEY: Each new entry ends with exactly one initial mechanical task.
+Status: VERIFIED = checked against primary body; CORRECTED = original statement
+is unsupported/contradicted; DERIVED = exercise constructed here;
+UNVERIFIED = named university or precise benchmark claim not established.
+
+REFERENCE NUMBERS THAT MUST NOT BE CONFUSED
+A. 64,000,000 bytes is decimal 64 MB, not binary 64 MiB (67,108,864).
+B. '32-byte ITCH 5.0' is not a universal message size: Add A is 36 bytes,
+   Add F with attribution 40, Execute E 31, Cancel X 23, Delete D 19.
+C. ITCH is market-data dissemination, not an instruction to execute all
+   incoming messages in a new matching engine. Reconstructing a displayed
+   book and matching new orders require distinct contracts.
+D. Cache snapshots/address figures in the paste are hand-created diagrams.
+   Do not call them a dump of captured RAM or proof of residency in L1.
+E. Performance times in the paste are assumptions. No CPU trace or benchmark
+   in the evidence establishes 3-cycle parsing, 4-cycle insertion, or
+   14-cycle tick-to-trade.
+F. A test with no allocation requires instrumenting every participating
+   allocator and defining the measured time window. C++ PMR alone is
+   insufficient proof.
+G. Keep the pre-existing 54 questions unchanged and use these prompts as
+   additional exercises, not as answers to the earlier questions.
+
+RECONSTRUCTED DIAGRAM (SYNTHETIC, NOT A PHYSICAL MEMORY DUMP)
+One hypothetical 64-byte cache line:
+  0x1000 [Order 9001, 32 bytes] --> 0x101F
+  0x1020 [Order 9002, 32 bytes] --> 0x103F
+Two separate hypothetical lines:
+  0x2000 [Producer counter, 4 bytes] [padding, 60 bytes] --> 0x203F
+  0x2040 [Consumer counter, 4 bytes] [padding, 60 bytes] --> 0x207F
+Derived lookup example supplied by user:
+  base 0x500000 + 16 * 15000 = 0x53A980
+  base 0x800000 + 32 * 1 = 0x800020
+The numbers only define a hypothetical arrangement. The source text gives
+no complete struct definitions proving Prev/Next field displacements.
+
+RESEARCH INTEGRITY (APPLY TO ALL 54 EXISTING QUESTIONS)
+For each significant claim preserve:
+exact assertion; primary document URL; version/date; passage/page/function;
+observed versus simulated values; method; contradiction; test; confidence.
+When source and secondary summary disagree, keep both with exact differences.
+For PDFs open actual middle/appendix pages and inspect page images; for source,
+read callers/callees/tests/history; for mailing lists, original + objections.
+Backward: claim -> citation -> primary body -> experiment/patch.
+Forward: primary issue -> corrected patch -> regression -> current version.
+Search 1990s, 2000-04, 2005-09, 2010-14, 2015-19, 2020-23,
+2024-26; use historical vocabulary of each era.
+Count one original source family once; mirrored reports are not independent.
+Do not inflate meaningful depth by counting search pages or redirects.
+Never claim the exercise has been executed merely because its text was read.
+
+NEW ONE-ACTION QUESTIONS
+Q55. Huge-page allocation count [CORRECTED]
+EVIDENCE: Linux mmap(2) man page; huge mapping length rounded to huge-page multiple.
+ONE ACTION: CALCULATE: Divide 64,000,000 by 2,097,152 and write the smallest whole page count.
+
+Q56. Huge-page remainder [DERIVED]
+EVIDENCE: Linux mmap(2) huge-page alignment rules.
+ONE ACTION: CALCULATE: Subtract 64,000,000 from the size implied by your Q55 count.
+
+Q57. Page count without hugepages [DERIVED]
+EVIDENCE: 4096-byte page assumption in provided scenario.
+ONE ACTION: CALCULATE: Divide 64,000,000 by 4,096 without rounding.
+
+Q58. Virtual versus physical memory [CORRECTED]
+EVIDENCE: mmap(2): mapping in process virtual address space; huge pages use a kernel-managed page pool.
+ONE ACTION: DRAW: Show one process virtual address and one distinct underlying physical frame.
+
+Q59. Fixed-address mapping collision [VERIFIED]
+EVIDENCE: mmap(2), MAP_FIXED and MAP_FIXED_NOREPLACE paragraphs.
+ONE ACTION: DRAW: Mark the pre-existing mapping occupying the requested address before a second MAP_FIXED request.
+
+Q60. No guaranteed page-walk penalty [CORRECTED]
+EVIDENCE: CPU translation costs depend on cache/translation state, not simply four DRAM delays.
+ONE ACTION: CALCULATE: List the count of lookups in a 4-level walk as a count, without assigning nanoseconds.
+
+Q61. ITCH messages are not all 32 bytes [CORRECTED]
+EVIDENCE: Nasdaq TotalView-ITCH 5.0 PDF p.13-15: A/F/E/X/D field tables.
+ONE ACTION: CALCULATE: Sum the field lengths of Add Order A from the official table, not from the pasted 32-byte assertion.
+
+Q62. Attributed Add Order [VERIFIED]
+EVIDENCE: Nasdaq TotalView-ITCH 5.0 PDF p.13 F attribution at position 36, length 4.
+ONE ACTION: CALCULATE: Add the extra 4-byte attribution field to your Q61 message length.
+
+Q63. Market-data event versus inbound order [CORRECTED]
+EVIDENCE: Nasdaq PDF p.12: Add Order A reports an accepted displayed order.
+ONE ACTION: DRAW: Put the exchange on one side, the subscriber/book-reconstructor on the other, and trace a single A event.
+
+Q64. Endian-safe decoding and object lifetime [CORRECTED]
+EVIDENCE: C++ object lifetime, alignment, aliasing requirements; ITCH defines network-byte-order fields.
+ONE ACTION: DRAW: Show four stored wire bytes and the four-byte host integer object as distinct representations.
+
+Q65. Order book source of truth [DERIVED]
+EVIDENCE: Nasdaq A/E/X/D/U: displayed book updates use event-specific rules.
+ONE ACTION: CALCULATE: Start with displayed 100 and write only the result after an E event containing 25.
+
+Q66. Protocol length and actual network framing [CORRECTED]
+EVIDENCE: ITCH is a payload specification; Ethernet/TCP/UDP/PCAP transport is a different layer.
+ONE ACTION: DRAW: Separate NIC frame, transport payload and one ITCH message in three boxes.
+
+Q67. Priority matching versus feed reconstruction [CORRECTED]
+EVIDENCE: ITCH book display events follow matching already performed by the exchange.
+ONE ACTION: DRAW: Use two separate arrows for 'receive published event' and 'accept an incoming new order'.
+
+Q68. Synthetic order-size diagram [DERIVED]
+EVIDENCE: Two sample 32-byte order records fit a hypothetical 64-byte line; no struct declaration supplied.
+ONE ACTION: CALCULATE: Write the final occupied byte address of the 32-byte first record starting at 0x1000.
+
+Q69. Unspecified intrusive struct layout [UNVERIFIED]
+EVIDENCE: The pasted layout never gives C++ declarations/offsetof measurements.
+ONE ACTION: DRAW: Place 8-byte id, 4-byte quantity and two 4-byte links in a 32-byte box without choosing link positions yet.
+
+Q70. Price array arithmetic [DERIVED]
+EVIDENCE: Synthetic base=0x500000, stride=16, selected price level=15000.
+ONE ACTION: CALCULATE: Multiply 15000 by 16 in decimal first, before adding any hexadecimal base.
+
+Q71. Sparse price range and memory [DERIVED]
+EVIDENCE: Array implementation assumes bounded tick size and price range.
+ONE ACTION: CALCULATE: Compute bytes needed for 20,000 levels of 16 bytes each.
+
+Q72. Flat table cannot always give bounded O(1) matching [CORRECTED]
+EVIDENCE: Direct price lookup can be constant-time but finding next non-empty level, queue traversal and allocation remain distinct costs.
+ONE ACTION: DRAW: Mark empty levels between two occupied price entries.
+
+Q73. Tree latency figures are not universal [CORRECTED]
+EVIDENCE: std::map provides logarithmic comparison complexity; no fixed 20 uncached 300-cycle dereferences proven.
+ONE ACTION: CALCULATE: Write the number of binary decisions required to distinguish 1,024 possibilities under balanced splits.
+
+Q74. malloc does not always enter kernel [CORRECTED]
+EVIDENCE: General-purpose allocators can reuse already mapped memory; no universal 6,000-cycle syscall.
+ONE ACTION: DRAW: Separate allocator free-list reuse from a request to the OS for more pages.
+
+Q75. Tick-to-trade arithmetic is not measurement [CORRECTED]
+EVIDENCE: 14 = 3+1+4+6 is a synthetic arithmetic sum, not a timed CPU path; ignores receive, decode, send, branch, ownership.
+ONE ACTION: CALCULATE: Add 3, 1, 4 and 6 without attaching performance claims.
+
+Q76. Cycle budget and seconds [DERIVED]
+EVIDENCE: Specified hypothetical CPU frequency 3,000,000,000 cycles/second and deadline 500 ns.
+ONE ACTION: CALCULATE: Multiply 3,000,000,000 by (500 / 1,000,000,000).
+
+Q77. False sharing has contingent cost [CORRECTED]
+EVIDENCE: Cache-line separation changes coherence interactions; 180 cycles per update is not established.
+ONE ACTION: DRAW: Put two actively written four-byte counters first inside one 64-byte line.
+
+Q78. Cache-line padding alone does not prove layout [DERIVED]
+EVIDENCE: C++ alignas affects alignments; compiler layout and other fields still matter.
+ONE ACTION: DRAW: Two adjacent 64-byte blocks with one counter per block; mark every byte owned by each block.
+
+Q79. SPSC queue ownership mismatch [DERIVED]
+EVIDENCE: Queue publication semantics depend on which index the producer owns and which the consumer owns.
+ONE ACTION: DRAW: Label who writes publication counter and who reads it before choosing memory orders.
+
+Q80. Sequential consistency is not a pipeline flush contract [CORRECTED]
+EVIDENCE: C++ standard atomic memory model specifies ordering, not a universal complete pipeline flush.
+ONE ACTION: VERIFY: Locate the section defining a single total order for sequentially consistent operations.
+
+Q81. PMR allocations can escape initial buffer [CORRECTED]
+EVIDENCE: std::pmr::monotonic_buffer_resource may ask an upstream resource for memory on exhaustion.
+ONE ACTION: DRAW: Initial arena, attempted allocation, and upstream resource as three boxes.
+
+Q82. PMR is not stack-only [CORRECTED]
+EVIDENCE: Initial memory can be supplied by caller; PMR may allocate upstream and default resource is not stack-specific.
+ONE ACTION: DRAW: Distinguish initial user-provided storage from any subsequent dynamically supplied storage.
+
+Q83. Preallocating Orders does not cover every allocation [CORRECTED]
+EVIDENCE: Maps, string growth, vector expansion, logging and other subsystems can allocate independently.
+ONE ACTION: DRAW: Two separate allocation paths, one for orders and one for identifiers.
+
+Q84. SPSC reserved-slot design [DERIVED]
+EVIDENCE: Folly/rigtorp designs can reserve a physical slot; logical and physical capacities differ.
+ONE ACTION: DRAW: A four-position physical ring and leave one position unavailable at full occupancy.
+
+Q85. ctz on an all-zero mask [CORRECTED]
+EVIDENCE: GCC builtins manual: __builtin_ctz and variants have undefined result on zero input.
+ONE ACTION: CALCULATE: Write the bit pattern for a 64-bit mask containing no set bits.
+
+Q86. Constant cycle count for ctz [CORRECTED]
+EVIDENCE: Intrinsic use does not guarantee one instruction or one cycle on all CPUs.
+ONE ACTION: VERIFY: Inspect documented instructions on one named target without assuming clock cycles.
+
+Q87. C++17 versus C++20 language feature [CORRECTED]
+EVIDENCE: [[likely]]/[[unlikely]] standard attributes arrived in C++20; some assignments require C++17.
+ONE ACTION: VERIFY: Record the language version required by the original OrderCache assignment.
+
+Q88. Likely does not ban speculation [CORRECTED]
+EVIDENCE: Branch likelihood attributes may inform optimization; do not guarantee perfect prediction or avoid pipeline flush.
+ONE ACTION: DRAW: Two possible outcomes from one conditional branch, without choosing a predicted one.
+
+Q89. No automatic kernel isolation guarantee [CORRECTED]
+EVIDENCE: Linux CPU isolation guide: IRQs, timer tick, housekeeping and SMT must be handled separately.
+ONE ACTION: DRAW: One isolated core still receiving a device interrupt before adding other kernel configurations.
+
+Q90. Affinity does not reserve exclusive CPU ownership [CORRECTED]
+EVIDENCE: pthread_setaffinity_np restricts allowed CPUs for a thread, not all other threads.
+ONE ACTION: DRAW: Place two runnable threads with affinity to the same logical CPU.
+
+Q91. Uncontended mutex may stay in user space [CORRECTED]
+EVIDENCE: Modern pthread mutex fast path need not sleep in the kernel on every lock; specific runtime matters.
+ONE ACTION: DRAW: First distinguish unlocked mutex acquisition from contested mutex acquisition.
+
+Q92. No-network stack omission from latency budget [DERIVED]
+EVIDENCE: Pasted 65-ns simulation uses arbitrary 50+1+10+4 nanosecond components.
+ONE ACTION: CALCULATE: Add the four stated scenario components without claiming measurement.
+
+Q93. No guaranteed one TCP packet per writev [CORRECTED]
+EVIDENCE: writev describes scatter/gather input; TCP segmentation, coalescing and transmission are separate.
+ONE ACTION: DRAW: One writev call with two buffers feeding one TCP byte stream.
+
+Q94. Unchecked packet cast is not portable fast parser [CORRECTED]
+EVIDENCE: Insufficient length, alignment, lifetime and endian conversion must be considered before accessing fields.
+ONE ACTION: CALCULATE: Subtract a 20-byte truncated input length from the required 36-byte Add A length.
+
+Q95. NW CS343 lab verified, but not exact HFT firm take-home [CORRECTED]
+EVIDENCE: Winter 2025 pclab.pdf p.2-7 specifies ring.[ch], atomics.[ch], harness.c; spinlock, mutex, semaphore, signals.
+ONE ACTION: DRAW: Show two producers and four consumers around the lab's shared ring.
+
+Q96. NW lock-free MCS requirement unsupported [CORRECTED]
+EVIDENCE: The Winter 2025 lab does NOT require ticket, MCS or lock-free SPSC/MPMC implementation.
+ONE ACTION: VERIFY: Locate the lab's headings Task 1 through Task 5 and copy the first task type.
+
+Q97. NW original harness invocation [VERIFIED]
+EVIDENCE: Lab p.2 uses ./harness 2 4 16 1024; p.6 uses ./harness -i pc -t 100000 2 4 16 1024.
+ONE ACTION: CALCULATE: Multiply 16 queue positions by the element size for a hypothetical eight-byte slot representation.
+
+Q98. UIUC IE421 verified existence, not 'only' school [CORRECTED]
+EVIDENCE: Official UIUC IE421 2026 description confirms class/instructor and message-by-message theme, not exclusive nationwide course rank or publicly verified engine/PCAP assignment.
+ONE ACTION: VERIFY: Find 'IE421' and its prerequisite paragraph in the 2026 official course listing.
+
+Q99. Stevens FE522 and FE545 content narrower than alleged [CORRECTED]
+EVIDENCE: FE522 is introductory C++/finance; FE545 is design patterns and derivatives pricing; a raw HFT engine requirement was not found in those official descriptions.
+ONE ACTION: VERIFY: Find a named course's stated learning outcome about financial models and cite its exact section.
+
+Q100. Baruch, Rochester, Waterloo, Georgia Tech: actual public scope [CORRECTED]
+EVIDENCE: Baruch MFE lists Software Engineering for Finance and Market Microstructure; Rochester publications establish 1996 Michael-Scott queue; Waterloo CS452 builds a real-time OS; Georgia Tech CS6210 covers parallel/distributed OS. The claimed universal HFT take-home links are not evidenced.
+ONE ACTION: VERIFY: Locate the year and full authors of Rochester's 1996 queue paper in its official publication list.
+
+Q101. Portland State/UCSC course details still unverified [UNVERIFIED]
+EVIDENCE: The precise CS510 CAS/RCU syllabus and CMPS111 content claimed in the paste were not checked in accessible primary assignments in this pass.
+ONE ACTION: VERIFY: Find a dated original syllabus PDF before assigning any specific implementation requirement.
+
+Q102. University-course citation does not establish company assignment [CORRECTED]
+EVIDENCE: The Northwestern lab is official teaching material; no primary source establishes that its harness is an exact recruiting test given by specific HFT companies.
+ONE ACTION: VERIFY: Look for one employer-issued original test identical to the course lab before calling it the same assignment.
+
+PRIMARY SOURCES OPENED / BODY INSPECTED
+Nasdaq TotalView-ITCH 5.0, printed page 13 Add Order A/F and p.14-16
+executions/cancel/replace (36-page exchange PDF):
+https://classic.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+Northwestern University CS343 Peter Dinda Producer-Consumer Lab,
+Winter 2025, printed pages 2-7, including lab file names, commands,
+spinlock/mutex/semaphore and interrupt-like signal exercises:
+https://users.cs.northwestern.edu/~pdinda/os-w25/labs/pclab.pdf
+Northwestern CS343 official schedule:
+https://users.cs.northwestern.edu/~pdinda/os-w25/index.html
+Linux mmap(2), MAP_HUGETLB, MAP_FIXED, length rounding and virtual mapping:
+https://man7.org/linux/man-pages/man2/mmap.2.html
+Linux CPU isolation guide, interrupts / nohz_full / housekeeping:
+https://cdn.kernel.org/doc/html/latest/admin-guide/cpu-isolation.html
+C++ atomic ordering semantics:
+https://en.cppreference.com/w/cpp/atomic/memory_order
+C++ PMR monotonic buffer behavior and upstream fallback:
+https://en.cppreference.com/w/cpp/memory/monotonic_buffer_resource/do_allocate
+GCC ctz zero-argument behavior:
+https://gcc.gnu.org/onlinedocs/gcc/Bit-Operation-Builtins.html
+University of Illinois IE 421, official 2026 offering / prerequisites:
+https://illinois-public.courseleaf.com/courses-of-instruction/ie/
+Stevens FE522 introductory finance C++ description:
+https://fsc.stevens.edu/fe522-c-programming-in-finance/
+Stevens FE545 design patterns and derivatives pricing:
+https://fsc.stevens.edu/fe545-design-patterns-and-derivatives-pricing/
+Baruch MFE published curriculum:
+https://mfe.baruch.cuny.edu/curriculum/
+University of Rochester 1996 Michael-Scott queue publication trail:
+https://www.cs.rochester.edu/research/synchronization/pubs.shtml
+University of Waterloo CS452 original course outline:
+https://cs.uwaterloo.ca/current/courses/course_descriptions/cDescr/newCDescr/CS452
+Georgia Tech CS6210 official overview:
+https://omscs.gatech.edu/cs-6210-advanced-operating-systems
+
+EVIDENCE LIMITATIONS
+Nothing above validates the claimed one-cycle implementations, numerical
+latency penalty constants, raw NIC memory map, copied layout field
+addresses, or physical L1 residency. The first four blocks in the paste are
+copies, not independent evidence. C++17/20 constraints and exact exchange
+protocol version must be checked for each assigned project separately.
+STOP CONDITION: No fabricated deeper citations or claims of exhaustive
+1990s/2000s course coverage. Newly learned evidence is additive only.
+END APPENDIX G
