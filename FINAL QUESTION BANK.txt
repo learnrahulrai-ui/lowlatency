@@ -1,0 +1,1330 @@
+FINAL QUESTION BANK - UNSOLVED SYSTEMS / HFT / DEBUGGING
+Verified GitHub main contents: 13 existing exercises, 102-question bank1,
+2,270 issue leads in bank2, 40 Packt source-based predictions,
+22 newly catalogued missing/different assessments, 129 third-party OA
+titles, and 104 debugging exercises across 312 specialist terms.
+NO CODING SOLUTIONS. NO PROVIDED NUMERIC ANSWERS. NO NEW IMPLEMENTATION.
+
+ORDER OF READING
+1. HFT_TAKEHOME_MISSING.txt : what is already here versus missing.
+2. HFT_GDB_DEBUGGING_QUESTION_BANK.txt : watchpoints, reverse tracing,
+   core forensics, io_uring, memory, tracing, 312 terms and 104 questions.
+3. question bank1.txt : historical patches + original 102 questions.
+4. faillure predictions : 40 Packt source-reviewed risks and 2270 leads.
+5. question bank2.txt : individual GitHub issue links, NOT 2270 proved bugs.
+6. PACKT_SOURCE_MAP.txt : original Packt chapter source history.
+7. This file: an additional hard numerical and boundary-case workbook.
+
+CERTAINTY
+FIRST-PARTY: official specification, organization repository or manual.
+SOURCE-DERIVED: possible case inferred from visible code, NOT run.
+REPORT: anecdotal first person or GitHub issue, not independent proof.
+OA INDEX: a public third-party title, not employer-authenticated.
+SYNTHETIC: deliberate exercise numbers, not market measurements.
+
+TRAINING CONTRACT FOR EVERY QUESTION BELOW
+Only do FIRST ACTION. No source code solution, optimization recipe,
+magic shortcuts, completed arithmetic or finished trading outputs.
+Inputs chosen to expose boundaries; cause of any alleged bug is undecided.
+After verifying first action, open the exact cited source and derive
+further steps. One observable invariant per step, no assumed timings.
+
+TOPIC COVERAGE
+MODULO PRICE ALIAS: 20 cases
+FIXED ORDER-ID TABLE: 12 cases
+SPSC QUEUE STATE: 14 cases
+POOL OBJECT LIFETIME: 12 cases
+TCP BUFFER ACCOUNTING: 14 cases
+ITCH WIRE BOUNDARY: 20 cases
+SNAPSHOT / INCREMENTAL RECOVERY: 10 cases
+PRETRADE RISK CONCURRENCY: 12 cases
+FIX SESSION GAP: 10 cases
+VIRTUAL MEMORY / HUGE PAGE: 10 cases
+CYCLE / CLOCK CONVERSION: 10 cases
+GDB / FD GENERATION REUSE: 8 cases
+LINUX FTRACE RING HISTORY: 10 cases
+IO_URING REFERENCE TRACE: 8 cases
+BOOK-RECONSTRUCTION VS EXCHANGE MATCHING: 10 cases
+
+ADDITIONAL NUMERICAL EXERCISES - 180 UNSOLVED
+
+FQ-0001 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=100; order-B-price=356; A-side=BUY; B-side=SELL
+FIRST ACTION: CALCULATE 100 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0002 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=0; order-B-price=256; A-side=SELL; B-side=BUY
+FIRST ACTION: CALCULATE 0 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0003 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=255; order-B-price=511; A-side=BUY; B-side=BUY
+FIRST ACTION: CALCULATE 255 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0004 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=1; order-B-price=257; A-side=SELL; B-side=SELL
+FIRST ACTION: CALCULATE 1 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0005 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=512; order-B-price=768; A-side=BUY; B-side=BUY
+FIRST ACTION: CALCULATE 512 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0006 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=65535; order-B-price=65791; A-side=SELL; B-side=BUY
+FIRST ACTION: CALCULATE 65535 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0007 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=15000; order-B-price=15256; A-side=BUY; B-side=SELL
+FIRST ACTION: CALCULATE 15000 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0008 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=65536; order-B-price=65792; A-side=SELL; B-side=BUY
+FIRST ACTION: CALCULATE 65536 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0009 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=9999; order-B-price=10255; A-side=BUY; B-side=BUY
+FIRST ACTION: CALCULATE 9999 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0010 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=1000000; order-B-price=1000256; A-side=SELL; B-side=SELL
+FIRST ACTION: CALCULATE 1000000 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0011 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=999999; order-B-price=1000255; A-side=BUY; B-side=BUY
+FIRST ACTION: CALCULATE 999999 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0012 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=2147483392; order-B-price=2147483648; A-side=SELL; B-side=BUY
+FIRST ACTION: CALCULATE 2147483392 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0013 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=128; order-B-price=384; A-side=BUY; B-side=SELL
+FIRST ACTION: CALCULATE 128 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0014 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=356; order-B-price=612; A-side=SELL; B-side=BUY
+FIRST ACTION: CALCULATE 356 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0015 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=255; order-B-price=767; A-side=BUY; B-side=BUY
+FIRST ACTION: CALCULATE 255 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0016 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=0; order-B-price=65536; A-side=SELL; B-side=SELL
+FIRST ACTION: CALCULATE 0 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0017 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=4095; order-B-price=4351; A-side=BUY; B-side=BUY
+FIRST ACTION: CALCULATE 4095 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0018 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=777; order-B-price=1033; A-side=SELL; B-side=BUY
+FIRST ACTION: CALCULATE 777 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0019 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=1024; order-B-price=2048; A-side=BUY; B-side=SELL
+FIRST ACTION: CALCULATE 1024 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0020 | MODULO PRICE ALIAS | difficulty 4/4
+INPUT: bucket-count=256; order-A-price=12345; order-B-price=12857; A-side=SELL; B-side=BUY
+FIRST ACTION: CALCULATE 12345 / 256 as quotient+remainder, without processing B.
+TRAP / SOURCE QUESTION (NO ANSWER): The same slot number is not enough to prove identical price/side.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/exchange/matcher/me_order_book.h#L78-L90
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0021 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=0; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 0 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0022 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=1; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 1 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0023 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=255; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 255 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0024 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=256; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 256 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0025 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=1023; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 1023 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0026 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=1024; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 1024 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0027 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=1048574; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 1048574 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0028 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=1048575; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 1048575 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0029 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=1048576; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 1048576 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0030 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=1048577; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 1048577 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0031 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=2097151; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 2097151 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0032 | FIXED ORDER-ID TABLE | difficulty 3/4
+INPUT: order-index-size=1048576; proposed-order-id=2097152; client=1; ticker=0; qty=10
+FIRST ACTION: CALCULATE 2097152 - (1048576 - 1) as signed decimal; do not index storage.
+TRAP / SOURCE QUESTION (NO ANSWER): An array's numeric capacity does not establish all admitted ID rules.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/types.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0033 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=0; writer-publishes=1; reader-consumes=0; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 0 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0034 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=1; writer-publishes=2; reader-consumes=1; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 1 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0035 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=2; writer-publishes=3; reader-consumes=2; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 2 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0036 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=3; writer-publishes=4; reader-consumes=0; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 3 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0037 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=4; writer-publishes=5; reader-consumes=1; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 4 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0038 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=8; writer-publishes=9; reader-consumes=2; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 8 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0039 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=16; writer-publishes=17; reader-consumes=0; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 8 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0040 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=32; writer-publishes=33; reader-consumes=1; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 8 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0041 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=64; writer-publishes=65; reader-consumes=2; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 8 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0042 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=128; writer-publishes=129; reader-consumes=0; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 8 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0043 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=255; writer-publishes=256; reader-consumes=1; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 8 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0044 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=256; writer-publishes=257; reader-consumes=2; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 8 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0045 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=512; writer-publishes=513; reader-consumes=0; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 8 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0046 | SPSC QUEUE STATE | difficulty 3/4
+INPUT: queue-capacity=1024; writer-publishes=1025; reader-consumes=1; occupancy-before=0; authorship=1 writer/1 reader
+FIRST ACTION: DRAW 8 ring positions and represent the remaining positions with one continuation mark.
+TRAP / SOURCE QUESTION (NO ANSWER): Wrap, capacity, publication and memory synchronization are separate invariants.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/lf_queue.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0047 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=0; total-construction-requests=1; deallocations=0; object-type=int
+FIRST ACTION: DRAW 0 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0048 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=1; total-construction-requests=2; deallocations=1; object-type=string
+FIRST ACTION: DRAW 1 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0049 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=2; total-construction-requests=3; deallocations=0; object-type=int
+FIRST ACTION: DRAW 2 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0050 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=4; total-construction-requests=5; deallocations=1; object-type=string
+FIRST ACTION: DRAW 4 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0051 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=8; total-construction-requests=8; deallocations=0; object-type=int
+FIRST ACTION: DRAW 4 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0052 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=8; total-construction-requests=9; deallocations=1; object-type=string
+FIRST ACTION: DRAW 4 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0053 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=16; total-construction-requests=17; deallocations=0; object-type=int
+FIRST ACTION: DRAW 4 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0054 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=256; total-construction-requests=257; deallocations=1; object-type=string
+FIRST ACTION: DRAW 4 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0055 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=1024; total-construction-requests=1025; deallocations=0; object-type=int
+FIRST ACTION: DRAW 4 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0056 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=4096; total-construction-requests=4097; deallocations=1; object-type=string
+FIRST ACTION: DRAW 4 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0057 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=10; total-construction-requests=11; deallocations=0; object-type=int
+FIRST ACTION: DRAW 4 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0058 | POOL OBJECT LIFETIME | difficulty 4/4
+INPUT: pool-slots=100; total-construction-requests=101; deallocations=1; object-type=string
+FIRST ACTION: DRAW 4 constructed slots as separate lifetimes; do not call placement new.
+TRAP / SOURCE QUESTION (NO ANSWER): Object lifetime is not the same as whether a block's free flag is true.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/mem_pool.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0059 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=8; send-return=8; errno=none; nonblocking=1
+FIRST ACTION: WRITE 8 and 8 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0060 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=8; send-return=7; errno=none; nonblocking=1
+FIRST ACTION: WRITE 8 and 7 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0061 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=8; send-return=0; errno=none; nonblocking=1
+FIRST ACTION: WRITE 8 and 0 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0062 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=8; send-return=-1; errno=EAGAIN; nonblocking=1
+FIRST ACTION: WRITE 8 and -1 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0063 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=64; send-return=1; errno=none; nonblocking=1
+FIRST ACTION: WRITE 64 and 1 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0064 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=64; send-return=32; errno=none; nonblocking=1
+FIRST ACTION: WRITE 64 and 32 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0065 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=64; send-return=-1; errno=EINTR; nonblocking=1
+FIRST ACTION: WRITE 64 and -1 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0066 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=1500; send-return=1460; errno=none; nonblocking=1
+FIRST ACTION: WRITE 1500 and 1460 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0067 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=4096; send-return=0; errno=none; nonblocking=1
+FIRST ACTION: WRITE 4096 and 0 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0068 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=4096; send-return=4095; errno=none; nonblocking=1
+FIRST ACTION: WRITE 4096 and 4095 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0069 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=65536; send-return=16384; errno=none; nonblocking=1
+FIRST ACTION: WRITE 65536 and 16384 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0070 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=65536; send-return=-1; errno=EAGAIN; nonblocking=1
+FIRST ACTION: WRITE 65536 and -1 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0071 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=131072; send-return=65536; errno=none; nonblocking=1
+FIRST ACTION: WRITE 131072 and 65536 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0072 | TCP BUFFER ACCOUNTING | difficulty 3/4
+INPUT: outbound-pending=32; send-return=33; errno=none; nonblocking=1
+FIRST ACTION: WRITE 32 and 33 in two separate cells; record the return sign before arithmetic.
+TRAP / SOURCE QUESTION (NO ANSWER): A negative syscall return is not a negative byte count.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/common/tcp_socket.cpp#L46-L59
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0073 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=A; specified-body-length=36; received-body-bytes=35; transport-header=unspecified
+FIRST ACTION: CALCULATE 35-36; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0074 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=A; specified-body-length=36; received-body-bytes=36; transport-header=unspecified
+FIRST ACTION: CALCULATE 36-36; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0075 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=A; specified-body-length=36; received-body-bytes=37; transport-header=unspecified
+FIRST ACTION: CALCULATE 37-36; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0076 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=A; specified-body-length=36; received-body-bytes=38; transport-header=unspecified
+FIRST ACTION: CALCULATE 38-36; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0077 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=F; specified-body-length=40; received-body-bytes=39; transport-header=unspecified
+FIRST ACTION: CALCULATE 39-40; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0078 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=F; specified-body-length=40; received-body-bytes=40; transport-header=unspecified
+FIRST ACTION: CALCULATE 40-40; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0079 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=F; specified-body-length=40; received-body-bytes=41; transport-header=unspecified
+FIRST ACTION: CALCULATE 41-40; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0080 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=F; specified-body-length=40; received-body-bytes=42; transport-header=unspecified
+FIRST ACTION: CALCULATE 42-40; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0081 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=E; specified-body-length=31; received-body-bytes=30; transport-header=unspecified
+FIRST ACTION: CALCULATE 30-31; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0082 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=E; specified-body-length=31; received-body-bytes=31; transport-header=unspecified
+FIRST ACTION: CALCULATE 31-31; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0083 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=E; specified-body-length=31; received-body-bytes=32; transport-header=unspecified
+FIRST ACTION: CALCULATE 32-31; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0084 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=E; specified-body-length=31; received-body-bytes=33; transport-header=unspecified
+FIRST ACTION: CALCULATE 33-31; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0085 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=X; specified-body-length=23; received-body-bytes=22; transport-header=unspecified
+FIRST ACTION: CALCULATE 22-23; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0086 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=X; specified-body-length=23; received-body-bytes=23; transport-header=unspecified
+FIRST ACTION: CALCULATE 23-23; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0087 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=X; specified-body-length=23; received-body-bytes=24; transport-header=unspecified
+FIRST ACTION: CALCULATE 24-23; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0088 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=X; specified-body-length=23; received-body-bytes=25; transport-header=unspecified
+FIRST ACTION: CALCULATE 25-23; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0089 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=D; specified-body-length=19; received-body-bytes=18; transport-header=unspecified
+FIRST ACTION: CALCULATE 18-19; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0090 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=D; specified-body-length=19; received-body-bytes=19; transport-header=unspecified
+FIRST ACTION: CALCULATE 19-19; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0091 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=D; specified-body-length=19; received-body-bytes=20; transport-header=unspecified
+FIRST ACTION: CALCULATE 20-19; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0092 | ITCH WIRE BOUNDARY | difficulty 3/4
+INPUT: message-type=D; specified-body-length=19; received-body-bytes=21; transport-header=unspecified
+FIRST ACTION: CALCULATE 21-19; stop before decoding any field.
+TRAP / SOURCE QUESTION (NO ANSWER): An incomplete message and a complete message followed by a byte are not equivalent.
+SOURCE TO READ: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0093 | SNAPSHOT / INCREMENTAL RECOVERY | difficulty 4/4
+INPUT: snapshot-sequences=[0,1,2]; incremental-sequences=[104,105,106]; advertised-last=103; downstream-queue=4
+FIRST ACTION: WRITE the first snapshot element or EMPTY. Stop before any replay.
+TRAP / SOURCE QUESTION (NO ANSWER): Gap, duplicate, and order can give different recovery outcomes.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/market_data/market_data_consumer.cpp#L48-L144
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0094 | SNAPSHOT / INCREMENTAL RECOVERY | difficulty 4/4
+INPUT: snapshot-sequences=[0,2]; incremental-sequences=[104,105]; advertised-last=103; downstream-queue=4
+FIRST ACTION: WRITE the first snapshot element or EMPTY. Stop before any replay.
+TRAP / SOURCE QUESTION (NO ANSWER): Gap, duplicate, and order can give different recovery outcomes.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/market_data/market_data_consumer.cpp#L48-L144
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0095 | SNAPSHOT / INCREMENTAL RECOVERY | difficulty 4/4
+INPUT: snapshot-sequences=[0,1,1,2]; incremental-sequences=[104,105]; advertised-last=103; downstream-queue=4
+FIRST ACTION: WRITE the first snapshot element or EMPTY. Stop before any replay.
+TRAP / SOURCE QUESTION (NO ANSWER): Gap, duplicate, and order can give different recovery outcomes.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/market_data/market_data_consumer.cpp#L48-L144
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0096 | SNAPSHOT / INCREMENTAL RECOVERY | difficulty 4/4
+INPUT: snapshot-sequences=[1,2,3]; incremental-sequences=[104,105]; advertised-last=103; downstream-queue=4
+FIRST ACTION: WRITE the first snapshot element or EMPTY. Stop before any replay.
+TRAP / SOURCE QUESTION (NO ANSWER): Gap, duplicate, and order can give different recovery outcomes.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/market_data/market_data_consumer.cpp#L48-L144
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0097 | SNAPSHOT / INCREMENTAL RECOVERY | difficulty 4/4
+INPUT: snapshot-sequences=[0,1]; incremental-sequences=[102,103]; advertised-last=101; downstream-queue=4
+FIRST ACTION: WRITE the first snapshot element or EMPTY. Stop before any replay.
+TRAP / SOURCE QUESTION (NO ANSWER): Gap, duplicate, and order can give different recovery outcomes.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/market_data/market_data_consumer.cpp#L48-L144
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0098 | SNAPSHOT / INCREMENTAL RECOVERY | difficulty 4/4
+INPUT: snapshot-sequences=[0,1,2]; incremental-sequences=[102,104]; advertised-last=101; downstream-queue=4
+FIRST ACTION: WRITE the first snapshot element or EMPTY. Stop before any replay.
+TRAP / SOURCE QUESTION (NO ANSWER): Gap, duplicate, and order can give different recovery outcomes.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/market_data/market_data_consumer.cpp#L48-L144
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0099 | SNAPSHOT / INCREMENTAL RECOVERY | difficulty 4/4
+INPUT: snapshot-sequences=[0,1,2,3]; incremental-sequences=[100,101,103]; advertised-last=99; downstream-queue=4
+FIRST ACTION: WRITE the first snapshot element or EMPTY. Stop before any replay.
+TRAP / SOURCE QUESTION (NO ANSWER): Gap, duplicate, and order can give different recovery outcomes.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/market_data/market_data_consumer.cpp#L48-L144
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0100 | SNAPSHOT / INCREMENTAL RECOVERY | difficulty 4/4
+INPUT: snapshot-sequences=[0,1,2,3]; incremental-sequences=[101,102,102]; advertised-last=100; downstream-queue=4
+FIRST ACTION: WRITE the first snapshot element or EMPTY. Stop before any replay.
+TRAP / SOURCE QUESTION (NO ANSWER): Gap, duplicate, and order can give different recovery outcomes.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/market_data/market_data_consumer.cpp#L48-L144
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0101 | SNAPSHOT / INCREMENTAL RECOVERY | difficulty 4/4
+INPUT: snapshot-sequences=[]; incremental-sequences=[0,1,2]; advertised-last=0; downstream-queue=4
+FIRST ACTION: WRITE the first snapshot element or EMPTY. Stop before any replay.
+TRAP / SOURCE QUESTION (NO ANSWER): Gap, duplicate, and order can give different recovery outcomes.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/market_data/market_data_consumer.cpp#L48-L144
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0102 | SNAPSHOT / INCREMENTAL RECOVERY | difficulty 4/4
+INPUT: snapshot-sequences=[0,1,2]; incremental-sequences=[18446744073709551615,0]; advertised-last=18446744073709551614; downstream-queue=4
+FIRST ACTION: WRITE the first snapshot element or EMPTY. Stop before any replay.
+TRAP / SOURCE QUESTION (NO ANSWER): Gap, duplicate, and order can give different recovery outcomes.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/market_data/market_data_consumer.cpp#L48-L144
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0103 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=90; configured-limit=100; concurrent-reservation-1=8; concurrent-reservation-2=8; both read start=90
+FIRST ACTION: DRAW initial reservation 90 and limit 100 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0104 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=999; configured-limit=1000; concurrent-reservation-1=5; concurrent-reservation-2=5; both read start=999
+FIRST ACTION: DRAW initial reservation 999 and limit 1000 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0105 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=100; configured-limit=100; concurrent-reservation-1=1; concurrent-reservation-2=0; both read start=100
+FIRST ACTION: DRAW initial reservation 100 and limit 100 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0106 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=0; configured-limit=100; concurrent-reservation-1=101; concurrent-reservation-2=0; both read start=0
+FIRST ACTION: DRAW initial reservation 0 and limit 100 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0107 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=4500; configured-limit=5000; concurrent-reservation-1=600; concurrent-reservation-2=100; both read start=4500
+FIRST ACTION: DRAW initial reservation 4500 and limit 5000 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0108 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=-10; configured-limit=100; concurrent-reservation-1=70; concurrent-reservation-2=70; both read start=-10
+FIRST ACTION: DRAW initial reservation -10 and limit 100 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0109 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=1000000; configured-limit=1000010; concurrent-reservation-1=9; concurrent-reservation-2=9; both read start=1000000
+FIRST ACTION: DRAW initial reservation 1000000 and limit 1000010 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0110 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=2147483647; configured-limit=2147483647; concurrent-reservation-1=1; concurrent-reservation-2=1; both read start=2147483647
+FIRST ACTION: DRAW initial reservation 2147483647 and limit 2147483647 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0111 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=4294967280; configured-limit=4294967295; concurrent-reservation-1=10; concurrent-reservation-2=10; both read start=4294967280
+FIRST ACTION: DRAW initial reservation 4294967280 and limit 4294967295 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0112 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=9999999; configured-limit=10000000; concurrent-reservation-1=1; concurrent-reservation-2=1; both read start=9999999
+FIRST ACTION: DRAW initial reservation 9999999 and limit 10000000 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0113 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=20; configured-limit=20; concurrent-reservation-1=0; concurrent-reservation-2=1; both read start=20
+FIRST ACTION: DRAW initial reservation 20 and limit 20 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0114 | PRETRADE RISK CONCURRENCY | difficulty 4/4
+INPUT: starting-reserved=50; configured-limit=100; concurrent-reservation-1=50; concurrent-reservation-2=50; both read start=50
+FIRST ACTION: DRAW initial reservation 50 and limit 100 in separate cells.
+TRAP / SOURCE QUESTION (NO ANSWER): Both independent checks may observe one old state; numerical inputs are synthetic.
+SOURCE TO READ: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/blob/11e3925f431f7c8c39739ed90b874d6ff2aa2966/Chapter12/trading/strategy/risk_manager.h
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0115 | FIX SESSION GAP | difficulty 3/4
+INPUT: expected-sequence=197648; incoming-sequence=197650; resend-state=unknown
+FIRST ACTION: CALCULATE 197650-197648. Stop before applying session recovery.
+TRAP / SOURCE QUESTION (NO ANSWER): Transport gaps and application resends are separate event types.
+SOURCE TO READ: https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992a95d08f7c0c1f%40mail.gmail.com/
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0116 | FIX SESSION GAP | difficulty 3/4
+INPUT: expected-sequence=1; incoming-sequence=3; resend-state=unknown
+FIRST ACTION: CALCULATE 3-1. Stop before applying session recovery.
+TRAP / SOURCE QUESTION (NO ANSWER): Transport gaps and application resends are separate event types.
+SOURCE TO READ: https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992a95d08f7c0c1f%40mail.gmail.com/
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0117 | FIX SESSION GAP | difficulty 3/4
+INPUT: expected-sequence=100; incoming-sequence=101; resend-state=unknown
+FIRST ACTION: CALCULATE 101-100. Stop before applying session recovery.
+TRAP / SOURCE QUESTION (NO ANSWER): Transport gaps and application resends are separate event types.
+SOURCE TO READ: https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992a95d08f7c0c1f%40mail.gmail.com/
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0118 | FIX SESSION GAP | difficulty 3/4
+INPUT: expected-sequence=50; incoming-sequence=54; resend-state=unknown
+FIRST ACTION: CALCULATE 54-50. Stop before applying session recovery.
+TRAP / SOURCE QUESTION (NO ANSWER): Transport gaps and application resends are separate event types.
+SOURCE TO READ: https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992a95d08f7c0c1f%40mail.gmail.com/
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0119 | FIX SESSION GAP | difficulty 3/4
+INPUT: expected-sequence=2048; incoming-sequence=2050; resend-state=unknown
+FIRST ACTION: CALCULATE 2050-2048. Stop before applying session recovery.
+TRAP / SOURCE QUESTION (NO ANSWER): Transport gaps and application resends are separate event types.
+SOURCE TO READ: https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992a95d08f7c0c1f%40mail.gmail.com/
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0120 | FIX SESSION GAP | difficulty 3/4
+INPUT: expected-sequence=999998; incoming-sequence=1000000; resend-state=unknown
+FIRST ACTION: CALCULATE 1000000-999998. Stop before applying session recovery.
+TRAP / SOURCE QUESTION (NO ANSWER): Transport gaps and application resends are separate event types.
+SOURCE TO READ: https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992a95d08f7c0c1f%40mail.gmail.com/
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0121 | FIX SESSION GAP | difficulty 3/4
+INPUT: expected-sequence=7; incoming-sequence=7; resend-state=unknown
+FIRST ACTION: CALCULATE 7-7. Stop before applying session recovery.
+TRAP / SOURCE QUESTION (NO ANSWER): Transport gaps and application resends are separate event types.
+SOURCE TO READ: https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992a95d08f7c0c1f%40mail.gmail.com/
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0122 | FIX SESSION GAP | difficulty 3/4
+INPUT: expected-sequence=4294967294; incoming-sequence=4294967295; resend-state=unknown
+FIRST ACTION: CALCULATE 4294967295-4294967294. Stop before applying session recovery.
+TRAP / SOURCE QUESTION (NO ANSWER): Transport gaps and application resends are separate event types.
+SOURCE TO READ: https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992a95d08f7c0c1f%40mail.gmail.com/
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0123 | FIX SESSION GAP | difficulty 3/4
+INPUT: expected-sequence=4500; incoming-sequence=4502; resend-state=unknown
+FIRST ACTION: CALCULATE 4502-4500. Stop before applying session recovery.
+TRAP / SOURCE QUESTION (NO ANSWER): Transport gaps and application resends are separate event types.
+SOURCE TO READ: https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992a95d08f7c0c1f%40mail.gmail.com/
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0124 | FIX SESSION GAP | difficulty 3/4
+INPUT: expected-sequence=800; incoming-sequence=802; resend-state=unknown
+FIRST ACTION: CALCULATE 802-800. Stop before applying session recovery.
+TRAP / SOURCE QUESTION (NO ANSWER): Transport gaps and application resends are separate event types.
+SOURCE TO READ: https://sourceforge.net/p/quickfix/mailman/quickfix-developers/thread/989aceac0601031239o13fc16b2l992a95d08f7c0c1f%40mail.gmail.com/
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0125 | VIRTUAL MEMORY / HUGE PAGE | difficulty 3/4
+INPUT: requested-virtual-bytes=64000000; candidate-page-bytes=2097152; hugepage-pool=unknown
+FIRST ACTION: CALCULATE 64000000 / 2097152 as quotient and remainder.
+TRAP / SOURCE QUESTION (NO ANSWER): Page count is not physical address or guaranteed successful mapping.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/mmap.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0126 | VIRTUAL MEMORY / HUGE PAGE | difficulty 3/4
+INPUT: requested-virtual-bytes=67108864; candidate-page-bytes=2097152; hugepage-pool=unknown
+FIRST ACTION: CALCULATE 67108864 / 2097152 as quotient and remainder.
+TRAP / SOURCE QUESTION (NO ANSWER): Page count is not physical address or guaranteed successful mapping.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/mmap.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0127 | VIRTUAL MEMORY / HUGE PAGE | difficulty 3/4
+INPUT: requested-virtual-bytes=65536; candidate-page-bytes=4096; hugepage-pool=unknown
+FIRST ACTION: CALCULATE 65536 / 4096 as quotient and remainder.
+TRAP / SOURCE QUESTION (NO ANSWER): Page count is not physical address or guaranteed successful mapping.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/mmap.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0128 | VIRTUAL MEMORY / HUGE PAGE | difficulty 3/4
+INPUT: requested-virtual-bytes=1048577; candidate-page-bytes=4096; hugepage-pool=unknown
+FIRST ACTION: CALCULATE 1048577 / 4096 as quotient and remainder.
+TRAP / SOURCE QUESTION (NO ANSWER): Page count is not physical address or guaranteed successful mapping.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/mmap.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0129 | VIRTUAL MEMORY / HUGE PAGE | difficulty 3/4
+INPUT: requested-virtual-bytes=1048576; candidate-page-bytes=4096; hugepage-pool=unknown
+FIRST ACTION: CALCULATE 1048576 / 4096 as quotient and remainder.
+TRAP / SOURCE QUESTION (NO ANSWER): Page count is not physical address or guaranteed successful mapping.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/mmap.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0130 | VIRTUAL MEMORY / HUGE PAGE | difficulty 3/4
+INPUT: requested-virtual-bytes=1; candidate-page-bytes=4096; hugepage-pool=unknown
+FIRST ACTION: CALCULATE 1 / 4096 as quotient and remainder.
+TRAP / SOURCE QUESTION (NO ANSWER): Page count is not physical address or guaranteed successful mapping.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/mmap.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0131 | VIRTUAL MEMORY / HUGE PAGE | difficulty 3/4
+INPUT: requested-virtual-bytes=0; candidate-page-bytes=2097152; hugepage-pool=unknown
+FIRST ACTION: CALCULATE 0 / 2097152 as quotient and remainder.
+TRAP / SOURCE QUESTION (NO ANSWER): Page count is not physical address or guaranteed successful mapping.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/mmap.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0132 | VIRTUAL MEMORY / HUGE PAGE | difficulty 3/4
+INPUT: requested-virtual-bytes=2097153; candidate-page-bytes=2097152; hugepage-pool=unknown
+FIRST ACTION: CALCULATE 2097153 / 2097152 as quotient and remainder.
+TRAP / SOURCE QUESTION (NO ANSWER): Page count is not physical address or guaranteed successful mapping.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/mmap.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0133 | VIRTUAL MEMORY / HUGE PAGE | difficulty 3/4
+INPUT: requested-virtual-bytes=1000000000; candidate-page-bytes=2097152; hugepage-pool=unknown
+FIRST ACTION: CALCULATE 1000000000 / 2097152 as quotient and remainder.
+TRAP / SOURCE QUESTION (NO ANSWER): Page count is not physical address or guaranteed successful mapping.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/mmap.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0134 | VIRTUAL MEMORY / HUGE PAGE | difficulty 3/4
+INPUT: requested-virtual-bytes=4294967296; candidate-page-bytes=2097152; hugepage-pool=unknown
+FIRST ACTION: CALCULATE 4294967296 / 2097152 as quotient and remainder.
+TRAP / SOURCE QUESTION (NO ANSWER): Page count is not physical address or guaranteed successful mapping.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/mmap.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0135 | CYCLE / CLOCK CONVERSION | difficulty 2/4
+INPUT: ASSUMED-hz=3000000000; ASSUMED-critical-cycles=1500; measurement-trace=absent
+FIRST ACTION: CALCULATE 1500*1000000000/3000000000 as a fraction, not a measured duration.
+TRAP / SOURCE QUESTION (NO ANSWER): A cycle conversion is not a wall-clock timing measurement.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0136 | CYCLE / CLOCK CONVERSION | difficulty 2/4
+INPUT: ASSUMED-hz=3000000000; ASSUMED-critical-cycles=1499; measurement-trace=absent
+FIRST ACTION: CALCULATE 1499*1000000000/3000000000 as a fraction, not a measured duration.
+TRAP / SOURCE QUESTION (NO ANSWER): A cycle conversion is not a wall-clock timing measurement.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0137 | CYCLE / CLOCK CONVERSION | difficulty 2/4
+INPUT: ASSUMED-hz=3000000000; ASSUMED-critical-cycles=1501; measurement-trace=absent
+FIRST ACTION: CALCULATE 1501*1000000000/3000000000 as a fraction, not a measured duration.
+TRAP / SOURCE QUESTION (NO ANSWER): A cycle conversion is not a wall-clock timing measurement.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0138 | CYCLE / CLOCK CONVERSION | difficulty 2/4
+INPUT: ASSUMED-hz=3200000000; ASSUMED-critical-cycles=1600; measurement-trace=absent
+FIRST ACTION: CALCULATE 1600*1000000000/3200000000 as a fraction, not a measured duration.
+TRAP / SOURCE QUESTION (NO ANSWER): A cycle conversion is not a wall-clock timing measurement.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0139 | CYCLE / CLOCK CONVERSION | difficulty 2/4
+INPUT: ASSUMED-hz=2500000000; ASSUMED-critical-cycles=1250; measurement-trace=absent
+FIRST ACTION: CALCULATE 1250*1000000000/2500000000 as a fraction, not a measured duration.
+TRAP / SOURCE QUESTION (NO ANSWER): A cycle conversion is not a wall-clock timing measurement.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0140 | CYCLE / CLOCK CONVERSION | difficulty 2/4
+INPUT: ASSUMED-hz=2100000000; ASSUMED-critical-cycles=1050; measurement-trace=absent
+FIRST ACTION: CALCULATE 1050*1000000000/2100000000 as a fraction, not a measured duration.
+TRAP / SOURCE QUESTION (NO ANSWER): A cycle conversion is not a wall-clock timing measurement.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0141 | CYCLE / CLOCK CONVERSION | difficulty 2/4
+INPUT: ASSUMED-hz=1000000000; ASSUMED-critical-cycles=500; measurement-trace=absent
+FIRST ACTION: CALCULATE 500*1000000000/1000000000 as a fraction, not a measured duration.
+TRAP / SOURCE QUESTION (NO ANSWER): A cycle conversion is not a wall-clock timing measurement.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0142 | CYCLE / CLOCK CONVERSION | difficulty 2/4
+INPUT: ASSUMED-hz=4200000000; ASSUMED-critical-cycles=2100; measurement-trace=absent
+FIRST ACTION: CALCULATE 2100*1000000000/4200000000 as a fraction, not a measured duration.
+TRAP / SOURCE QUESTION (NO ANSWER): A cycle conversion is not a wall-clock timing measurement.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0143 | CYCLE / CLOCK CONVERSION | difficulty 2/4
+INPUT: ASSUMED-hz=3000000000; ASSUMED-critical-cycles=14; measurement-trace=absent
+FIRST ACTION: CALCULATE 14*1000000000/3000000000 as a fraction, not a measured duration.
+TRAP / SOURCE QUESTION (NO ANSWER): A cycle conversion is not a wall-clock timing measurement.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0144 | CYCLE / CLOCK CONVERSION | difficulty 2/4
+INPUT: ASSUMED-hz=2250000000; ASSUMED-critical-cycles=1125; measurement-trace=absent
+FIRST ACTION: CALCULATE 1125*1000000000/2250000000 as a fraction, not a measured duration.
+TRAP / SOURCE QUESTION (NO ANSWER): A cycle conversion is not a wall-clock timing measurement.
+SOURCE TO READ: https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0145 | GDB / FD GENERATION REUSE | difficulty 4/4
+INPUT: accepted-fd=3; resource-2-allocated-fd=7; stale-close-target=7; total-close-calls=3
+FIRST ACTION: DRAW the TWO resources as distinct boxes even if their numeric FD matches.
+TRAP / SOURCE QUESTION (NO ANSWER): A descriptor number reused after close is a different open-file description.
+SOURCE TO READ: https://github.com/quickfix/quickfix/issues/747
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0146 | GDB / FD GENERATION REUSE | difficulty 4/4
+INPUT: accepted-fd=7; resource-2-allocated-fd=7; stale-close-target=7; total-close-calls=3
+FIRST ACTION: DRAW the TWO resources as distinct boxes even if their numeric FD matches.
+TRAP / SOURCE QUESTION (NO ANSWER): A descriptor number reused after close is a different open-file description.
+SOURCE TO READ: https://github.com/quickfix/quickfix/issues/747
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0147 | GDB / FD GENERATION REUSE | difficulty 4/4
+INPUT: accepted-fd=7; resource-2-allocated-fd=8; stale-close-target=7; total-close-calls=3
+FIRST ACTION: DRAW the TWO resources as distinct boxes even if their numeric FD matches.
+TRAP / SOURCE QUESTION (NO ANSWER): A descriptor number reused after close is a different open-file description.
+SOURCE TO READ: https://github.com/quickfix/quickfix/issues/747
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0148 | GDB / FD GENERATION REUSE | difficulty 4/4
+INPUT: accepted-fd=31; resource-2-allocated-fd=31; stale-close-target=32; total-close-calls=3
+FIRST ACTION: DRAW the TWO resources as distinct boxes even if their numeric FD matches.
+TRAP / SOURCE QUESTION (NO ANSWER): A descriptor number reused after close is a different open-file description.
+SOURCE TO READ: https://github.com/quickfix/quickfix/issues/747
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0149 | GDB / FD GENERATION REUSE | difficulty 4/4
+INPUT: accepted-fd=1023; resource-2-allocated-fd=1023; stale-close-target=1023; total-close-calls=3
+FIRST ACTION: DRAW the TWO resources as distinct boxes even if their numeric FD matches.
+TRAP / SOURCE QUESTION (NO ANSWER): A descriptor number reused after close is a different open-file description.
+SOURCE TO READ: https://github.com/quickfix/quickfix/issues/747
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0150 | GDB / FD GENERATION REUSE | difficulty 4/4
+INPUT: accepted-fd=200; resource-2-allocated-fd=201; stale-close-target=200; total-close-calls=3
+FIRST ACTION: DRAW the TWO resources as distinct boxes even if their numeric FD matches.
+TRAP / SOURCE QUESTION (NO ANSWER): A descriptor number reused after close is a different open-file description.
+SOURCE TO READ: https://github.com/quickfix/quickfix/issues/747
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0151 | GDB / FD GENERATION REUSE | difficulty 4/4
+INPUT: accepted-fd=4; resource-2-allocated-fd=9; stale-close-target=4; total-close-calls=3
+FIRST ACTION: DRAW the TWO resources as distinct boxes even if their numeric FD matches.
+TRAP / SOURCE QUESTION (NO ANSWER): A descriptor number reused after close is a different open-file description.
+SOURCE TO READ: https://github.com/quickfix/quickfix/issues/747
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0152 | GDB / FD GENERATION REUSE | difficulty 4/4
+INPUT: accepted-fd=13; resource-2-allocated-fd=13; stale-close-target=13; total-close-calls=3
+FIRST ACTION: DRAW the TWO resources as distinct boxes even if their numeric FD matches.
+TRAP / SOURCE QUESTION (NO ANSWER): A descriptor number reused after close is a different open-file description.
+SOURCE TO READ: https://github.com/quickfix/quickfix/issues/747
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0153 | LINUX FTRACE RING HISTORY | difficulty 4/4
+INPUT: historical-2009-situation=padding boundary; page-A=[10,11,padding]; page-B=[12,13]; writer-commit=0
+FIRST ACTION: DRAW page A and place event 10 first.
+TRAP / SOURCE QUESTION (NO ANSWER): A 2009 patch does not prove any modern code has the same defect.
+SOURCE TO READ: https://lkml.iu.edu/0909.0/01672.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0154 | LINUX FTRACE RING HISTORY | difficulty 4/4
+INPUT: historical-2009-situation=peek-before-read; page-A=[11,12,padding]; page-B=[13,14]; writer-commit=1
+FIRST ACTION: DRAW page A and place event 11 first.
+TRAP / SOURCE QUESTION (NO ANSWER): A 2009 patch does not prove any modern code has the same defect.
+SOURCE TO READ: https://lkml.iu.edu/0909.0/01672.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0155 | LINUX FTRACE RING HISTORY | difficulty 4/4
+INPUT: historical-2009-situation=reset-during-commit; page-A=[12,13,padding]; page-B=[14,15]; writer-commit=2
+FIRST ACTION: DRAW page A and place event 12 first.
+TRAP / SOURCE QUESTION (NO ANSWER): A 2009 patch does not prove any modern code has the same defect.
+SOURCE TO READ: https://lkml.iu.edu/0909.0/01672.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0156 | LINUX FTRACE RING HISTORY | difficulty 4/4
+INPUT: historical-2009-situation=swap-while-writer-active; page-A=[13,14,padding]; page-B=[15,16]; writer-commit=0
+FIRST ACTION: DRAW page A and place event 13 first.
+TRAP / SOURCE QUESTION (NO ANSWER): A 2009 patch does not prove any modern code has the same defect.
+SOURCE TO READ: https://lkml.iu.edu/0909.0/01672.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0157 | LINUX FTRACE RING HISTORY | difficulty 4/4
+INPUT: historical-2009-situation=discarded-record-count; page-A=[14,15,padding]; page-B=[16,17]; writer-commit=1
+FIRST ACTION: DRAW page A and place event 14 first.
+TRAP / SOURCE QUESTION (NO ANSWER): A 2009 patch does not prove any modern code has the same defect.
+SOURCE TO READ: https://lkml.iu.edu/0909.0/01672.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0158 | LINUX FTRACE RING HISTORY | difficulty 4/4
+INPUT: historical-2009-situation=zero-events; page-A=[15,16,padding]; page-B=[17,18]; writer-commit=2
+FIRST ACTION: DRAW page A and place event 15 first.
+TRAP / SOURCE QUESTION (NO ANSWER): A 2009 patch does not prove any modern code has the same defect.
+SOURCE TO READ: https://lkml.iu.edu/0909.0/01672.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0159 | LINUX FTRACE RING HISTORY | difficulty 4/4
+INPUT: historical-2009-situation=two-pages; page-A=[16,17,padding]; page-B=[18,19]; writer-commit=0
+FIRST ACTION: DRAW page A and place event 16 first.
+TRAP / SOURCE QUESTION (NO ANSWER): A 2009 patch does not prove any modern code has the same defect.
+SOURCE TO READ: https://lkml.iu.edu/0909.0/01672.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0160 | LINUX FTRACE RING HISTORY | difficulty 4/4
+INPUT: historical-2009-situation=back-to-back-padding; page-A=[17,18,padding]; page-B=[19,20]; writer-commit=1
+FIRST ACTION: DRAW page A and place event 17 first.
+TRAP / SOURCE QUESTION (NO ANSWER): A 2009 patch does not prove any modern code has the same defect.
+SOURCE TO READ: https://lkml.iu.edu/0909.0/01672.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0161 | LINUX FTRACE RING HISTORY | difficulty 4/4
+INPUT: historical-2009-situation=read-only iteration; page-A=[18,19,padding]; page-B=[20,21]; writer-commit=2
+FIRST ACTION: DRAW page A and place event 18 first.
+TRAP / SOURCE QUESTION (NO ANSWER): A 2009 patch does not prove any modern code has the same defect.
+SOURCE TO READ: https://lkml.iu.edu/0909.0/01672.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0162 | LINUX FTRACE RING HISTORY | difficulty 4/4
+INPUT: historical-2009-situation=commit in progress; page-A=[19,20,padding]; page-B=[21,22]; writer-commit=0
+FIRST ACTION: DRAW page A and place event 19 first.
+TRAP / SOURCE QUESTION (NO ANSWER): A 2009 patch does not prove any modern code has the same defect.
+SOURCE TO READ: https://lkml.iu.edu/0909.0/01672.html
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0163 | IO_URING REFERENCE TRACE | difficulty 4/4
+INPUT: poll-refs=[0x1,0x22,0x43,0x64,0x80]; CQEs=unknown; multishot=1; kTLS=0
+FIRST ACTION: WRITE 0x1 in 32-bit binary with no masked result.
+TRAP / SOURCE QUESTION (NO ANSWER): The reporter's kernel version, trace and root-cause interpretation must stay distinct.
+SOURCE TO READ: https://github.com/axboe/liburing/issues/1644
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0164 | IO_URING REFERENCE TRACE | difficulty 4/4
+INPUT: poll-refs=[0x1,0x20,0x40,0x60,0x80]; CQEs=unknown; multishot=1; kTLS=1
+FIRST ACTION: WRITE 0x1 in 32-bit binary with no masked result.
+TRAP / SOURCE QUESTION (NO ANSWER): The reporter's kernel version, trace and root-cause interpretation must stay distinct.
+SOURCE TO READ: https://github.com/axboe/liburing/issues/1644
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0165 | IO_URING REFERENCE TRACE | difficulty 4/4
+INPUT: poll-refs=[0x0,0x1,0x2,0x3,0x4]; CQEs=unknown; multishot=1; kTLS=0
+FIRST ACTION: WRITE 0x0 in 32-bit binary with no masked result.
+TRAP / SOURCE QUESTION (NO ANSWER): The reporter's kernel version, trace and root-cause interpretation must stay distinct.
+SOURCE TO READ: https://github.com/axboe/liburing/issues/1644
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0166 | IO_URING REFERENCE TRACE | difficulty 4/4
+INPUT: poll-refs=[0x80,0x80,0x80,0x80,0x80]; CQEs=unknown; multishot=1; kTLS=1
+FIRST ACTION: WRITE 0x80 in 32-bit binary with no masked result.
+TRAP / SOURCE QUESTION (NO ANSWER): The reporter's kernel version, trace and root-cause interpretation must stay distinct.
+SOURCE TO READ: https://github.com/axboe/liburing/issues/1644
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0167 | IO_URING REFERENCE TRACE | difficulty 4/4
+INPUT: poll-refs=[0x40,0x60,0x80,0x80,0x80]; CQEs=unknown; multishot=1; kTLS=0
+FIRST ACTION: WRITE 0x40 in 32-bit binary with no masked result.
+TRAP / SOURCE QUESTION (NO ANSWER): The reporter's kernel version, trace and root-cause interpretation must stay distinct.
+SOURCE TO READ: https://github.com/axboe/liburing/issues/1644
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0168 | IO_URING REFERENCE TRACE | difficulty 4/4
+INPUT: poll-refs=[0x1,0x2,0x3,0x4,0x5]; CQEs=unknown; multishot=1; kTLS=1
+FIRST ACTION: WRITE 0x1 in 32-bit binary with no masked result.
+TRAP / SOURCE QUESTION (NO ANSWER): The reporter's kernel version, trace and root-cause interpretation must stay distinct.
+SOURCE TO READ: https://github.com/axboe/liburing/issues/1644
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0169 | IO_URING REFERENCE TRACE | difficulty 4/4
+INPUT: poll-refs=[0x1f,0x40,0x61,0x82,0xa3]; CQEs=unknown; multishot=1; kTLS=0
+FIRST ACTION: WRITE 0x1f in 32-bit binary with no masked result.
+TRAP / SOURCE QUESTION (NO ANSWER): The reporter's kernel version, trace and root-cause interpretation must stay distinct.
+SOURCE TO READ: https://github.com/axboe/liburing/issues/1644
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0170 | IO_URING REFERENCE TRACE | difficulty 4/4
+INPUT: poll-refs=[0x80,0x40000080,0x80,0x40000000,0x0]; CQEs=unknown; multishot=1; kTLS=1
+FIRST ACTION: WRITE 0x80 in 32-bit binary with no masked result.
+TRAP / SOURCE QUESTION (NO ANSWER): The reporter's kernel version, trace and root-cause interpretation must stay distinct.
+SOURCE TO READ: https://github.com/axboe/liburing/issues/1644
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0171 | BOOK-RECONSTRUCTION VS EXCHANGE MATCHING | difficulty 4/4
+INPUT: first=[100,10,BUY]; second=[101,5,SELL]; task-contract=NOT-YET-SELECTED
+FIRST ACTION: DRAW the first resting order only. Do not produce any execution.
+TRAP / SOURCE QUESTION (NO ANSWER): An ITCH feed handler and exchange matching engine have different rule sets.
+SOURCE TO READ: https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0172 | BOOK-RECONSTRUCTION VS EXCHANGE MATCHING | difficulty 4/4
+INPUT: first=[100,10,BUY]; second=[100,5,SELL]; task-contract=NOT-YET-SELECTED
+FIRST ACTION: DRAW the first resting order only. Do not produce any execution.
+TRAP / SOURCE QUESTION (NO ANSWER): An ITCH feed handler and exchange matching engine have different rule sets.
+SOURCE TO READ: https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0173 | BOOK-RECONSTRUCTION VS EXCHANGE MATCHING | difficulty 4/4
+INPUT: first=[101,10,BUY]; second=[100,5,SELL]; task-contract=NOT-YET-SELECTED
+FIRST ACTION: DRAW the first resting order only. Do not produce any execution.
+TRAP / SOURCE QUESTION (NO ANSWER): An ITCH feed handler and exchange matching engine have different rule sets.
+SOURCE TO READ: https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0174 | BOOK-RECONSTRUCTION VS EXCHANGE MATCHING | difficulty 4/4
+INPUT: first=[100,10,BUY]; second=[99,5,BUY]; task-contract=NOT-YET-SELECTED
+FIRST ACTION: DRAW the first resting order only. Do not produce any execution.
+TRAP / SOURCE QUESTION (NO ANSWER): An ITCH feed handler and exchange matching engine have different rule sets.
+SOURCE TO READ: https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0175 | BOOK-RECONSTRUCTION VS EXCHANGE MATCHING | difficulty 4/4
+INPUT: first=[100,10,SELL]; second=[99,5,SELL]; task-contract=NOT-YET-SELECTED
+FIRST ACTION: DRAW the first resting order only. Do not produce any execution.
+TRAP / SOURCE QUESTION (NO ANSWER): An ITCH feed handler and exchange matching engine have different rule sets.
+SOURCE TO READ: https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0176 | BOOK-RECONSTRUCTION VS EXCHANGE MATCHING | difficulty 4/4
+INPUT: first=[15000,100,BUY]; second=[15000,250,BUY]; task-contract=NOT-YET-SELECTED
+FIRST ACTION: DRAW the first resting order only. Do not produce any execution.
+TRAP / SOURCE QUESTION (NO ANSWER): An ITCH feed handler and exchange matching engine have different rule sets.
+SOURCE TO READ: https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0177 | BOOK-RECONSTRUCTION VS EXCHANGE MATCHING | difficulty 4/4
+INPUT: first=[123456,100,BUY]; second=[123457,200,SELL]; task-contract=NOT-YET-SELECTED
+FIRST ACTION: DRAW the first resting order only. Do not produce any execution.
+TRAP / SOURCE QUESTION (NO ANSWER): An ITCH feed handler and exchange matching engine have different rule sets.
+SOURCE TO READ: https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0178 | BOOK-RECONSTRUCTION VS EXCHANGE MATCHING | difficulty 4/4
+INPUT: first=[100,10,SELL]; second=[101,5,BUY]; task-contract=NOT-YET-SELECTED
+FIRST ACTION: DRAW the first resting order only. Do not produce any execution.
+TRAP / SOURCE QUESTION (NO ANSWER): An ITCH feed handler and exchange matching engine have different rule sets.
+SOURCE TO READ: https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0179 | BOOK-RECONSTRUCTION VS EXCHANGE MATCHING | difficulty 4/4
+INPUT: first=[1000,1000000,BUY]; second=[1001,1,SELL]; task-contract=NOT-YET-SELECTED
+FIRST ACTION: DRAW the first resting order only. Do not produce any execution.
+TRAP / SOURCE QUESTION (NO ANSWER): An ITCH feed handler and exchange matching engine have different rule sets.
+SOURCE TO READ: https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+FQ-0180 | BOOK-RECONSTRUCTION VS EXCHANGE MATCHING | difficulty 4/4
+INPUT: first=[1,10,BUY]; second=[0,10,BUY]; task-contract=NOT-YET-SELECTED
+FIRST ACTION: DRAW the first resting order only. Do not produce any execution.
+TRAP / SOURCE QUESTION (NO ANSWER): An ITCH feed handler and exchange matching engine have different rule sets.
+SOURCE TO READ: https://github.com/hudson-trading/inside-at-hrt/blob/main/Book.py
+RESULT: __________  CHECKED: [ ]  NEXT STEP LOCKED: [ ]
+
+HARD COMPOSITE PROBLEMS - FIRST ACTION ONLY
+C1: price=100 vs 356, 256 price slots, 1,048,576 fixed ID slots,
+    producer ring size=1024, 1025 requests, one consumer paused.
+    FIRST ACTION: WRITE 100 / 256 quotient and remainder.
+C2: 1,000,000 36-byte ITCH A bodies mixed with 100,000 23-byte X
+    bodies, binary-file framing unknown, NIC ring byte count unknown.
+    FIRST ACTION: CALCULATE 1,000,000*36 alone.
+C3: 64,000,000-byte hugepage request, 2,097,152 bytes/page, 3GHz
+    assumed CPU clock, claimed 14-cycle processing, no benchmark trace.
+    FIRST ACTION: CALCULATE 64,000,000 / 2,097,152 quotient+remainder.
+C4: QuickFIX fd 7 closed twice, a new pipe also gets fd 7;
+    an execution 30 shares is replayed twice after reconnect.
+    FIRST ACTION: DRAW two descriptor generations, not trade math.
+C5: io_uring reports poll_refs 0x40000080 and CQE_F_MORE;
+    socket has data but user recv returns EAGAIN in one reported run.
+    FIRST ACTION: WRITE 0x40000080 as 32 explicit bits.
+C6: 12 logical cores, two isolated cores, 4096 RX slots,
+    a shared 65,536 byte UMEM, 2,048 byte chunk size.
+    FIRST ACTION: CALCULATE 65,536 / 2,048.
+END FINAL QUESTION BANK
