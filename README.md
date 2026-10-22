@@ -1,16 +1,25 @@
 # lowlatency
 
 Practice problems for low-latency C++ and trading-systems work. This repo holds **problem statements and sources only. No solutions.**
+FACT CHECK CORRECTION: This description is outdated: main also contains worked numerical scenarios, CORRECTNESS.md, prediction files and ans files. These are not exclusively original problem statements, and their worked claims require verification.
+FOLLOW-UP: VERIFY: Find the original sentence that supports the preceding claim.
 
 ## Rules for every exercise
 Produce, in this order:
+FOLLOW-UP: CALCULATE: Apply only the first described change to the stated numerical input.
 1. An independent input generator
+FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
 2. A simple correctness reference
+FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
 3. Deterministic unit tests
+FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
 4. A benchmark
+FOLLOW-UP: CALCULATE: Reproduce one given number from its stated inputs.
 5. A short explanation of the measured results
+FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
 
 Correctness first; build the optimization argument from measurements.
+FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
 
 ## Priority order (C++ low-latency hiring prep)
 | # | Exercise | Evidence level |
@@ -35,6 +44,8 @@ Correctness first; build the optimization argument from measurements.
 
 ## Memory-ordering reference
 [memory-ordering/README.md](memory-ordering/README.md): store-buffer and refcount race diagrams, seven reconstructed memory-order bugs, and a summary table. Marked unverified until checked against the linked trackers.
+FOLLOW-UP: VERIFY: Find the original sentence that supports the preceding claim.
 
 ## Caveat
 Public competitions, personal GitHub projects and candidate accounts are not confirmed recruitment assignments. No authenticated hiring take-home was verified for Citadel Securities, Jump Trading, Flow Traders or Tower Research Capital. Your own OrderCache project uses a company-restricted quantity-matching rule, which is different from exchange price-time matching; keep their specifications separate.
+FOLLOW-UP: VERIFY: Find the original sentence that supports the preceding claim.
