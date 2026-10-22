@@ -29,3 +29,16 @@ FOLLOW-UP: CALCULATE: Reproduce one given number from its stated inputs.
 Why might the queue need an extra internal slot? Why acquire/release ordering? Why separate producer and consumer positions onto different cache lines and cache the other side's position locally?
 FACT CHECK: Reserving a physical slot is an implementation choice used by Folly and Rigtorp; it is not a mandatory requirement of every SPSC queue. https://github.com/facebook/folly/blob/main/folly/ProducerConsumerQueue.h
 FOLLOW-UP: CALCULATE: Apply only the first described change to the stated numerical input.
+
+
+Appendix: Northwestern concurrency lab source
+Northwestern CS343 Producer-Consumer Lab (Winter 2025) defines a shared
+ring with two producers, four consumers, 16 elements and 1024 uses in its
+harness example. It asks for spinlocks, mutexes and semaphores, plus a
+signal-based approximation of interrupts. It does NOT authenticate an
+HFT firm's hiring take-home. It is not a requirement to implement MCS,
+ticket locks or an SPSC-only queue in that particular lab.
+The starter files ring.[ch] atomics.[ch] harness.c are described in the
+PDF, but the class-specific GitHub Classroom code was not fetched here.
+SOURCE: https://users.cs.northwestern.edu/~pdinda/os-w25/labs/pclab.pdf
+ONE ACTION: DRAW two senders and four receivers around a 16-position ring.
