@@ -33,5 +33,8 @@ Correctness first; build the optimization argument from measurements.
 | 12 | [Akuna Shanghai binary messages](exercises/12-akuna-shanghai-binary-messages.md) | Unverified candidate code |
 | 13 | [HRT x Partcl macro placement](exercises/13-hrt-partcl-macro-placement.md) | Public competition (hardware) |
 
+## Memory-ordering reference
+[memory-ordering/README.md](memory-ordering/README.md): store-buffer and refcount race diagrams, seven reconstructed memory-order bugs, and a summary table. Marked unverified until checked against the linked trackers.
+
 ## Caveat
 Public competitions, personal GitHub projects and candidate accounts are not confirmed recruitment assignments. No authenticated hiring take-home was verified for Citadel Securities, Jump Trading, Flow Traders or Tower Research Capital. Your own OrderCache project uses a company-restricted quantity-matching rule, which is different from exchange price-time matching; keep their specifications separate.
