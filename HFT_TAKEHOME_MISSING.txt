@@ -1,0 +1,1034 @@
+HFT / RELATED COMPANIES - MISSING TAKE-HOME AND ASSESSMENT INDEX
+Audit date: 2026-10-23. Repository: learnrahulrai-ui/lowlatency main.
+Purpose: compare existing exercises with independent original/current sources.
+Only *new* named assessments/workshops or genuinely distinct OA topics below.
+NO CODING SOLUTIONS. No source code, answer, hidden tests, or private rubric.
+The number of listed items is NOT the count of original employer-issued tests.
+
+STATUS DEFINITIONS:
+OFFICIAL PUBLIC TAKE-HOME = source published by employer itself.
+OFFICIAL PROCESS / SPEC NOT PUBLIC = employer confirms exercise exists, but
+there is no genuine accessible problem statement to reproduce.
+CANDIDATE REPORT = one person's recollection/experience; not employer-issued.
+CANDIDATE-ATTRIBUTED PROJECT = candidate code in public repo; not original spec.
+THIRD-PARTY OA INDEX = company attributed by a public practice provider;
+not firm-authenticated and not necessarily a software engineering assessment.
+CONSTRUCTED = an invented practice problem; never imply real hiring use.
+LIVE INTERVIEW = NOT a take-home and must be labeled as such.
+
+A. ALREADY PRESENT ON MAIN - DO NOT DUPLICATE
+01 | PRESENT | exercises/01-akuna-matching-engine.md
+02 | PRESENT | exercises/02-cpp14-orderbook-takehome.md
+03 | PRESENT | exercises/03-hrt-order-book-workshop.md
+04 | PRESENT | exercises/04-nasdaq-itch-decoder.md
+05 | PRESENT | exercises/05-cboe-pitch-decoder.md
+06 | PRESENT | exercises/06-fix-gateway.md
+07 | PRESENT | exercises/07-pretrade-risk-server.md
+08 | PRESENT | exercises/08-spsc-ring-buffer.md
+09 | PRESENT | exercises/09-optiver-ready-trader-go.md
+10 | PRESENT | exercises/10-drw-tetris.md
+11 | PRESENT | exercises/11-imc-prosperity.md
+12 | PRESENT | exercises/12-akuna-shanghai-binary-messages.md
+13 | PRESENT | exercises/13-hrt-partcl-macro-placement.md
+
+Existing corpus also includes question bank1.txt (102 questions), question
+bank2.txt (2,270 issue leads, NOT take-homes), historical files, and the
+Packt MIT-licensed teaching code submodule. Source-file presence is not a
+guarantee that any third-party assessment is employer-authenticated.
+
+B. NOT PRESENT AS AN ORIGINAL STANDALONE EXERCISE FILE
+
+MISSING-001
+FIRM: IMC Trading
+TOPIC: Rock-Paper-Scissors design using visitor pattern
+EVIDENCE STATUS: CANDIDATE FIRSTHAND / TAKE-HOME
+SOURCE: https://www.jointaro.com/interviews/companies/imc-trading/experiences/software-engineer-sydney-new-south-wales-august-1-2025-no-offer-positive-089ec85b/
+SOURCE SCOPE: The 2025 Sydney candidate describes a visitor-pattern take-home; the 2021 Netherlands candidate independently names Rock/Paper/Scissors. Exact scoring/tests are not public.
+FIRST MECHANICAL QUESTION: ONE ACTION: WRITE the three named moves as an input alphabet. The full private prompt is unavailable.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-002
+FIRM: IMC Trading
+TOPIC: Trading matching engine in timed live interview
+EVIDENCE STATUS: CANDIDATE FIRSTHAND / LIVE ROUND (NOT HOMEWORK)
+SOURCE: https://www.jointaro.com/interviews/companies/imc-trading/experiences/c-software-engineer-netherlands-september-1-2021-no-offer-positive-b64f6c35/
+SOURCE SCOPE: Candidate identifies CLion and test-driven live matching; keep distinct from the RPS take-home and IMC's public Prosperity competition.
+FIRST MECHANICAL QUESTION: ONE ACTION: DRAW one empty bid side and one empty ask side.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-003
+FIRM: Jane Street
+TOPIC: TDOE attention-to-detail technical take-home
+EVIDENCE STATUS: OFFICIAL PROCESS / SPEC NOT PUBLIC
+SOURCE: https://www.janestreet.com/join-jane-street/tdoe/
+SOURCE SCOPE: Official Jane Street role page confirms short take-home but does not release full contents; NOT the Jane Street SWE hiring specification.
+FIRST MECHANICAL QUESTION: ONE ACTION: LIST the input columns the eventual assessment actually supplies, without guessing.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-004
+FIRM: Jane Street
+TOPIC: Trading desk operations spreadsheet exercise
+EVIDENCE STATUS: CANDIDATE REPORT / HOME EXERCISE
+SOURCE: https://www.jointaro.com/interviews/companies/jane-street/experiences/trading-operations-engineer-united-kingdom-february-21-2025-no-offer-neutral-f4093616/
+SOURCE SCOPE: UK first-person candidate describes an Excel exercise. The original spreadsheet is not public; no fabricated private tests.
+FIRST MECHANICAL QUESTION: ONE ACTION: COPY a given amount, reference price and rule from a provided spreadsheet before calculating.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-005
+FIRM: Belvedere Trading
+TOPIC: Technical take-home followed by code-extension interview
+EVIDENCE STATUS: CANDIDATE REPORT / CONTENT NOT PUBLIC
+SOURCE: https://api.glassdoor.com/Interview/Belvedere-Trading-Software-Engineer-Interview-Questions-EI_IE250716.0%2C17_KO18%2C35.htm
+SOURCE SCOPE: Candidate reports take-home and subsequent three-hour technical interview covering code review and extension; prompt not accessible.
+FIRST MECHANICAL QUESTION: ONE ACTION: RECORD the implementation's intended invariants before a review extension.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-006
+FIRM: Vest Labs
+TOPIC: ETH-PERP live candlestick chart, REST + Brotli WS
+EVIDENCE STATUS: OFFICIAL PUBLIC TAKE-HOME
+SOURCE: https://github.com/VestLabs/fullstack-takehome-2/blob/main/README.md
+SOURCE SCOPE: Original firm repository README checked: one-minute ETH-PERP chart, TypeScript/React/TradingView lightweight-charts, decoded Brotli WS. Company-set assignment.
+FIRST MECHANICAL QUESTION: ONE ACTION: DRAW two separate incoming transports, REST historical candles and WebSocket updates.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-007
+FIRM: Baraka
+TOPIC: Asset matching-engine take-home
+EVIDENCE STATUS: CANDIDATE-ATTRIBUTED PUBLIC PROJECT
+SOURCE: https://github.com/ZaTribune/assets-matching-engine
+SOURCE SCOPE: Project author explicitly acknowledges Baraka for providing a take-home. The public repo is a completed candidate project, not an authenticated original rubric.
+FIRST MECHANICAL QUESTION: ONE ACTION: DRAW the first incoming buy order and its quantity, based on the author's description.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-008
+FIRM: Tether
+TOPIC: Distributed order-book backend via Grenache RPC
+EVIDENCE STATUS: CANDIDATE-ATTRIBUTED PUBLIC PROJECT
+SOURCE: https://github.com/bender-tech-ltda/tether-orderbook
+SOURCE SCOPE: Author claims Tether senior backend take-home; exact original employer PDF/rubric unverified. P2P propagation, idempotency and stale replica questions only.
+FIRST MECHANICAL QUESTION: ONE ACTION: DRAW two nodes with separate order-book state before copying any delta.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-009
+FIRM: Fireplace
+TOPIC: Polymarket OrderFilled anomaly-indexing exercise
+EVIDENCE STATUS: CANDIDATE-ATTRIBUTED PUBLIC PROJECT
+SOURCE: https://github.com/Vedant-29/Insider-Trading-Detection-Fireplace
+SOURCE SCOPE: Candidate README references ASSIGNMENT.pdf and a data pipeline; employer claim not independently authenticated; avoid copying candidate solutions.
+FIRST MECHANICAL QUESTION: ONE ACTION: WRITE one trade event's maker, taker, token, amount and timestamp as five blank fields.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-010
+FIRM: Independent trading-related task
+TOPIC: Parameter-grid trading optimizer
+EVIDENCE STATUS: PUBLIC ASSIGNMENT TEXT / COMPANY UNKNOWN
+SOURCE: https://github.com/H-Ali63/Trading_strategy_optimizer
+SOURCE SCOPE: An assignment is published but no reliable HFT employer provenance. Do not attribute to a named firm.
+FIRST MECHANICAL QUESTION: ONE ACTION: COPY the first required parameter-set count from the assignment's README.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-011
+FIRM: Tradeweb / user-supplied assignment
+TOPIC: OrderCache with company-restricted matching
+EVIDENCE STATUS: USER-PROVIDED SPECIFICATION / DISTINCT FROM EXCHANGE BOOK
+SOURCE: https://github.com/learnrahulrai-ui/lowlatency/blob/main/question%20bank1.txt
+SOURCE SCOPE: Prior user-supplied take-home rules: C++17, multiple cancel methods, company-restricted matching. No full validated original rubric is present in the 13 exercise files.
+FIRST MECHANICAL QUESTION: ONE ACTION: DRAW one Buy order and one Sell order with equal security but distinct company IDs.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-012
+FIRM: Virtu Financial
+TOPIC: FIX message reconciliation
+EVIDENCE STATUS: THIRD-PARTY OA INDEX / ROLE UNKNOWN
+SOURCE: https://www.fastprep.io/problems/virtu-fix-message-reconciliation
+SOURCE SCOPE: Company attribution comes from independent FastPrep index, not a released Virtu hiring assessment.
+FIRST MECHANICAL QUESTION: ONE ACTION: COPY the initial sequence number and one packet's tag list from the published practice statement.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-013
+FIRM: Citadel
+TOPIC: Limit order-book matching engine
+EVIDENCE STATUS: THIRD-PARTY OA INDEX / ROLE UNKNOWN
+SOURCE: https://www.fastprep.io/problems/citadel-limit-order-book-matching-engine
+SOURCE SCOPE: Potential topic overlaps existing order-book exercises, but exact OA item absent. Do not claim independent source authenticity.
+FIRST MECHANICAL QUESTION: ONE ACTION: COPY the opening order type and its first quantity from the practice statement.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-014
+FIRM: Citadel
+TOPIC: Process scheduling
+EVIDENCE STATUS: THIRD-PARTY OA INDEX / ROLE UNKNOWN
+SOURCE: https://www.fastprep.io/problems/citadel-process-scheduling
+SOURCE SCOPE: Process scheduling is a different exercise from matching engine or FIX parsing.
+FIRST MECHANICAL QUESTION: ONE ACTION: DRAW the first two jobs and their stated arrival times.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-015
+FIRM: Headlands
+TOPIC: Disaster recovery
+EVIDENCE STATUS: THIRD-PARTY OA INDEX / ROLE UNKNOWN
+SOURCE: https://www.fastprep.io/problems/headlands-disaster-recovery
+SOURCE SCOPE: No evidence a particular Headlands SWE received this exact take-home.
+FIRST MECHANICAL QUESTION: ONE ACTION: COPY the first recovery-state input and its limit from the published item.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-016
+FIRM: Two Sigma
+TOPIC: Piecewise linear interpolation and extrapolation
+EVIDENCE STATUS: THIRD-PARTY OA INDEX / ROLE UNKNOWN
+SOURCE: https://www.fastprep.io/problems/twosigma-piecewise-linear-interpolation
+SOURCE SCOPE: The named practice problem is not company-issued rubric evidence.
+FIRST MECHANICAL QUESTION: ONE ACTION: WRITE the first two data points as separate pairs without computing slope.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-017
+FIRM: Hudson River Trading
+TOPIC: Market data signal watcher
+EVIDENCE STATUS: THIRD-PARTY OA INDEX / ROLE UNKNOWN
+SOURCE: https://www.fastprep.io/problems/hudson-river-market-data-signal-watcher
+SOURCE SCOPE: Not the same as official Inside@HRT book workshop.
+FIRST MECHANICAL QUESTION: ONE ACTION: COPY the first message timestamp from the public practice question.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-018
+FIRM: Akuna Capital
+TOPIC: Communications handler
+EVIDENCE STATUS: THIRD-PARTY OA INDEX / ROLE UNKNOWN
+SOURCE: https://www.fastprep.io/problems/akuna-communications-handler
+SOURCE SCOPE: Different from candidate-reported GFD matching exercise.
+FIRST MECHANICAL QUESTION: ONE ACTION: COPY one given connection or message into a one-row event table.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-019
+FIRM: Optiver
+TOPIC: Overheat prevention controller
+EVIDENCE STATUS: THIRD-PARTY OA INDEX / ROLE UNKNOWN
+SOURCE: https://www.fastprep.io/problems/optiver-overheat-prevention-controller
+SOURCE SCOPE: Do not conflate with Ready Trader Go trading competition.
+FIRST MECHANICAL QUESTION: ONE ACTION: DRAW one device with its stated initial temperature.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-020
+FIRM: DRW
+TOPIC: Doctor appointment slot assignment
+EVIDENCE STATUS: THIRD-PARTY OA INDEX / ROLE UNKNOWN
+SOURCE: https://www.fastprep.io/problems/drw-doctor-appointment-slot-assignment
+SOURCE SCOPE: Different from candidate-reported Tetris puzzle.
+FIRST MECHANICAL QUESTION: ONE ACTION: COPY one time interval and its endpoints, no sorting yet.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-021
+FIRM: D. E. Shaw Group
+TOPIC: Maximum L1 distance of equal-length subarrays
+EVIDENCE STATUS: THIRD-PARTY OA INDEX / ROLE UNKNOWN
+SOURCE: https://www.fastprep.io/problems/deshaw-maximum-l1-distance-equal-length-subarrays
+SOURCE SCOPE: No evidence of a real D. E. Shaw take-home from the title.
+FIRST MECHANICAL QUESTION: ONE ACTION: WRITE the first two same-length arrays as two rows.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+MISSING-022
+FIRM: Squarepoint
+TOPIC: Evaluating circuit expressions
+EVIDENCE STATUS: THIRD-PARTY OA INDEX / ROLE UNKNOWN
+SOURCE: https://www.fastprep.io/problems/squarepoint-evaluating-circuit-expressions
+SOURCE SCOPE: Public third-party practice index only.
+FIRST MECHANICAL QUESTION: ONE ACTION: DRAW the first input expression as a tree of operations without evaluating.
+NEXT QUESTION (STOP UNTIL FIRST ANSWERED): Which exact premise in the provided source supports the first action?
+
+C. ADDITIONAL THIRD-PARTY OA METADATA INDEX (NOT TAKE-HOME PROOF)
+SOURCE: https://github.com/perixtar/quant-interview-oa-bank/blob/main/README.md
+SOURCE METHOD: Connected GitHub fetch of entire 2026-07-31 README, parse table
+rows with company, public title, public URL and last-seen date.
+The publisher says role information is NOT available; a firm attribution
+does NOT prove a quant-trader, systems role, or take-home assignment.
+No full problem statements or solution texts are copied here.
+Number of parsed rows: 129. Entries may repeat a topic elsewhere
+in this repo; overlap is marked where the exact title is present.
+
+OA-001 | Optiver | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Overheat Prevention Controller
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/optiver-overheat-prevention-controller
+LAST-SEEN METADATA: 🔥 Jul 30, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-002 | Square Point | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Evaluating Circuit Expressions
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/squarepoint-evaluating-circuit-expressions
+LAST-SEEN METADATA: 🔥 Jul 29, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-003 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Binary Circuit
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-get-max-cost
+LAST-SEEN METADATA: 🔥 Jul 28, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-004 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Items Sort
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-items-sort
+LAST-SEEN METADATA: 🔥 Jul 28, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-005 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimize Malware Spread by Removing a Node
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-minimize-malware-spread
+LAST-SEEN METADATA: 🔥 Jul 28, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-006 | Virtu Financial | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Banking Transaction Exceptions
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/virtu-banking-transaction-exceptions
+LAST-SEEN METADATA: 🔥 Jul 28, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-007 | Virtu Financial | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: FIX Message Reconciliation
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/virtu-fix-message-reconciliation
+LAST-SEEN METADATA: 🔥 Jul 28, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-008 | Virtu Financial | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Profit Analysis
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/virtu-profit-analysis
+LAST-SEEN METADATA: 🔥 Jul 28, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-009 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Limit Order Book Matching Engine
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-limit-order-book-matching-engine
+LAST-SEEN METADATA: 🔥 Jul 26, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-010 | Hudson River Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Count 2x2 Submatrices by Black Cells
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/hrt-count-black-blocks
+LAST-SEEN METADATA: 🔥 Jul 26, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-011 | Hudson River Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Cumulative Unique Bytes
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/hrt-cumulative-unique-bytes
+LAST-SEEN METADATA: 🔥 Jul 26, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-012 | Hudson River Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Market Data Signal Watcher
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/hudson-river-market-data-signal-watcher
+LAST-SEEN METADATA: 🔥 Jul 26, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-013 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Maximum L1 Distance Between Equal-Length Subarrays
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-maximum-l1-distance-equal-length-subarrays
+LAST-SEEN METADATA: 🔥 Jul 26, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-014 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Maximum K-Star Sum
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-maximum-k-star-sum
+LAST-SEEN METADATA: 🔥 Jul 24, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-015 | Point72 | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Initial Public Offering
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/point72-initial-public-offering
+LAST-SEEN METADATA: 🔥 Jul 24, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-016 | Two Sigma | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Sewer Drainage Partition
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/twosigma-sewer-drainage-partition
+LAST-SEEN METADATA: 🔥 Jul 24, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-017 | Virtu Financial | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Count Substrings With Identical Characters
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/virtu-count-identical-character-substrings
+LAST-SEEN METADATA: 🔥 Jul 24, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-018 | Virtu Financial | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: HexSpeak
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/virtu-hexspeak
+LAST-SEEN METADATA: 🔥 Jul 24, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-019 | Virtu Financial | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Maximum Apples That Fit in a Box
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/virtu-maximum-apples-in-box
+LAST-SEEN METADATA: 🔥 Jul 24, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-020 | Virtu Financial | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimum Steps to a Fibonacci Number
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/virtu-minimum-steps-to-fibonacci
+LAST-SEEN METADATA: 🔥 Jul 24, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-021 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Profitable Project Pairs
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-profitable-project-pairs
+LAST-SEEN METADATA: 🔥 Jul 23, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-022 | Optiver | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Power Cell Bank
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/optiver-power-cell-bank
+LAST-SEEN METADATA: 🔥 Jul 23, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-023 | IMC | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Rock Jumping
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/imc-rock-jumping
+LAST-SEEN METADATA: 🔥 Jul 22, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-024 | IMC | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Stack Batch Removal
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/imc-stack-batch-removal
+LAST-SEEN METADATA: 🔥 Jul 22, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-025 | DRW | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Last Round for Each Player
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/drw-last-round-for-each-player
+LAST-SEEN METADATA: 🔥 Jul 21, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-026 | DRW | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Shortest Compressed Length After Removal
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/drw-shortest-compressed-length-after-removal
+LAST-SEEN METADATA: 🔥 Jul 21, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-027 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Array Challenge (QR Intern)
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-array-challenge
+LAST-SEEN METADATA: 🔥 Jul 20, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-028 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Communications Handler
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-communications-handler
+LAST-SEEN METADATA: 🔥 Jul 20, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-029 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: K Smallest Substring
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-get-substring
+LAST-SEEN METADATA: 🔥 Jul 20, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-030 | IMC | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Chain of Command
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/imc-chain-of-command
+LAST-SEEN METADATA: 🆕 Jul 16, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-031 | Optiver | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Construct Binary Tree S-Expression
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/optiver-construct-binary-tree-s-expression
+LAST-SEEN METADATA: 🆕 Jul 16, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-032 | Optiver | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Days Between
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/optiver-days-between
+LAST-SEEN METADATA: 🆕 Jul 16, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-033 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Delivery Management System
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-delivery-management-system
+LAST-SEEN METADATA: 🆕 Jul 15, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-034 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimum Swaps
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-minimum-swaps
+LAST-SEEN METADATA: 🆕 Jul 15, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-035 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Movie Ratings
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-maximize-ratings
+LAST-SEEN METADATA: 🆕 Jul 15, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-036 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimum Changes for a Periodic Palindrome
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-minimum-changes-periodic-palindrome
+LAST-SEEN METADATA: 🆕 Jul 15, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-037 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimum Image Processing Cost
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-minimum-image-processing-cost
+LAST-SEEN METADATA: 🆕 Jul 15, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-038 | DRW | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Doctor Appointment Slot Assignment
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/drw-doctor-appointment-slot-assignment
+LAST-SEEN METADATA: 🆕 Jul 10, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-039 | DRW | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Maximum Even-Sum Neighboring Pairs
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/drw-maximum-even-sum-neighboring-pairs
+LAST-SEEN METADATA: 🆕 Jul 10, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-040 | DRW | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimize Maximum Group Difference
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/drw-minimize-maximum-group-difference
+LAST-SEEN METADATA: 🆕 Jul 10, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-041 | IMC | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Sub-matrix Sums
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/imc-maximum-size-square-sub-matrix-with-sum-less-than-threshold
+LAST-SEEN METADATA: 🆕 Jul 10, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-042 | IMC | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Sub-matrix Sums
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/imc-maximum-sub-square-matrix-sum-less-than-k
+LAST-SEEN METADATA: 🆕 Jul 10, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-043 | IMC | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Choose Containers
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/imc-choose-containers
+LAST-SEEN METADATA: 🆕 Jul 08, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-044 | Two Sigma | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Balanced Split String with Wildcards
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/two-sigma-balanced-split-string-with-wildcards
+LAST-SEEN METADATA: 🆕 Jul 06, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-045 | Two Sigma | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Closest Color
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/two-sigma-closest-color
+LAST-SEEN METADATA: 🆕 Jul 06, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-046 | IMC | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Can Every Package Fit in a Box
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/imc-package-box-fit
+LAST-SEEN METADATA: 🆕 Jul 03, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-047 | Optiver | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Multi-Level Inventory Storage System
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/optiver-multi-level-inventory-storage-system
+LAST-SEEN METADATA: 🆕 Jul 03, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-048 | Point72 | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Test the Hypothesis
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/point72-test-the-hypothesis
+LAST-SEEN METADATA: 🆕 Jul 03, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-049 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimum Frames for Equal Chunks
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-minimum-frames-for-equal-chunks
+LAST-SEEN METADATA: 🆕 Jul 03, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-050 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Non-Alternating Binary Partitions
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-non-alternating-binary-partitions
+LAST-SEEN METADATA: 🆕 Jul 03, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-051 | Qube Research & Technologies | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: 🐘 Keep Them Apart 🦙
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/qrt-keep-them-apart
+LAST-SEEN METADATA: 🆕 Jul 02, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-052 | Qube Research & Technologies | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Array Nullification
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/qrt-array-nullification
+LAST-SEEN METADATA: 🆕 Jul 02, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-053 | Two Sigma | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Linear Interpolator
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/two-sigma-linear-interpolator
+LAST-SEEN METADATA: 🆕 Jun 28, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-054 | Two Sigma | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Online No-Intercept Linear Regression
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/two-sigma-online-no-intercept-linear-regression
+LAST-SEEN METADATA: 🆕 Jun 28, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-055 | Hudson River Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Backtick Identifier Converter
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/hrt-backtick-identifier-converter
+LAST-SEEN METADATA: 🆕 Jun 17, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-056 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Calculate Portfolio Rebalancing Deltas
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-portfolio-rebalancing-deltas
+LAST-SEEN METADATA: May 25, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-057 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Maximum Difference
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-maximum-difference
+LAST-SEEN METADATA: May 25, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-058 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Maximum Label Difference in a Connected Component
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-maximum-component-label-difference
+LAST-SEEN METADATA: May 25, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-059 | Hudson River Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Integer to String Without Built-ins
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/hudson-river-trading-integer-to-string
+LAST-SEEN METADATA: May 13, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-060 | Point72 | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Lexicographically Smallest String After Substring Operation
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/point72-lexicographically-smallest-substring-operation
+LAST-SEEN METADATA: May 10, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-061 | Two Sigma | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Piecewise Linear Interpolation and Extrapolation
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/twosigma-piecewise-linear-interpolation
+LAST-SEEN METADATA: May 10, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-062 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimum Path Sum to Target in Binary Tree
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-minimum-path-sum-to-target-in-binary-tree
+LAST-SEEN METADATA: Apr 30, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-063 | Point72 | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Generate an Optimal Portfolio Trading Report
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/point72-portfolio-trading-optimizer
+LAST-SEEN METADATA: Apr 27, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-064 | DRW | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Simplified Tetris Engine
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/drw-simplified-tetris-engine
+LAST-SEEN METADATA: Mar 23, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-065 | Headlands | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Disaster Recovery
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/headlands-disaster-recovery
+LAST-SEEN METADATA: Mar 21, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-066 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimum Time to Process Requests
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/1.citadel-minimum-time-to-process-requests
+LAST-SEEN METADATA: Mar 02, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-067 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Process Scheduling
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-process-scheduling
+LAST-SEEN METADATA: Mar 02, 2026
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-068 | Two Sigma | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Calculate y/x using Patch
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/twosigma-calculate-y-over-x
+LAST-SEEN METADATA: Nov 09, 2025
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-069 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Best Sum Downward Tree Path
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-best-sum-downward-tree-path
+LAST-SEEN METADATA: May 19, 2025
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-070 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Social Media Suggestions
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-get-recommended-friends
+LAST-SEEN METADATA: May 19, 2025
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-071 | Point72 | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Get Triplet Count
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/point72-get-triplet-count
+LAST-SEEN METADATA: Apr 09, 2025
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-072 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Price Check
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-price-check
+LAST-SEEN METADATA: Feb 06, 2025
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-073 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Palindromic Substrings (LC 647 :)
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-palindromic-substrings
+LAST-SEEN METADATA: Jan 20, 2025
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-074 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Get Minimum Cost
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-get-min-cost
+LAST-SEEN METADATA: Jan 12, 2025
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-075 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Tree Points
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-tree-points
+LAST-SEEN METADATA: Jan 12, 2025
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-076 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Get Distinct Goodness Values
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-get-good-value
+LAST-SEEN METADATA: Jan 09, 2025
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-077 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Get Min Operations
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-get-min-operations
+LAST-SEEN METADATA: Jan 09, 2025
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-078 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Count Stable Segments
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-count-stable-segments
+LAST-SEEN METADATA: Jan 08, 2025
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-079 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Find Consistent Logs
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-find-consistent-logs
+LAST-SEEN METADATA: Oct 20, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-080 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Nearest Neighbouring City
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-find-nearest-cities
+LAST-SEEN METADATA: Oct 03, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-081 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Subarray Removal
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-get-num-subarrays
+LAST-SEEN METADATA: Oct 03, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-082 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Future Stock Prices
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-maximum-amount-of-profit
+LAST-SEEN METADATA: Oct 01, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-083 | Square Point | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Empty Shelf
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/squarepoint-empty-shelf
+LAST-SEEN METADATA: Sep 29, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-084 | Square Point | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Suggested Products
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/squarepoint-suggested-products
+LAST-SEEN METADATA: Sep 29, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-085 | Hudson River Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Future Stock Prices
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/hudsonriver-maximum-amount-profit
+LAST-SEEN METADATA: Sep 28, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-086 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Count the Number of Incremovable Subarrays II
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-count-the-number-of-incremovable-subarrays-ii
+LAST-SEEN METADATA: Sep 21, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-087 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Update Release Scheduler (QR Intern)
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-update-release-scheduler
+LAST-SEEN METADATA: Sep 20, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-088 | Hudson River Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Count Fancy Numbers
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/hudsonriver-count-fancy-numbers
+LAST-SEEN METADATA: Sep 20, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-089 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Get Max Throughput
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-get-max-throughput
+LAST-SEEN METADATA: Sep 19, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-090 | Susquehanna International Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Equal Difference Pairs
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/sig-diff-pairs
+LAST-SEEN METADATA: Sep 19, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-091 | Hudson River Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Increasing Paths, part 1
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/hudsonriver-increasing-paths-1
+LAST-SEEN METADATA: Aug 26, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-092 | Hudson River Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Increasing Paths, part 2
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/hudsonriver-increasing-paths-2
+LAST-SEEN METADATA: Aug 26, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-093 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Subarray Removal
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-subarray-removal
+LAST-SEEN METADATA: Aug 25, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-094 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Maximize Segregation Cost
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-maximize-segregation-cost
+LAST-SEEN METADATA: Aug 06, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-095 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: No Pairs Allowed
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-minimal-operations
+LAST-SEEN METADATA: Aug 06, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-096 | Susquehanna International Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Counting Triples
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/counting-triples
+LAST-SEEN METADATA: Aug 05, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-097 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Effective Manager
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-max-meetings
+LAST-SEEN METADATA: Jul 26, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-098 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: An Evening of Movies
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-longest-marathon
+LAST-SEEN METADATA: Jul 24, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-099 | Optiver | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Customer Checkout Duration
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/optiver-customer-checkout-duration
+LAST-SEEN METADATA: Jul 24, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-100 | Hudson River Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Stock Buy Sell Position Indicator
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/hudsonriver-buy-sell-stock
+LAST-SEEN METADATA: Jul 17, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-101 | Jane Street | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Transform String
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/janestreet-transform-string
+LAST-SEEN METADATA: Jul 17, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-102 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Get Minimum Cost
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-get-minimum-cost
+LAST-SEEN METADATA: Jun 02, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-103 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Find Number of Interesting Pairs
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-find-number-of-interesting-pairs
+LAST-SEEN METADATA: May 10, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-104 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Maximum Size Subarray Sum
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-maximum-size-subarray-sum
+LAST-SEEN METADATA: Apr 24, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-105 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Calculate Region
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-calculate-total-region
+LAST-SEEN METADATA: Apr 20, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-106 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Array Break
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-perfect-break
+LAST-SEEN METADATA: Apr 19, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-107 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Maximize the Lottery ID
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-maximize-the-lottery-id
+LAST-SEEN METADATA: Apr 03, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-108 | Wolverine Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Permutation Operations 🌻
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/wolverine-trading-count-operations
+LAST-SEEN METADATA: Mar 18, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-109 | Wolverine Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Shared Interest 🌷
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/wolverine-trading-max-shared
+LAST-SEEN METADATA: Mar 18, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-110 | Wolverine Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: The Huffman Decoder 🌼
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/wolverine-trading-decode
+LAST-SEEN METADATA: Mar 18, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-111 | Two Sigma | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Nums That Are Divisible by N 🍋
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/ts-nums-that-can-be-divided-by-n
+LAST-SEEN METADATA: Mar 17, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-112 | Two Sigma | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Replacing Val 🍓
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/ts-replacing-num
+LAST-SEEN METADATA: Mar 17, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-113 | Geneva Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimum Number of Permutation Operations 👑
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/geneva-trading-minimum-number-of-permutation-operations
+LAST-SEEN METADATA: Mar 16, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-114 | IMC | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Asteroid Collision (IMC Sydney 🐚)
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/imc-asteroid-game
+LAST-SEEN METADATA: Mar 12, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-115 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Get Distinct Goodness Values
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-get-distinct-goodness-values
+LAST-SEEN METADATA: Mar 06, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-116 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Get Minimum Operations
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-get-minimum-operations
+LAST-SEEN METADATA: Mar 06, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-117 | Optiver | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Print Schedule
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-print-schedule
+LAST-SEEN METADATA: Mar 06, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-118 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Police Station 🚓
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-min-acquire-cost
+LAST-SEEN METADATA: Mar 06, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-119 | IMC | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Avoiding the Obstacles (IMC Sydney 🦪)
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/imc-find-best-path
+LAST-SEEN METADATA: Mar 02, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-120 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimum Operations to Make Array Equal 🍋
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-minimum-operations-to-make-array-equal
+LAST-SEEN METADATA: Mar 02, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-121 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Math with Lego Blocks
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/citadel-find-minimum-equal-sum
+LAST-SEEN METADATA: Feb 28, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-122 | Hudson River Trading | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Max Harvested Crops
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/hudsonriver-harvest-crops
+LAST-SEEN METADATA: Feb 28, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-123 | The D. E. Shaw Group | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Find Maximum Beauty
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/deshaw-find-maximum-beauty
+LAST-SEEN METADATA: Feb 24, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-124 | Walleye Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Get Minimum Time for DNS Resolution
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/walleye-get-min-time
+LAST-SEEN METADATA: Feb 20, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-125 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Difference Calculator (Akuna Shang Hai 🏙️)
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-difference-calculator
+LAST-SEEN METADATA: Feb 02, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-126 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimum Chunks Required (Akuna Shang Hai 🌆)
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-minimum-chunks-required
+LAST-SEEN METADATA: Feb 02, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-127 | Akuna Capital | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Minimum Cost to Move Within a Grid (Akuna Shang Hai 🌃)
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/akuna-min-cost
+LAST-SEEN METADATA: Feb 02, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-128 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Count Increasing Triplets
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/1.citadel-triplets
+LAST-SEEN METADATA: Jan 10, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+OA-129 | Citadel | EXACT TITLE NOT FOUND IN PRIOR BANKS
+TITLE: Prime Factor Visitation
+PUBLISHED PRACTICE URL: https://www.fastprep.io/problems/1.prime-factor-visitation
+LAST-SEEN METADATA: Jan 10, 2024
+FIRST QUESTION: COPY the first numerical input from the public problem statement. If unavailable, write INPUT NOT VERIFIED.
+
+EVIDENCE/QUALITY LIMITS
+- The GitHub provider labels its 129 rows as question bank items, not
+  publisher-authenticated complete HFT hiring take-homes.
+- First-person accounts can be inaccurate or change by hiring season.
+- Jane Street's official TDOE description cannot establish Jane SWE tests.
+- IMC's official recruitment page confirms some technical take-homes, but
+  does not publish the RPS task/rubric. The latter is candidate-reported.
+- Vest Labs original file was directly fetched; it is React/TypeScript,
+  not a C++ kernel/HFT matching-engine assignment.
+- All tasks above are unsolved.
+- No original repository file is to be removed.
+END MISSING TAKE-HOME AUDIT
