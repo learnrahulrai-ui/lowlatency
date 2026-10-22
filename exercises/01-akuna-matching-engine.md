@@ -39,3 +39,7 @@ FOLLOW-UP: CALCULATE: Apply the first described event and write only the resulti
 ## Deliverables (see root README)
 Input generator, simple reference, deterministic tests, benchmark, short write-up.
 FOLLOW-UP: DRAW: Record the initial numerical state before processing the first event.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+Status remains candidate-reported, not employer-authenticated. The command list and price-time behavior are specifications to verify from the full candidate report, not proof of current Akuna hiring rules.
+ONE ACTION: COPY the first five tokens in the sample BUY command.
