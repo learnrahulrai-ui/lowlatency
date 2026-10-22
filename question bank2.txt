@@ -9269,3 +9269,2113 @@ CLAIM: [BUG] Key-spec `numkeys` signed-integer-overflow aborts trapping/hardened
 SOURCE: https://github.com/redis/redis/issues/15403
 FIRST ACTION: EXTRACT the first stated failure condition and one observed result; record NO REPRODUCER if unspecified.
 
+QB2-1849 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Workload scheduler: possible self-deadlock in AllocationQueue on eviction
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/125116
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1850 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Concurrent partition-scoped ALTERs deadlock the replication queue forever via max_replicated_mutations_in_queue
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/123957
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1851 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Long running query exceed distributed_ddl_task_timeout leads to deadlock
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/49655
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1852 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MergingSortedTransform deadlocks in its always_read_till_end drain: NeedData with all inputs finished ("Pipeline stuck")
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/114723
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1853 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `DEPENDS ON` cycle of refreshable views stops refreshing after retry exhaustion
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/123775
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1854 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Logical error: Pipeline stuck still happens
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/106237
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1855 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Kafka engine — zombie consumer-group sessions after ClickHouse restart block partition assignment
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/104305
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1856 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Workload CPU scheduling for merges and mutations
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/84610
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1857 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Mutation analysis still fails with `CANNOT_INSERT_NULL_IN_ORDINARY_COLUMN` when the scalar subquery returns a `Tuple` or `Map` with `Nullable` elements — residual of #119926
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/122279
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1858 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Nodes with `always_fetch_merge_parts=1` using significant CPU (25 core+) while waiting for remote merges to complete
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/51921
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1859 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: iceberg_manifest_decode_concurrency: make the default 'auto' instead of 4
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/127061
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1860 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build post-hook fails fleet-wide: build-profile INSERT into the CI logs cluster rejected with `MEMORY_LIMIT_EXCEEDED`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/113408
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1861 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Concurrent ALTER ... UPDATE on a JSON column produces truncated subcolumn files that replicate to all replicas (CANNOT_READ_ALL_DATA), blocking table startup
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/109053
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1862 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Uninterruptible CPU-bound function evaluation over a large value
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/112203
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1863 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hung check failed, possible deadlock found
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/118833
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1864 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 4-letter command `rcvr` not working when doing a keeper DR reconfig
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/63265
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1865 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Docs: no info about multiple column DROPs and alter_sync in ALTER TABLE query
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/122019
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1866 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Quadratic complexity of applying MergeOnKey patch parts with long equal-key runs
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/115732
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1867 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Stress test `Hung check` fails without finding a hung query: the check's own `system.stack_trace` query queues behind another reader of it
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/121413
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1868 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: LDAP user directory: one in-flight LDAP bind stalls all queries server-wide (storage mutex held across network call)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/123935
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1869 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Limit max_insert_threads by available memory. 
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/59112
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1870 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Large merges on object storage deadlock each other on the disk connection limit
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/119660
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1871 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Backport #92925 to 25.8: segfault rebuilding _part_offset projection during CoalescingMergeTree merge
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/106929
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1872 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Automatic MergeTree merge remains at progress=1 indefinitely and background merge scheduling stops
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/110772
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1873 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unkillable synchronous DROP of a table with inner tables: the inner drop waits in `waitTableFinallyDropped` without a process-list element (stress hung check: `DROP TABLE prometheus`)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/114259
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1874 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ThreadSanitizer: potential deadlock (STID: 5654-6326)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/107776
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1875 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Plain `MergeTree`: `REPLACE PARTITION` and `TRUNCATE` in a transaction keep the deduplication block IDs of removed parts, so a later identical `INSERT` is silently dropped
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/122805
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1876 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Parquet over many local files: a second pool of decode threads competes with the reading streams; decoding in the reading threads makes short ClickBench queries 5-10% faster
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/124918
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1877 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Server rejects all queries for minutes: the usage side of the total memory limit check freezes at the previous peak while the limit keeps updating
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/117681
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1878 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hung check failed, possible deadlock found
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/107941
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1879 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ALTER ... REMOVE TTL is invisible to mutation and merge ordering: a replica that has not applied the ALTER_METADATA still deletes rows under the removed TTL
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/121819
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1880 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Stress test hung check: 100 threads serialized on SerializationObject callbacks_mutex held across a blocking marks-load wait, amplified by a 3-per-refill TEST log storm under ThreadFuzzer
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/114136
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1881 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The optimization for v23.6 leads to problems with using StorageJoin tables
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/52016
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1882 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Logical error: Pipeline stuck. Current state: (STID: 3833-2f20)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/116484
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1883 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: closeAllConnections blocks on the Poco SSL lock: tcp_port_secure stalls shutdown
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/119393
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1884 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Deadlock on shutdown in `rocksdb` 
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/58294
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1885 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: h3PolygonToCellsWithContainment hangs unkillably on degenerate polygon coordinates
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/116195
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1886 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: TRUNCATE ALL TABLES throws LOGICAL_ERROR 49 when database holds an Alias table
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/121129
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1887 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RWLockImpl::getLock re-entrant deadlock in CREATE OR REPLACE internal DROP (STID 2043-3c5c)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/110893
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1888 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ReplicatedMergeTree: fully expired TTL drop still postponed by source size after #86439, occupying the only TTL queue slot
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/119775
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1889 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hung check failed, possible deadlock found
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/107477
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1890 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hung check failed, possible deadlock found
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/107171
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1891 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Possible deadlock using clusterAllReplicas against system tables
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/66351
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1892 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: I experience query slowness when dictionaries are reloading - only for queries which use dictionary. Can lock contention in a destructor be the cause?
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/96807
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1893 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Parallel parsing starts threads for small text files that fit in one segment; parse the first segment in the reading thread
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/124660
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1894 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Shard-queue cap bypass buffers the whole input on a plain GROUP BY (40x memory)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/116038
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1895 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CI crash] Segmentation fault in MergeTree background part cleanup (`clearPartsFromFilesystemImplMaybeInParallel`)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/112896
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1896 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Server shutdown blocks indefinitely in `~MergeTreeData()` waiting for `refreshStatistics()`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/125136
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1897 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Parquet: one file is decoded by a single thread because each read stage gets 1/5 of the parsing threads (ClickBench q21 -48%, q24 -54%)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/124139
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1898 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Flush/unsupported message sets ignore_until_sync: simple-query connection goes deaf
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/118202
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1899 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crash: Abort trap: 6
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/84761
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1900 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Deadlock in `PipelineExecutor`/`ExecutorTasks` on query cancellation
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/41939
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1901 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hung check failed, possible deadlock found
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/100445
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1902 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ThreadSanitizer: potential deadlock (STID: 4059-4a26)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/97966
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1903 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Infinite uncancellable loop in function `hop` at analysis time: a window interval whose span wraps to 0 modulo 2^32 dodges the time-overflow guard
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/114605
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1904 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Logical error: 'Pipeline stuck' on UNION ALL of two enable_sharding_aggregator=1 GROUP BY branches
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/108413
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1905 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hung check failed, possible deadlock found with distributed plan
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/107029
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1906 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: AST fuzzer: fuzzed `QueryRunner` tables with `threads = 1024` exhaust the global thread pool (`CANNOT_SCHEDULE_TASK` storm, job killed as `Received signal 15`)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/114367
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1907 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Deadlock in clickhouse-client in case of MEMORY_LIMIT_EXCEEDED
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/87001
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1908 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Long query run time when using SSB benchmark
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/40602
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1909 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Local ContextPtr may stuck in IndicesDescription holding some shared pointers
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/54890
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1910 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Index analysis schedules one pool job per part; one job per thread makes text-index searches over many parts 21-45% faster
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/122556
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1911 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: connection_pool_max_wait_ms default is 0, (non negative), but Common/PoolBase.h check expect it to be <0
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/112053
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1912 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CI: `SYSTEM FLUSH LOGS query_log` hangs for 180 s in `Stateless tests (amd_tsan, flaky check)` across unrelated pull requests since 2026-07-24
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/112191
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1913 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Test reference file hardcodes database-dependent ZK paths, causing CI failure
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/101136
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1914 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: DDL locks are possible and should be resolved or documented as normal behavior
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/25273
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1915 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow interactive queries finish in the background
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/49683
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1916 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: EXPLAIN returns a different query plan than actually executed
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/106256
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1917 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [RFC] Reclaimable memory and dynamic spilling on top of memory reservations
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/109064
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1918 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hung check failed, possible deadlock found
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/101383
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1919 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Flaky test: test_replicated_database::test_sync_replica exceeds 900s pytest-timeout (slow, not a DROP DATABASE SYNC hang)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/107378
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1920 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: nullIf(key, sentinel) predicates build no key range — primary key / partition / skip indexes not used (mirror of #94754)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/107209
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1921 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: LOGICAL_ERROR (Code 49): Found patch part intersects mutation with version [ID] (Mutation ID missing from system.mutations)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/98898
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1922 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [RFC] Limited support for transactions in MergeTree tables
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/22086
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1923 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Slow shutdown of `MergeTreeBackgroundExecutor`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/50933
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1924 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Stress test 'px != 0' residual: loadOutdatedDataParts terminate on transient MEMORY_LIMIT_EXCEEDED
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/106736
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1925 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Logical error "Part X intersects part Y": plain MergeTree merge selector can span a gap that a concurrent merge fills (STID 4462-571d)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/108515
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1926 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Query planner stuck for hours in bloom_filter index analysis when WHERE references a large scalar subquery Map, query cannot be killed
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/113003
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1927 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Flaky test: test_totp_auth/test_totp.py::test_interactive_totp_authentication
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/101589
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1928 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: First modelEvaluate() call on a newly created CatBoost model deadlocks forever
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/13832
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1929 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Deadlock in `WriteBufferFromS3::waitForAllBackGroundTasks`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/48136
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1930 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Potential deadlock in TSAN
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/57367
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1931 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: AST-fuzzer-internal-path: executor/planner assertions on type-invalid inputs the analyzer normally rejects (5 sites: `IColumn`, `KeyCondition`, `SingleValueData`, `ActionsDAG` ×2)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/107951
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1932 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Segfault in `__thread_stack_pcs` under the macOS query/memory profiler makes `Fast test (arm_darwin)` fail with `Server died` across PRs
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/111579
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1933 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unix domain socket for localhost connections
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/22260
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1934 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Possible missing infinite recursion check missing
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/78360
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1935 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ThreadSanitizer: lock-order-inversion in librdkafka
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/84144
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1936 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: clickhouse-client hangs on exit when user lacks SELECT ON *.* — suggestion thread blocks on system.columns metadata lock (regression in 25.x)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/99694
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1937 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Queries stuck when high traffic insert to kafka table
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/72437
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1938 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Clickhouse on ARM spams libunwind: Unsupported .eh_frame_hdr version to the stdout
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/15638
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1939 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CI crash] Condition variable wait interrupted in ConcurrentBoundedQueue
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/93682
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1940 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Background Merges stuck on different replicas from time to time, requiring restart to solve
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/44865
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1941 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crash during shutdown in `Poco::Event::waitImpl` during `ThreadFromGlobalPoolImpl::join` (STID: 2104-3e8a)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/92297
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1942 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ThreadSanitizer: lock-order-inversion with database rename
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/87985
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1943 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Another TSAN report on database rename
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/90026
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1944 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Logical error: 'Deadlock in Parquet::ReadManager (single-threaded)' with new Parquet reader
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/86222
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1945 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: There is a deadlock in IcebergMetadata in the 25.4 version
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/85770
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1946 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 00090_thread_pool_deadlock is flaky
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/75874
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1947 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 00090_thread_pool_deadlock is flaky
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/79325
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1948 | ClickHouse-deadlock | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Potential deadlock (or major bottleneck) in `AsynchronousBoundedReadBuffer`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/54360
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1949 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Alter metadata and mutation race
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/55100
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1950 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Race condition on `StorageObjectStorageConfiguration::(get/set)Paths`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/90967
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1951 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 04838 sync polls a queue count the INSERT already satisfies: flaky RENAME race
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/120528
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1952 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Kafka partition can stay paused: resume_partitions dropped right after assign
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/125938
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1953 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: S3Queue - A lost claim-race permanently caches a file as Processing
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/115406
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1954 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Data race on `FutureSetFromSubquery::source` between two storage iterators building the sets of a shared `ActionsDAG`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/118784
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1955 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Iceberg commit retries a failed metadata write as a lost race: `OPTIMIZE TABLE ... MANIFEST` ends in `LOGICAL_ERROR` after 100 attempts
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/126287
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1956 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Silent data loss: OPTIMIZE FINAL that waits for a running merge keeps a stale metadata snapshot, so a concurrent RENAME COLUMN is stamped as applied but written with the old name
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/122704
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1957 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Fix the 01019_alter_materialized_view_atomic.sh Failure Caused by Potential Race Condition
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/81720
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1958 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `checkDropOrRenameCommandDoesntAffectInProgressMutations` doesn't detect conflict between `DROP STATISTICS` and `MATERIALIZE STATISTICS ALL`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/104894
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1959 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: FREEZE permanently fails with empty shadow/increment.txt after concurrent FREEZE/UNFREEZE race — no self-recovery
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/105719
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1960 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `ALTER RENAME COLUMN` racing with a merge still loses data on `26.3`: `04238_alter_rename_column_merge_race` fails ~12% there and 0% everywhere else
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/119382
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1961 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [deepsec] ContextAccess / EnabledRoles / AccessChangesNotifier: data races and invalidated-iterator capture
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/104647
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1962 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Graceful shutdown server persistent connections with 408
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/61873
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1963 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Plain MergeTree: a concurrent DETACH PARTITION silently reverts an acknowledged lightweight UPDATE (assertNoPatchesForParts guard has a TOCTOU hole)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/116633
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1964 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Continuous NO_SUCH_DATA_PART Error
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/84541
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1965 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Flaky test 01513_count_without_select_sequence_consistency_zookeeper_long: UNSATISFIED_QUORUM_FOR_PREVIOUS_WRITE on quorum INSERT
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/110298
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1966 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Segmentation fault (STID: 4085-568b)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/121577
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1967 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Concurrent lightweight DELETE can mark an earlier mutation done without applying it
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/122083
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1968 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support dropping all tables within a database with only `DROP TABLE` privileges
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/68903
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1969 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Randomization of tests with DETACH/ATTACH table.
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/33850
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1970 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `ALTER MODIFY COLUMN` is accepted while a queued mutation still uses the column under its old type — the mutation then retries `ILLEGAL_TYPE_OF_ARGUMENT` forever and wedges the table's mutation queue
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/120903
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1971 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Non-permanent DETACH frees a table_disk root, breaking next load (#124298)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/126390
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1972 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Data race on the settings of a `Memory` table between `ALTER TABLE ... MODIFY SETTING` and `INSERT` (TSan)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/126586
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1973 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Zoo]Keeper load balancing based on `mntr` or `srvr` 4LW commands
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/47837
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1974 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: S3Queue `after_processing='delete'` silently leaves objects in the bucket
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/114801
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1975 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Data race on the settings of an `EmbeddedRocksDB` table: `getSettings` returns a reference into a `MultiVersion` snapshot that `ALTER TABLE ... MODIFY SETTING` frees (TSan)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/126587
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1976 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Flaky test `04640_query_log_map_columns_serialization`: `sum` over the prefetched read pool returns exactly 2^23 too much; `asynchronous_read_counters` sometimes empty in Fast test
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/113762
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1977 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Configuration of server log is not applied until restart
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/10438
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1978 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: DDLWorker skips every ON CLUSTER task after first start on a fresh volume ("There is no a local address in host list") until restart
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/124717
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1979 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Recursive CTE with a self-join branch hangs instead of failing with TOO_DEEP_RECURSION (Thread Sanitizer)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/116016
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1980 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Parallel replicas INSERT SELECT into a DeltaLake table commits once per replica: commit conflict, lost or partial data
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/120714
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1981 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Object storage globs read Hive staging and marker paths (_temporary/, .spark-staging-*/): phantom rows and "The specified key does not exist" failures racing writer commits
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/121436
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1982 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: AddressSanitizer: CHECK failed: sanitizer_allocator_secondary.h:199 "((nearest_chunk)) >= ((h->map_beg))"
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/107157
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1983 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: UBSan: pointer overflow in BufferBase when reading RocksDB slices (EmbeddedRocksDB read-only mode)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/99862
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1984 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Object-storage `local` metadata files are rewritten in place (O_TRUNC, no journal): a SIGKILL during a mutation clone or old-part cleanup loses a committed part's acked rows
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/113179
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1985 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Plain MergeTree: concurrent MOVE PARTITION TO TABLE / REPLACE PARTITION FROM silently drops an acknowledged lightweight UPDATE (assertNoPatchesForParts TOCTOU on the move/replace paths)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/116638
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1986 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Signed overflow in `constantValueInSeconds` for `DateTime64` near `INT64_MIN`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/125860
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1987 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Clients can still send data after SYSTEM STOP LISTEN command
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/54109
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1988 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: FR: Cluster-wide Keeper-mediated session-scoped advisory locks
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/121664
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1989 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ReplicatedMergeTree: concurrent MOVE PARTITION TO TABLE / REPLACE PARTITION FROM silently drops an acknowledged lightweight UPDATE (assertNoPatchesForParts drain missing on the move/replace paths)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/116643
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1990 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: UNDROP for replicated database engine
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/56062
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1991 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: A buffered common subplan (`ReadFromCommonBuffer`) can be read before its writers finish: `Trying to extract chunk from ChunkBuffer before all inputs are finished`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/119375
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1992 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Cleanup thread stops after ZooKeeper session expiry, parts accumulate
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/92607
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1993 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: No such file or directory from KeeperAsynchronousMetrics
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/78575
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1994 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Idempotency key for DDL operations
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/95963
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1995 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Incremental BACKUP dedup ignores base_size: RESTORE silently returns wrong data with a RESTORED ack
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/112403
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1996 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Seal-gated reading: logical error `filter && filter->isReady()` when the JOIN build side stops early (`join_overflow_mode = 'break'`)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/124961
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1997 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: TTL Delete for a table is not executing as expected
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/30645
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1998 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: DROP DATABASE throws UNKNOWN_TABLE exception 
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/71475
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-1999 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Logical error 'txn' in ImplicitTransactionControlExecutor::commit on cancelled implicit-transaction query
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/107446
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2000 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: librdkafka fork missing `ERR__DESTROY` guard in `rd_kafka_handle_SaslAuthenticate` — spurious SASL errors on Kafka engine producer destroy
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/104001
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2001 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Stress test: S3_ERROR "No such key" during background merge on cached_s3_encrypted (foreground merge-read variant, not covered by #108489)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/111188
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2002 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Dictionary `HOST '[x'` now hits a `DNSResolver` `chassert`: debug builds abort
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/123776
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2003 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Recommended approach for atomic partition loading in ReplicatedMergeTree ETL pipelines
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/103186
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2004 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Backport #100822 to 26.3: ATTACH PARTITION FROM aborts merges in other partitions
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/127436
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2005 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Clickhouse nodes OOM Kill
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/77705
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2006 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Segmentation fault in RemoteQueryExecutorReadContext async fiber resume during shutdown/timeout (STID: 4348-2010)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/110124
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2007 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: FR: Commit an app-supplied DDL tag value atomically alongside a DDL operation
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/121651
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2008 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Reading an object storage table in order can return unsorted rows
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/112981
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2009 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ThreadSanitizer: data race (STID: 2377-33f2)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/113265
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2010 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Data race on `StorageFile::paths`: heap-buffer-overflow, wrong results and lost files on concurrent INSERT
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/121517
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2011 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Direct `SELECT` can steal rows/messages from materialized view
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/108419
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2012 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Feature request: TTL setting for S3Queue failed files + SYSTEM command to clear the failed set in Keeper
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/113054
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2013 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Too many optimizations applied to query plan. Current limit 10000
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/25131
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2014 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Load job <table_name> failed with table which depends on xml-declarated dictionary.
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/67521
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2015 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Storage-policy config reload may claim pre-existing data on newly added disks
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/109823
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2016 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow cancelling queries in the middle of blocking operations 
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/47272
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2017 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Iceberg read-in-order returns unsorted rows when data files outnumber streams
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/127435
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2018 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Fuzzer of data formats.
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/33165
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2019 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ReplicatedMergeTree: ALTER UPDATE accepted on a replica with stale metadata after a concurrent RENAME COLUMN; mutation fails forever with NO_SUCH_COLUMN_IN_TABLE and wedges the table's mutation queue
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/127174
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2020 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `Table is in readonly mode due to shutdown` after DROP DATABASE with Replicated table and size bigger than `max_table_size_to_drop`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/62933
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2021 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: BACKUP to S3: concurrent backups to the same destination can both be acked BACKUP_CREATED, one unrestorable (.lock claimed by check-then-create, no conditional write)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/112407
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2022 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hedged requests + offset-based parallel replicas silently duplicate a sample segment when the replacement replica connects after the offset already received data
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/118452
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2023 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MOVE PARTITION TO DISK/VOLUME can destroy the moved part on both disks after power loss: destination clone is never fsynced and the source part is deleted at ack
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/111432
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2024 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Concurrent `ALTER NAMED COLLECTION` on a Keeper-backed store silently loses one update: both ALTERs report success, one change vanishes
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/114996
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2025 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Patch merge spans a running merge's data version on MergeTree: LOGICAL_ERROR
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/116047
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2026 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Correlated scalar subquery: max() over a non-empty group returns NULL for a subset of rows under a small max_block_size (nondeterministic wrong result)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/115028
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2027 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: generateSerialID blocks indefinitely on Keeper quorum loss -- inconsistent timeout behavior
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/99722
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2028 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Silent row loss: a merge racing `DETACH PARTITION` commits an empty part that covers the detached data, and `ATTACH PARTITION` then strands the rows as `inactive_*`
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/118765
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2029 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `StorageKafka`: `KafkaConsumer::commit` never returns when no broker is reachable, stalling the table until the server restarts
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/113920
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2030 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: HudiMetadata lazily initializes its shared file list without synchronization — data race between concurrent queries on one Hudi table
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/117317
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2031 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: A TTLDelete merge refused by a full background pool is dropped while the partition's TTL timer stays armed, so expired rows outlive merge_with_ttl_timeout
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/119717
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2032 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Iceberg expire_snapshots treats a permission error on the metadata write as a commit conflict and fails with LIMIT_EXCEEDED
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/125343
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2033 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: query_plan_join_swap_table changes the result of ANY INNER JOIN with OR-ed ON conditions (deterministic, max_threads = 1)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/114354
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2034 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Dropping a nested column group bypasses every ALTER protection
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/114481
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2035 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Aggregating over `x IN (subquery using shardNum())` from `remote()`/`Distributed` fails: 10 NOT_FOUND_COLUMN_IN_BLOCK — initiator and shard disagree on the `__set_` id
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/113183
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2036 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Flaky test: 02669_alter_modify_to_nullable (ALTER MODIFY -> Nullable metadata-only optimization falls back to full rewrite)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/108845
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2037 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Concurrent `file()` inserts with multiple files share one file: rows lost
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/122746
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2038 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: REPLACE PARTITION silently degrades to ATTACH across publish retries, so a racing INSERT survives it
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/125954
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2039 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `checkDataPart` skips `txn_version.txt` only if it existed before the scan
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/124371
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2040 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Iceberg native writes: one lost response on a `metadata.json` PUT destroys the table and deletes the committed snapshot's data — an ambiguous commit is treated as a conflict and cleaned up
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/112081
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2041 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ATTACH PART/PARTITION is not power-loss durable: both commit renames are unsynced, an acknowledged attach silently reverts (and can strand the part under attaching_*)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/111433
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2042 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Since 26.8 a plain `INSERT` is written by parallel sinks by default: `CollapsingMergeTree` / `EmbeddedRocksDB` / `ReplacingMergeTree` keep an older row than the last one inserted (regression)
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/126613
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2043 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `diff-review` server gates only `POST /submit` on the session nonce; `GET /data` serves the entire uncommitted working tree to any unauthenticated local request
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/113995
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2044 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The `Replicated` mutation determinism guard misses a non-deterministic function hidden in an `ALIAS` or recomputed `MATERIALIZED` column — replicas mutate divergently and reconcile by first-committer-wins download
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/122281
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2045 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RESTORE leaves orphan empty table after mid-restore crash
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/104464
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2046 | ClickHouse-race | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SQLancerPP nightly job runs without `mutations_sync`, so its two-query oracles race async mutations
+SOURCE: https://github.com/ClickHouse/ClickHouse/issues/116422
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2047 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: rust: make the unchecked read path a gencode-only boundary with one checked entry point
+SOURCE: https://github.com/google/flatbuffers/issues/9428
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2048 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: reflection: ForAllFields writes out of bounds when field->id() exceeds fields()->size()
+SOURCE: https://github.com/google/flatbuffers/issues/9426
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2049 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Object API: Pack() dereferences null when a union has its type set but no value (buffer passes the verifier)
+SOURCE: https://github.com/google/flatbuffers/issues/9416
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2050 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Go] Object size is not considered during vtable de-duplication
+SOURCE: https://github.com/google/flatbuffers/issues/9413
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2051 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Pilot: adopt the Safe Buffers model (-Wunsafe-buffer-usage) for idl_parser.cpp
+SOURCE: https://github.com/google/flatbuffers/issues/9314
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2052 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Runtime hardening: unverified GetRoot/table/vector access allows OOB read/crash from tiny buffers + insecure sample
+SOURCE: https://github.com/google/flatbuffers/issues/9295
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2053 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GLD Serializer Benchmark] Swift FlatBuffers 24.3.25 — spec compliance misses
+SOURCE: https://github.com/google/flatbuffers/issues/9256
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2054 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GLD Serializer Benchmark] Rust flexbuffers 2.0.0 — spec compliance misses
+SOURCE: https://github.com/google/flatbuffers/issues/9255
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2055 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GLD Serializer Benchmark] Python flexbuffers — spec compliance misses
+SOURCE: https://github.com/google/flatbuffers/issues/9254
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2056 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GLD Serializer Benchmark] Python flatbuffers 25.12.19 — spec compliance misses
+SOURCE: https://github.com/google/flatbuffers/issues/9253
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2057 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GLD Serializer Benchmark] Kotlin flatbuffers 24.3.25 — spec compliance misses
+SOURCE: https://github.com/google/flatbuffers/issues/9252
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2058 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GLD Serializer Benchmark] JavaScript flexbuffers 24.12.23 — spec compliance misses
+SOURCE: https://github.com/google/flatbuffers/issues/9251
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2059 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GLD Serializer Benchmark] JavaScript flatbuffers 24.12.23 — spec compliance misses
+SOURCE: https://github.com/google/flatbuffers/issues/9250
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2060 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GLD Serializer Benchmark] Java flatbuffers unknown — spec compliance misses
+SOURCE: https://github.com/google/flatbuffers/issues/9249
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2061 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GLD Serializer Benchmark] C++ flexbuffers flatbuffers-flex — spec compliance misses
+SOURCE: https://github.com/google/flatbuffers/issues/9248
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2062 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GLD Serializer Benchmark] C++ flatbuffers flatbuffers — spec compliance misses
+SOURCE: https://github.com/google/flatbuffers/issues/9247
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2063 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Allow to disable lowercase snake_case warning for fields
+SOURCE: https://github.com/google/flatbuffers/issues/9243
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2064 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Rust] Clarify MSRV and Clippy policy
+SOURCE: https://github.com/google/flatbuffers/issues/9238
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2065 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Rust] Add paired doctests for vector unsafe-call contracts
+SOURCE: https://github.com/google/flatbuffers/issues/9232
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2066 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] `flatc --python` silently overwrites existing `__init__.py` files
+SOURCE: https://github.com/google/flatbuffers/issues/9229
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2067 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Generated type stubs don't work
+SOURCE: https://github.com/google/flatbuffers/issues/9224
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2068 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Incorrect usage of py.typed marker
+SOURCE: https://github.com/google/flatbuffers/issues/9223
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2069 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [benchmark] Request for call-path / fairness review (GLD.SerializerBenchmark)
+SOURCE: https://github.com/google/flatbuffers/issues/9221
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2070 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CMake package should expose a single canonical flatbuffers::flatbuffers target
+SOURCE: https://github.com/google/flatbuffers/issues/9206
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2071 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: OSS-Fuzz issue 542909756
+SOURCE: https://github.com/google/flatbuffers/issues/9194
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2072 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Heap Out-of-Bounds Write via Integer Overflow in FlatBufferBuilder
+SOURCE: https://github.com/google/flatbuffers/issues/9193
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2073 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Publish a Linux ARM64 flatc in releases
+SOURCE: https://github.com/google/flatbuffers/issues/9191
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2074 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Rust: Verifier::reset() does not reset apparent_size (duplicated num_tables assignment)
+SOURCE: https://github.com/google/flatbuffers/issues/9189
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2075 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Request for the fairness review
+SOURCE: https://github.com/google/flatbuffers/issues/9185
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2076 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] FlatBufferBuilder writes unreadable buffers on targets where alignof(scalar) < sizeof(scalar)
+SOURCE: https://github.com/google/flatbuffers/issues/9182
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2077 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++][Java] Cross language incompatability when working with maps
+SOURCE: https://github.com/google/flatbuffers/issues/9180
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2078 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [benchmark] Request for call-path / fairness review (GLD.SerializerBenchmark)
+SOURCE: https://github.com/google/flatbuffers/issues/9178
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2079 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [benchmark] Request for call-path / fairness review (GLD.SerializerBenchmark)
+SOURCE: https://github.com/google/flatbuffers/issues/9177
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2080 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [benchmark] Request for call-path / fairness review (GLD.SerializerBenchmark)
+SOURCE: https://github.com/google/flatbuffers/issues/9176
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2081 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [benchmark] Request for call-path / fairness review (GLD.SerializerBenchmark)
+SOURCE: https://github.com/google/flatbuffers/issues/9175
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2082 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: PyPI wheel missing LICENSE file
+SOURCE: https://github.com/google/flatbuffers/issues/9170
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2083 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Out-of-bounds memory access in memcpy_downward when in_use sizes exceed buffer sizes
+SOURCE: https://github.com/google/flatbuffers/issues/9162
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2084 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: crates.io release cycle
+SOURCE: https://github.com/google/flatbuffers/issues/9153
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2085 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Memory corruption in FlatBuffers MiniReflect leading to reliable DoS after verification
+SOURCE: https://github.com/google/flatbuffers/issues/9152
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2086 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question about the choice of padding fields
+SOURCE: https://github.com/google/flatbuffers/issues/9151
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2087 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SEGV in `StructDef::Deserialize` via `IsStruct` on a bfbs schema that passes `VerifySchemaBuffer`
+SOURCE: https://github.com/google/flatbuffers/issues/9144
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2088 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: flatc generates invalid C++ code with `--grpc-callback-api`
+SOURCE: https://github.com/google/flatbuffers/issues/9130
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2089 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: OSS-Fuzz issue 522117389
+SOURCE: https://github.com/google/flatbuffers/issues/9127
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2090 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add module-info.java to flatbuffers-java for JPMS support
+SOURCE: https://github.com/google/flatbuffers/issues/9112
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2091 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add module-info.java to flatbuffers-java for JPMS support
+SOURCE: https://github.com/google/flatbuffers/issues/9111
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2092 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Dart] Struct builders do not prepare full inline struct alignment/size before writing fields
+SOURCE: https://github.com/google/flatbuffers/issues/9099
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2093 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Dart] Support for required non-scalars
+SOURCE: https://github.com/google/flatbuffers/issues/9093
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2094 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Dart] Support for `--gen-compare`
+SOURCE: https://github.com/google/flatbuffers/issues/9091
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2095 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Dart] Enums with "bit_flags" cannot be used as bit flags
+SOURCE: https://github.com/google/flatbuffers/issues/9087
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2096 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Missing Null-Terminator Content Check in VerifyTerminator()
+SOURCE: https://github.com/google/flatbuffers/issues/9085
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2097 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Swift] Verifier accepts truncated scalar vectors leading to OOB read/write and RCE
+SOURCE: https://github.com/google/flatbuffers/issues/9082
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2098 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Swift] Investigate whether marking Objects as Sendable
+SOURCE: https://github.com/google/flatbuffers/issues/9075
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2099 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unbounded Recursion / Stack Overflow in flexbuffers::Reference::ToString via Nested Vectors
+SOURCE: https://github.com/google/flatbuffers/issues/9074
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2100 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [CPP] Swift code gRPC generator refactoring
+SOURCE: https://github.com/google/flatbuffers/issues/9073
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2101 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: JSON schema generation does not allow differentiation between double and float
+SOURCE: https://github.com/google/flatbuffers/issues/9071
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2102 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Net add support System.Buffers.IBufferWriter<byte>
+SOURCE: https://github.com/google/flatbuffers/issues/9070
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2103 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Python gen for array within struct not set to staticmethod for length/isnone
+SOURCE: https://github.com/google/flatbuffers/issues/9069
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2104 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Current release: generated code variables collision (possible regression)
+SOURCE: https://github.com/google/flatbuffers/issues/9066
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2105 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Transitive dependency on grpc-java causes bzlmod resolution failure
+SOURCE: https://github.com/google/flatbuffers/issues/9064
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2106 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Pack() method incorrectly accesses fixed array of structs as single object in Python object API
+SOURCE: https://github.com/google/flatbuffers/issues/9061
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2107 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: parser_.opts.python_decode_obj_api_strings doesn't apply for vector of strings
+SOURCE: https://github.com/google/flatbuffers/issues/9059
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2108 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: python stub for pack has incorrect type
+SOURCE: https://github.com/google/flatbuffers/issues/9057
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2109 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support --root-type when compiling from proto
+SOURCE: https://github.com/google/flatbuffers/issues/9055
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2110 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Feature Request: Official Zig language support for FlatBuffers code generation
+SOURCE: https://github.com/google/flatbuffers/issues/9052
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2111 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Out-of-Bounds Heap Read in `flatc --json`
+SOURCE: https://github.com/google/flatbuffers/issues/9051
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2112 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `Bus error***Exception` on armhf
+SOURCE: https://github.com/google/flatbuffers/issues/9050
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2113 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Heap Buffer Overflow in FlexBuffers ToString Post-Verification
+SOURCE: https://github.com/google/flatbuffers/issues/9041
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2114 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Heap Buffer Overflow in FlatBuffers Reflection Verifier
+SOURCE: https://github.com/google/flatbuffers/issues/9040
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2115 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Null Pointer Dereference in `JsonPrinter::PrintOffset()` for Union Types
+SOURCE: https://github.com/google/flatbuffers/issues/9033
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2116 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [TS] generated typescript should be conformant to isolatedDeclarations and isolatedModules requirements
+SOURCE: https://github.com/google/flatbuffers/issues/9028
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2117 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: flatbuffers::Parser::Deserialize() performs BFBS identifier probing before running schema verification. Could cause an out-of-bounds read
+SOURCE: https://github.com/google/flatbuffers/issues/9023
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2118 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Bug] utils / EnsureDirExists silently ignores errors
+SOURCE: https://github.com/google/flatbuffers/issues/9022
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2119 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Use-after-free / double-free in Parser::Deserialize via SymbolTable duplicate handling
+SOURCE: https://github.com/google/flatbuffers/issues/9009
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2120 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Heap buffer overflow in FlexBuffers ToString via strlen (4-byte PoC)
+SOURCE: https://github.com/google/flatbuffers/issues/9008
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2121 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Typescript tests have started failing
+SOURCE: https://github.com/google/flatbuffers/issues/9002
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2122 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Rust: inconsistent union has value and type the wrong way round
+SOURCE: https://github.com/google/flatbuffers/issues/9001
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2123 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Rust tests are broken on master
+SOURCE: https://github.com/google/flatbuffers/issues/8994
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2124 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support vector of union for Go
+SOURCE: https://github.com/google/flatbuffers/issues/8987
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2125 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Invalid Dart code generated for union types
+SOURCE: https://github.com/google/flatbuffers/issues/8986
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2126 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Rust test failures do not block PRs
+SOURCE: https://github.com/google/flatbuffers/issues/8971
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2127 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Rust: flaky CI test
+SOURCE: https://github.com/google/flatbuffers/issues/8961
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2128 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Heap Buffer Overflow/SIGSEGV in flatc via Unvalidated vtable_offset in Binary Headers
+SOURCE: https://github.com/google/flatbuffers/issues/8957
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2129 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: --size-prefixed generates empty annotated file
+SOURCE: https://github.com/google/flatbuffers/issues/8953
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2130 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Heap Out-of-Bounds Write via Unchecked `field->id()` Index in BFBS Schema Processing
+SOURCE: https://github.com/google/flatbuffers/issues/8950
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2131 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Proto Reserved Range Parser Infinite Loop / OOM Denial of Service
+SOURCE: https://github.com/google/flatbuffers/issues/8949
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2132 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C++] Tables containing native tables from a different namespace missing namespace in Pack function
+SOURCE: https://github.com/google/flatbuffers/issues/8948
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2133 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] Non type-prefixed create vector function missing a return statement
+SOURCE: https://github.com/google/flatbuffers/issues/8944
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2134 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Rust]: Object API codegen for arrays missing `Default` trait implementation
+SOURCE: https://github.com/google/flatbuffers/issues/8943
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2135 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bazel rule rewrite
+SOURCE: https://github.com/google/flatbuffers/issues/8941
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2136 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Python] `Builder` object has no attribute `CreateVectorOfTables`
+SOURCE: https://github.com/google/flatbuffers/issues/8940
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2137 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: No clear way to iterate over a fixed length array using reflection.h
+SOURCE: https://github.com/google/flatbuffers/issues/8938
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2138 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [C#] Incorrect offset type in verifier
+SOURCE: https://github.com/google/flatbuffers/issues/8937
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2139 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Bug] Heap Buffer Overflow (Write) in FlatBuffers `idl_parser.cpp:4132`
+SOURCE: https://github.com/google/flatbuffers/issues/8932
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2140 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Vector builder API for c++?
+SOURCE: https://github.com/google/flatbuffers/issues/8930
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2141 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add Span params for CreateXXX in C#
+SOURCE: https://github.com/google/flatbuffers/issues/8927
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2142 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compile flatc failed in windows 11
+SOURCE: https://github.com/google/flatbuffers/issues/8926
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2143 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compile flatc failed in windows 11
+SOURCE: https://github.com/google/flatbuffers/issues/8925
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2144 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: FlexBuffers Rust: panic from untrusted input in Reader::get_bool()
+SOURCE: https://github.com/google/flatbuffers/issues/8923
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2145 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Status of v25.12.19-2026-02-06-03fffb2 release?
+SOURCE: https://github.com/google/flatbuffers/issues/8922
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2146 | FlatBuffers | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Doc 404]
+SOURCE: https://github.com/google/flatbuffers/issues/8917
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2147 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: tardis.convert silently drops snapshot rows when a later snapshot batch is larger than the first
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/339
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2148 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: create_last_snapshot does not close the backtest, so each call leaks the loaded data
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/334
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2149 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ROIVectorMarketDepth.best_bid_qty / best_ask_qty return the price, not the quantity
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/333
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2150 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Proposal: event-clock sampling tutorial using wait_next_feed
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/329
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2151 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add annualized Volatility metric to stats
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/324
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2152 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Avoid per-event allocation in Python market-depth fusion
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/320
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2153 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Partial fills of resting orders are never applied to position/balance (PartialFillExchange + prob queue models)
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/316
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2154 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can the number of assets used affect the backtest results?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/315
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2155 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bug: PartialFillExchange fails with InvalidOrderStatus when filled_qty == leaves_qty
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/312
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2156 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Typo in order.tick_size
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/309
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2157 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Potential limit order `exec_price` mismatch
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/308
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2158 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Segmentation fault during tardis.convert with incremental_book_L2
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/306
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2159 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Create an open community chat (Telegram / Discord / etc.) for HFTBacktest users
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/304
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2160 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question about market data with L3 backtesting
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/303
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2161 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Research Pricing Framework: FileNotFoundError: data/BTCUSDT_20250801.parquet
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/302
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2162 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Backtest stops with InvalidOrderStatus (14) when using partial_fill_exchange
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/301
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2163 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Binance Futures order book synchronization not following official documentation
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/300
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2164 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Local state ignores partial fills (Status::PartiallyFilled)
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/299
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2165 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Backtest::submit_order ignores OrderRequest.side (always Sell)
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/298
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2166 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to write grid trading using Accelerated Backtesting?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/297
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2167 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: questions about queue.rs and implementation of new queue model like others
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/296
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2168 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question: Event-driven (callback-based) backtesting support?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/295
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2169 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Event-driven (callback-based) backtesting support?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/294
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2170 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: NSE(India) Data
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/293
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2171 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: question about multi-asset backtesting
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/289
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2172 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: question about options
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/287
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2173 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Order req unknown code 7
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/286
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2174 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Databento Continuous Symbology failing to enter backtest loop
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/285
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2175 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: segmentation fault (core dumped)
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/284
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2176 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Proposal: Enhanced Rust-Python Exception Interoperability
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/283
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2177 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: question about Market Making with Alpha - Order Book Imbalance
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/282
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2178 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question: wait_next_feed returning list of last_trades
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/281
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2179 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question: quoting logic using modify
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/280
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2180 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question: Handling of trades
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/279
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2181 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is there a way to access a trade print of the backtest?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/278
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2182 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Example of cross exchange trading?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/277
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2183 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Trade event when only working with LOB data
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/275
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2184 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Level2 backtest: Can I place a limit order at the counterparty price?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/274
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2185 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: partial_fill_exchange() make backtest broken
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/273
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2186 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can I set recorder.record(hbt) for every ten frame?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/272
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2187 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bug: create_last_snapshot returns invalid orderbook
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/271
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2188 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to make multi backtest task with A shared data?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/270
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2189 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can hftbacktest be used for backtesting perpetual contracts? And does it support two-way positions?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/269
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2190 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: how deep can backtest go through a 100ms orderbook data?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/265
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2191 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: python dependency
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/264
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2192 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Ignore "NA" trade type in binance futures connector
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/263
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2193 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: backtest memory usage too high.
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/262
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2194 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bybit data converter
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/261
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2195 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: how to backtest in multi processes?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/260
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2196 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Getting Started Example submit_order issue
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/259
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2197 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: risk_adverse_queue_model kills jupyter kernel
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/258
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2198 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Roadmap up-to-date?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/257
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2199 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: how to use constant_order_latency()?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/256
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2200 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: how to set roi_lb/roi_ub?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/255
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2201 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: how to set BacktestAsset.latency_offset()?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/254
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2202 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: dryrun
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/253
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2203 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: exch local timestamp unmatch
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/251
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2204 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unexpected Execution Price
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/250
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2205 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: example:High-Frequency Grid Trading doesn't work
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/249
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2206 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: create_last_snapshot() always return None
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/248
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2207 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bug : Hyperliquid DiffOrderbookSnapshot has no context of first snapshot
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/247
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2208 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How did you bind Rust to Python in this project?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/246
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2209 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Corner case in processing bbo data
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/244
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2210 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Missing Files
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/243
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2211 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question about `modify` updating `qty` but not `leaves_qty`
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/241
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2212 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: make the order status to rejected after request type change to rejected
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/239
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2213 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Wrong timestamp convert on tardis
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/238
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2214 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: market depth without strategy orders
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/237
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2215 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question about l3 order quantity handling during price crossing in `add_buy_order` and `add_sell_order`
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/236
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2216 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: measure trading intensity
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/233
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2217 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Retry reset
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/228
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2218 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why is my return always less than 0?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/227
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2219 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question About Level-3 Backtesting and Order Book Generation
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/226
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2220 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Feature: Stats `plot()` function should return the plot object
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/224
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2221 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Matplotlib Price and Position legends overlap for LinearAssetRecord
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/218
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2222 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: An error occurred while sending a live event to the bots. error=BuildError("NodeCreationFailure::InternalError")
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/214
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2223 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Broken elapse logic
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/213
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2224 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Possible unsound API in DataPtr.at
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/212
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2225 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Please take a look, I found a Rust version of the CCXT exchange API.
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/211
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2226 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Issue with the connector's reconnection logic:
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/210
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2227 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Python `polars` plot errors out
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/209
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2228 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: About the input data types
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/207
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2229 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Jupyter Kernel Crash on specific dataset
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/206
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2230 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: expected `bool`, found `ElapseResult`
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/205
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2231 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: An error occurred while sending a live event to the bots. error=BuildError("PublishSubscribeOpenOrCreateError::PublishSubscribeOpenError(ServiceInCorruptedState)")
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/204
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2232 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Where can I find the Rust API documentation?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/203
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2233 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Live bot event capture？
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/202
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2234 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: WARN collect_data::binance: missing depth feed has been detected. symbol=BTCUSDT
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/201
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2235 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: has on trade Event?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/200
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2236 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Getting Current Profit
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/199
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2237 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: BackTest Rust: execute error in gridtrading_backtest.rs
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/198
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2238 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Nans when using ROIVectorMarketDepthBacktest instead of HashMapMarketDepthBacktest
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/197
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2239 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Comma is missing
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/195
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2240 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: A little stupid question
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/193
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2241 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Don't run on windows
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/192
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2242 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: binancefutures convert error
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/191
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2243 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: core dumped with very small tick sizes
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/190
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2244 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Tardis.dev data is always `is_snapshot = True` which breaks the tardis `convert` functionality
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/189
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2245 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can I use a customized dataset for example CBOT futures data to run backtesting?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/187
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2246 | HFTBacktest | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Running data Collector for Binancefuturesum, missing depth warning?
+SOURCE: https://github.com/nkaz001/hftbacktest/issues/186
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2247 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Rust port
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/66
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2248 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Got multiple errors while building solution
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/63
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2249 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Positions and Orders Tab Empty
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/46
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2250 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Guyf
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/44
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2251 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Optimize OxyPlot for Real-time Rolling Charts (specifically to our use-case)
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/42
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2252 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can't connect to coinbase
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/35
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2253 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Website dead
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/32
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2254 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Enhancement required for 'order flow'
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/31
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2255 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Plugin Manager
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/29
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2256 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Extending OrderBook UC with additional depth views
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/22
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2257 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Bids and Asks arrays become unsorted after some time
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/20
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2258 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Cant find 'Telerik' after rebuild all
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/19
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2259 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Consider using SQLite for the database
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/15
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2260 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Create Contributing Guide
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/11
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2261 | VisualHFT | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Code cleanup and framework integrity
+SOURCE: https://github.com/visualHFT/VisualHFT/issues/5
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2262 | Packt | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Bug Report] Flat 256-slot price index has no collision handling -- price levels 256 ticks apart (even opposite sides) silently merge and eventually crash; a second, independent order-id cap also crashes the process
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/9
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2263 | Packt | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question on addOrdersAtPrice
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/8
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2264 | Packt | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Memory leak in MemPool
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/7
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2265 | Packt | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: documentation is not clear as how to run it.
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/6
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2266 | Packt | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM:  resource leak in socket creation?
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/5
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2267 | Packt | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: In the LF_Queue, the getWriteIndex() might not be thread safe
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/4
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2268 | Packt | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Random allocate and deallocate objects in memory pool in chapter 4?
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/3
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2269 | Packt | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build on MacOs with gcc compiler
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/2
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
+QB2-2270 | Packt | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Which course is it ?
+SOURCE: https://github.com/PacktPublishing/Building-Low-Latency-Applications-with-CPP/issues/1
+FIRST ACTION: READ the primary report and copy its first numerical boundary or failing event; write UNSTATED if absent.
+
