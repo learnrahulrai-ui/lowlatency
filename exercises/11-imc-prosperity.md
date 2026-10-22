@@ -31,3 +31,8 @@ Read `TradingState`, `OrderDepth`, `Order`; implement only `Trader.run(state)`; 
 FOLLOW-UP: CALCULATE: Apply only the first described change to the stated numerical input.
 Check the executable interface directly: the participant notes a mismatch between the wiki description and the backtester data model.
 FOLLOW-UP: DERIVE: State one directly testable premise of this assertion.
+
+SOURCE-AUDIT ADDENDUM (2026-10-22)
+The fair price 103, starting position +15 and exercise limit +20 are artificial test inputs; do not claim the 2026 competition enforced those numbers. The published competition is distinct from an employee hiring take-home. Cross-check actual trading and backtester interfaces against competition-provided material.
+SOURCE: https://www.imc.com/ap/articles/prosperity-4-imc-global-trading-challenge
+ONE ACTION: WRITE the starting position on one line.
