@@ -4934,3 +4934,2473 @@ CLAIM: [c++][parquet][8.0.0] The coredump appears when constructed parquetfileRe
 SOURCE: https://github.com/apache/arrow/issues/15044
 FIRST ACTION: COPY the first numeric input, failing operation and observed symptom from the original issue; mark NO REPRODUCER if absent.
 
+QB2-0982 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `ldb load` cannot restore wide-column entities written by `ldb dump`: text mode stores each entity as a plain value, `--hex` terminates at the first entity
+SOURCE: https://github.com/facebook/rocksdb/issues/15452
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0983 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Tailing iterator reads blob values through a freed Version (heap-use-after-free)
+SOURCE: https://github.com/facebook/rocksdb/issues/15445
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0984 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: IngestExternalFiles with atomic_replace_range misses a memtable range tombstone when another tombstone fragment starts at the range limit: no flush, the ingested file goes below the older tombstones and its keys are lost (call ret
+SOURCE: https://github.com/facebook/rocksdb/issues/15440
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0985 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: format_version=8 with ReverseBytewiseComparator: a data block holding `k + "\x01"` before `k` stores a common prefix longer than `k`, so Get/MultiGet/Seek of `k` skip its newest version (stale value, deleted value back, or NotFoun
+SOURCE: https://github.com/facebook/rocksdb/issues/15439
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0986 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Process-lifetime lock leak when DB close is skipped: locked_files entry is never removed
+SOURCE: https://github.com/facebook/rocksdb/issues/15432
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0987 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: WritePrepared/WriteUnprepared: rolling back a prepared transaction strips all non-default columns of a wide-column entity it touched
+SOURCE: https://github.com/facebook/rocksdb/issues/15426
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0988 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: cf_allow_ingest_behind: compaction still drops range tombstones as obsolete, so an ingest_behind back-fill resurrects DeleteRange'd keys (point deletes are preserved since #13807)
+SOURCE: https://github.com/facebook/rocksdb/issues/15425
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0989 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: User-defined timestamps + Merge: compaction with full_history_ts_low merges the newest version below the cutoff into a newer operand, reads at timestamps >= cutoff return NotFound
+SOURCE: https://github.com/facebook/rocksdb/issues/15424
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0990 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: enable_blob_files + preclude_last_level_data_seconds: compaction writes blob files for proximal-level outputs but never registers them ("Corruption: Invalid blob file number", values lost permanently)
+SOURCE: https://github.com/facebook/rocksdb/issues/15423
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0991 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RepairDB with recycle_log_file_num > 0 replays the recycled (already flushed) WAL: merge operands are applied twice
+SOURCE: https://github.com/facebook/rocksdb/issues/15422
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0992 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RepairDB undoes IngestExternalFile on an intact DB: files from SstFileWriter without a CF handle are moved to lost/, and ingested files lose their global seqno (older values win again)
+SOURCE: https://github.com/facebook/rocksdb/issues/15421
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0993 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compaction merges across a snapshot at sequence number 0 (e.g. taken right after ingesting into a new DB): DeleteRange'd data comes back permanently and the snapshot loses its value
+SOURCE: https://github.com/facebook/rocksdb/issues/15420
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0994 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Get() drops the base value of a merge when the key's versions span two SST files of one level and the first file has an older covering range tombstone (MultiGet and iterators are correct)
+SOURCE: https://github.com/facebook/rocksdb/issues/15419
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0995 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Null dereference in WriteThread::EnterAsBatchGroupLeader when the r_list graft's compare_exchange_weak fails spuriously (aarch64 LL/SC)
+SOURCE: https://github.com/facebook/rocksdb/issues/15414
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0996 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java release for 11.12
+SOURCE: https://github.com/facebook/rocksdb/issues/15385
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0997 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RocksJava: expose explicit-length byte[] overloads for write-batch put, merge and delete
+SOURCE: https://github.com/facebook/rocksdb/issues/15381
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0998 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Iterator returns freed memory when a merge operator returns a blob base value via existing_operand (e.g. MaxOperator)
+SOURCE: https://github.com/facebook/rocksdb/issues/15336
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-0999 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `BlockBasedTableOptions::super_block_alignment_size` accepts values at or below `block_size`, which its documentation says are invalid
+SOURCE: https://github.com/facebook/rocksdb/issues/15318
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1000 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: DB::Open with a negative num_levels terminates the process (uncaught std::length_error in MutableCFOptions::RefreshDerivedOptions) instead of returning a Status
+SOURCE: https://github.com/facebook/rocksdb/issues/15317
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1001 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: TransactionDB::SetDeadlockInfoBufferSize(n) with n == current number of recorded deadlocks leaves buffer_idx_ == size(); next deadlock writes past the end of paths_buffer_
+SOURCE: https://github.com/facebook/rocksdb/issues/15316
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1002 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Leveled compaction: ttl greater than the current unix time underflows `current_time - ttl`, so every file is treated as TTL-expired
+SOURCE: https://github.com/facebook/rocksdb/issues/15315
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1003 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: WriteBatch entry count silently wraps at 2^32 (Put/Delete return OK); the batch then fails DB::Write with "Corruption: WriteBatch has wrong count" and stops the DB
+SOURCE: https://github.com/facebook/rocksdb/issues/15314
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1004 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Flush() returns OK but writes a >= 4 GiB data block that the block reader truncates; every key in the block becomes unreadable
+SOURCE: https://github.com/facebook/rocksdb/issues/15313
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1005 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Blob GC improvement for better space and write amp
+SOURCE: https://github.com/facebook/rocksdb/issues/15301
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1006 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Some remaining costly misses in rocksjni
+SOURCE: https://github.com/facebook/rocksdb/issues/15295
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1007 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: db_bench: `--report_file` keeps only the last benchmark when `--benchmarks` lists several
+SOURCE: https://github.com/facebook/rocksdb/issues/15276
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1008 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java release for 11.11
+SOURCE: https://github.com/facebook/rocksdb/issues/15266
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1009 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Secondary open/catch-up can fail if an obsolete SST disappears during MANIFEST replay with unique-ID verification disabled
+SOURCE: https://github.com/facebook/rocksdb/issues/15260
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1010 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SstFileManager's reserved disk buffer grows by write_buffer_size on every DB::Open and is never released, so after enough reopens the DB can no longer recover from a NoSpace error
+SOURCE: https://github.com/facebook/rocksdb/issues/15258
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1011 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CompactFiles() with allow_trivial_move never releases its SstFileManager space reservation, so compactions are eventually refused as "Compaction too large" on a nearly empty DB
+SOURCE: https://github.com/facebook/rocksdb/issues/15257
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1012 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: blob_garbage_collection_force_threshold = 0.0 makes the forced-GC predicate a tautology: an idle DB compacts forever
+SOURCE: https://github.com/facebook/rocksdb/issues/15256
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1013 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MultiScan: ~ScanIterator() asserts on the status operator++ just threw, so reaching max_prefetch_size aborts instead of raising MultiScanException
+SOURCE: https://github.com/facebook/rocksdb/issues/15255
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1014 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: FIFO max_data_files_size drops far more user data than its budget requires: the trimming loop subtracts a flat per-file average instead of each file's real size
+SOURCE: https://github.com/facebook/rocksdb/issues/15252
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1015 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: kTriggerCompaction is never re-registered, so time-based compaction set via SetOptions never fires on an idle DB
+SOURCE: https://github.com/facebook/rocksdb/issues/15251
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1016 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Stats history deltas use an unguarded uint64 subtraction, so Statistics::Reset() records counts near 2^64 (also persisted to disk)
+SOURCE: https://github.com/facebook/rocksdb/issues/15250
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1017 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `WAL_size_limit_MB` is enforced as a file count derived from the largest archived WAL, so the archive is pruned far below the limit — and wiped entirely at the boundary
+SOURCE: https://github.com/facebook/rocksdb/issues/15249
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1018 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: One `SeekToFirst()` permanently disables `max_sequential_skip_in_iterations` for the rest of the iterator's life
+SOURCE: https://github.com/facebook/rocksdb/issues/15248
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1019 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MultiGet makes no progress when the first key's value is in a blob file and exceeds `value_size_soft_limit`
+SOURCE: https://github.com/facebook/rocksdb/issues/15247
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1020 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why does the coroutine read executor default to one thread?
+SOURCE: https://github.com/facebook/rocksdb/issues/15246
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1021 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add coroutine support for integrated BlobDB payload reads
+SOURCE: https://github.com/facebook/rocksdb/issues/15245
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1022 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support native coroutine reads for iterators
+SOURCE: https://github.com/facebook/rocksdb/issues/15244
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1023 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unused param compile error in utils/compression
+SOURCE: https://github.com/facebook/rocksdb/issues/15243
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1024 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Coroutine read API: Let the caller keep its own executor
+SOURCE: https://github.com/facebook/rocksdb/issues/15242
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1025 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Feature request: officially supported Rust bindings and integration
+SOURCE: https://github.com/facebook/rocksdb/issues/15217
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1026 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Crash / OOB read and SIGFPE in CuckooTableReader when cuckoo SST table properties are inconsistent with the file
+SOURCE: https://github.com/facebook/rocksdb/issues/15213
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1027 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Crash / OOB read in CassandraValueMergeOperator when a merge operand is malformed (format.cc deserialization has no bounds checks)
+SOURCE: https://github.com/facebook/rocksdb/issues/15212
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1028 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 【BUG】In the SeekForGetImpl function of the block.cc file, the check for whether data_ is null is omitted. The function directly uses data_ for hash lookup and subsequent parsing, which poses a potential risk of null pointer for Ro
+SOURCE: https://github.com/facebook/rocksdb/issues/15210
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1029 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 【BUG】In the Block::Block (located in block_based/block.cc) file, the calculation of restart_offset_ results in an integer overflow for RocksDB-v6.26.1
+SOURCE: https://github.com/facebook/rocksdb/issues/15209
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1030 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 【BUG】Heap buffer allocation failure and out-of-bounds write caused by uint32_t overflow in BlockPrefixIndex::Builder::Finish function for RocksDB-v6.26.1
+SOURCE: https://github.com/facebook/rocksdb/issues/15208
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1031 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: About 1.3-1.5% additional successful-write time after b7a9d414 in a manual-WAL workload
+SOURCE: https://github.com/facebook/rocksdb/issues/15205
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1032 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: WriteBatch construction with explicit column-family handles is about 3.8% slower after 15873b1f
+SOURCE: https://github.com/facebook/rocksdb/issues/15204
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1033 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java release for 11.10
+SOURCE: https://github.com/facebook/rocksdb/issues/15166
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1034 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CompactedDBImpl::Get/MultiGet never populate Statistics (block cache hit/miss, memtable hit/miss, bytes read all stay 0)
+SOURCE: https://github.com/facebook/rocksdb/issues/15140
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1035 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: EventListenerTest.OnFileOperationTest fails on Apple Silicon (regression of #7133)
+SOURCE: https://github.com/facebook/rocksdb/issues/15139
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1036 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: BUG: LRU block cache can spin forever in MaintainPoolSize
+SOURCE: https://github.com/facebook/rocksdb/issues/15128
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1037 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java release for 11.9
+SOURCE: https://github.com/facebook/rocksdb/issues/15120
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1038 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Deadlock when: `unordered_write=true` + `manual_wal_flush=true` on WAL-enabled writes
+SOURCE: https://github.com/facebook/rocksdb/issues/15097
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1039 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: rocksdb 11.8.1 fails to build on i686
+SOURCE: https://github.com/facebook/rocksdb/issues/15093
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1040 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: rocksdb 11.8.1 fails to build on s390x
+SOURCE: https://github.com/facebook/rocksdb/issues/15092
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1041 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: rocksdbjni fat JAR omits license and notice materials for bundled native code
+SOURCE: https://github.com/facebook/rocksdb/issues/15091
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1042 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Speed up Slice::DecodeHex
+SOURCE: https://github.com/facebook/rocksdb/issues/15072
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1043 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `multiGet` ByteBuffer output helper accumulates local references
+SOURCE: https://github.com/facebook/rocksdb/issues/15068
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1044 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Speed up Slice::ToString(bool hex=true)
+SOURCE: https://github.com/facebook/rocksdb/issues/15057
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1045 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Secondary serves stale reads: entries replayed from a WAL the primary has since flushed are never evicted from the active memtable
+SOURCE: https://github.com/facebook/rocksdb/issues/15051
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1046 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java release for 11.8
+SOURCE: https://github.com/facebook/rocksdb/issues/15042
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1047 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Java] RocksDB.close() never closes defaultReadOptions_, leaking a native ReadOptions per DB instance
+SOURCE: https://github.com/facebook/rocksdb/issues/15036
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1048 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Flush(wait=true) can hang forever after a non-recovery flush rollback
+SOURCE: https://github.com/facebook/rocksdb/issues/15030
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1049 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: check-c-api-gen broken for non-main branches
+SOURCE: https://github.com/facebook/rocksdb/issues/15029
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1050 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Valid WAL rejected as corrupted during recovery
+SOURCE: https://github.com/facebook/rocksdb/issues/15007
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1051 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java release for 11.7
+SOURCE: https://github.com/facebook/rocksdb/issues/14977
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1052 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Comparator thread-local reusable buffers do not delete their native wrapper
+SOURCE: https://github.com/facebook/rocksdb/issues/14975
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1053 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `JniCallback` checks the input object instead of the `NewGlobalRef` result
+SOURCE: https://github.com/facebook/rocksdb/issues/14974
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1054 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: createColumnFamilyWithImport` checks the wrong pointer after `GetLongArrayElements`
+SOURCE: https://github.com/facebook/rocksdb/issues/14973
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1055 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `setEventListeners` never releases the `GetLongArrayElements` pointer
+SOURCE: https://github.com/facebook/rocksdb/issues/14972
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1056 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SIGSEGV in EnvLogger::Logv() during DBImpl::Close()
+SOURCE: https://github.com/facebook/rocksdb/issues/14939
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1057 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CI: pin anthropics/claude-code-base-action@beta to a full commit SHA in ai-review-analysis.yml
+SOURCE: https://github.com/facebook/rocksdb/issues/14936
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1058 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Duplicated IOActivity-to-histogram mapping: GetExternalTableFileReadHistogram is a copy of GetFileReadHistograms
+SOURCE: https://github.com/facebook/rocksdb/issues/14935
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1059 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java release for 11.6
+SOURCE: https://github.com/facebook/rocksdb/issues/14921
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1060 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: doc: outdated default value for level_compaction_dynamic_level_bytes in JavaDoc
+SOURCE: https://github.com/facebook/rocksdb/issues/14916
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1061 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: C API: Add `rocksdb_iter_is_key/value_pinned` functions
+SOURCE: https://github.com/facebook/rocksdb/issues/14903
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1062 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Error during compaction that produces empty SST file & writes blobs
+SOURCE: https://github.com/facebook/rocksdb/issues/14897
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1063 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `ReadOptions::pin_data` no longer pins iterator keys/values for mmap reads on Primary/Secondary instances
+SOURCE: https://github.com/facebook/rocksdb/issues/14895
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1064 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `TransactionDB.open` (multi-CF overload) never releases the database path UTF chars
+SOURCE: https://github.com/facebook/rocksdb/issues/14893
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1065 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java release for 11.5
+SOURCE: https://github.com/facebook/rocksdb/issues/14878
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1066 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: C API: add rocksdb_delete_range_cf_with_ts for user-defined timestamps
+SOURCE: https://github.com/facebook/rocksdb/issues/14870
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1067 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Offer: GitHub Actions CI acceleration experiment with Incredibuild runners
+SOURCE: https://github.com/facebook/rocksdb/issues/14829
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1068 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Missing 11.x rocksdbjni in Maven
+SOURCE: https://github.com/facebook/rocksdb/issues/14825
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1069 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java release for 11.4
+SOURCE: https://github.com/facebook/rocksdb/issues/14823
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1070 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Fatal librocksdbjni error detected by JVM
+SOURCE: https://github.com/facebook/rocksdb/issues/14817
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1071 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Expose IngestExternalFileOptions::failed_move_fall_back_to_copy in RocksJava
+SOURCE: https://github.com/facebook/rocksdb/issues/14803
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1072 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Expose IngestExternalFileOptions::fill_cache in RocksJava
+SOURCE: https://github.com/facebook/rocksdb/issues/14801
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1073 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can not enable allow_db_generated_files in Java lib in IngestExternalFileOptions
+SOURCE: https://github.com/facebook/rocksdb/issues/14791
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1074 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 23
+SOURCE: https://github.com/facebook/rocksdb/issues/14790
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1075 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 2
+SOURCE: https://github.com/facebook/rocksdb/issues/14789
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1076 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 250
+SOURCE: https://github.com/facebook/rocksdb/issues/14788
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1077 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 800
+SOURCE: https://github.com/facebook/rocksdb/issues/14787
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1078 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java release for 11.3
+SOURCE: https://github.com/facebook/rocksdb/issues/14766
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1079 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Failed to execute make shared_lib on main
+SOURCE: https://github.com/facebook/rocksdb/issues/14762
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1080 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Does RocksDB FIFO mode support customized deletion logic?
+SOURCE: https://github.com/facebook/rocksdb/issues/14758
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1081 | RocksDB | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: IsTrivialMove() rejects trivial move due to grandparent overlap, but ShouldStopBefore() never splits the output — resulting in unnecessary full data rewrite
+SOURCE: https://github.com/facebook/rocksdb/issues/14735
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1082 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Please fix build with FOLLY_USE_JEMALLOC=OFF
+SOURCE: https://github.com/facebook/folly/issues/2721
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1083 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Tests fail to compile on FreeBSD: fatal error: 'jemalloc/jemalloc.h' file not found
+SOURCE: https://github.com/facebook/folly/issues/2720
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1084 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: macOS x86_64 build fails in MathOperation_Simple.cpp because -mno-sse2 conflicts with SDK _Float16 declarations
+SOURCE: https://github.com/facebook/folly/issues/2716
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1085 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Building folly on low-memory arm64 systems suffers high memory pressure due to -g in default Release CXX flags
+SOURCE: https://github.com/facebook/folly/issues/2709
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1086 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: folly does not build against OpenSSL 4.0 (opaque ASN1_STRING, const X509 accessors); fizz and wangle affected too
+SOURCE: https://github.com/facebook/folly/issues/2705
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1087 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CO_ASSERT_FALSE is inverted when built against a released googletest
+SOURCE: https://github.com/facebook/folly/issues/2704
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1088 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Raise cmake_minimum_required in fizz, wangle and mvfst to 3.14 to match folly
+SOURCE: https://github.com/facebook/folly/issues/2703
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1089 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Bug] DistributedMutex flat combining crashes 100% under multi-threaded workloads on aarch64
+SOURCE: https://github.com/facebook/folly/issues/2701
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1090 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: building error in folly 2026.07.27.00 with mac xcode 27.0
+SOURCE: https://github.com/facebook/folly/issues/2697
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1091 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: macOS CI cannot compile result epitaph sources without transitive standard headers
+SOURCE: https://github.com/facebook/folly/issues/2694
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1092 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CI: add macos-26-intel (x86_64) to macOS CI matrix to catch Intel-only regressions
+SOURCE: https://github.com/facebook/folly/issues/2692
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1093 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MemsetBenchmark.cpp: .align 64 is invalid on macOS x86_64 (Apple assembler interprets as 2^64)
+SOURCE: https://github.com/facebook/folly/issues/2690
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1094 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: coalesceAndReallocate / cloneCoalescedWithHeadroomTailroom integer-overflow guards were reverted (D116335797, D116669664, D115286348) — is main sitting unguarded intentionally?
+SOURCE: https://github.com/facebook/folly/issues/2686
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1095 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: build break - references to the nonexistent EDFThreadPoolExecutorBenchmark.cpp and PartialTest.cpp
+SOURCE: https://github.com/facebook/folly/issues/2685
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1096 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build failure on macOS arm64: `Undefined symbols for architecture arm64: "void google::MakeCheckOpValueString<std::nullptr_t>(std::__1::basic_ostream<char, std::__1::char_traits<char>>*, std::nullptr_t const&)"`
+SOURCE: https://github.com/facebook/folly/issues/2681
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1097 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [macOS] CMake build fails with libc++ `<cwctype>` error due to system SDK `/usr/include` in `Folly::folly_deps`
+SOURCE: https://github.com/facebook/folly/issues/2679
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1098 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [needs meta attention] Buck2 build broken by repo sync tooling?
+SOURCE: https://github.com/facebook/folly/issues/2676
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1099 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: v2ray
+SOURCE: https://github.com/facebook/folly/issues/2672
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1100 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: C++23 modules/header-unit compatibility when consuming Folly
+SOURCE: https://github.com/facebook/folly/issues/2671
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1101 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: glog 0.7 compatibility still not there
+SOURCE: https://github.com/facebook/folly/issues/2669
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1102 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: IoUringZeroCopyBufferPool.cpp build issues
+SOURCE: https://github.com/facebook/folly/issues/2660
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1103 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Clarify expected behavior for FIXME in build/fbcode_builder/getdeps/builder.py
+SOURCE: https://github.com/facebook/folly/issues/2659
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1104 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MeteredExecutor: is seq_cst on the modifyState CAS required, or would relaxed suffice?
+SOURCE: https://github.com/facebook/folly/issues/2656
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1105 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build breaks on aarch64: file INSTALL cannot find "/wrkdirs/usr/ports/devel/folly/work/.build/folly/external/aor/libfolly_external_aor_memcpy_aarch64-use.so": No such file or directory.
+SOURCE: https://github.com/facebook/folly/issues/2652
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1106 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ParkingLot: symmetric F^sc on park side (mirror of ff7ab9d)
+SOURCE: https://github.com/facebook/folly/issues/2649
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1107 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Windows][MSVC] 10 folly::cli tests failed due to they rely on POSIX-specific newline and filesystem behavior
+SOURCE: https://github.com/facebook/folly/issues/2648
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1108 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Proposal: evaluate a read-optimized concurrent ordered set as alternative to ConcurrentSkipList for read-heavy workloads
+SOURCE: https://github.com/facebook/folly/issues/2638
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1109 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Test "singleton_thread_local_test.ThreadLocal.DependencyTest" aborts
+SOURCE: https://github.com/facebook/folly/issues/2603
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1110 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: EvictingCacheMap seems to miss <memory> header for std::unique_ptr
+SOURCE: https://github.com/facebook/folly/issues/2598
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1111 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: F14FastSet search string_view in string set core dumps in MacOs
+SOURCE: https://github.com/facebook/folly/issues/2597
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1112 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: No option to skip monolithic library build
+SOURCE: https://github.com/facebook/folly/issues/2593
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1113 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Avoid `BIO_meth_get_*` methods as they are deprecated in OpenSSL 3.5
+SOURCE: https://github.com/facebook/folly/issues/2584
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1114 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Missing 'https://github.com/facebook/folly/blob/main/folly/synchronization/test/HazptrTest.cpp#L1001' for waitpid in HazptrTest.cpp
+SOURCE: https://github.com/facebook/folly/issues/2568
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1115 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Is folly buildable/usable with c++17?
+SOURCE: https://github.com/facebook/folly/issues/2553
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1116 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Error installing homebrewed folly as dependency for Fizz/Wangle/MVFST
+SOURCE: https://github.com/facebook/folly/issues/2552
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1117 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Are FutureTimeout and FutureCancellation Causing Memory Leaks?
+SOURCE: https://github.com/facebook/folly/issues/2548
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1118 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Symbolizer does not demangle function names if binutils-dev is not installed before compiling folly
+SOURCE: https://github.com/facebook/folly/issues/2546
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1119 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `SimpleAllocator` segfaults when the size of the objects is less than 8
+SOURCE: https://github.com/facebook/folly/issues/2538
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1120 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: MSVC compile error safe_closure
+SOURCE: https://github.com/facebook/folly/issues/2536
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1121 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ExceptionTracerLib.cpp duplicating symbols from libstdc++
+SOURCE: https://github.com/facebook/folly/issues/2534
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1122 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [MSVC] C:\gitP\facebook\folly\folly\test\MemsetBenchmark.cpp(38): error C3861: '__builtin_clzl': identifier not found
+SOURCE: https://github.com/facebook/folly/issues/2533
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1123 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: v2025.04.28.00 build fail on mac m4 15.7.1
+SOURCE: https://github.com/facebook/folly/issues/2530
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1124 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CPUThreadPoolExecutor::threadRun crash
+SOURCE: https://github.com/facebook/folly/issues/2525
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1125 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 2025.10.06 FTBFS on clang-i586: static assertion failed due to requirement 'alignof...'
+SOURCE: https://github.com/facebook/folly/issues/2517
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1126 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 2025.10.06 FTBFS on clang-x86_64: reference to overloaded function could not be resolved
+SOURCE: https://github.com/facebook/folly/issues/2516
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1127 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 2025.10.06 FTBFS on gcc-i586: call of overloaded 'find(const std::basic_string_view<char>&)'
+SOURCE: https://github.com/facebook/folly/issues/2515
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1128 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build fails: error: comparison between pointer and integer ('ElfAddr' (aka 'unsigned long') and 'caddr_t' (aka 'char *'))
+SOURCE: https://github.com/facebook/folly/issues/2502
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1129 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: In high-concurrency scenarios, Folly is extremely slow.高并发场景，folly速度巨慢
+SOURCE: https://github.com/facebook/folly/issues/2501
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1130 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Windows CI build is broken
+SOURCE: https://github.com/facebook/folly/issues/2500
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1131 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: project link folly with " in function `folly::MicroSpinLock::lock()': /usr/local/include/folly/synchronization/SanitizeThread.h:74: undefined reference to `folly::detail::annotate_rwlock_acquired_v'"
+SOURCE: https://github.com/facebook/folly/issues/2498
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1132 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Error with macros when building folly
+SOURCE: https://github.com/facebook/folly/issues/2494
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1133 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build failure with GCC 14 on riscv64 (Ubuntu 24.04) due to use of libstdc++ internal details
+SOURCE: https://github.com/facebook/folly/issues/2493
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1134 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Folly build failure auto& asyncFrame = continuation.promise().getAsyncFrame()
+SOURCE: https://github.com/facebook/folly/issues/2492
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1135 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build fails with upcoming Boost 1.89.0
+SOURCE: https://github.com/facebook/folly/issues/2489
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1136 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build Error: error: 'runtime_error' is not a member of 'std'
+SOURCE: https://github.com/facebook/folly/issues/2487
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1137 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: folly compile shared filed
+SOURCE: https://github.com/facebook/folly/issues/2486
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1138 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: folly build fail on debian bookworm
+SOURCE: https://github.com/facebook/folly/issues/2482
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1139 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Unable to find the ”ManyFind benchmark“ in folly
+SOURCE: https://github.com/facebook/folly/issues/2481
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1140 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Error compiling folly/Demangle.cpp
+SOURCE: https://github.com/facebook/folly/issues/2479
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1141 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: IoUringZeroCopyBufferPool.cpp:34:21: error: 'sysconf' was not declared in this scope
+SOURCE: https://github.com/facebook/folly/issues/2478
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1142 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Double free error when mixing c++20 project with folly built using c++17
+SOURCE: https://github.com/facebook/folly/issues/2477
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1143 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: perf issue try to use folly coroutine reactor to process sqe latency is way long if handle 50K requests
+SOURCE: https://github.com/facebook/folly/issues/2473
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1144 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: non-type template argument is not a constant expression
+SOURCE: https://github.com/facebook/folly/issues/2472
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1145 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Any interest in adding fast modulus hashing of long keys to folly?
+SOURCE: https://github.com/facebook/folly/issues/2470
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1146 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: OSS build(s) broken (multiple candidates for basic_string_view)
+SOURCE: https://github.com/facebook/folly/issues/2468
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1147 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: folly/coro/Coroutine.h file not found after upgrading to 0.80.1
+SOURCE: https://github.com/facebook/folly/issues/2467
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1148 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can I use atomic_shared_ptr on a 5-level paging enabled system?
+SOURCE: https://github.com/facebook/folly/issues/2460
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1149 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Linux CMake install scripts fail with expecting executor_api.h
+SOURCE: https://github.com/facebook/folly/issues/2453
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1150 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Inconsistent ordering in AtFork's prepare() rollback vs parent() execution
+SOURCE: https://github.com/facebook/folly/issues/2452
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1151 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: container_fbvector_benchmark - looks like its looped
+SOURCE: https://github.com/facebook/folly/issues/2451
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1152 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: gen_parallel_benchmark hangs.
+SOURCE: https://github.com/facebook/folly/issues/2450
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1153 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: symbolizer::findDefinitionDie returns incorrect DW_AT_specification offset for DW_FORM_ref_addr
+SOURCE: https://github.com/facebook/folly/issues/2445
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1154 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Move from glog to ng-log
+SOURCE: https://github.com/facebook/folly/issues/2442
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1155 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ElementWrapper causes crash when any thread exits
+SOURCE: https://github.com/facebook/folly/issues/2441
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1156 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: error: inlining failed in call to ‘always_inline’ ‘long long int _mm_popcnt_u64(long long unsigned int)’: target specific option mismatch
+SOURCE: https://github.com/facebook/folly/issues/2439
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1157 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Could NOT find FastFloat (missing: FASTFLOAT_INCLUDE_DIR)
+SOURCE: https://github.com/facebook/folly/issues/2438
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1158 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crash when profiling application using `folly::coro` with `async-profiler` - possible signal-safety or reentrancy issue?
+SOURCE: https://github.com/facebook/folly/issues/2434
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1159 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compilation failure on Mac
+SOURCE: https://github.com/facebook/folly/issues/2433
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1160 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: DynamicTokenBucket::consumeWithBorrowNonBlocking will return incorrect value with very low rate
+SOURCE: https://github.com/facebook/folly/issues/2430
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1161 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ERROR: something wrong with flag 'folly_hazptr_use_executor' in file 'Hazptr.cpp'. One possibility: file 'Hazptr.cpp' is being linked both statically and dynamically into this executable.
+SOURCE: https://github.com/facebook/folly/issues/2428
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1162 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Build error: Policy CMP0167 is not set: The FindBoost module is removed.
+SOURCE: https://github.com/facebook/folly/issues/2427
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1163 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: dynamic.h operator== claiming to do a deep equal comparison but its not
+SOURCE: https://github.com/facebook/folly/issues/2424
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1164 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Coroutine tests fail with GCC 15
+SOURCE: https://github.com/facebook/folly/issues/2422
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1165 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `IoUringZeroCopyBufferPool` depends on unreleased liburing features
+SOURCE: https://github.com/facebook/folly/issues/2420
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1166 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to Implement Key-Value Storage Using `folly::ConcurrentSkipList`?
+SOURCE: https://github.com/facebook/folly/issues/2417
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1167 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: error: there are no arguments to ‘occupiedMask’ that depend on a template parameter, so a declaration of ‘occupiedMask’ must be available
+SOURCE: https://github.com/facebook/folly/issues/2416
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1168 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: macOS SDK 15.4 fails to compile - undefined template 'std::char_traits<unsigned char>'
+SOURCE: https://github.com/facebook/folly/issues/2412
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1169 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Question] Would the maintainers like to be added to libc++'s special vendor communications?
+SOURCE: https://github.com/facebook/folly/issues/2411
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1170 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [MSVC] Warning C4146 from compiler about implementation of VectorContainerPolicy::valuesOffset
+SOURCE: https://github.com/facebook/folly/issues/2406
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1171 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Does not build on fedora 41
+SOURCE: https://github.com/facebook/folly/issues/2401
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1172 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: unable to link C++ std::atomic code: you may need to install GNU libatomic
+SOURCE: https://github.com/facebook/folly/issues/2400
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1173 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compiling with MSVC 2022 yields: libiberty.a(cp-demangle.o) : error LNK2019
+SOURCE: https://github.com/facebook/folly/issues/2399
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1174 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG]: Wrong type name `io_uring_zcrx_rq`
+SOURCE: https://github.com/facebook/folly/issues/2396
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1175 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Release build encounters "Broken promise" error during meta configuration update on aarch64 (Ubuntu 22.04)
+SOURCE: https://github.com/facebook/folly/issues/2395
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1176 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Inefficient memory order in SpinLock
+SOURCE: https://github.com/facebook/folly/issues/2389
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1177 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: k_limit does not increase in the second time in merging multiple digests
+SOURCE: https://github.com/facebook/folly/issues/2388
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1178 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG]: EpollBackend.h: error: type struct EpollBackend violates the C++ One Definition Rule [-Werror=odr]
+SOURCE: https://github.com/facebook/folly/issues/2387
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1179 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: There seems to be an issue with the TagIt service.
+SOURCE: https://github.com/facebook/folly/issues/2385
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1180 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Regarding FB_ANONYMOUS_VARIABLE and FB_ANONYMOUS_VARIABLE_ODR_SAFE
+SOURCE: https://github.com/facebook/folly/issues/2384
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1181 | Folly | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compile error in folly\test\ExpectedCoroutinesTest.cpp when compiling with /std:c++20 or later
+SOURCE: https://github.com/facebook/folly/issues/2383
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1182 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] ABI break in 1.10.0 without SONAME version bump
+SOURCE: https://github.com/google/benchmark/issues/2340
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1183 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Confusing title in docs/platform_specific_build_instructions.md
+SOURCE: https://github.com/google/benchmark/issues/2309
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1184 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Three small hardening notes from a security review: CSV formula-prefix neutralization, full C0 escaping in the JSON reporter, and type diagnostics in gbench/compare.py
+SOURCE: https://github.com/google/benchmark/issues/2299
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1185 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] GCC optimizes away the write with `benchmark::DoNotOptimize`
+SOURCE: https://github.com/google/benchmark/issues/2282
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1186 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Add native Zig bindings via top-level `bindings/zig`
+SOURCE: https://github.com/google/benchmark/issues/2266
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1187 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Fail to build with `-Werror` on macOS.
+SOURCE: https://github.com/google/benchmark/issues/2263
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1188 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG]Heap-use-after-free in benchmark `RunSpecifiedBenchmarks
+SOURCE: https://github.com/google/benchmark/issues/2240
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1189 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Benchmark registration order affects reported outcomes
+SOURCE: https://github.com/google/benchmark/issues/2235
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1190 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Pass State into the ProfilerManager
+SOURCE: https://github.com/google/benchmark/issues/2234
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1191 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Jason Carter
+SOURCE: https://github.com/google/benchmark/issues/2231
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1192 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [RFC] Add native Rust bindings via top-level `bindings/rust`
+SOURCE: https://github.com/google/benchmark/issues/2212
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1193 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] ComputeStats crash when first repetition is skipped
+SOURCE: https://github.com/google/benchmark/issues/2206
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1194 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: project mew: A microbenchmarking CLI for Python
+SOURCE: https://github.com/google/benchmark/issues/2195
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1195 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] .gitignore does not unignore CMake files in subdirectories under cmake/
+SOURCE: https://github.com/google/benchmark/issues/2190
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1196 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] MaybeReenterWithoutASLR() infinite loop under AppArmor (not covered by #1984 fix)
+SOURCE: https://github.com/google/benchmark/issues/2184
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1197 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Multiple PerfCountersTest failures with counter.num_counters() zero on some s390x systems
+SOURCE: https://github.com/google/benchmark/issues/2174
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1198 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Flaky failure of PerfCountersTest.MultiThreaded
+SOURCE: https://github.com/google/benchmark/issues/2173
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1199 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Command-line options are not documented
+SOURCE: https://github.com/google/benchmark/issues/2156
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1200 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] FTBFS with GCC 16
+SOURCE: https://github.com/google/benchmark/issues/2155
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1201 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Memory manager counts allocations not part of benchmark
+SOURCE: https://github.com/google/benchmark/issues/2149
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1202 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Failure to serialize `std::invoke`
+SOURCE: https://github.com/google/benchmark/issues/2141
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1203 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Large number of benchmarks exposes compiler/linker scalability issues
+SOURCE: https://github.com/google/benchmark/issues/2128
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1204 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] v1.9.5: src/string_util.cc:158:34: error: format string is not a string literal [-Werror,-Wformat-nonliteral]
+SOURCE: https://github.com/google/benchmark/issues/2125
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1205 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] How to scale statistical time proportionally？
+SOURCE: https://github.com/google/benchmark/issues/2124
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1206 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Minimum benchmark time with multiple threads
+SOURCE: https://github.com/google/benchmark/issues/2117
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1207 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG]Compilation of the source code fails in QNX OS
+SOURCE: https://github.com/google/benchmark/issues/2113
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1208 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] How to make multiple `RangeMultiplier(x)->Range(start, stop)` work?
+SOURCE: https://github.com/google/benchmark/issues/2107
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1209 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Improve CI throughput by triggering CI for non-maintainer PRs
+SOURCE: https://github.com/google/benchmark/issues/2085
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1210 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Rate counters are per-thread in multi-threaded benchmarks, kAvgThreadsRate does not make sense
+SOURCE: https://github.com/google/benchmark/issues/2080
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1211 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Unneccesary re-run of cxx_feature_check on cmake config re-run
+SOURCE: https://github.com/google/benchmark/issues/2078
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1212 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Missing override in benchmark_runner.cc causes build failure
+SOURCE: https://github.com/google/benchmark/issues/2059
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1213 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Passing -pedantic -Werror but relying on extensions
+SOURCE: https://github.com/google/benchmark/issues/2057
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1214 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Multithreaded benchmark results in invalid JSON
+SOURCE: https://github.com/google/benchmark/issues/2039
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1215 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] LLVM 21.1.0 optimizes out the benchmark with -flto enabled
+SOURCE: https://github.com/google/benchmark/issues/2037
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1216 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] incorrect logic of checking the return of try_run() in CXXFeatureCheck.cmake when compile fails
+SOURCE: https://github.com/google/benchmark/issues/2036
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1217 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Run all tests without arguments
+SOURCE: https://github.com/google/benchmark/issues/2028
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1218 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `user_counters_tabular_test` is failing
+SOURCE: https://github.com/google/benchmark/issues/2027
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1219 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: python bindings: Add tools, drop hard abseil dependency
+SOURCE: https://github.com/google/benchmark/issues/2017
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1220 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Segfault when compiling with `-D_GLIBCXX_DEBUG`
+SOURCE: https://github.com/google/benchmark/issues/2015
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1221 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Add OpenSSF Scorecard Badge for Security Insights
+SOURCE: https://github.com/google/benchmark/issues/2013
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1222 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Packaging tools subdirectory on install
+SOURCE: https://github.com/google/benchmark/issues/2011
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1223 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compilation error C2220 with warning C4267 on msvc with _UNICODE UNICODE
+SOURCE: https://github.com/google/benchmark/issues/2007
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1224 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Linker Errors in Google Benchmark Release Build on ARM64 Platform
+SOURCE: https://github.com/google/benchmark/issues/2006
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1225 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [PYTHON] wheels are built in debug mode
+SOURCE: https://github.com/google/benchmark/issues/2002
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1226 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `State::name` returns a string copy
+SOURCE: https://github.com/google/benchmark/issues/2001
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1227 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] DoNotOptimize on values with const members again
+SOURCE: https://github.com/google/benchmark/issues/1997
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1228 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [documentation] C++03 mention
+SOURCE: https://github.com/google/benchmark/issues/1995
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1229 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [DOC] Using nice to reduce variance
+SOURCE: https://github.com/google/benchmark/issues/1991
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1230 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `pip install -e . ` - 'No such file or directory: .../_benchmark.pyi'
+SOURCE: https://github.com/google/benchmark/issues/1986
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1231 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] `MaybeReenterWithoutASLR()` causes infinite loop
+SOURCE: https://github.com/google/benchmark/issues/1984
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1232 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] BENCHMARK_ENABLE_WERROR: implicit conversion loses integer precision
+SOURCE: https://github.com/google/benchmark/issues/1982
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1233 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG]Fail to build (i want to use gcc)
+SOURCE: https://github.com/google/benchmark/issues/1973
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1234 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG/FEATURE] Disable internal test build by default
+SOURCE: https://github.com/google/benchmark/issues/1972
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1235 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Tests fail to build with clang-20
+SOURCE: https://github.com/google/benchmark/issues/1966
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1236 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] segmentation fault in python module
+SOURCE: https://github.com/google/benchmark/issues/1965
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1237 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Does benchmark support iOS/macOS platforms?
+SOURCE: https://github.com/google/benchmark/issues/1964
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1238 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Possible bug in StartStopBarrier
+SOURCE: https://github.com/google/benchmark/issues/1963
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1239 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Empty benchmarks cause endless loops
+SOURCE: https://github.com/google/benchmark/issues/1962
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1240 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] BENCHMARK macros do not reference full namespace for make_unique
+SOURCE: https://github.com/google/benchmark/issues/1959
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1241 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Setup auto-deploys to Bazel-Central-Registry
+SOURCE: https://github.com/google/benchmark/issues/1958
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1242 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] New release
+SOURCE: https://github.com/google/benchmark/issues/1957
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1243 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Draw a line
+SOURCE: https://github.com/google/benchmark/issues/1954
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1244 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] benchmark_random_interleaving_gtest isn't run when build as shared library
+SOURCE: https://github.com/google/benchmark/issues/1953
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1245 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Enable running benchmarks in WebAssembly without filesystem
+SOURCE: https://github.com/google/benchmark/issues/1952
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1246 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [DOC] Document Bazel integration
+SOURCE: https://github.com/google/benchmark/issues/1951
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1247 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Register function using macro, write the loop part only
+SOURCE: https://github.com/google/benchmark/issues/1950
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1248 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Compare benchmarks of the same run
+SOURCE: https://github.com/google/benchmark/issues/1949
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1249 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] c++17 is required instead of c++14 (as in the document)
+SOURCE: https://github.com/google/benchmark/issues/1947
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1250 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: C++14 is required for the example
+SOURCE: https://github.com/google/benchmark/issues/1943
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1251 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] pkgconfig file missing required libs for linking
+SOURCE: https://github.com/google/benchmark/issues/1940
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1252 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Invalid Pointer Dereference due to std::vector auto-resizing in Memory Manager Result push_back
+SOURCE: https://github.com/google/benchmark/issues/1939
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1253 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Perf Counters in Multithread Benchmark
+SOURCE: https://github.com/google/benchmark/issues/1929
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1254 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] clang-tidy warnings and errors
+SOURCE: https://github.com/google/benchmark/issues/1925
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1255 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] ProfilerManager should run the benchmark the same number of iterations as the regular run
+SOURCE: https://github.com/google/benchmark/issues/1913
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1256 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] pkgconfig benchmark.pc not modified with addition of -lpfm when BENCHMARK_ENABLE_LIBPFM=On
+SOURCE: https://github.com/google/benchmark/issues/1908
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1257 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Feature Extraction Optimization in Training Process (Benchmark/DASB)
+SOURCE: https://github.com/google/benchmark/issues/1907
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1258 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Report cross-thread statistics for multithreaded runs
+SOURCE: https://github.com/google/benchmark/issues/1902
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1259 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Allow modification of perf attributes 
+SOURCE: https://github.com/google/benchmark/issues/1897
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1260 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Certain performance counters are not measured and are always zero
+SOURCE: https://github.com/google/benchmark/issues/1896
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1261 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] benchmark build errors when included as an external bazel project
+SOURCE: https://github.com/google/benchmark/issues/1893
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1262 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: License for Python source code in tools/gbench
+SOURCE: https://github.com/google/benchmark/issues/1891
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1263 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Allow to add more information in the custom output for json
+SOURCE: https://github.com/google/benchmark/issues/1890
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1264 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Easy attaching perf from within the library
+SOURCE: https://github.com/google/benchmark/issues/1889
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1265 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Could not delete file 'C:\Users\Administrator\AppData\Local\Temp\ort-DefaultWorkingTreeCache8817070010412163686\.svn\wc.db
+SOURCE: https://github.com/google/benchmark/issues/1888
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1266 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Ability to register flags for custom Reporters
+SOURCE: https://github.com/google/benchmark/issues/1885
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1267 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Error LNK2001 in Visual studio 2022
+SOURCE: https://github.com/google/benchmark/issues/1879
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1268 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `--benchmark_min_time` command line option undocumented
+SOURCE: https://github.com/google/benchmark/issues/1878
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1269 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] fails to compile on windows with clang-18 / clang-19
+SOURCE: https://github.com/google/benchmark/issues/1877
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1270 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Setup and teardown that only runs once for a benchmark with the same parameters
+SOURCE: https://github.com/google/benchmark/issues/1874
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1271 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] global setup and teardown
+SOURCE: https://github.com/google/benchmark/issues/1873
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1272 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Let SetUp and TearDown be std::function
+SOURCE: https://github.com/google/benchmark/issues/1872
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1273 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Does not build with clang-cl
+SOURCE: https://github.com/google/benchmark/issues/1869
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1274 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] Warning 'misc-use-anonymous-namespace' should be disabled within `BENCHMARK` macro
+SOURCE: https://github.com/google/benchmark/issues/1860
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1275 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] pkg-config file has bad version string
+SOURCE: https://github.com/google/benchmark/issues/1857
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1276 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: CMake: Difference between benchmark::benchmark and benchmark::benchmark_main
+SOURCE: https://github.com/google/benchmark/issues/1856
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1277 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG] CPU hang on multithreaded benchmarks overriding the memory manager
+SOURCE: https://github.com/google/benchmark/issues/1849
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1278 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] `PredictNumItersNeeded()` 1.4 correction factor
+SOURCE: https://github.com/google/benchmark/issues/1848
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1279 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [BUG](Initial problem) cannot build library
+SOURCE: https://github.com/google/benchmark/issues/1845
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1280 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [FR] Make benchmark tests available from Test Explorer of Visual Studio
+SOURCE: https://github.com/google/benchmark/issues/1843
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1281 | Benchmark | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Latest wheel delivery problems
+SOURCE: https://github.com/google/benchmark/issues/1840
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1282 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Wiki link to fmt reference is dead
+SOURCE: https://github.com/gabime/spdlog/issues/3687
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1283 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: daily_file_sink deletes the active log file when a message timestamp jumps past more than one rotation day (max_files=1)
+SOURCE: https://github.com/gabime/spdlog/issues/3672
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1284 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: DD_API_KEY
+SOURCE: https://github.com/gabime/spdlog/issues/3670
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1285 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The archive is gone
+SOURCE: https://github.com/gabime/spdlog/issues/3660
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1286 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Issue Title
+SOURCE: https://github.com/gabime/spdlog/issues/3654
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1287 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: crash when nullptr
+SOURCE: https://github.com/gabime/spdlog/issues/3653
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1288 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [[Feature Request] Proposal for new logging macros: `SPDLOG_LOGGER_CONDITIONAL`, `SPDLOG_LOGGER_EVERY_N`, and `SPDLOG_LOGGER_THROTTLE`
+SOURCE: https://github.com/gabime/spdlog/issues/3652
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1289 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Reported Security Vulnerability
+SOURCE: https://github.com/gabime/spdlog/issues/3646
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1290 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: seems that line 47 is redundant now (current_size = 0)
+SOURCE: https://github.com/gabime/spdlog/issues/3643
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1291 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: AI...
+SOURCE: https://github.com/gabime/spdlog/issues/3636
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1292 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Feature Request / Optimization] Super-fast AVX2 SIMD alternative for `full_formatter` timestamps
+SOURCE: https://github.com/gabime/spdlog/issues/3635
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1293 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `spdlog.org` is infected with malware
+SOURCE: https://github.com/gabime/spdlog/issues/3632
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1294 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: spdlog `1.17.0` generates deprecation warnings with fmt `12.2.0`
+SOURCE: https://github.com/gabime/spdlog/issues/3631
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1295 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: difference between the branches?
+SOURCE: https://github.com/gabime/spdlog/issues/3623
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1296 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compilation failure with libsystemd
+SOURCE: https://github.com/gabime/spdlog/issues/3616
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1297 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [feature request] hourly_file_sink max_files does not clean existing historical files after restart
+SOURCE: https://github.com/gabime/spdlog/issues/3613
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1298 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [question] std::format 2.0
+SOURCE: https://github.com/gabime/spdlog/issues/3608
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1299 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: unresolved external symbols, mostly for fmt, when trying to link with MSVC on Windows
+SOURCE: https://github.com/gabime/spdlog/issues/3607
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1300 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: FATAL log level..?
+SOURCE: https://github.com/gabime/spdlog/issues/3601
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1301 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Windows] tcp_client::close() calls closesocket() unconditionally, generating spurious WSAENOTSOCK errors on disconnected sockets
+SOURCE: https://github.com/gabime/spdlog/issues/3587
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1302 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [Windows] tcp_sink fails to reconnect after server restart due to premature WSACleanup() calls
+SOURCE: https://github.com/gabime/spdlog/issues/3586
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1303 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: test_misc triggers GCC 16 array-bounds warning
+SOURCE: https://github.com/gabime/spdlog/issues/3578
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1304 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 建议新增tcp_server_sink
+SOURCE: https://github.com/gabime/spdlog/issues/3574
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1305 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Feature Request: allow shutdown outside main
+SOURCE: https://github.com/gabime/spdlog/issues/3572
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1306 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Setting of logger pattern overrides the sink pattern
+SOURCE: https://github.com/gabime/spdlog/issues/3570
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1307 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Cannot open include file: 'fmt/format.h': No such file or directory
+SOURCE: https://github.com/gabime/spdlog/issues/3559
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1308 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crashes in tests (in random order)
+SOURCE: https://github.com/gabime/spdlog/issues/3557
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1309 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: spdlog::systemd_logger_mt and spdlog::syslog_logger_mt crashed if it is built with a debug flag _GLIBCXX_DEBUG
+SOURCE: https://github.com/gabime/spdlog/issues/3540
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1310 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compilation: HYDRODYN force SEASTATE
+SOURCE: https://github.com/gabime/spdlog/issues/3539
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1311 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compilation: AERODYN force INFLOWIND
+SOURCE: https://github.com/gabime/spdlog/issues/3538
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1312 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Change CP_UTF8 to CP_ACP
+SOURCE: https://github.com/gabime/spdlog/issues/3537
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1313 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Macro SPDLOG_TRACE only work if default logger is specified
+SOURCE: https://github.com/gabime/spdlog/issues/3536
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1314 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why console print the same log twice ?
+SOURCE: https://github.com/gabime/spdlog/issues/3529
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1315 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: A null pointer dereference was discovered in the `count_lines()` function within spdlog V1.11.0.
+SOURCE: https://github.com/gabime/spdlog/issues/3528
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1316 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Proposal: Allow Custom Thread Pool Implementations for Async Logger
+SOURCE: https://github.com/gabime/spdlog/issues/3527
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1317 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The UTC offset of the standard time in the Europe/Israel time zone returns 480 minutes.
+SOURCE: https://github.com/gabime/spdlog/issues/3526
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1318 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Loading log levels from env does not work with uppercase level names
+SOURCE: https://github.com/gabime/spdlog/issues/3525
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1319 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: COREDUMP OS:rh7.9 GCC:version 4.8.5 20150623
+SOURCE: https://github.com/gabime/spdlog/issues/3512
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1320 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [GCC] [Windows] Segfault when running with GCC with the debugger on another thread
+SOURCE: https://github.com/gabime/spdlog/issues/3511
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1321 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: v1.17.0, project “example” complier fail.
+SOURCE: https://github.com/gabime/spdlog/issues/3510
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1322 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Source location not working on some log calls
+SOURCE: https://github.com/gabime/spdlog/issues/3505
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1323 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Backtrace buffer collects all messages
+SOURCE: https://github.com/gabime/spdlog/issues/3503
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1324 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Crash at pattern_formatter::format
+SOURCE: https://github.com/gabime/spdlog/issues/3502
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1325 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: C++20 compile error
+SOURCE: https://github.com/gabime/spdlog/issues/3500
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1326 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Using asynchronous loggers, file descriptors are still held by multiple threads
+SOURCE: https://github.com/gabime/spdlog/issues/3498
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1327 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: tcp_client.h missing <fcntl.h> include — causes compilation failures
+SOURCE: https://github.com/gabime/spdlog/issues/3496
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1328 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: branch is v2.X--[CMakeLists] Missing file in the included directory
+SOURCE: https://github.com/gabime/spdlog/issues/3495
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1329 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: [MSVC][Windows] spdlog-utests failed on MSVC
+SOURCE: https://github.com/gabime/spdlog/issues/3494
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1330 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Detection of UWP platform
+SOURCE: https://github.com/gabime/spdlog/issues/3488
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1331 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Overflow at many places can happen
+SOURCE: https://github.com/gabime/spdlog/issues/3484
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1332 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: One unit test fails on FreeBSD using 1.16.0
+SOURCE: https://github.com/gabime/spdlog/issues/3483
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1333 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add rotation count to file_event_handlers
+SOURCE: https://github.com/gabime/spdlog/issues/3481
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1334 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SPDLOG_DEBUG("{}", 0) segment fault on Windows 11 Qt-6.8.3
+SOURCE: https://github.com/gabime/spdlog/issues/3478
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1335 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Under windows, when using rotating logs, files cannot be renamed immediately after being closed
+SOURCE: https://github.com/gabime/spdlog/issues/3476
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1336 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: typo in wiki Default-logger
+SOURCE: https://github.com/gabime/spdlog/issues/3475
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1337 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Feature: systemd journald logging without systemd library dependency
+SOURCE: https://github.com/gabime/spdlog/issues/3471
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1338 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Problem with : type_is_unformattable_for<T, char_type> _;
+SOURCE: https://github.com/gabime/spdlog/issues/3470
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1339 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Update fmt to 12.0.0
+SOURCE: https://github.com/gabime/spdlog/issues/3468
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1340 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: SPDLOG_USE_STD_FORMAT is not an option in CMake config file
+SOURCE: https://github.com/gabime/spdlog/issues/3467
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1341 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: spdlog-utests do not respect defined SPDLOG_LEVEL_NAMES in the tweakme.h
+SOURCE: https://github.com/gabime/spdlog/issues/3466
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1342 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: spdlog support for working with external logrotate
+SOURCE: https://github.com/gabime/spdlog/issues/3464
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1343 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: When the initialize_logger function is called, a crash occurs in the function while accessing the member variable logger_map_mutex_
+SOURCE: https://github.com/gabime/spdlog/issues/3463
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1344 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: rotating_logger_mt error in spdlog-1.15.3
+SOURCE: https://github.com/gabime/spdlog/issues/3462
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1345 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: ansicolor_stderr_sink_mt produces disordered output when used with fork.
+SOURCE: https://github.com/gabime/spdlog/issues/3461
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1346 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hopefully support u8string strings
+SOURCE: https://github.com/gabime/spdlog/issues/3460
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1347 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Error: `fwrite_unlocked` is unavailable on Android for vcpkg version of spdlog
+SOURCE: https://github.com/gabime/spdlog/issues/3459
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1348 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: vs2022 runtime exception
+SOURCE: https://github.com/gabime/spdlog/issues/3458
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1349 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: set_pattern doesn't take effect immediately with multi-threaded
+SOURCE: https://github.com/gabime/spdlog/issues/3457
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1350 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `mdc_formatter` fails to read MDC values due to `static thread_local context` being duplicated across TUs
+SOURCE: https://github.com/gabime/spdlog/issues/3456
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1351 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Issue logging hex - preceding the colon with '0' and logging two uint64_t values prints the first value twice.
+SOURCE: https://github.com/gabime/spdlog/issues/3455
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1352 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Feature Request: Automatically compress rotated log files exceeding size limit into tar.gz with date + logname + sequence number naming
+SOURCE: https://github.com/gabime/spdlog/issues/3454
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1353 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Qt loggers have a hard dependency on Qt Widgets
+SOURCE: https://github.com/gabime/spdlog/issues/3453
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1354 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: The static library that encapsulates spdlog cannot be output normally in the Debugging-Console of VS Code
+SOURCE: https://github.com/gabime/spdlog/issues/3452
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1355 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Segment fault with spdlog fmt 11
+SOURCE: https://github.com/gabime/spdlog/issues/3450
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1356 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Tests failure with catch 3.9.0
+SOURCE: https://github.com/gabime/spdlog/issues/3449
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1357 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Error getting default logger
+SOURCE: https://github.com/gabime/spdlog/issues/3448
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1358 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: unsigned char* not supported for string logging
+SOURCE: https://github.com/gabime/spdlog/issues/3447
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1359 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to create new loggers properly?
+SOURCE: https://github.com/gabime/spdlog/issues/3446
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1360 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Basic file logger always uses Downloads folder regardless if I give it absolute path
+SOURCE: https://github.com/gabime/spdlog/issues/3445
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1361 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compiler warnings of memory overflow
+SOURCE: https://github.com/gabime/spdlog/issues/3443
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1362 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Source Location not printed
+SOURCE: https://github.com/gabime/spdlog/issues/3440
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1363 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: error: #error Only Win32 target is supported!
+SOURCE: https://github.com/gabime/spdlog/issues/3439
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1364 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Does it make sence to disable warnings if SPDLOG_BUILD_WARNINGS is OFF ?
+SOURCE: https://github.com/gabime/spdlog/issues/3438
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1365 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Error when using spdlog with Conan
+SOURCE: https://github.com/gabime/spdlog/issues/3434
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1366 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Disabled Backtracer performance impact
+SOURCE: https://github.com/gabime/spdlog/issues/3431
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1367 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: `wincolor_sink::log()` shouldn't be `final`
+SOURCE: https://github.com/gabime/spdlog/issues/3429
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1368 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Why no security advisories have been published
+SOURCE: https://github.com/gabime/spdlog/issues/3427
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1369 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Issues with linking spdlog header only against a cuda project built with MSVC
+SOURCE: https://github.com/gabime/spdlog/issues/3425
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1370 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Issue 1: Missing Error Handling for File Not Found
+SOURCE: https://github.com/gabime/spdlog/issues/3424
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1371 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Logger Stall - GCC 11.4 - External FMT - Debug configuration
+SOURCE: https://github.com/gabime/spdlog/issues/3422
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1372 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: spdlog issues with CMAKE_INTERPROCEDURAL_OPTIMIZATION
+SOURCE: https://github.com/gabime/spdlog/issues/3421
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1373 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: spdlog::rotating_logger_mt crash on macos 11.7.10 Big Sur
+SOURCE: https://github.com/gabime/spdlog/issues/3420
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1374 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compilation issue with spdlog 1.15.x and clang++ 20.1.7
+SOURCE: https://github.com/gabime/spdlog/issues/3418
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1375 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: daily_file_sink.h compilation error
+SOURCE: https://github.com/gabime/spdlog/issues/3417
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1376 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Too short environment variables are allowed
+SOURCE: https://github.com/gabime/spdlog/issues/3414
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1377 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: What's the latest version qt sink supporting Qt 5.9.4?
+SOURCE: https://github.com/gabime/spdlog/issues/3411
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1378 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Example with C++20 module and std::source_location
+SOURCE: https://github.com/gabime/spdlog/issues/3410
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1379 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Some lines in my log are truncated.
+SOURCE: https://github.com/gabime/spdlog/issues/3409
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1380 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: #3399 broke compatibility with all versions of libfmt prior to 11.2.0
+SOURCE: https://github.com/gabime/spdlog/issues/3408
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1381 | spdlog | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Daily logger is not swapped at designated time
+SOURCE: https://github.com/gabime/spdlog/issues/3407
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1382 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question: Is the 10-18x Performance Gap Between C++ and Java ART Normal?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/158
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1383 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Are there any plans to continue updating this project?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/149
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1384 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hope to support JDK21
+SOURCE: https://github.com/exchange-core/exchange-core/issues/148
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1385 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Upgrade of BigDecimal type of orders
+SOURCE: https://github.com/exchange-core/exchange-core/issues/147
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1386 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: compile error
+SOURCE: https://github.com/exchange-core/exchange-core/issues/146
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1387 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: is there a bug here? [OrderBookDirectImpl]
+SOURCE: https://github.com/exchange-core/exchange-core/issues/145
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1388 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: is there a web UI for this project?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/144
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1389 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Does CoreSymbolSpecification support futures?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/141
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1390 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Delete symbol in exchange-core
+SOURCE: https://github.com/exchange-core/exchange-core/issues/140
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1391 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Does exchange-core support java17 or higher version
+SOURCE: https://github.com/exchange-core/exchange-core/issues/138
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1392 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: 如何配置订单为限价订单，价格相同才可以交易
+SOURCE: https://github.com/exchange-core/exchange-core/issues/137
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1393 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Hello! How to configure a price limit order? Where is the module
+SOURCE: https://github.com/exchange-core/exchange-core/issues/136
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1394 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Exchange Core
+SOURCE: https://github.com/exchange-core/exchange-core/issues/135
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1395 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: New release of exchange-core
+SOURCE: https://github.com/exchange-core/exchange-core/issues/132
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1396 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RAM is consuming more 
+SOURCE: https://github.com/exchange-core/exchange-core/issues/131
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1397 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Removing sun.misc.Unsafe;
+SOURCE: https://github.com/exchange-core/exchange-core/issues/130
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1398 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: exchange-core does not work work with java17
+SOURCE: https://github.com/exchange-core/exchange-core/issues/129
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1399 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Remove symbols on the go
+SOURCE: https://github.com/exchange-core/exchange-core/issues/128
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1400 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to handle failure or exception that may occur in Orderbook processing.
+SOURCE: https://github.com/exchange-core/exchange-core/issues/127
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1401 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Exchange core stock
+SOURCE: https://github.com/exchange-core/exchange-core/issues/126
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1402 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: what is risk control ?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/125
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1403 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Please explain what this todo "TODO check if nextSequence is correct (not nextSequence+-1)?" mean? 
+SOURCE: https://github.com/exchange-core/exchange-core/issues/123
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1404 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Journaling and Snapshot improvement
+SOURCE: https://github.com/exchange-core/exchange-core/issues/118
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1405 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Java 17 Support 
+SOURCE: https://github.com/exchange-core/exchange-core/issues/116
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1406 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: I need your help
+SOURCE: https://github.com/exchange-core/exchange-core/issues/115
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1407 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can you share benchmark code that you used in the main page of the project?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/114
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1408 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Do customer balance get persisted?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/112
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1409 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: process of making snapshots
+SOURCE: https://github.com/exchange-core/exchange-core/issues/111
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1410 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: why in mode NO_RISK_PROCESSING, risk engine should work
+SOURCE: https://github.com/exchange-core/exchange-core/issues/110
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1411 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: java.lang.NegativeArraySizeException in exchange-core
+SOURCE: https://github.com/exchange-core/exchange-core/issues/109
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1412 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Contribution needed for diagram to demonstrate how exchange-core works
+SOURCE: https://github.com/exchange-core/exchange-core/issues/108
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1413 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: exchange core showing java.lang.OutOfMemoryError:Java Heap Space
+SOURCE: https://github.com/exchange-core/exchange-core/issues/107
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1414 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: OrderType
+SOURCE: https://github.com/exchange-core/exchange-core/issues/105
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1415 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Order Type FOK
+SOURCE: https://github.com/exchange-core/exchange-core/issues/104
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1416 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: recovering from specific snapshot file name problem
+SOURCE: https://github.com/exchange-core/exchange-core/issues/103
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1417 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: java.io.FileNotFoundException: .\dumps\NUMBERS_journal_0_0001.ecj (The system cannot find the path specified)
+SOURCE: https://github.com/exchange-core/exchange-core/issues/97
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1418 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Confusion about baseScaleK and quoteScaleK and Price
+SOURCE: https://github.com/exchange-core/exchange-core/issues/96
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1419 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: API is ready?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/93
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1420 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to get execution report and the real-time orderbook
+SOURCE: https://github.com/exchange-core/exchange-core/issues/91
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1421 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Maximum capacity of keeping orders
+SOURCE: https://github.com/exchange-core/exchange-core/issues/90
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1422 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Support for UUID instead of int
+SOURCE: https://github.com/exchange-core/exchange-core/issues/89
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1423 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Where is MatcherEventType.CANCEL?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/88
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1424 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to place MarketOrder?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/87
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1425 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Code error?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/86
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1426 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to present floating in amount and price for symbol
+SOURCE: https://github.com/exchange-core/exchange-core/issues/85
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1427 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Storing the exchange
+SOURCE: https://github.com/exchange-core/exchange-core/issues/84
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1428 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: RiskRelease out of order execution
+SOURCE: https://github.com/exchange-core/exchange-core/issues/83
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1429 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: when do you want to support FIX
+SOURCE: https://github.com/exchange-core/exchange-core/issues/82
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1430 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: why duplicate order id - can match, but can not place
+SOURCE: https://github.com/exchange-core/exchange-core/issues/81
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1431 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: OrderId datatype
+SOURCE: https://github.com/exchange-core/exchange-core/issues/80
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1432 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: OrderBook Creation
+SOURCE: https://github.com/exchange-core/exchange-core/issues/79
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1433 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: BinaryCommandsProcessor code problem
+SOURCE: https://github.com/exchange-core/exchange-core/issues/77
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1434 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: LimitOrder and MarketOrder?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/76
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1435 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: code problem
+SOURCE: https://github.com/exchange-core/exchange-core/issues/75
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1436 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: canPlaceMarginOrder
+SOURCE: https://github.com/exchange-core/exchange-core/issues/74
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1437 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: are there any guarantees for in-order processing?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/73
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1438 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Concurrency Issue 
+SOURCE: https://github.com/exchange-core/exchange-core/issues/72
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1439 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Pegged Orders
+SOURCE: https://github.com/exchange-core/exchange-core/issues/71
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1440 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Question about putting journaling module in the event handlers?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/70
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1441 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Does this engine support Distributed deployment?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/69
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1442 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Find a spelling mistake in README.md
+SOURCE: https://github.com/exchange-core/exchange-core/issues/67
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1443 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: About account balance
+SOURCE: https://github.com/exchange-core/exchange-core/issues/66
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1444 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: exchange-core Trade details
+SOURCE: https://github.com/exchange-core/exchange-core/issues/65
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1445 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: exchange-core orderbook
+SOURCE: https://github.com/exchange-core/exchange-core/issues/64
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1446 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Expose exchange-core API to accept requests from other applications
+SOURCE: https://github.com/exchange-core/exchange-core/issues/63
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1447 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can you write a simple description of the system？
+SOURCE: https://github.com/exchange-core/exchange-core/issues/62
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1448 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Recovering users balances and orderbook in case of crash ?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/61
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1449 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: exchange-core source code
+SOURCE: https://github.com/exchange-core/exchange-core/issues/60
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1450 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: InitialStateConfiguration.lastKnownStateFromJournal, and Error continuing
+SOURCE: https://github.com/exchange-core/exchange-core/issues/59
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1451 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Access custom balance, symbols, users . What should I do?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/58
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1452 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Confusion about the data type of the Order
+SOURCE: https://github.com/exchange-core/exchange-core/issues/57
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1453 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Can not access Disruptor internals when starting the project
+SOURCE: https://github.com/exchange-core/exchange-core/issues/55
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1454 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Testing basic user cases. 
+SOURCE: https://github.com/exchange-core/exchange-core/issues/54
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1455 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Performance issues when starting the project
+SOURCE: https://github.com/exchange-core/exchange-core/issues/53
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1456 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Issues for Downloading Maven Plugins 
+SOURCE: https://github.com/exchange-core/exchange-core/issues/52
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1457 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Compilation Failed Error
+SOURCE: https://github.com/exchange-core/exchange-core/issues/51
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1458 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Abstract the matching engine 
+SOURCE: https://github.com/exchange-core/exchange-core/issues/50
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1459 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How would journaling work?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/44
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1460 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: can i matching order with myself?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/43
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1461 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Risk engine and balances as optional feature
+SOURCE: https://github.com/exchange-core/exchange-core/issues/40
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1462 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: activeOrderId, activeOrderUid, activeOrderAction removed from MatcherTradeEvent
+SOURCE: https://github.com/exchange-core/exchange-core/issues/39
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1463 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Ca it handle 1M OrderBooks? :)
+SOURCE: https://github.com/exchange-core/exchange-core/issues/36
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1464 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Fast vs Direct Order Books
+SOURCE: https://github.com/exchange-core/exchange-core/issues/35
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1465 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to ensure the accuracy of the data(account / order / balance ) when saving the snapshot? E.g. transaction
+SOURCE: https://github.com/exchange-core/exchange-core/issues/34
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1466 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: when the machine down, has anyway to solve it?
+SOURCE: https://github.com/exchange-core/exchange-core/issues/32
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1467 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Provide Initial SyncUp File
+SOURCE: https://github.com/exchange-core/exchange-core/issues/31
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1468 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Usage example
+SOURCE: https://github.com/exchange-core/exchange-core/issues/27
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1469 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Adapte it with websockets, updating balances etc.
+SOURCE: https://github.com/exchange-core/exchange-core/issues/26
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1470 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How can i run exchange-core
+SOURCE: https://github.com/exchange-core/exchange-core/issues/25
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1471 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How can i Run exchange-core
+SOURCE: https://github.com/exchange-core/exchange-core/issues/24
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1472 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Running tests. 
+SOURCE: https://github.com/exchange-core/exchange-core/issues/23
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1473 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Add more order types
+SOURCE: https://github.com/exchange-core/exchange-core/issues/22
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1474 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: How to improve the core performance of the transaction
+SOURCE: https://github.com/exchange-core/exchange-core/issues/20
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
+QB2-1475 | ExchangeCore | ISSUE LEAD, NOT VERIFIED FAILURE
+CLAIM: Lombok and maven
+SOURCE: https://github.com/exchange-core/exchange-core/issues/17
+FIRST ACTION: READ the issue body and record the smallest stated input and first wrong observation; write NO REPRODUCER if absent.
+
